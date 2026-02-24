@@ -1,0 +1,39 @@
+models:
+  trials:
+    - "openrouter/openai/gpt-3.5-turbo"
+    - "openrouter/openai/gpt-4o-mini"
+  judges:
+    - "openrouter/openai/gpt-3.5-turbo"
+
+baseline_model: "openrouter/openai/gpt-3.5-turbo"
+
+execution:
+  seed: 42
+  n_parallel: 3
+  match_batch_size: 3
+  # プロバイダ別の並列度制限（スロットリング）
+  # 各プロバイダに対して同時実行可能な最大リクエスト数を指定
+  provider_parallel_limits:
+    openai: 6
+    gemini: 1
+    anthropic: 6
+    default: 3  # 未定義プロバイダのデフォルト値
+
+selection:
+  strategy: "baseline_star_adaptive"
+  baseline_weight: 0.7
+  prefer_close_ratings: true
+  avoid_recent_duplicates: true
+  recent_window: 20
+
+rating:
+  backend: "elo"
+  elo:
+    k_initial: 32
+    k_default: 16
+    k_stable: 10
+    draw_value: 0.5
+
+stopping:
+  max_matches: 10
+  min_star_per_model: 3

@@ -1,0 +1,3 @@
+{"input":{"messages":[{"role":"user","content":"地球を周回する衛星の速度が減少した場合、その衛星の軌道半径と公転周期に何が起こりますか？物理学の原則を用いてあなたの答えの根拠を説明してください。"}]},"usage_output":null}
+{"input":{"messages":[{"role":"user","content":[{"type":"text","text":"このPDFを要約してください"},{"type":"file_ref","path":"attachments/Sustainability Data Book 2018 ガバナンス.pdf"}]}]},"usage_output":null}
+{"input":{"messages":[{"role":"user","content":"人生の各段階は、我々が時間や死をどう理解するかにどのように影響を与えるでしょうか？例を挙げて説明してください。"}]},"usage_output":null}

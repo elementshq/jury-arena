@@ -1,0 +1,51 @@
+version: "3.9"
+
+name: jury-arena-dev
+
+services:
+  db:
+    image: postgres:18.1
+    container_name: jury-arena-dev-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d app"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  web:
+    container_name: jury-arena-dev-web
+    build:
+      context: ..
+      dockerfile: web/Dockerfile
+      target: dev
+    env_file:
+      - ../web/.env
+    environment:
+      NODE_ENV: development
+      WATCHPACK_POLLING: "true"
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/app
+      WORKER_DIR: /app/worker
+      UV_PROJECT_ENVIRONMENT: /opt/venv
+      UV_PYTHON: /opt/venv/bin/python
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../web:/app/web
+      - ../worker:/app/worker
+      - web_node_modules:/app/web/node_modules
+      - web_next:/app/web/.next
+
+volumes:
+  web_node_modules:
+  web_next:

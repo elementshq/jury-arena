@@ -1,0 +1,31 @@
+models:
+  trials: ["$model_1_name", "$model_2_name", "$model_3_name"]
+  judges: ["$judge_model_1_name", "$judge_model_2_name", "$judge_model_3_name"]
+baseline_model: "$baseline_model_name"
+execution:
+  seed: "$seed"
+  n_parallel: "$n_parallel"  # LLM API実行時の並列度 (5-10)
+  match_batch_size: "$match_batch_size"  # arena_match実行時のバッチサイズ。このバッチサイズごとに組み合わせを選出して実行する。 n_parallelより大きな数を想定
+
+selection:
+  strategy: "$selection_strategy"  # baseline_star_adaptive, glicko2, etc.
+  baseline_weight: "$baseline_weight"  # ベースライン対戦の割合（0.0-1.0）
+  prefer_close_ratings: "$prefer_close_ratings"  # 近いレートを優先（baseline_star_adaptive のみ）
+  avoid_recent_duplicates: "$avoid_recent_duplicates"  # 直近の重複カード回避
+  recent_window: "$recent_window"  # 重複チェックする直近マッチ数
+
+rating:
+  backend: "$rating_backend"  # elo, glicko2, etc.
+  elo:
+    initial_rating: "$initial_rating"  # 初期レーティング (デフォルト: 1500.0)
+    k_initial: "$k_initial"
+    k_default: "$k_default"
+    k_stable: "$k_stable"
+    draw_value: "$draw_value"
+  # glicko2: 将来的に実装
+  #   mu0: "$mu0"
+  #   phi0: "$phi0"
+  #   sigma0: "$sigma0"
+stopping:
+  max_matches: "$max_matches"  # 打ち切り上限（安全弁）
+  min_star_per_model: "$min_star_per_model"  # 初期星型の最低本数（モデルごと）

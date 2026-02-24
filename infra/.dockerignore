@@ -1,0 +1,10 @@
+# Python virtualenv
+**/.venv
+worker/.venv
+
+# Python cache
+**/__pycache__
+**/*.pyc
+
+# Node
+**/node_modules

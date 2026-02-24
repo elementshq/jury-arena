@@ -1,0 +1,126 @@
+model_list:
+  # OpenAI models - PDF base64 support
+  - model: openai/gpt-5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-5.1
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-5.2
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-5.2-pro
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-5-mini
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-5-nano
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openai/gpt-oss-120b
+    capabilities:
+      inputs:
+        image: ["base64"]
+
+  # Google Gemini models - PDF base64 support
+  - model: gemini/gemini-2.5-flash
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: gemini/gemini-2.5-flash-lite
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: gemini/gemini-2.5-pro
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: gemini/gemini-3-pro-preview
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: gemini/gemini-3-flash-preview
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: gemini/gemma-3-27b-it
+    capabilities:
+      inputs:
+        image: ["base64"]
+
+  - model: xai/grok-3
+    capabilities:
+      inputs: {}
+
+  - model: xai/grok-4
+    capabilities:
+      inputs: {}
+
+  - model: openrouter/x-ai/grok-4
+    capabilities:
+      inputs: {}
+
+  - model: openrouter/x-ai/grok-4-fast
+    capabilities:
+      inputs: {}
+
+  # OpenRouter models - varying support
+  - model: openrouter/openai/gpt-oss-120b
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openrouter/anthropic/claude-opus-4.5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openrouter/anthropic/claude-sonnet-4.5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # DeepSeek - no PDF support
+  - model: openrouter/deepseek/deepseek-v3.2
+    capabilities:
+      inputs: {}
+
+  # Mistral models - no PDF support
+  - model: openrouter/mistralai/mistral-small-24b-instruct-2501
+    capabilities:
+      inputs: {}
+
+  - model: openrouter/mistralai/mistral-large-2512
+    capabilities:
+      inputs: {}
+
+  # Meta Llama models - no PDF support
+  - model: openrouter/meta-llama/llama-3.1-8b-instruct
+    capabilities:
+      inputs: {}
+
+  - model: openrouter/meta-llama/llama-3.3-70b-instruct
+    capabilities:
+      inputs: {}
+
+  - model: openrouter/meta-llama/llama-4-scout
+    capabilities:
+      inputs: {}
