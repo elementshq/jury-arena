@@ -10,8 +10,8 @@
 ## 1. リポジトリのクローン
 
 ```bash
-git clone git@github.com:Liquid-dev/ele-cloud-autobench.git
-cd ele-cloud-autobench
+git clone https://github.com/elementshq/jury-arena.git
+cd jury-arena
 ```
 
 ## 2. 環境変数の設定
