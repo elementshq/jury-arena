@@ -58,8 +58,8 @@ Dataset (JSONL / ZIP)
 ### 1. Clone
 
 ```bash
-git clone https://github.com/Liquid-dev/ele-cloud-autobench.git
-cd ele-cloud-autobench
+git clone https://github.com/elementshq/jury-arena.git
+cd jury-arena
 ```
 
 ### 2. Configure environment
