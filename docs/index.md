@@ -42,10 +42,8 @@ For details, see [Data Format](./guides/data-format).
 
 ### Multi-turn
 
-Multi-turn is not directly supported.
-
-Instead, treat a series of conversation history as a single Sample.
-Since the evaluation targets the LLM's response quality to the last User Input, it is effectively a single-turn evaluation.
+A series of conversation history is treated as a single Sample.
+The entire conversation history is provided as context, and the LLM's response quality to the last User Input is evaluated.
 
 ![Multi-turn dataset](/assets/dataset-multi-turn.png)
 
