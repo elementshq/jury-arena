@@ -25,12 +25,36 @@ const PROVIDER_PREFIX_RULES: Array<{
     prefixes: ["llama-", "meta-"],
   },
   {
+    provider: Provider.Bytedance,
+    prefixes: ["bytedance-", "bytedance", "bytedance-seed"],
+  },
+  {
+    provider: Provider.Minimax,
+    prefixes: ["minimax-"],
+  },
+  {
     provider: Provider.Mistral,
     prefixes: ["mistral-"],
   },
   {
+    provider: Provider.Moonshotai,
+    prefixes: ["moonshotai-", "kimi-"],  
+  },
+  {
     provider: Provider.DeepSeek,
     prefixes: ["deepseek-"],
+  },
+  {
+    provider: Provider.Qwen,
+    prefixes: ["qwen"],
+  },
+  {
+    provider: Provider.Xiaomi,
+    prefixes: ["xiaomi"],
+  },
+  {
+    provider: Provider.Zai,
+    prefixes: ["z-ai", "zai-", "glm-"],
   },
 ];
 

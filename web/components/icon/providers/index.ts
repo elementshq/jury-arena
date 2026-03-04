@@ -1,8 +1,14 @@
 export { AnthropicIcon } from "./anthropic-icon";
+export { BytedanceIcon } from "./bytedance-icon";
 export { DeepSeekIcon } from "./deepseek-icon";
 export { GoogleIcon } from "./google-icon";
 export { GrokIcon } from "./grok-icon";
 export { MetaIcon } from "./meta-icon";
+export { MinimaxIcon } from "./minimax-icon";
 export { MistralIcon } from "./mistral-icon";
+export { MoonshotaiIcon } from "./moonshotai-icon"; 
 export { OpenAIIcon } from "./openai-icon";
+export { QwenIcon } from "./qwen-icon";
+export { XiaomiIcon } from "./xiaomi-icon";
+export { ZaiIcon } from "./zai-icon";
 export { UnknownIcon } from "./unknown-icon";
