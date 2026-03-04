@@ -521,6 +521,17 @@ Output the evaluation result in the following JSON format.
                         "cost": 0.0,
                     }
 
+                # コードフェンス除去（モデルが```json...```で囲む場合の対応）
+                judge_output_stripped = judge_output.strip()
+                if judge_output_stripped.startswith("```"):
+                    lines = judge_output_stripped.split("\n")
+                    # 先頭行(```json等)と末尾行(```)を除去
+                    if lines[-1].strip() == "```":
+                        judge_output_stripped = "\n".join(lines[1:-1])
+                    else:
+                        judge_output_stripped = "\n".join(lines[1:])
+                    judge_output = judge_output_stripped
+
                 # JSONパース
                 try:
                     judge_result = json.loads(judge_output)
