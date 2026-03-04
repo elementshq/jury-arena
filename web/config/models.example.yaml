@@ -63,8 +63,7 @@ model_list:
 
   - model: gemini/gemma-3-27b-it
     capabilities:
-      inputs:
-        image: ["base64"]
+      inputs: {}
 
   - model: xai/grok-3
     capabilities:
@@ -74,15 +73,7 @@ model_list:
     capabilities:
       inputs: {}
 
-  - model: openrouter/x-ai/grok-4
-    capabilities:
-      inputs: {}
-
-  - model: openrouter/x-ai/grok-4-fast
-    capabilities:
-      inputs: {}
-
-  # OpenRouter models - varying support
+  # OpenRouter models - PDF base64 support
   - model: openrouter/openai/gpt-oss-120b
     capabilities:
       inputs:
@@ -98,29 +89,81 @@ model_list:
       inputs:
         pdf: ["base64"]
 
-  # DeepSeek - no PDF support
+  - model: openrouter/x-ai/grok-4
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  - model: openrouter/x-ai/grok-4-fast
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # DeepSeek
   - model: openrouter/deepseek/deepseek-v3.2
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
 
-  # Mistral models - no PDF support
+  # Mistral models
   - model: openrouter/mistralai/mistral-small-24b-instruct-2501
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
 
   - model: openrouter/mistralai/mistral-large-2512
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
 
-  # Meta Llama models - no PDF support
+  # Meta Llama models
   - model: openrouter/meta-llama/llama-3.1-8b-instruct
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
 
   - model: openrouter/meta-llama/llama-3.3-70b-instruct
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
 
   - model: openrouter/meta-llama/llama-4-scout
     capabilities:
-      inputs: {}
+      inputs:
+        pdf: ["base64"]
+
+  # Z-AI models
+  - model: openrouter/z-ai/glm-5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # moonshotai models
+  - model: openrouter/moonshotai/kimi-k2.5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # minimax models
+  - model: openrouter/minimax/minimax-m2.5
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # Xiaomi models
+  - model: openrouter/xiaomi/mimo-v2-flash
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # Qwen models
+  - model: openrouter/qwen/qwen3-235b-a22b-2507
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
+  # Bytedance models
+  - model: openrouter/bytedance/seed-oss-36b-instruct
+    capabilities:
+      inputs:
+        pdf: ["base64"]        
