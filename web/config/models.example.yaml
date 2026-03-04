@@ -89,6 +89,11 @@ model_list:
       inputs:
         pdf: ["base64"]
 
+  - model: openrouter/anthropic/claude-sonnet-4.6
+    capabilities:
+      inputs:
+        pdf: ["base64"]
+
   - model: openrouter/x-ai/grok-4
     capabilities:
       inputs:
@@ -163,7 +168,7 @@ model_list:
         pdf: ["base64"]
 
   # Bytedance models
-  - model: openrouter/bytedance/seed-oss-36b-instruct
+  - model: openrouter/bytedance-seed/seed-2.0-mini
     capabilities:
       inputs:
-        pdf: ["base64"]        
+        pdf: ["base64"]
