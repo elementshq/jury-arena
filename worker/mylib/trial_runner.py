@@ -418,6 +418,11 @@ class TrialRunner:
                         )
 
                 output = extract_text_from_response(response)
+                if output is None or (isinstance(output, str) and output.strip() == ""):
+                    raise ValueError(
+                        f"Empty response from model (output={output!r}). "
+                        "Provider may have returned an incomplete response."
+                    )
                 latency_ms = (time.time() - start_time) * 1000
 
                 usage = extract_usage_from_response(response)
@@ -452,7 +457,8 @@ class TrialRunner:
                 is_retryable = (
                     isinstance(e, litellm.exceptions.APIError) or
                     "InternalServerError" in type(e).__name__ or
-                    "500" in str(e)
+                    "500" in str(e) or
+                    "Empty response from model" in str(e)
                 )
 
                 if attempt < self.max_retries and is_retryable:
