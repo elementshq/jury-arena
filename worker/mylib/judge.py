@@ -292,6 +292,7 @@ Output the evaluation result in the following JSON format.
         dataset_dir: Path | None = None,
         provider_semaphores: Optional[Dict[str, threading.Semaphore]] = None,
         judge_output_language: str = "en",
+        timeout: int = 300,
     ):
         self.benchmark_dir = benchmark_dir
         self.matches_dir = benchmark_dir / "arena_matches"
@@ -307,6 +308,7 @@ Output the evaluation result in the following JSON format.
         self.provider_semaphores = provider_semaphores or {}
         # 出力言語（未対応の言語コードの場合は英語にフォールバック）
         self.judge_output_language = judge_output_language if judge_output_language in self.JUDGE_PROMPT_TEMPLATES else "en"
+        self.timeout = timeout
 
     def _get_semaphore(self, model: str) -> Optional[threading.Semaphore]:
         """モデルに対応するSemaphoreを取得（なければNone）"""
@@ -491,6 +493,7 @@ Output the evaluation result in the following JSON format.
                             model=judge_model,
                             input=input_messages,
                             response_format=json_schema_config,
+                            timeout=self.timeout,
                             # temperature=0.3,
                         )
                     else:
@@ -498,6 +501,7 @@ Output the evaluation result in the following JSON format.
                             model=judge_model,
                             messages=judge_messages,
                             response_format=json_schema_config,
+                            timeout=self.timeout,
                             # temperature=0.3,
                         )
 
@@ -554,19 +558,20 @@ Output the evaluation result in the following JSON format.
                     "cost": cost,
                 }
 
-            except litellm.exceptions.InternalServerError as e:
+            except (litellm.exceptions.InternalServerError, litellm.exceptions.Timeout) as e:
+                error_type = type(e).__name__
                 if attempt < max_retries:
                     wait_time = 2 ** attempt  # Exponential backoff: 1s, 2s
-                    print(f"    [Judge リトライ {attempt + 1}/{max_retries}] {judge_model}: InternalServerError - {wait_time}秒後に再試行")
+                    print(f"    [Judge リトライ {attempt + 1}/{max_retries}] {judge_model}: {error_type} - {wait_time}秒後に再試行")
                     time.sleep(wait_time)
                     continue
                 else:
-                    error_message = f"Internal server error for model '{judge_model}' after {max_retries} retries. The service may be temporarily unavailable."
+                    error_message = f"{error_type} for model '{judge_model}' after {max_retries} retries. The service may be temporarily unavailable."
                     print(f"    [Judge エラー] {judge_model}: {error_message}")
                     return {
                         "output": f"Error: {error_message}",
                         "winner": "tie",
-                        "reason": "Judge execution failed after retries (InternalServerError)",
+                        "reason": f"Judge execution failed after retries ({error_type})",
                         "cost": 0.0,
                     }
 
