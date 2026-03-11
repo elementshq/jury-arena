@@ -284,6 +284,7 @@ class TrialRunner:
         n_parallel: int = 5,
         max_retries: int = 3,
         provider_parallel_limits: Optional[Dict[str, int]] = None,
+        timeout: int = 300,
     ):
         self.dataset_dir = dataset_dir
         self.trials_cache_dir = dataset_dir / "trials_cache"
@@ -292,6 +293,7 @@ class TrialRunner:
         self.benchmark_trials_dir.mkdir(parents=True, exist_ok=True)
         self.n_parallel = n_parallel
         self.max_retries = max_retries
+        self.timeout = timeout
 
         # プロバイダ別の並列度制限（Semaphore）
         self.provider_parallel_limits = provider_parallel_limits or {
@@ -408,12 +410,14 @@ class TrialRunner:
                         response = litellm.responses(
                             model=model,
                             input=input_messages,
+                            timeout=self.timeout,
                             **params,
                         )
                     else:
                         response = litellm.completion(
                             model=model,
                             messages=messages,
+                            timeout=self.timeout,
                             **params,
                         )
 
@@ -454,7 +458,13 @@ class TrialRunner:
 
             except Exception as e:
                 # リトライ可能なエラーかどうか判定
+                is_timeout = (
+                    isinstance(e, litellm.exceptions.Timeout) or
+                    "Timeout" in type(e).__name__ or
+                    "timed out" in str(e).lower()
+                )
                 is_retryable = (
+                    is_timeout or
                     isinstance(e, litellm.exceptions.APIError) or
                     "InternalServerError" in type(e).__name__ or
                     "500" in str(e) or
@@ -472,7 +482,9 @@ class TrialRunner:
                 msg = str(e)
 
                 skip_reason = "OTHER_ERROR"
-                if "context_length" in msg.lower():
+                if is_timeout:
+                    skip_reason = "TIMEOUT"
+                elif "context_length" in msg.lower():
                     skip_reason = "CONTEXT_OVERFLOW"
                 elif "InternalServerError" in type(e).__name__ or "500" in msg:
                     skip_reason = "API_ERROR"

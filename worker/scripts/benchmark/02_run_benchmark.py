@@ -248,11 +248,13 @@ def main() -> int:
     provider_parallel_limits = config.get("execution", {}).get(
         "provider_parallel_limits"
     )
+    trial_timeout = config.get("execution", {}).get("trial_timeout", 300)
     trial_runner = TrialRunner(
         dataset_dir,
         benchmark_dir,
         n_parallel,
         provider_parallel_limits=provider_parallel_limits,
+        timeout=trial_timeout,
     )
 
     # resume判定: 既存の状態を復元
@@ -268,6 +270,7 @@ def main() -> int:
         print(f"累積Judge コスト: ${total_judge_cost:.4f}", flush=True)
 
         # ArenaMatchRunnerに既存のマッチカウントとSemaphoreを設定
+        judge_timeout = config.get("execution", {}).get("judge_timeout", 300)
         match_runner = ArenaMatchRunner(
             benchmark_dir,
             judge_models,
@@ -276,6 +279,7 @@ def main() -> int:
             dataset_dir=dataset_dir,
             provider_semaphores=trial_runner.provider_semaphores,
             judge_output_language=judge_output_language,
+            timeout=judge_timeout,
         )
     else:
         ratings = {
@@ -285,6 +289,7 @@ def main() -> int:
         total_trial_cost = 0.0
         total_judge_cost = 0.0
         step = 0
+        judge_timeout = config.get("execution", {}).get("judge_timeout", 300)
         match_runner = ArenaMatchRunner(
             benchmark_dir,
             judge_models,
@@ -292,6 +297,7 @@ def main() -> int:
             dataset_dir=dataset_dir,
             provider_semaphores=trial_runner.provider_semaphores,
             judge_output_language=judge_output_language,
+            timeout=judge_timeout,
         )
 
     print("\n===== ベンチマーク開始 =====\n", flush=True)
