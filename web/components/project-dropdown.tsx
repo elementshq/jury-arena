@@ -57,6 +57,10 @@ export function ProjectDropdown({
   const [renameTarget, setRenameTarget] = useState<ProjectModel | null>(null);
   const [renameValue, setRenameValue] = useState("");
 
+  // Delete dialog
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
+
   async function setSelectedProjectId(projectId: string) {
     const res = await fetch("/api/projects/selected", {
       method: "POST",
@@ -149,40 +153,42 @@ export function ProjectDropdown({
     }
   }
 
-  async function handleDeleteProject(projectId: string, e?: React.MouseEvent) {
+  function openDeleteDialog(projectId: string, e?: React.MouseEvent) {
     e?.preventDefault();
     e?.stopPropagation();
     if (busy) return;
 
     setMenuOpen(false);
+    setDeleteTargetId(projectId);
+    setShowDeleteDialog(true);
+  }
 
-    const ok = window.confirm("このプロジェクトを削除しますか？");
-    if (!ok) return;
+  async function handleConfirmDelete() {
+    if (busy || !deleteTargetId) return;
 
     setBusy(true);
     try {
-      const res = await fetch(`/api/projects/${projectId}`, {
+      const res = await fetch(`/api/projects/${deleteTargetId}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("failed to delete project");
 
-      const isDeletingSelected = projectId === selectedProjectId;
+      const isDeletingSelected = deleteTargetId === selectedProjectId;
 
-      // 次に選ぶ project を決める（削除対象以外の先頭）
-      const next = projects.find((p) => p.id !== projectId) ?? null;
+      const next = projects.find((p) => p.id !== deleteTargetId) ?? null;
+
+      // Close dialog
+      setShowDeleteDialog(false);
+      setDeleteTargetId(null);
 
       if (isDeletingSelected) {
         if (next) {
-          // 先に cookie を更新して SSR リダイレクトを防ぐ
           await setSelectedProjectId(next.id);
 
           startTransition(() => {
             router.replace(`/projects/${next.id}`);
           });
         } else {
-          // project が 0 件になるケース
-          // 選択 cookie を「空」にできる API があるなら叩くのが理想
-          // ない場合は /projects へ
           startTransition(() => {
             router.replace("/projects");
           });
@@ -190,8 +196,6 @@ export function ProjectDropdown({
         return;
       }
 
-      // 選択中以外を消した場合：ページ遷移は不要、一覧だけ更新
-      // （ここで replace("/projects") すると逆に遷移でちらつく）
       startTransition(() => {
         router.refresh();
       });
@@ -265,18 +269,19 @@ export function ProjectDropdown({
                   <Pencil className="h-3 w-3" />
                 </Button>
 
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="h-6 w-6 p-0 text-red-600 hover:text-red-700"
-                  onClick={(e) => handleDeleteProject(project.id, e)}
-                  disabled={busy}
-                  aria-label="Delete"
-                >
-                  <Trash2 className="h-3 w-3" />
-                </Button>
-              </div>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="h-6 w-6 p-0 text-red-600 hover:text-red-700"
+                    onClick={(e) => openDeleteDialog(project.id, e)}
+                    disabled={busy}
+                    aria-label="Delete"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </Button>
+                </div>
+              )}
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
@@ -292,14 +297,14 @@ export function ProjectDropdown({
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>新しいプロジェクトを作成</DialogTitle>
+            <DialogTitle>Create New Project</DialogTitle>
             <DialogDescription>
-              プロジェクト名を入力してください。
+              Enter a name for your project.
             </DialogDescription>
           </DialogHeader>
 
           <div className="py-4 space-y-3">
-            <Label htmlFor="project-name">プロジェクト名</Label>
+            <Label htmlFor="project-name">Project Name</Label>
             <Input
               id="project-name"
               value={newProjectName}
@@ -317,14 +322,14 @@ export function ProjectDropdown({
               disabled={busy}
               type="button"
             >
-              キャンセル
+              Cancel
             </Button>
             <Button
               onClick={handleAddProject}
               disabled={busy || !newProjectName.trim()}
               type="button"
             >
-              作成
+              Create
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -343,14 +348,14 @@ export function ProjectDropdown({
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>プロジェクト名を変更</DialogTitle>
+            <DialogTitle>Rename Project</DialogTitle>
             <DialogDescription>
-              新しいプロジェクト名を入力してください。
+              Enter a new name for the project.
             </DialogDescription>
           </DialogHeader>
 
           <div className="py-4 space-y-3">
-            <Label htmlFor="rename-project">プロジェクト名</Label>
+            <Label htmlFor="rename-project">Project Name</Label>
             <Input
               id="rename-project"
               value={renameValue}
@@ -367,14 +372,52 @@ export function ProjectDropdown({
               disabled={busy}
               type="button"
             >
-              キャンセル
+              Cancel
             </Button>
             <Button
               onClick={handleRenameProject}
               disabled={busy || !renameValue.trim()}
               type="button"
             >
-              変更
+              Rename
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete Project Dialog */}
+      <Dialog
+        open={showDeleteDialog}
+        onOpenChange={(open) => {
+          setShowDeleteDialog(open);
+          if (!open) setDeleteTargetId(null);
+        }}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Delete Project</DialogTitle>
+            <DialogDescription>
+              Are you sure you want to delete this project? This action cannot be
+              undone.
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setShowDeleteDialog(false)}
+              disabled={busy}
+              type="button"
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleConfirmDelete}
+              disabled={busy}
+              type="button"
+            >
+              Delete
             </Button>
           </DialogFooter>
         </DialogContent>
