@@ -371,11 +371,14 @@ export async function findRecentEvaluatedDatasets(
     .leftJoin(sampleCounts, eq(sampleCounts.datasetId, datasets.id))
     .leftJoin(benchmarkCounts, eq(benchmarkCounts.datasetId, datasets.id))
     .leftJoin(lastEvaluated, eq(lastEvaluated.datasetId, datasets.id))
-    .where(eq(datasets.projectId, projectId))
+    .where(
+      and(
+        eq(datasets.projectId, projectId),
+        sql`${lastEvaluated.lastEvaluatedAt} is not null`,
+      ),
+    )
     .orderBy(desc(lastEvaluated.lastEvaluatedAt), desc(datasets.id))
     .$dynamic();
-
-  q = q.where(sql`${lastEvaluated.lastEvaluatedAt} is not null`);
 
   if (limit !== undefined) q = q.limit(limit);
 

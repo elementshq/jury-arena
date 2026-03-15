@@ -231,7 +231,7 @@ export function ProjectDropdown({
           <DropdownMenuSeparator />
 
           <div className="text-xs text-slate-500 px-2 py-1.5">
-            プロジェクト一覧
+            Projects
           </div>
 
           {projects.map((project) => (
