@@ -53,13 +53,13 @@ const nextConfig: NextConfig = {
 	// Expose demo flag to client components via NEXT_PUBLIC_
 	env: {
 		NEXT_PUBLIC_DEMO: isDemo ? "1" : "",
-		NEXT_PUBLIC_BASE_PATH: isDemoExport ? "/ele-cloud-autobench/demo" : "",
+		NEXT_PUBLIC_BASE_PATH: isDemoExport ? "/jury-arena/demo" : "",
 	},
 
 	// Static export for GitHub Pages deployment (DEMO_EXPORT=1)
 	...(isDemoExport && {
 		output: "export" as const,
-		basePath: "/ele-cloud-autobench/demo",
+		basePath: "/jury-arena/demo",
 		images: { unoptimized: true },
 	}),
 
