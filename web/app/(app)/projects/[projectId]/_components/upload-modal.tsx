@@ -1,7 +1,9 @@
 "use client";
 
-import { Sparkles, Upload, Check } from "lucide-react";
+import { Sparkles, Upload, Check, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
+import { DemoDisabled } from "@/components/demo-disabled";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,8 +17,24 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
   DatasetTemplates,
-  type DatasetTemplateKey,
+  DatasetTemplateKey,
 } from "@/lib/templates/dataset-source";
+
+// ---------------------------------------------------------------------------
+// Demo mode — pre-built sample dataset links
+// ---------------------------------------------------------------------------
+const DEMO_PROJECT_ID = "c46d3901-f8c4-4e8f-acc8-7ab75f38dd0e";
+
+const DEMO_TEMPLATE_DATASET: Record<string, { label: string; href: string }> = {
+  [DatasetTemplateKey.Basic20JmtbenchEn]: {
+    label: "template samples en",
+    href: `/projects/${DEMO_PROJECT_ID}/datasets/b1dc9849-46c4-469f-813c-92fe95c3ceb9`,
+  },
+  [DatasetTemplateKey.Basic20Jmtbench]: {
+    label: "template samples jp",
+    href: `/projects/${DEMO_PROJECT_ID}/datasets/50660426-c42a-4e71-83ac-26cead3693c5`,
+  },
+};
 
 interface UploadModalProps {
   open: boolean;
@@ -50,9 +68,6 @@ function isValidFileName(fileName: string) {
   return /\.(jsonl|zip)$/i.test(fileName);
 }
 
-function isJsonlFileName(fileName: string) {
-  return /\.jsonl$/i.test(fileName);
-}
 
 function isZipFileName(fileName: string) {
   return /\.zip$/i.test(fileName);
@@ -313,17 +328,19 @@ export function UploadModal({
 
           {!uploadType && (
             <div className="grid grid-cols-2 gap-3">
-              <Button
-                type="button"
-                variant="outline"
-                className="h-24 flex flex-col gap-2"
-                disabled={submitting}
-                onClick={() => fileInputRef.current?.click()}
-              >
-                <Upload className="h-6 w-6" />
-                <span>Upload</span>
-                <span className="text-xs text-slate-600">.jsonl or .zip</span>
-              </Button>
+              <DemoDisabled className="w-full">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="h-24 flex flex-col gap-2 w-full"
+                  disabled={submitting}
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  <Upload className="h-6 w-6" />
+                  <span>Upload</span>
+                  <span className="text-xs text-slate-600">.jsonl or .zip</span>
+                </Button>
+              </DemoDisabled>
 
               <Button
                 type="button"
@@ -425,6 +442,29 @@ export function UploadModal({
                   </button>
                 ))}
               </div>
+
+              {/* Demo mode: show link to the pre-built dataset for the selected language */}
+              {process.env.NEXT_PUBLIC_DEMO === "1" && selectedTemplateKey && (
+                <div className="rounded-md border border-amber-200 bg-amber-50 p-3 space-y-1">
+                  <p className="text-xs text-amber-800">
+                    Adding datasets is not available in demo mode. View the pre-built sample dataset instead:
+                  </p>
+                  {(() => {
+                    const sample = DEMO_TEMPLATE_DATASET[selectedTemplateKey];
+                    if (!sample) return null;
+                    return (
+                      <Link
+                        href={sample.href}
+                        onClick={() => { resetState(); onOpenChange(false); }}
+                        className="inline-flex items-center gap-1.5 text-sm text-amber-700 hover:text-amber-900 underline underline-offset-2"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+                        {sample.label}
+                      </Link>
+                    );
+                  })()}
+                </div>
+              )}
             </div>
           )}
 
@@ -447,20 +487,28 @@ export function UploadModal({
           >
             Cancel
           </Button>
-          <Button
-            type="button"
-            onClick={handleSubmit}
-            disabled={Boolean(
-              submitting ||
-              !uploadType ||
-              !title.trim() ||
-              (uploadType === "template" && !selectedTemplateKey) ||
-              (uploadType === "upload" && !fileBuffer && (!fileContent.trim() || !!errorMsg)) ||
-              (uploadType === "upload" && fileBuffer && !fileName)
-            )}
-          >
-            {submitting ? "Adding..." : "Add"}
-          </Button>
+          {process.env.NEXT_PUBLIC_DEMO === "1" && uploadType ? (
+            <DemoDisabled>
+              <Button type="button" disabled>
+                Add
+              </Button>
+            </DemoDisabled>
+          ) : (
+            <Button
+              type="button"
+              onClick={handleSubmit}
+              disabled={Boolean(
+                submitting ||
+                !uploadType ||
+                !title.trim() ||
+                (uploadType === "template" && !selectedTemplateKey) ||
+                (uploadType === "upload" && !fileBuffer && (!fileContent.trim() || !!errorMsg)) ||
+                (uploadType === "upload" && fileBuffer && !fileName)
+              )}
+            >
+              {submitting ? "Adding..." : "Add"}
+            </Button>
+          )}
         </div>
       </DialogContent>
     </Dialog>

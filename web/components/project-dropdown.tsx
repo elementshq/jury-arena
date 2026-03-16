@@ -2,8 +2,9 @@
 
 import { ChevronDown, Pencil, Plus, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { startTransition, useMemo, useState } from "react";
+import { startTransition, useState } from "react";
 import type { ProjectModel } from "@/lib/db/repository/project-repository";
+import { isDemo } from "@/lib/is-demo";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -38,10 +39,7 @@ export function ProjectDropdown({
 }: ProjectDropdownProps) {
   const router = useRouter();
 
-  const selected = useMemo(
-    () => projects.find((p) => p.id === selectedProjectId) ?? projects[0],
-    [projects, selectedProjectId],
-  );
+  const selected = projects.find((p) => p.id === selectedProjectId) ?? projects[0];
 
   const [busy, setBusy] = useState(false);
 
@@ -112,10 +110,8 @@ export function ProjectDropdown({
       const json = (await res.json()) as { project: ProjectModel };
       const created = json.project;
 
-      // 作成したProjectを選択状態にして遷移
       await setSelectedProjectId(created.id);
 
-      // Close UI first (important)
       setShowAddDialog(false);
       setNewProjectName("");
 
@@ -143,7 +139,6 @@ export function ProjectDropdown({
       });
       if (!res.ok) throw new Error("failed to rename project");
 
-      // Close UI first (important)
       setShowRenameDialog(false);
       setRenameTarget(null);
 
@@ -177,7 +172,6 @@ export function ProjectDropdown({
 
       const next = projects.find((p) => p.id !== deleteTargetId) ?? null;
 
-      // Close dialog
       setShowDeleteDialog(false);
       setDeleteTargetId(null);
 
@@ -226,10 +220,10 @@ export function ProjectDropdown({
               setMenuOpen(false);
               setShowAddDialog(true);
             }}
-            disabled={busy}
+            disabled={busy || isDemo}
           >
             <Plus className="mr-2 h-4 w-4" />
-            プロジェクトを追加
+            Add Project
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />
@@ -256,18 +250,19 @@ export function ProjectDropdown({
                 {project.name}
               </span>
 
-              <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100">
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="h-6 w-6 p-0"
-                  onClick={(e) => openRenameDialog(project, e)}
-                  disabled={busy}
-                  aria-label="Rename"
-                >
-                  <Pencil className="h-3 w-3" />
-                </Button>
+              {!isDemo && (
+                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="h-6 w-6 p-0"
+                    onClick={(e) => openRenameDialog(project, e)}
+                    disabled={busy}
+                    aria-label="Rename"
+                  >
+                    <Pencil className="h-3 w-3" />
+                  </Button>
 
                   <Button
                     type="button"

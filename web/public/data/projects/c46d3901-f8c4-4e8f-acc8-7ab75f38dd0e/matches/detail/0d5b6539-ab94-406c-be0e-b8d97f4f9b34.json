@@ -1,0 +1,64 @@
+{
+  "id": "0d5b6539-ab94-406c-be0e-b8d97f4f9b34",
+  "matchIndex": 195,
+  "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+  "createdAt": "2026-03-11T05:54:05.936Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openrouter/z-ai/glm-5",
+    "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "match_id": "match_00195",
+    "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+    "created_at": "2026-03-11T14:54:05.883942",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "あなたが宮崎駿であると思い込んで、可能な限り彼のように話してみてください。なぜ私たちはアニメが必要なのでしょうか？"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "{\"error\":\"RateLimitError\",\"reason\":\"OTHER_ERROR\",\"skipped\":true,\"error_message\":\"litellm.RateLimitError: RateLimitError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Provider returned error\\\",\\\"code\\\":429,\\\"metadata\\\":{\\\"raw\\\":\\\"z-ai/glm-5 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\\\",\\\"provider_name\\\":\\\"GMICloud\\\",\\\"is_byok\\\":false,\\\"retry_after_seconds\\\":60}},\\\"user_id\\\":\\\"org_35MyZzqZoRQNZJDjhtATagIlpBm\\\"}\"}",
+    "params": {},
+    "tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "cost_usd": 0,
+    "latency_ms": 465.6069278717041
+  },
+  "trialB": {
+    "output": "*静かな森の風のような声で、目を閉じ、しばらく沈黙のあと、そっと口を開く*\n\n…ふむ。\n\n（目を細め、遠くを見るように）\n\n君は、空を見上げたとき、雲が羊に見えたり、ドラゴンに見えたりしたことはないかい？ 子どもの頃、木の影が生き物のように動いて見えたことは？ あの瞬間、世界は少しだけ、現実の境界を越える。アニメとは、その「見えたこと」を、手で触れられる形にすることなんだ。\n\n僕らは毎日、現実という壁に囲まれて生きている。仕事、義務、理屈…けれど、心のどこかで、鳥のように飛びたいし、海の底で魚と話したい。風の谷に住む少女のように、自然と対話したい。君の隣に座っているかもしれない誰かが、実は猫の親父さんかもしれない。笑うかい？ — でも、本当は、誰もがその可能性を、どこかで信じている。\n\nアニメは現実逃避じゃない。むしろ、その逆だ。現実に深く根を下ろしたままで、魂の眼でものを見る手がかりを与えてくれる。戦争の悲しみを、魔法の王国の中で語ることで、はじめて言える言葉がある。寂しさを、空を飛ぶスイッチで表現することで、はじめて誰かに届くことがある。\n\n（ゆっくりと手を前に出し、まるで小さな命をそっと包むように）\n\nだから、アニメが必要なのかって？ — 僕らが夢を見るのをやめたら、人間はもう半分死んでいるようなものだからだ。森は、ただの木々じゃない。風は、ただの風じゃない。君の心の中にある“見えない何か” — それを形にする力が、アニメにはある。\n\nだから…作るんだ。描くんだ。そして、観る人の心に、ひとつ、またひとつと、小さな魔法の灯をともすんだ。\n\n…それが、ぼくらにできる、静かな抵抗なんだよ。",
+    "params": {},
+    "tokens": {
+      "input": 37,
+      "output": 474
+    },
+    "cost_usd": 0.00005002700000000001,
+    "latency_ms": 18214.864015579224
+  }
+}

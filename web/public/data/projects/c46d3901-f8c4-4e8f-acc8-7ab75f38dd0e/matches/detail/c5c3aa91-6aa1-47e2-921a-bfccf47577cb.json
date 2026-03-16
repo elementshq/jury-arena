@@ -1,0 +1,64 @@
+{
+  "id": "c5c3aa91-6aa1-47e2-921a-bfccf47577cb",
+  "matchIndex": 0,
+  "sampleId": "cbb72379-f819-431b-83d9-65757d27211d",
+  "createdAt": "2026-03-11T06:00:07.560Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00000",
+    "sample_id": "cbb72379-f819-431b-83d9-65757d27211d",
+    "created_at": "2026-03-11T15:00:07.389565",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, follows the required output format, includes all requested fields for all three books, and is clear and concise.\",\n  \"B\": \"Accurate, follows the required output format, includes all requested fields for all three books, and is clear and concise.\",\n  \"reason\": \"Both answers are identical and fully satisfy the prompt across accuracy, instruction-following, completeness, clarity, and conciseness.\",\n  \"winner\": \"tie\"\n}",
+        "winner": "tie"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is a perfect response. It correctly extracts the protagonist, book title, author, and publication year for each of the three books provided. It also follows the specified output format 'Protagonist, Book, Author, Year' precisely, with each book on a new line.\",\n  \"B\": \"Answer B is also a perfect response and is identical to Answer A. It successfully extracts all the required information for each book and presents it in the correct format as requested by the user.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are identical and perfectly fulfill the user's request. They both accurately extract all the specified information and present it in the correct format.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete, clear, and concise. It correctly extracts all required information and formats it properly.\",\"B\":\"Answer B is identical to Answer A in every way - accurate, follows instructions, complete, clear, and concise.\",\"winner\":\"tie\",\"reason\":\"Both answers are identical in content and formatting, correctly extracting the protagonist, book title, author, and year for all three books in the specified format.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni and Campanella, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 219,
+      "output": 67
+    },
+    "cost_usd": 0.0015525,
+    "latency_ms": 2244.1751956939697
+  },
+  "trialB": {
+    "output": "Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni and Campanella, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 220,
+      "output": 1098
+    },
+    "cost_usd": 0.011255,
+    "latency_ms": 8390.4128074646
+  }
+}

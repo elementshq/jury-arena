@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProjectDropdown } from "@/components/project-dropdown";
 import type { ProjectModel } from "@/lib/db/repository/project-repository";
+import logo from "@/public/logo.png";
 
 export function Header({
   projects,
@@ -15,7 +16,7 @@ export function Header({
   return (
     <header className="bg-[#F5F6F8]">
       <div className="px-6 h-14 flex items-center gap-1">
-        <Image src="/logo.png" alt="JuryArena" height={24} width={24} className="h-6 w-auto" />
+        <Image src={logo} alt="JuryArena" height={24} width={24} className="h-6 w-auto" />
         <Link href="/">
           <span className="text-slate-900 whitespace-nowrap">JuryArena</span>
         </Link>

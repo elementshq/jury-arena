@@ -1,0 +1,64 @@
+{
+  "id": "7192bcd4-d587-42c2-a644-3c277f327e52",
+  "matchIndex": 131,
+  "sampleId": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+  "createdAt": "2026-03-11T06:56:57.109Z",
+  "match": {
+    "winner": "openrouter/z-ai/glm-5",
+    "model_a": "openrouter/z-ai/glm-5",
+    "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "match_id": "match_00131",
+    "sample_id": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+    "created_at": "2026-03-11T15:56:56.935546",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, directly answers both parts of the question, and is very concise and clear. It fully follows the prompt with no unnecessary content.\",\n  \"B\": \"Accurate and clear, and it answers both parts completely. However, it is slightly less concise because it adds extra explanation and a note that are not strictly necessary.\",\n  \"reason\": \"Both answers are correct and complete, but Answer A is better because it is clearer and more concise while still fully addressing the prompt.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/z-ai/glm-5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct, concise, and directly answers both parts of the user's question.\",\n  \"B\": \"Answer B is also correct and provides a well-structured answer. It enhances its response with brief explanations and a helpful note that clarifies the logic, which is particularly useful for a riddle.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are correct, but Answer B is slightly better because it provides an explanation for the logic. For a classic riddle designed to trick the listener, explaining *why* the answer is correct adds significant value and clarity.\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Correct, concise, and complete. Directly answers both questions with accurate information. Easy to understand with no unnecessary content.\",\"B\":\"Correct and complete, with good clarity. Adds a helpful note clarifying that first place wasn't passed. Slightly more verbose with the emoji and extra explanation, but the additional note adds value for understanding.\",\"winner\":\"tie\",\"reason\":\"Both answers are accurate, complete, and clear. Answer A is more concise, while Answer B adds a useful clarifying note about not passing the first-place person. The additional context in B is helpful but not strictly necessary, making this essentially a tie between conciseness and thoroughness.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Imagine you are running a race with others. If you just passed the person in second place, what position are you now in? What position is the person you passed now in?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "If you just passed the person in second place, you are now in **second place**.\n\nThe person you passed is now in **third place**.",
+    "params": {},
+    "tokens": {
+      "input": 41,
+      "output": 261
+    },
+    "cost_usd": 0.0006298199999999999,
+    "latency_ms": 3676.9299507141113
+  },
+  "trialB": {
+    "output": "If you just passed the person who was in **second place**, then:\n\n- **You are now in second place.**  \n  (Because you overtook the person who was ahead of you in that position.)\n\n- **The person you passed is now in third place.**  \n  (Since you moved ahead of them, they drop one position.)\n\n💡 Note: You did *not* pass the person in first place, so you didn't take the lead — you're now the new second-place runner.",
+    "params": {},
+    "tokens": {
+      "input": 44,
+      "output": 104
+    },
+    "cost_usd": 0.000013524000000000001,
+    "latency_ms": 2972.860813140869
+  }
+}

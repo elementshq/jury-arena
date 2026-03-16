@@ -1,11 +1,35 @@
+import * as fs from "node:fs";
+import * as path from "node:path";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
-import { analyzeDatasetCapabilities } from "@/lib/config/dataset-capabilities";
+import { analyzeDatasetCapabilities, type DatasetCapabilities } from "@/lib/config/dataset-capabilities";
 import { loadModels } from "@/lib/config/models";
+import { generateDatasetParams } from "@/lib/static-params";
 import { getDataset } from "@/lib/usecase/evaluations/get-dataset";
 import { getProject } from "@/lib/usecase/projects/get-project";
+
+function getDemoDatasetCapabilities(projectId: string, datasetId: string): DatasetCapabilities {
+  try {
+    const filePath = path.resolve(
+      process.cwd(),
+      `public/data/projects/${projectId}/datasets/${datasetId}/index.json`,
+    );
+    const json = JSON.parse(fs.readFileSync(filePath, "utf-8")) as { sampleCount?: number };
+    return {
+      totalSamples: json.sampleCount ?? 0,
+      pdfSampleCount: 0,
+      requiresPdf: false,
+      requiresImage: false,
+    };
+  } catch {
+    return { totalSamples: 0, pdfSampleCount: 0, requiresPdf: false, requiresImage: false };
+  }
+}
 import { NewEvaluation } from "./_components/new-evaluation";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateDatasetParams : undefined;
 
 export default async function Page(props: {
   params: Promise<{ projectId: string; datasetId: string }>;
@@ -17,7 +41,9 @@ export default async function Page(props: {
   const [project, dataset, datasetCapabilities] = await Promise.all([
     getProject({ projectId }),
     getDataset({ datasetId }),
-    analyzeDatasetCapabilities(datasetId),
+    process.env.MODE === "demo"
+      ? Promise.resolve(getDemoDatasetCapabilities(projectId, datasetId))
+      : analyzeDatasetCapabilities(datasetId),
   ]);
   if (!project) notFound();
   if (!dataset) notFound();

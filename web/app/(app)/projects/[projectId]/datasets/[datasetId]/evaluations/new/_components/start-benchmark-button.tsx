@@ -31,6 +31,15 @@ export function StartBenchmarkButton(props: {
 
     setStarting(true);
     try {
+      // In demo mode, skip the API call and use a mock benchmark ID directly.
+      if (process.env.NEXT_PUBLIC_DEMO === "1") {
+        const benchmarkId = `demo-mock-${Date.now()}`;
+        setRunningBenchmark({ benchmarkId, projectId, datasetId, datasetName, startedAt: Date.now() });
+        setActive(benchmarkId);
+        onStarted?.();
+        return;
+      }
+
       const res = await fetch("/api/benchmarks", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -54,11 +63,8 @@ export function StartBenchmarkButton(props: {
       };
 
       if (!res.ok) {
-        // const text = await res.text().catch(() => "");
         throw new Error(bodyText || "failed to start benchmark");
       }
-
-      // const data = (await res.json()) as { benchmarkId: string };
 
       // running banner 用
       setRunningBenchmark({

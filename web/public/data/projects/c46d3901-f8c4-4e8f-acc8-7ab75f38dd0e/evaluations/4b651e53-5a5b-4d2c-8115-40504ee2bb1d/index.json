@@ -1,0 +1,4338 @@
+{
+  "benchmark": {
+    "id": "4b651e53-5a5b-4d2c-8115-40504ee2bb1d",
+    "datasetId": "50660426-c42a-4e71-83ac-26cead3693c5",
+    "datasetName": "template samples jp",
+    "name": "20260311044542",
+    "config": {
+      "models": {
+        "judges": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "trials": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6",
+          "openrouter/x-ai/grok-4",
+          "openrouter/z-ai/glm-5",
+          "openrouter/moonshotai/kimi-k2.5",
+          "openrouter/minimax/minimax-m2.5",
+          "openrouter/qwen/qwen3-235b-a22b-2507",
+          "openrouter/bytedance-seed/seed-2.0-mini"
+        ]
+      },
+      "rating": {
+        "backend": "glicko2",
+        "glicko2": {
+          "tau": 0.5,
+          "epsilon": 0.000001,
+          "initial_mu": 1500,
+          "initial_phi": 350,
+          "initial_sigma": 0.06
+        }
+      },
+      "stopping": {
+        "max_matches": 200,
+        "min_star_per_model": 3
+      },
+      "execution": {
+        "seed": 42,
+        "n_parallel": 5,
+        "match_batch_size": 5,
+        "provider_parallel_limits": {
+          "gemini": 5,
+          "openai": 5,
+          "default": 5,
+          "anthropic": 5
+        }
+      },
+      "selection": {
+        "strategy": "glicko2",
+        "recent_window": 10,
+        "baseline_weight": 0,
+        "avoid_recent_duplicates": true
+      },
+      "baseline_model": "openai/gpt-5.4",
+      "judge_output_language": "ja"
+    },
+    "info": {
+      "dataset": "50660426-c42a-4e71-83ac-26cead3693c5",
+      "created_at": "2026-03-11T04:45:42.484Z"
+    },
+    "createdAt": "2026-03-11T04:45:42.485Z"
+  },
+  "ratingHistory": [
+    {
+      "cost": {
+        "judge_total_usd": 0.19498700000000002,
+        "trial_total_usd": 0.09161966499999999
+      },
+      "step": 1,
+      "stats": {
+        "best_model": {
+          "games": 1,
+          "model": "openrouter/x-ai/grok-4",
+          "rating": 1662.3108939062977,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1500,
+          "phi": 253.404599204557,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999841754891583,
+          "rating": 1500
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1337.6891060937023,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999967537233814,
+          "rating": 1337.6891060937023
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1337.6891060937023,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.05999967537233814,
+          "rating": 1337.6891060937023
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1662.3108939062977,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999967537233814,
+          "rating": 1662.3108939062977
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1662.3108939062977,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999967537233814,
+          "rating": 1662.3108939062977
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1662.3108939062977,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999967537233814,
+          "rating": 1662.3108939062977
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1337.6891060937023,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999967537233814,
+          "rating": 1337.6891060937023
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1500,
+          "phi": 253.404599204557,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.05999841754891583,
+          "rating": 1500
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1500,
+          "phi": 350,
+          "type": "glicko2",
+          "games": 0,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.06,
+          "rating": 1500
+        }
+      },
+      "created_at": "2026-03-11T13:47:01.992974"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 0.4285125000000001,
+        "trial_total_usd": 0.220969075
+      },
+      "step": 2,
+      "stats": {
+        "best_model": {
+          "games": 2,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1791.9345507008834,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1399.988312632737,
+          "phi": 227.8908810974635,
+          "type": "glicko2",
+          "games": 3,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999818263071364,
+          "rating": 1399.988312632737
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1467.312762888288,
+          "phi": 247.46327953139283,
+          "type": "glicko2",
+          "games": 2,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999931196499315,
+          "rating": 1467.312762888288
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1208.0654492991166,
+          "phi": 247.46327953139283,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.05999931196499315,
+          "rating": 1208.0654492991166
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1532.687237111712,
+          "phi": 247.46327953139283,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999931196499315,
+          "rating": 1532.687237111712
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1476.3525351732433,
+          "phi": 247.93350439461943,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.060000342214760805,
+          "rating": 1476.3525351732433
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1791.9345507008834,
+          "phi": 247.46327953139283,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999931196499315,
+          "rating": 1791.9345507008834
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1337.6891060937023,
+          "phi": 290.31896371798047,
+          "type": "glicko2",
+          "games": 1,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999967537233814,
+          "rating": 1337.6891060937023
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1704.00998776491,
+          "phi": 207.40938177517774,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06000041805705597,
+          "rating": 1704.00998776491
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1500,
+          "phi": 234.29362765525624,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05999816498987171,
+          "rating": 1500
+        }
+      },
+      "created_at": "2026-03-11T13:49:03.742512"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 0.5936312500000002,
+        "trial_total_usd": 0.299590354
+      },
+      "step": 3,
+      "stats": {
+        "best_model": {
+          "games": 3,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1768.995708294036,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1456.9578849790098,
+          "phi": 206.36540729256436,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999724854935734,
+          "rating": 1456.9578849790098
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1543.07382393969,
+          "phi": 221.07768969546157,
+          "type": "glicko2",
+          "games": 3,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999858328977242,
+          "rating": 1543.07382393969
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1176.5414601979378,
+          "phi": 200.2397772367849,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.059997119328465416,
+          "rating": 1176.5414601979378
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1625.2704025934472,
+          "phi": 216.49803675754097,
+          "type": "glicko2",
+          "games": 3,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999867291147168,
+          "rating": 1625.2704025934472
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1383.4747070989033,
+          "phi": 216.77497300290594,
+          "type": "glicko2",
+          "games": 3,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059999701689462295,
+          "rating": 1383.4747070989033
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1768.995708294036,
+          "phi": 214.02995328981913,
+          "type": "glicko2",
+          "games": 3,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.0599976870512749,
+          "rating": 1768.995708294036
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1231.2320827201959,
+          "phi": 216.86494150341292,
+          "type": "glicko2",
+          "games": 3,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999818652329708,
+          "rating": 1231.2320827201959
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1719.8264225371004,
+          "phi": 188.60120934835064,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.05999881766955058,
+          "rating": 1719.8264225371004
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1500,
+          "phi": 234.29362765525624,
+          "type": "glicko2",
+          "games": 2,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05999816498987171,
+          "rating": 1500
+        }
+      },
+      "created_at": "2026-03-11T13:52:31.509995"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 0.7640737500000002,
+        "trial_total_usd": 0.41052014400000003
+      },
+      "step": 4,
+      "stats": {
+        "best_model": {
+          "games": 4,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1783.7425081704423,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1524.9074669514061,
+          "phi": 186.0894637843813,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059996477879826954,
+          "rating": 1524.9074669514061
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1624.0425734277508,
+          "phi": 197.2688718901914,
+          "type": "glicko2",
+          "games": 4,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999798686363854,
+          "rating": 1624.0425734277508
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1176.5414601979378,
+          "phi": 200.2397772367849,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.059997119328465416,
+          "rating": 1176.5414601979378
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1554.9484095679964,
+          "phi": 192.22300155364132,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999773435997212,
+          "rating": 1554.9484095679964
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1267.5371360626523,
+          "phi": 177.28375588097816,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059999292360071184,
+          "rating": 1267.5371360626523
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1783.7425081704423,
+          "phi": 207.21755089825416,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.0599971536494419,
+          "rating": 1783.7425081704423
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1216.2048805565896,
+          "phi": 209.78040526630164,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999765390078772,
+          "rating": 1216.2048805565896
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1775.212808844966,
+          "phi": 173.08085685394408,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.059997968242359874,
+          "rating": 1775.212808844966
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1486.652964408113,
+          "phi": 186.04803399740885,
+          "type": "glicko2",
+          "games": 4,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059995443846231775,
+          "rating": 1486.652964408113
+        }
+      },
+      "created_at": "2026-03-11T13:53:50.571122"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 0.9079792500000002,
+        "trial_total_usd": 0.48097715800000007
+      },
+      "step": 5,
+      "stats": {
+        "best_model": {
+          "games": 5,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1837.8443692187966,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1459.487655794749,
+          "phi": 169.53654035523155,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999589881589258,
+          "rating": 1459.487655794749
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1574.2882494482908,
+          "phi": 180.6781186715727,
+          "type": "glicko2",
+          "games": 5,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059996942699950755,
+          "rating": 1574.2882494482908
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1087.3215360907172,
+          "phi": 171.14779698238948,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.05999637522027664,
+          "rating": 1087.3215360907172
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1624.2728864167739,
+          "phi": 173.8342047190132,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999713101617046,
+          "rating": 1624.2728864167739
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1259.6904062430597,
+          "phi": 163.60151965312815,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999736292281128,
+          "rating": 1259.6904062430597
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1837.8443692187966,
+          "phi": 187.7715037715521,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999608481225819,
+          "rating": 1837.8443692187966
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1288.7373717688254,
+          "phi": 169.7527674455282,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.0599955527844967,
+          "rating": 1288.7373717688254
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1775.212808844966,
+          "phi": 173.08085685394408,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.059997968242359874,
+          "rating": 1775.212808844966
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1513.9391471526026,
+          "phi": 175.9391657318776,
+          "type": "glicko2",
+          "games": 5,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059994422490551744,
+          "rating": 1513.9391471526026
+        }
+      },
+      "created_at": "2026-03-11T13:56:08.290624"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.1538077500000004,
+        "trial_total_usd": 0.697563938
+      },
+      "step": 6,
+      "stats": {
+        "best_model": {
+          "games": 7,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "rating": 1847.921812527222,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1529.3561016026215,
+          "phi": 156.44309237147738,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999614582147685,
+          "rating": 1529.3561016026215
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1573.000881786757,
+          "phi": 152.57855988124078,
+          "type": "glicko2",
+          "games": 7,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999334681916191,
+          "rating": 1573.000881786757
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1178.9408916545624,
+          "phi": 159.27150606794072,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.059998430626996425,
+          "rating": 1178.9408916545624
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1552.5081839020634,
+          "phi": 159.89837862891412,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.059997304057113274,
+          "rating": 1552.5081839020634
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1175.8235039685621,
+          "phi": 153.33776053394942,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.0599994342142019,
+          "rating": 1175.8235039685621
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1753.2228322826898,
+          "phi": 170.2936806857033,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999634337120875,
+          "rating": 1753.2228322826898
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1288.7373717688254,
+          "phi": 169.7527674455282,
+          "type": "glicko2",
+          "games": 6,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.0599955527844967,
+          "rating": 1288.7373717688254
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1847.921812527222,
+          "phi": 159.65906211915384,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.059998289107642724,
+          "rating": 1847.921812527222
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1513.6709115846904,
+          "phi": 149.75362111135942,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05999077733514682,
+          "rating": 1513.6709115846904
+        }
+      },
+      "created_at": "2026-03-11T14:00:53.987275"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.2947275000000005,
+        "trial_total_usd": 0.773426001
+      },
+      "step": 7,
+      "stats": {
+        "best_model": {
+          "games": 8,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1740.0113193221803,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1480.7587554383615,
+          "phi": 145.39552607264358,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999541689489464,
+          "rating": 1480.7587554383615
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1619.4165168842928,
+          "phi": 142.3959516101846,
+          "type": "glicko2",
+          "games": 8,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059992633751628686,
+          "rating": 1619.4165168842928
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1303.1508760845284,
+          "phi": 158.01542159048924,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060007799512707266,
+          "rating": 1303.1508760845284
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1637.1151989546738,
+          "phi": 150.84057078630875,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.059999921125152164,
+          "rating": 1637.1151989546738
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1175.8235039685621,
+          "phi": 153.33776053394942,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.0599994342142019,
+          "rating": 1175.8235039685621
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1740.0113193221803,
+          "phi": 147.95916631540138,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999295841749925,
+          "rating": 1740.0113193221803
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1389.274271683484,
+          "phi": 159.1921456899363,
+          "type": "glicko2",
+          "games": 7,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059998729945893566,
+          "rating": 1389.274271683484
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1671.4009034742276,
+          "phi": 147.57627754108344,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001529502753081,
+          "rating": 1671.4009034742276
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1435.4557998397186,
+          "phi": 142.72404774325648,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059993947627782686,
+          "rating": 1435.4557998397186
+        }
+      },
+      "created_at": "2026-03-11T14:02:14.782708"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.4300025000000005,
+        "trial_total_usd": 0.818860797
+      },
+      "step": 8,
+      "stats": {
+        "best_model": {
+          "games": 9,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1775.2194063084166,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1480.7587554383615,
+          "phi": 145.39552607264358,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999541689489464,
+          "rating": 1480.7587554383615
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1586.5870717325358,
+          "phi": 134.5778872155085,
+          "type": "glicko2",
+          "games": 9,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059991461472173935,
+          "rating": 1586.5870717325358
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1396.9174078401502,
+          "phi": 138.43121621852478,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000966468199107,
+          "rating": 1396.9174078401502
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1641.7171740978247,
+          "phi": 140.7452160947893,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999755859219864,
+          "rating": 1641.7171740978247
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1122.206799202897,
+          "phi": 137.67654483333192,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999812620164383,
+          "rating": 1122.206799202897
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1775.2194063084166,
+          "phi": 139.09309971596167,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059991768702829414,
+          "rating": 1775.2194063084166
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1320.5457591118623,
+          "phi": 148.09318655261333,
+          "type": "glicko2",
+          "games": 8,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999948745057123,
+          "rating": 1320.5457591118623
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1667.0005966126503,
+          "phi": 138.177934014293,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060012933556492565,
+          "rating": 1667.0005966126503
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1455.5732646019876,
+          "phi": 137.06737866705146,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059992698219384535,
+          "rating": 1455.5732646019876
+        }
+      },
+      "created_at": "2026-03-11T14:04:17.389121"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.5838742500000003,
+        "trial_total_usd": 0.897153187
+      },
+      "step": 9,
+      "stats": {
+        "best_model": {
+          "games": 10,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1689.8410030858927,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1428.6359109531345,
+          "phi": 136.08591536405987,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999541689489464,
+          "rating": 1428.6359109531345
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1635.3485010432123,
+          "phi": 127.36160011684464,
+          "type": "glicko2",
+          "games": 10,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999192620972669,
+          "rating": 1635.3485010432123
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1506.5898133662731,
+          "phi": 127.67971269356663,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.0600196097081857,
+          "rating": 1506.5898133662731
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1588.61235317638,
+          "phi": 132.37747431329117,
+          "type": "glicko2",
+          "games": 9,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999799608623986,
+          "rating": 1588.61235317638
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1143.6517484906858,
+          "phi": 131.63586332872376,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999669644491242,
+          "rating": 1143.6517484906858
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1689.8410030858927,
+          "phi": 135.6695418258233,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999848416237166,
+          "rating": 1689.8410030858927
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1261.6884177398802,
+          "phi": 131.99726285386757,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999852072181732,
+          "rating": 1261.6884177398802
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1667.0005966126503,
+          "phi": 138.177934014293,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060012933556492565,
+          "rating": 1667.0005966126503
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1502.2094340526282,
+          "phi": 129.40016463076384,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05999272474280048,
+          "rating": 1502.2094340526282
+        }
+      },
+      "created_at": "2026-03-11T14:05:41.049697"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.76842275,
+        "trial_total_usd": 1.006505304
+      },
+      "step": 10,
+      "stats": {
+        "best_model": {
+          "games": 11,
+          "model": "openrouter/x-ai/grok-4",
+          "rating": 1663.2701350854425,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1481.7668521210296,
+          "phi": 128.56553559462776,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999626673774116,
+          "rating": 1481.7668521210296
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1645.3418551851482,
+          "phi": 124.7714354131106,
+          "type": "glicko2",
+          "games": 11,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059990915532226366,
+          "rating": 1645.3418551851482
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1459.5832801283077,
+          "phi": 121.59979436601412,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06002049601147747,
+          "rating": 1459.5832801283077
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1663.2701350854425,
+          "phi": 119.43787179224661,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000088782881216,
+          "rating": 1663.2701350854425
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1143.6517484906858,
+          "phi": 131.63586332872376,
+          "type": "glicko2",
+          "games": 10,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999669644491242,
+          "rating": 1143.6517484906858
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1643.981006695048,
+          "phi": 128.1066595874576,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999848416237166,
+          "rating": 1643.981006695048
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1251.0387605969167,
+          "phi": 129.0536271623071,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999750864424372,
+          "rating": 1251.0387605969167
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1661.0013111112175,
+          "phi": 123.29073532427512,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06000855006894828,
+          "rating": 1661.0013111112175
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1471.073541255599,
+          "phi": 123.07248137012209,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059991668402720896,
+          "rating": 1471.073541255599
+        }
+      },
+      "created_at": "2026-03-11T14:07:01.324794"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 1.953138,
+        "trial_total_usd": 1.069574765
+      },
+      "step": 11,
+      "stats": {
+        "best_model": {
+          "games": 12,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1683.6566092999171,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1540.6426319500324,
+          "phi": 123.22612241629884,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999922962488277,
+          "rating": 1540.6426319500324
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1607.5984147475756,
+          "phi": 118.76295339647469,
+          "type": "glicko2",
+          "games": 12,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05999067143758436,
+          "rating": 1607.5984147475756
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1424.6190807826545,
+          "phi": 115.99988697756521,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060020097597328355,
+          "rating": 1424.6190807826545
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1596.80808400513,
+          "phi": 117.74798457785235,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.060008595871962875,
+          "rating": 1596.80808400513
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1113.574371820955,
+          "phi": 125.10308614611174,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999551590797008,
+          "rating": 1113.574371820955
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1683.6566092999171,
+          "phi": 121.54153816716283,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999822525436426,
+          "rating": 1683.6566092999171
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1349.5924340869426,
+          "phi": 120.62624497573239,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000838533797178,
+          "rating": 1349.5924340869426
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1606.8033048330917,
+          "phi": 118.66196490918762,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001152202697813,
+          "rating": 1606.8033048330917
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1506.8432648100795,
+          "phi": 117.23897599011853,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05999126421235178,
+          "rating": 1506.8432648100795
+        }
+      },
+      "created_at": "2026-03-11T14:10:53.263449"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 2.1374045000000006,
+        "trial_total_usd": 1.217011301
+      },
+      "step": 12,
+      "stats": {
+        "best_model": {
+          "games": 13,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1711.6800663879926,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1509.7731618244472,
+          "phi": 112.06456259407666,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999612618739437,
+          "rating": 1509.7731618244472
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1601.7478864469265,
+          "phi": 108.74006195875222,
+          "type": "glicko2",
+          "games": 14,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059985925959642326,
+          "rating": 1601.7478864469265
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1384.6631739350275,
+          "phi": 111.34503208804406,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06002104955945081,
+          "rating": 1384.6631739350275
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1570.4017964299403,
+          "phi": 112.939868995146,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.060007509297517476,
+          "rating": 1570.4017964299403
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1113.574371820955,
+          "phi": 125.10308614611174,
+          "type": "glicko2",
+          "games": 11,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999551590797008,
+          "rating": 1113.574371820955
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1711.6800663879926,
+          "phi": 116.18127639691029,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999712600800934,
+          "rating": 1711.6800663879926
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1392.6794168779427,
+          "phi": 115.30134885187013,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.0600093175953173,
+          "rating": 1392.6794168779427
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1641.5269424535695,
+          "phi": 113.42484680861088,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.0600112822785967,
+          "rating": 1641.5269424535695
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1509.8970344763395,
+          "phi": 112.28860444254566,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.0599886428958347,
+          "rating": 1509.8970344763395
+        }
+      },
+      "created_at": "2026-03-11T14:11:58.596422"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 2.3270292500000007,
+        "trial_total_usd": 1.251995428
+      },
+      "step": 13,
+      "stats": {
+        "best_model": {
+          "games": 14,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1738.9825336049328,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1531.6855294048823,
+          "phi": 108.10649907968237,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059994857171751445,
+          "rating": 1531.6855294048823
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1601.7478864469265,
+          "phi": 108.74006195875222,
+          "type": "glicko2",
+          "games": 14,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059985925959642326,
+          "rating": 1601.7478864469265
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1366.901323829367,
+          "phi": 104.44713489494421,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060017707910181996,
+          "rating": 1366.901323829367
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1565.2092831816344,
+          "phi": 108.53404074115481,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.060004905193816835,
+          "rating": 1565.2092831816344
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1098.6537196565769,
+          "phi": 121.33213415676668,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999417889076872,
+          "rating": 1098.6537196565769
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1738.9825336049328,
+          "phi": 111.40823270906955,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059996137079967315,
+          "rating": 1738.9825336049328
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1401.4372238123394,
+          "phi": 106.22049198969283,
+          "type": "glicko2",
+          "games": 16,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000468167461506,
+          "rating": 1401.4372238123394
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1615.432580150324,
+          "phi": 109.03427511799927,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001030275389388,
+          "rating": 1615.432580150324
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1515.0291314309447,
+          "phi": 107.97085942750788,
+          "type": "glicko2",
+          "games": 14,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05998604176835202,
+          "rating": 1515.0291314309447
+        }
+      },
+      "created_at": "2026-03-11T14:19:54.473783"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 2.5539455000000006,
+        "trial_total_usd": 1.3857358290000001
+      },
+      "step": 14,
+      "stats": {
+        "best_model": {
+          "games": 15,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1746.610947241445,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1508.6921496703853,
+          "phi": 104.36818391711977,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999376175774053,
+          "rating": 1508.6921496703853
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1600.0511019101143,
+          "phi": 100.7471430398421,
+          "type": "glicko2",
+          "games": 16,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.0599808374693734,
+          "rating": 1600.0511019101143
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1360.1216890836445,
+          "phi": 103.24734053302443,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001666018507528,
+          "rating": 1360.1216890836445
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1538.404748124361,
+          "phi": 104.57239394952872,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0600042292919693,
+          "rating": 1538.404748124361
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1098.6537196565769,
+          "phi": 121.33213415676668,
+          "type": "glicko2",
+          "games": 12,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999417889076872,
+          "rating": 1098.6537196565769
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1746.610947241445,
+          "phi": 109.8132816339368,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999508928022414,
+          "rating": 1746.610947241445
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1381.2691705926952,
+          "phi": 102.85118113412685,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.060003405747479685,
+          "rating": 1381.2691705926952
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1663.8223665306696,
+          "phi": 101.12633768207439,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001191978171457,
+          "rating": 1663.8223665306696
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1535.8283466903438,
+          "phi": 104.39534537003075,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05998476178099543,
+          "rating": 1535.8283466903438
+        }
+      },
+      "created_at": "2026-03-11T14:21:28.438023"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 2.6938927500000007,
+        "trial_total_usd": 1.4540716900000001
+      },
+      "step": 15,
+      "stats": {
+        "best_model": {
+          "games": 15,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1746.610947241445,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1510.9425285545626,
+          "phi": 100.85510969541443,
+          "type": "glicko2",
+          "games": 16,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999098747828537,
+          "rating": 1510.9425285545626
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1569.4289616560918,
+          "phi": 97.72078635464923,
+          "type": "glicko2",
+          "games": 17,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05998172125722013,
+          "rating": 1569.4289616560918
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1407.6932224129744,
+          "phi": 101.5966506935555,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06002304770273406,
+          "rating": 1407.6932224129744
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1562.0382953874969,
+          "phi": 97.39205606220101,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000088790253604,
+          "rating": 1562.0382953874969
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1123.391368220371,
+          "phi": 118.0437335150949,
+          "type": "glicko2",
+          "games": 13,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05999365328781219,
+          "rating": 1123.391368220371
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1746.610947241445,
+          "phi": 109.8132816339368,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999508928022414,
+          "rating": 1746.610947241445
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1363.6819322938939,
+          "phi": 101.10512090171429,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000285113075781,
+          "rating": 1363.6819322938939
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1618.2004473845013,
+          "phi": 99.61739859574075,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060018293674116756,
+          "rating": 1618.2004473845013
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1540.6272718107912,
+          "phi": 97.31184380015493,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997967431810137,
+          "rating": 1540.6272718107912
+        }
+      },
+      "created_at": "2026-03-11T14:22:23.960302"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 2.8798555000000006,
+        "trial_total_usd": 1.5106132140000001
+      },
+      "step": 16,
+      "stats": {
+        "best_model": {
+          "games": 16,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1767.0418669113765,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1486.8355693328544,
+          "phi": 97.68981779137783,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999038674367749,
+          "rating": 1486.8355693328544
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1569.4289616560918,
+          "phi": 97.72078635464923,
+          "type": "glicko2",
+          "games": 17,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05998172125722013,
+          "rating": 1569.4289616560918
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1404.507831748894,
+          "phi": 98.40190196829039,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06002028310156695,
+          "rating": 1404.507831748894
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1541.0820576492192,
+          "phi": 96.89331214027345,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000192204378585,
+          "rating": 1541.0820576492192
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1137.906431895558,
+          "phi": 112.86669990250168,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059991395435373324,
+          "rating": 1137.906431895558
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1767.0418669113765,
+          "phi": 106.08679410574533,
+          "type": "glicko2",
+          "games": 16,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999372549866574,
+          "rating": 1767.0418669113765
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1377.3157924343386,
+          "phi": 95.74013405446367,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059999114678998974,
+          "rating": 1377.3157924343386
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1601.1995702089168,
+          "phi": 97.02188181747066,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060016956527281645,
+          "rating": 1601.1995702089168
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1563.1416389735723,
+          "phi": 94.54642951259157,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059979087699096045,
+          "rating": 1563.1416389735723
+        }
+      },
+      "created_at": "2026-03-11T14:23:51.721774"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.036830500000001,
+        "trial_total_usd": 1.584282109
+      },
+      "step": 17,
+      "stats": {
+        "best_model": {
+          "games": 17,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1781.4824336019676,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1506.119906509045,
+          "phi": 95.00947883363229,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059989279964030105,
+          "rating": 1506.119906509045
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1569.6428817451945,
+          "phi": 91.83435168890473,
+          "type": "glicko2",
+          "games": 19,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05997637965444865,
+          "rating": 1569.6428817451945
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1384.9551158546885,
+          "phi": 95.64613125757066,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001917231696832,
+          "rating": 1384.9551158546885
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1579.3275123122476,
+          "phi": 91.65552382615734,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0600035777283304,
+          "rating": 1579.3275123122476
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1137.906431895558,
+          "phi": 112.86669990250168,
+          "type": "glicko2",
+          "games": 15,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059991395435373324,
+          "rating": 1137.906431895558
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1781.4824336019676,
+          "phi": 103.34488520472529,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999222942837818,
+          "rating": 1781.4824336019676
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1363.3800478427647,
+          "phi": 93.64318466472835,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059997639295705334,
+          "rating": 1363.3800478427647
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1574.6395247846613,
+          "phi": 94.27232304614894,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.0600172747439478,
+          "rating": 1574.6395247846613
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1551.5119422194343,
+          "phi": 92.82015978548873,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059977612406395805,
+          "rating": 1551.5119422194343
+        }
+      },
+      "created_at": "2026-03-11T14:24:50.190339"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.1615285000000006,
+        "trial_total_usd": 1.6198315970000001
+      },
+      "step": 18,
+      "stats": {
+        "best_model": {
+          "games": 18,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1795.3338889065276,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1534.13586820768,
+          "phi": 92.52809146250159,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999030916968559,
+          "rating": 1534.13586820768
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1590.6809607129046,
+          "phi": 89.5607081029554,
+          "type": "glicko2",
+          "games": 20,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059975942555539986,
+          "rating": 1590.6809607129046
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1394.9284933850352,
+          "phi": 94.13014767788346,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001775929912877,
+          "rating": 1394.9284933850352
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1568.2790394063059,
+          "phi": 90.12776279920028,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0600020904927976,
+          "rating": 1568.2790394063059
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1111.118769287672,
+          "phi": 106.56841228289431,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998948822117681,
+          "rating": 1111.118769287672
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1795.3338889065276,
+          "phi": 100.82842467443206,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999072317332838,
+          "rating": 1795.3338889065276
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1373.8501876869568,
+          "phi": 92.13358140919924,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999619499256165,
+          "rating": 1373.8501876869568
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1547.0430772762434,
+          "phi": 91.86686371352071,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001830821889643,
+          "rating": 1547.0430772762434
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1530.0384979047194,
+          "phi": 90.44647452324708,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059977171485913,
+          "rating": 1530.0384979047194
+        }
+      },
+      "created_at": "2026-03-11T14:25:21.835884"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.3899735000000004,
+        "trial_total_usd": 1.77662297
+      },
+      "step": 19,
+      "stats": {
+        "best_model": {
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1808.431474295593,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1576.9849917943757,
+          "phi": 87.49827271949938,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999476245130233,
+          "rating": 1576.9849917943757
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1580.2068706238585,
+          "phi": 88.19010565333303,
+          "type": "glicko2",
+          "games": 21,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05997444981463875,
+          "rating": 1580.2068706238585
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1370.3838446841535,
+          "phi": 91.6318683789983,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001790958360453,
+          "rating": 1370.3838446841535
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1545.6195601471682,
+          "phi": 88.01401957721814,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.060002260405670776,
+          "rating": 1545.6195601471682
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1111.118769287672,
+          "phi": 106.56841228289431,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998948822117681,
+          "rating": 1111.118769287672
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1808.431474295593,
+          "phi": 98.5459497866963,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059989210804902764,
+          "rating": 1808.431474295593
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1397.401543672061,
+          "phi": 89.84017773349463,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999635315638514,
+          "rating": 1397.401543672061
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1547.569927485762,
+          "phi": 86.96252268330838,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001281000555777,
+          "rating": 1547.569927485762
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1508.7516344926412,
+          "phi": 88.29678252858317,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059976936544319355,
+          "rating": 1508.7516344926412
+        }
+      },
+      "created_at": "2026-03-11T14:28:26.061304"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.5395035000000004,
+        "trial_total_usd": 1.875338658
+      },
+      "step": 20,
+      "stats": {
+        "best_model": {
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1808.431474295593,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1556.8565923943645,
+          "phi": 85.60089751545644,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059994546929304775,
+          "rating": 1556.8565923943645
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1600.6423572038027,
+          "phi": 86.22713643954228,
+          "type": "glicko2",
+          "games": 22,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05997423185913173,
+          "rating": 1600.6423572038027
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1370.3838446841535,
+          "phi": 91.6318683789983,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001790958360453,
+          "rating": 1370.3838446841535
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1522.9841662841643,
+          "phi": 86.0959760256825,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000272106806532,
+          "rating": 1522.9841662841643
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1111.118769287672,
+          "phi": 106.56841228289431,
+          "type": "glicko2",
+          "games": 17,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998948822117681,
+          "rating": 1111.118769287672
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1808.431474295593,
+          "phi": 98.5459497866963,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059989210804902764,
+          "rating": 1808.431474295593
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1427.4429279574324,
+          "phi": 88.12942604266024,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059999332717597116,
+          "rating": 1427.4429279574324
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1519.3867241413745,
+          "phi": 85.48739414503788,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001579758109367,
+          "rating": 1519.3867241413745
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1531.5274908280767,
+          "phi": 86.35171750562243,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.0599773955261457,
+          "rating": 1531.5274908280767
+        }
+      },
+      "created_at": "2026-03-11T14:29:01.804114"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.6925207500000004,
+        "trial_total_usd": 1.991411476
+      },
+      "step": 21,
+      "stats": {
+        "best_model": {
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1808.431474295593,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1574.5607549986335,
+          "phi": 83.88287407751226,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999391086220793,
+          "rating": 1574.5607549986335
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1591.723993815981,
+          "phi": 84.90616930687652,
+          "type": "glicko2",
+          "games": 23,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05997240829273614,
+          "rating": 1591.723993815981
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1360.9432986602524,
+          "phi": 87.79023087396139,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001391434644122,
+          "rating": 1360.9432986602524
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1505.0829265358084,
+          "phi": 84.33338443199547,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000208296529341,
+          "rating": 1505.0829265358084
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1129.5925562256311,
+          "phi": 104.27407226783049,
+          "type": "glicko2",
+          "games": 18,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998871057005565,
+          "rating": 1129.5925562256311
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1808.431474295593,
+          "phi": 98.5459497866963,
+          "type": "glicko2",
+          "games": 19,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059989210804902764,
+          "rating": 1808.431474295593
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1433.1929234396216,
+          "phi": 84.33593543265366,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059994539854410334,
+          "rating": 1433.1929234396216
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1520.0428502987822,
+          "phi": 83.76310614307758,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001283240285337,
+          "rating": 1520.0428502987822
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1530.8580800900118,
+          "phi": 84.54796931098114,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997443534265938,
+          "rating": 1530.8580800900118
+        }
+      },
+      "created_at": "2026-03-11T14:30:34.889769"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 3.903335,
+        "trial_total_usd": 2.179534548
+      },
+      "step": 22,
+      "stats": {
+        "best_model": {
+          "games": 20,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1768.5860557727042,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1591.1207326296117,
+          "phi": 82.3181035112566,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999315737118044,
+          "rating": 1591.1207326296117
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1621.3824672229175,
+          "phi": 83.90239624755179,
+          "type": "glicko2",
+          "games": 24,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059976980131698984,
+          "rating": 1621.3824672229175
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1369.9874858466067,
+          "phi": 86.68667607665539,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060012449957731015,
+          "rating": 1369.9874858466067
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1486.8497554705768,
+          "phi": 82.70014831230527,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000170003515131,
+          "rating": 1486.8497554705768
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1164.3637987709149,
+          "phi": 99.82154291444995,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059989357807484336,
+          "rating": 1164.3637987709149
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1768.5860557727042,
+          "phi": 96.53107557819958,
+          "type": "glicko2",
+          "games": 20,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999379727292154,
+          "rating": 1768.5860557727042
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1400.9718011198424,
+          "phi": 83.77293618895737,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000106280631263,
+          "rating": 1400.9718011198424
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1538.0397634842043,
+          "phi": 82.18031947582381,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.0600124513677042,
+          "rating": 1538.0397634842043
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1514.0454855213643,
+          "phi": 82.9247343542476,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059973680289220684,
+          "rating": 1514.0454855213643
+        }
+      },
+      "created_at": "2026-03-11T14:33:51.320478"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 4.07633775,
+        "trial_total_usd": 2.310977248
+      },
+      "step": 23,
+      "stats": {
+        "best_model": {
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1795.6341028803358,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1581.167875894265,
+          "phi": 81.3073827020901,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059991654492638095,
+          "rating": 1581.167875894265
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1624.3465599478109,
+          "phi": 80.65973706439212,
+          "type": "glicko2",
+          "games": 26,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059971936794991985,
+          "rating": 1624.3465599478109
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1359.7320080561844,
+          "phi": 85.51709108270542,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06001101262334729,
+          "rating": 1359.7320080561844
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1506.5934791134143,
+          "phi": 81.20948788981026,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000201091438729,
+          "rating": 1506.5934791134143
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1178.006192164789,
+          "phi": 97.62343395835427,
+          "type": "glicko2",
+          "games": 21,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998792726208642,
+          "rating": 1178.006192164789
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1795.6341028803358,
+          "phi": 91.75371307338692,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999253002160601,
+          "rating": 1795.6341028803358
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1400.9718011198424,
+          "phi": 83.77293618895737,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000106280631263,
+          "rating": 1400.9718011198424
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1524.0065451978933,
+          "phi": 80.82974926653456,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.0600113095294046,
+          "rating": 1524.0065451978933
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1494.1983637614362,
+          "phi": 81.41422516600785,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997398988929459,
+          "rating": 1494.1983637614362
+        }
+      },
+      "created_at": "2026-03-11T14:34:39.976114"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 4.2636875,
+        "trial_total_usd": 2.402977758
+      },
+      "step": 24,
+      "stats": {
+        "best_model": {
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1795.6341028803358,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1601.121463424303,
+          "phi": 79.94025338532866,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999227761578575,
+          "rating": 1601.121463424303
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1604.6994844568144,
+          "phi": 79.34562580876502,
+          "type": "glicko2",
+          "games": 27,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.0599725616885707,
+          "rating": 1604.6994844568144
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1353.0958310343615,
+          "phi": 82.11064076081654,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000630957634426,
+          "rating": 1353.0958310343615
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1511.6673094205835,
+          "phi": 80.88866402108698,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000078783534822,
+          "rating": 1511.6673094205835
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1158.1518881907068,
+          "phi": 93.87106740978659,
+          "type": "glicko2",
+          "games": 23,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998603004832773,
+          "rating": 1158.1518881907068
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1795.6341028803358,
+          "phi": 91.75371307338692,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999253002160601,
+          "rating": 1795.6341028803358
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1417.6068921546228,
+          "phi": 82.21729846793629,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.06000033974577937,
+          "rating": 1417.6068921546228
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1504.9395791738325,
+          "phi": 79.48871805512877,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001167795928169,
+          "rating": 1504.9395791738325
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1513.5321968458175,
+          "phi": 80.0237707666851,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997435546188234,
+          "rating": 1513.5321968458175
+        }
+      },
+      "created_at": "2026-03-11T14:35:38.816792"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 4.54180575,
+        "trial_total_usd": 2.537400273
+      },
+      "step": 25,
+      "stats": {
+        "best_model": {
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1795.6341028803358,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1608.1613523483556,
+          "phi": 79.34326241936596,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999079153778297,
+          "rating": 1608.1613523483556
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1607.4328687248203,
+          "phi": 79.46866692727305,
+          "type": "glicko2",
+          "games": 28,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059971753017939715,
+          "rating": 1607.4328687248203
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1354.9155976878205,
+          "phi": 79.87762656712127,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000225461241029,
+          "rating": 1354.9155976878205
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1493.686688186497,
+          "phi": 79.52424460632253,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000074906055745,
+          "rating": 1493.686688186497
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1142.9032237966037,
+          "phi": 91.22779850801865,
+          "type": "glicko2",
+          "games": 25,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998416105265413,
+          "rating": 1142.9032237966037
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1795.6341028803358,
+          "phi": 91.75371307338692,
+          "type": "glicko2",
+          "games": 22,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999253002160601,
+          "rating": 1795.6341028803358
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1404.1262007076343,
+          "phi": 80.88579017069357,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999909546880963,
+          "rating": 1404.1262007076343
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1522.3252512147187,
+          "phi": 78.2398107696688,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001164431609841,
+          "rating": 1522.3252512147187
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1526.3332430389887,
+          "phi": 78.86436213204969,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059973118946585545,
+          "rating": 1526.3332430389887
+        }
+      },
+      "created_at": "2026-03-11T14:37:36.162254"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 4.782637500000001,
+        "trial_total_usd": 2.6794177379999997
+      },
+      "step": 26,
+      "stats": {
+        "best_model": {
+          "games": 24,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1774.8635458899396,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1579.251858507115,
+          "phi": 76.82561797207092,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999410804353667,
+          "rating": 1579.251858507115
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1632.7090856028697,
+          "phi": 78.67333921553983,
+          "type": "glicko2",
+          "games": 29,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059975742136992374,
+          "rating": 1632.7090856028697
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1354.9155976878205,
+          "phi": 79.87762656712127,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000225461241029,
+          "rating": 1354.9155976878205
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1512.3519439117706,
+          "phi": 78.28141163416775,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000117854708122,
+          "rating": 1512.3519439117706
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1134.3615033826177,
+          "phi": 90.03023488631985,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998271405288603,
+          "rating": 1134.3615033826177
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1774.8635458899396,
+          "phi": 87.96167139639824,
+          "type": "glicko2",
+          "games": 24,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999052135957479,
+          "rating": 1774.8635458899396
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1410.931848123673,
+          "phi": 80.30333485750258,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999765709754522,
+          "rating": 1410.931848123673
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1542.8607392083472,
+          "phi": 77.18170523386324,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060013204674068836,
+          "rating": 1542.8607392083472
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1507.966395444791,
+          "phi": 77.6739521654152,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997355025780125,
+          "rating": 1507.966395444791
+        }
+      },
+      "created_at": "2026-03-11T14:39:01.059459"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 4.9902957500000005,
+        "trial_total_usd": 2.797883238
+      },
+      "step": 27,
+      "stats": {
+        "best_model": {
+          "games": 26,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1754.7124042128676,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1597.6794612995718,
+          "phi": 75.81108864933294,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059994965931341925,
+          "rating": 1597.6794612995718
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1636.178105330193,
+          "phi": 76.02149277858405,
+          "type": "glicko2",
+          "games": 31,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05997054478751928,
+          "rating": 1636.178105330193
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1340.3399539591758,
+          "phi": 78.64095999046079,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000136219847094,
+          "rating": 1340.3399539591758
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1505.9979258371077,
+          "phi": 77.8361462926571,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.059999735392696596,
+          "rating": 1505.9979258371077
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1134.3615033826177,
+          "phi": 90.03023488631985,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998271405288603,
+          "rating": 1134.3615033826177
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1754.7124042128676,
+          "phi": 84.85016619001054,
+          "type": "glicko2",
+          "games": 26,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05998893225893968,
+          "rating": 1754.7124042128676
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1425.6568129974728,
+          "phi": 79.0323076356703,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999676351191173,
+          "rating": 1425.6568129974728
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1557.4781239617032,
+          "phi": 76.11724999445595,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060012559846262,
+          "rating": 1557.4781239617032
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1493.1696757595578,
+          "phi": 76.57037459480236,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997290505712892,
+          "rating": 1493.1696757595578
+        }
+      },
+      "created_at": "2026-03-11T14:43:15.399278"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 5.1973385,
+        "trial_total_usd": 2.9481235949999998
+      },
+      "step": 28,
+      "stats": {
+        "best_model": {
+          "games": 28,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1720.666324192624,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1608.928473077979,
+          "phi": 74.96220676388563,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999365869838796,
+          "rating": 1608.928473077979
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1641.1775183334412,
+          "phi": 75.21010614972474,
+          "type": "glicko2",
+          "games": 32,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059968124816050974,
+          "rating": 1641.1775183334412
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1348.4913408589382,
+          "phi": 77.96095615072795,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.059999832612832184,
+          "rating": 1348.4913408589382
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1485.90164587279,
+          "phi": 76.7947976808068,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.06000117287709811,
+          "rating": 1485.90164587279
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1123.825229261192,
+          "phi": 88.5824842501444,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998116879861194,
+          "rating": 1123.825229261192
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1720.666324192624,
+          "phi": 81.72708209441879,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05999297567602399,
+          "rating": 1720.666324192624
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1446.357048120985,
+          "phi": 77.8994848161484,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999819684156297,
+          "rating": 1446.357048120985
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1581.2566968082492,
+          "phi": 75.5457726287976,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001689049427214,
+          "rating": 1581.2566968082492
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1481.7042399032607,
+          "phi": 75.66687693455188,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997159730101816,
+          "rating": 1481.7042399032607
+        }
+      },
+      "created_at": "2026-03-11T14:44:07.025132"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 5.444281,
+        "trial_total_usd": 3.118695478
+      },
+      "step": 29,
+      "stats": {
+        "best_model": {
+          "games": 30,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1711.6363308311923,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1628.893316955256,
+          "phi": 74.19873138060198,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999584473205443,
+          "rating": 1628.893316955256
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1641.9994488134291,
+          "phi": 72.8415710095076,
+          "type": "glicko2",
+          "games": 34,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996251470246531,
+          "rating": 1641.9994488134291
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1371.1796198512443,
+          "phi": 77.0575517250714,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000266502813409,
+          "rating": 1371.1796198512443
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1463.8715599096838,
+          "phi": 75.97207156605668,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0600040079329634,
+          "rating": 1463.8715599096838
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1123.825229261192,
+          "phi": 88.5824842501444,
+          "type": "glicko2",
+          "games": 27,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05998116879861194,
+          "rating": 1123.825229261192
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1711.6363308311923,
+          "phi": 78.59094293272739,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05998829327071903,
+          "rating": 1711.6363308311923
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1464.4805680586724,
+          "phi": 76.77598946539794,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059998688500488166,
+          "rating": 1464.4805680586724
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1568.256929154384,
+          "phi": 74.62588159357578,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001595210802226,
+          "rating": 1568.256929154384
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1464.571434711166,
+          "phi": 74.71431935150584,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059972096305053506,
+          "rating": 1464.571434711166
+        }
+      },
+      "created_at": "2026-03-11T14:44:25.456961"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 5.61642875,
+        "trial_total_usd": 3.199303348
+      },
+      "step": 30,
+      "stats": {
+        "best_model": {
+          "games": 30,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1711.6363308311923,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1611.2785181593217,
+          "phi": 73.37371344243046,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059996877379791425,
+          "rating": 1611.2785181593217
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1643.5936236089065,
+          "phi": 73.2743285637811,
+          "type": "glicko2",
+          "games": 35,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996192202946088,
+          "rating": 1643.5936236089065
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1391.503889800487,
+          "phi": 76.09566171654251,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000441602453224,
+          "rating": 1391.503889800487
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1448.8695782082543,
+          "phi": 73.37889205075047,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0600008162393024,
+          "rating": 1448.8695782082543
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1121.5399792905027,
+          "phi": 88.64958575246035,
+          "type": "glicko2",
+          "games": 28,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059980580651835494,
+          "rating": 1121.5399792905027
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1711.6363308311923,
+          "phi": 78.59094293272739,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05998829327071903,
+          "rating": 1711.6363308311923
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1460.5416640773185,
+          "phi": 74.1828737364304,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999321212350321,
+          "rating": 1460.5416640773185
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1586.0688604186657,
+          "phi": 73.77037827226462,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001698434592609,
+          "rating": 1586.0688604186657
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1464.5415829834837,
+          "phi": 73.81077693374604,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059969047379333104,
+          "rating": 1464.5415829834837
+        }
+      },
+      "created_at": "2026-03-11T14:45:20.858758"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 5.82697425,
+        "trial_total_usd": 3.313422348
+      },
+      "step": 31,
+      "stats": {
+        "best_model": {
+          "games": 32,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1703.1318943921299,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1597.8473040050912,
+          "phi": 72.57299665898564,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999626850891814,
+          "rating": 1597.8473040050912
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1673.2433542698568,
+          "phi": 71.08881183363997,
+          "type": "glicko2",
+          "games": 37,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996809081634597,
+          "rating": 1673.2433542698568
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1378.87078744229,
+          "phi": 75.15447839326927,
+          "type": "glicko2",
+          "games": 36,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000334569983716,
+          "rating": 1378.87078744229
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1453.0513517141248,
+          "phi": 73.37338854043205,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.059999574639286964,
+          "rating": 1453.0513517141248
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1115.569930191408,
+          "phi": 87.96217196186765,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059979334713605656,
+          "rating": 1115.569930191408
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1703.1318943921299,
+          "phi": 75.88786621168688,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05998361636882228,
+          "rating": 1703.1318943921299
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1460.5416640773185,
+          "phi": 74.1828737364304,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999321212350321,
+          "rating": 1460.5416640773185
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1576.1707390327194,
+          "phi": 73.11379560558356,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060015566205588414,
+          "rating": 1576.1707390327194
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1476.4572068745301,
+          "phi": 73.0340925033555,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05996798561493917,
+          "rating": 1476.4572068745301
+        }
+      },
+      "created_at": "2026-03-11T14:47:44.737730"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.0604525,
+        "trial_total_usd": 3.408445503
+      },
+      "step": 32,
+      "stats": {
+        "best_model": {
+          "games": 33,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1714.3889881419987,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1587.5124318125575,
+          "phi": 71.94087912760622,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999495531139623,
+          "rating": 1587.5124318125575
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1683.4856724658184,
+          "phi": 70.53028369602008,
+          "type": "glicko2",
+          "games": 38,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996682832941325,
+          "rating": 1683.4856724658184
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1397.5090747130826,
+          "phi": 74.28143747078138,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000467687789917,
+          "rating": 1397.5090747130826
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1450.4554409779685,
+          "phi": 71.16953181735452,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999389763960194,
+          "rating": 1450.4554409779685
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1115.569930191408,
+          "phi": 87.96217196186765,
+          "type": "glicko2",
+          "games": 29,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059979334713605656,
+          "rating": 1115.569930191408
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1714.3889881419987,
+          "phi": 75.02741018150267,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059982295601854266,
+          "rating": 1714.3889881419987
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1460.8864642129608,
+          "phi": 71.81429653436153,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05998733826283414,
+          "rating": 1460.8864642129608
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1565.3620989206547,
+          "phi": 72.42077943765366,
+          "type": "glicko2",
+          "games": 36,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001429548876802,
+          "rating": 1565.3620989206547
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1461.1811507395705,
+          "phi": 72.2492576834531,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05996813404929019,
+          "rating": 1461.1811507395705
+        }
+      },
+      "created_at": "2026-03-11T14:49:13.521842"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.258845749999999,
+        "trial_total_usd": 3.568813718
+      },
+      "step": 33,
+      "stats": {
+        "best_model": {
+          "games": 34,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1713.0536664713575,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1572.3963021276134,
+          "phi": 71.23172831367822,
+          "type": "glicko2",
+          "games": 36,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059995222890582046,
+          "rating": 1572.3963021276134
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1685.7691067224055,
+          "phi": 69.7195079540563,
+          "type": "glicko2",
+          "games": 40,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996341266603281,
+          "rating": 1685.7691067224055
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1385.0344666102133,
+          "phi": 73.449005882977,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000369842408871,
+          "rating": 1385.0344666102133
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1436.9279042671656,
+          "phi": 70.50863768690657,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999360463590101,
+          "rating": 1436.9279042671656
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1113.8437055118125,
+          "phi": 88.16367612516113,
+          "type": "glicko2",
+          "games": 30,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997887130883525,
+          "rating": 1113.8437055118125
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1713.0536664713575,
+          "phi": 74.10125073273683,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05997926794003536,
+          "rating": 1713.0536664713575
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1472.5782246438114,
+          "phi": 71.15547538089433,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05998636798814958,
+          "rating": 1472.5782246438114
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1580.673588420455,
+          "phi": 71.67797312615602,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001456166474782,
+          "rating": 1580.673588420455
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1475.106230999726,
+          "phi": 71.51148587640608,
+          "type": "glicko2",
+          "games": 35,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059967837810511695,
+          "rating": 1475.106230999726
+        }
+      },
+      "created_at": "2026-03-11T14:50:12.661276"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.436207499999999,
+        "trial_total_usd": 3.642913497
+      },
+      "step": 34,
+      "stats": {
+        "best_model": {
+          "games": 36,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1735.837228209545,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1554.646306188642,
+          "phi": 70.66252601969727,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999712868898517,
+          "rating": 1554.646306188642
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1679.7811577376942,
+          "phi": 68.25381998469395,
+          "type": "glicko2",
+          "games": 42,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05995888699034479,
+          "rating": 1679.7811577376942
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1390.4484356199605,
+          "phi": 73.26856392891247,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000227494404488,
+          "rating": 1390.4484356199605
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1436.9279042671656,
+          "phi": 70.50863768690657,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999360463590101,
+          "rating": 1436.9279042671656
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1106.1954365172114,
+          "phi": 87.20142047673708,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997743779905823,
+          "rating": 1106.1954365172114
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1735.837228209545,
+          "phi": 71.9222127806454,
+          "type": "glicko2",
+          "games": 36,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05998046641773404,
+          "rating": 1735.837228209545
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1466.0311757696766,
+          "phi": 70.8906981661822,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05998479518904044,
+          "rating": 1466.0311757696766
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1571.5188311951279,
+          "phi": 71.16254492526721,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060013102726901656,
+          "rating": 1571.5188311951279
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1492.9915067330724,
+          "phi": 70.92314544196458,
+          "type": "glicko2",
+          "games": 36,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059969740212141374,
+          "rating": 1492.9915067330724
+        }
+      },
+      "created_at": "2026-03-11T14:51:42.712379"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.610010499999999,
+        "trial_total_usd": 3.7255225849999998
+      },
+      "step": 35,
+      "stats": {
+        "best_model": {
+          "games": 37,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1743.464554476909,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1547.2717072393293,
+          "phi": 70.33318447887886,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999555322122485,
+          "rating": 1547.2717072393293
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1663.0251819886134,
+          "phi": 67.88935846487233,
+          "type": "glicko2",
+          "games": 43,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996108136619705,
+          "rating": 1663.0251819886134
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1395.2547219327084,
+          "phi": 71.08823887403092,
+          "type": "glicko2",
+          "games": 41,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.059996838995912155,
+          "rating": 1395.2547219327084
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1448.8560547087395,
+          "phi": 69.91562382042012,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05999282179366457,
+          "rating": 1448.8560547087395
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1106.1954365172114,
+          "phi": 87.20142047673708,
+          "type": "glicko2",
+          "games": 31,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997743779905823,
+          "rating": 1106.1954365172114
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1743.464554476909,
+          "phi": 71.52040977130027,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05997889025980642,
+          "rating": 1743.464554476909
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1437.5513635385707,
+          "phi": 68.98479911244296,
+          "type": "glicko2",
+          "games": 41,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999152919650373,
+          "rating": 1437.5513635385707
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1589.6903081675773,
+          "phi": 70.61525317750107,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060015295504890126,
+          "rating": 1589.6903081675773
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1505.8140628533931,
+          "phi": 70.28241932144397,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05996920742729142,
+          "rating": 1505.8140628533931
+        }
+      },
+      "created_at": "2026-03-11T14:52:00.939686"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.796416749999998,
+        "trial_total_usd": 3.874518373
+      },
+      "step": 36,
+      "stats": {
+        "best_model": {
+          "games": 37,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1743.464554476909,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1535.2303450366196,
+          "phi": 69.74337576789594,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059994816204454356,
+          "rating": 1535.2303450366196
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1641.8224981648793,
+          "phi": 67.93620784304045,
+          "type": "glicko2",
+          "games": 44,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996743019564683,
+          "rating": 1641.8224981648793
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1433.2703616578558,
+          "phi": 69.65026242267375,
+          "type": "glicko2",
+          "games": 43,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060014187071454506,
+          "rating": 1433.2703616578558
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1448.9852702197509,
+          "phi": 68.11575083233205,
+          "type": "glicko2",
+          "games": 41,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.059986999630981384,
+          "rating": 1448.9852702197509
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1100.5306509543384,
+          "phi": 86.60230089523203,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997620239264074,
+          "rating": 1100.5306509543384
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1743.464554476909,
+          "phi": 71.52040977130027,
+          "type": "glicko2",
+          "games": 37,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05997889025980642,
+          "rating": 1743.464554476909
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1441.193083055083,
+          "phi": 69.15679388011603,
+          "type": "glicko2",
+          "games": 42,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999029887276204,
+          "rating": 1441.193083055083
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1601.8247533309473,
+          "phi": 70.00663901551387,
+          "type": "glicko2",
+          "games": 40,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001455688594324,
+          "rating": 1601.8247533309473
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1489.9930088748006,
+          "phi": 69.70901528366821,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05997018916091249,
+          "rating": 1489.9930088748006
+        }
+      },
+      "created_at": "2026-03-11T14:52:19.370597"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 6.999297999999998,
+        "trial_total_usd": 3.962368251
+      },
+      "step": 37,
+      "stats": {
+        "best_model": {
+          "games": 38,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1753.6800638784737,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1546.9838548002542,
+          "phi": 69.19345546416581,
+          "type": "glicko2",
+          "games": 40,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05999404410622642,
+          "rating": 1546.9838548002542
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1632.564712512061,
+          "phi": 67.57956336128804,
+          "type": "glicko2",
+          "games": 45,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.05996613352201775,
+          "rating": 1632.564712512061
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1439.3087626758731,
+          "phi": 68.06064415000273,
+          "type": "glicko2",
+          "games": 45,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060009363202608565,
+          "rating": 1439.3087626758731
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1461.5699246206816,
+          "phi": 67.65112463613289,
+          "type": "glicko2",
+          "games": 42,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05998675947464554,
+          "rating": 1461.5699246206816
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1100.5306509543384,
+          "phi": 86.60230089523203,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997620239264074,
+          "rating": 1100.5306509543384
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1753.6800638784737,
+          "phi": 70.93506666299959,
+          "type": "glicko2",
+          "games": 38,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05997758400705776,
+          "rating": 1753.6800638784737
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1415.6560304079803,
+          "phi": 67.38169198708715,
+          "type": "glicko2",
+          "games": 44,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999542557077844,
+          "rating": 1415.6560304079803
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1609.4493070169754,
+          "phi": 69.67719481652433,
+          "type": "glicko2",
+          "games": 41,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060012988130294674,
+          "rating": 1609.4493070169754
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1478.2508181469755,
+          "phi": 69.16081119759183,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05996941811864159,
+          "rating": 1478.2508181469755
+        }
+      },
+      "created_at": "2026-03-11T14:52:35.863864"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 7.174040749999999,
+        "trial_total_usd": 4.069304194
+      },
+      "step": 38,
+      "stats": {
+        "best_model": {
+          "games": 39,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1757.3678662129312,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1546.2017775658837,
+          "phi": 67.51630958772282,
+          "type": "glicko2",
+          "games": 42,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059988315603156483,
+          "rating": 1546.2017775658837
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1619.0688126648197,
+          "phi": 67.15420184711267,
+          "type": "glicko2",
+          "games": 46,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059966436970459926,
+          "rating": 1619.0688126648197
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1440.7102142199342,
+          "phi": 67.61400460066876,
+          "type": "glicko2",
+          "games": 46,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.060006329704586914,
+          "rating": 1440.7102142199342
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1451.8420145076807,
+          "phi": 67.28256671493402,
+          "type": "glicko2",
+          "games": 43,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05998557834256915,
+          "rating": 1451.8420145076807
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1100.5306509543384,
+          "phi": 86.60230089523203,
+          "type": "glicko2",
+          "games": 32,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997620239264074,
+          "rating": 1100.5306509543384
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1757.3678662129312,
+          "phi": 71.04560921572168,
+          "type": "glicko2",
+          "games": 39,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059976363366691765,
+          "rating": 1757.3678662129312
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1412.309783614033,
+          "phi": 67.62345628027305,
+          "type": "glicko2",
+          "games": 45,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059994204726421974,
+          "rating": 1412.309783614033
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1633.9618272407274,
+          "phi": 67.88177831377804,
+          "type": "glicko2",
+          "games": 43,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.060017045806611276,
+          "rating": 1633.9618272407274
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1476.8044093000203,
+          "phi": 68.64029779296685,
+          "type": "glicko2",
+          "games": 40,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05996638993733731,
+          "rating": 1476.8044093000203
+        }
+      },
+      "created_at": "2026-03-11T14:53:01.260809"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 7.328468749999999,
+        "trial_total_usd": 4.1124394209999995
+      },
+      "step": 39,
+      "stats": {
+        "best_model": {
+          "games": 40,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1766.6928702234495,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1536.0806643179458,
+          "phi": 67.1355255990457,
+          "type": "glicko2",
+          "games": 43,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.05998724208154102,
+          "rating": 1536.0806643179458
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1629.0859722084028,
+          "phi": 66.79577162434214,
+          "type": "glicko2",
+          "games": 47,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059965365604320885,
+          "rating": 1629.0859722084028
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1454.691807338367,
+          "phi": 67.19304155316625,
+          "type": "glicko2",
+          "games": 47,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000688915938505,
+          "rating": 1454.691807338367
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1440.145989690468,
+          "phi": 66.87577981499123,
+          "type": "glicko2",
+          "games": 44,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.0599850788825737,
+          "rating": 1440.145989690468
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1094.402313423092,
+          "phi": 85.93467710482257,
+          "type": "glicko2",
+          "games": 33,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.05997489373435826,
+          "rating": 1094.402313423092
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1766.6928702234495,
+          "phi": 70.53775271835943,
+          "type": "glicko2",
+          "games": 40,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.059974932303119635,
+          "rating": 1766.6928702234495
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1416.1501632135012,
+          "phi": 67.79950427362547,
+          "type": "glicko2",
+          "games": 46,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.05999290350064538,
+          "rating": 1416.1501632135012
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1625.4146577527574,
+          "phi": 67.57010904398165,
+          "type": "glicko2",
+          "games": 44,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001561883352091,
+          "rating": 1625.4146577527574
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1474.6461063544552,
+          "phi": 66.9361808705839,
+          "type": "glicko2",
+          "games": 42,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.059960528580860414,
+          "rating": 1474.6461063544552
+        }
+      },
+      "created_at": "2026-03-11T14:53:53.383960"
+    },
+    {
+      "cost": {
+        "judge_total_usd": 7.465622499999999,
+        "trial_total_usd": 4.214761392
+      },
+      "step": 40,
+      "stats": {
+        "best_model": {
+          "games": 41,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "rating": 1747.7524224928404,
+          "win_rate": 0.6
+        },
+        "baseline_win_rate": 0.5
+      },
+      "rankings": {
+        "openai/gpt-5.4": {
+          "mu": 1546.4810141079781,
+          "phi": 66.76427005306819,
+          "type": "glicko2",
+          "games": 44,
+          "model": "openai/gpt-5.4",
+          "sigma": 0.059986284051817836,
+          "rating": 1546.4810141079781
+        },
+        "gemini/gemini-2.5-pro": {
+          "mu": 1646.1196533868251,
+          "phi": 66.57392351263054,
+          "type": "glicko2",
+          "games": 48,
+          "model": "gemini/gemini-2.5-pro",
+          "sigma": 0.059968326277442745,
+          "rating": 1646.1196533868251
+        },
+        "openrouter/z-ai/glm-5": {
+          "mu": 1454.691807338367,
+          "phi": 67.19304155316625,
+          "type": "glicko2",
+          "games": 47,
+          "model": "openrouter/z-ai/glm-5",
+          "sigma": 0.06000688915938505,
+          "rating": 1454.691807338367
+        },
+        "openrouter/x-ai/grok-4": {
+          "mu": 1430.1575159394029,
+          "phi": 65.99314225581594,
+          "type": "glicko2",
+          "games": 46,
+          "model": "openrouter/x-ai/grok-4",
+          "sigma": 0.05998263315875999,
+          "rating": 1430.1575159394029
+        },
+        "openrouter/minimax/minimax-m2.5": {
+          "mu": 1089.2658483027112,
+          "phi": 85.4613881044334,
+          "type": "glicko2",
+          "games": 34,
+          "model": "openrouter/minimax/minimax-m2.5",
+          "sigma": 0.059973710558831696,
+          "rating": 1089.2658483027112
+        },
+        "openrouter/moonshotai/kimi-k2.5": {
+          "mu": 1747.7524224928404,
+          "phi": 70.09345368961391,
+          "type": "glicko2",
+          "games": 41,
+          "model": "openrouter/moonshotai/kimi-k2.5",
+          "sigma": 0.05997788729911625,
+          "rating": 1747.7524224928404
+        },
+        "openrouter/qwen/qwen3-235b-a22b-2507": {
+          "mu": 1429.7856477191249,
+          "phi": 67.3567397829441,
+          "type": "glicko2",
+          "games": 47,
+          "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+          "sigma": 0.059993224816580724,
+          "rating": 1429.7856477191249
+        },
+        "openrouter/anthropic/claude-sonnet-4.6": {
+          "mu": 1625.4146577527574,
+          "phi": 67.57010904398165,
+          "type": "glicko2",
+          "games": 44,
+          "model": "openrouter/anthropic/claude-sonnet-4.6",
+          "sigma": 0.06001561883352091,
+          "rating": 1625.4146577527574
+        },
+        "openrouter/bytedance-seed/seed-2.0-mini": {
+          "mu": 1464.3051077562734,
+          "phi": 66.57691539439999,
+          "type": "glicko2",
+          "games": 43,
+          "model": "openrouter/bytedance-seed/seed-2.0-mini",
+          "sigma": 0.05995957239168503,
+          "rating": 1464.3051077562734
+        }
+      },
+      "created_at": "2026-03-11T14:54:21.074188"
+    }
+  ],
+  "modelStats": {
+    "openai/gpt-5.4": {
+      "rating": 1546.4810141079781,
+      "games": 44,
+      "cost": 12.8475,
+      "speed": 15.070615679718728
+    },
+    "gemini/gemini-2.5-pro": {
+      "rating": 1646.1196533868251,
+      "games": 48,
+      "cost": 25.45234042553192,
+      "speed": 23.04946995796041
+    },
+    "openrouter/z-ai/glm-5": {
+      "rating": 1454.691807338367,
+      "games": 47,
+      "cost": 4.982377916666667,
+      "speed": 50.585440243283905
+    },
+    "openrouter/x-ai/grok-4": {
+      "rating": 1430.1575159394029,
+      "games": 46,
+      "cost": 22.240046511627906,
+      "speed": 43.618276501810826
+    },
+    "openrouter/minimax/minimax-m2.5": {
+      "rating": 1089.2658483027112,
+      "games": 34,
+      "cost": 1.4718730303030303,
+      "speed": 43.141454169244476
+    },
+    "openrouter/moonshotai/kimi-k2.5": {
+      "rating": 1747.7524224928404,
+      "games": 41,
+      "cost": 4.031600000000001,
+      "speed": 85.61893721222877
+    },
+    "openrouter/qwen/qwen3-235b-a22b-2507": {
+      "rating": 1429.7856477191249,
+      "games": 47,
+      "cost": 0.059810829787234045,
+      "speed": 21.307860465759926
+    },
+    "openrouter/anthropic/claude-sonnet-4.6": {
+      "rating": 1625.4146577527574,
+      "games": 44,
+      "cost": 20.771142857142856,
+      "speed": 22.873479990732104
+    },
+    "openrouter/bytedance-seed/seed-2.0-mini": {
+      "rating": 1464.3051077562734,
+      "games": 43,
+      "cost": 1.339887804878049,
+      "speed": 86.64779644477659
+    }
+  },
+  "finalStep": {
+    "cost": {
+      "judge_total_usd": 7.465622499999999,
+      "trial_total_usd": 4.214761392
+    },
+    "step": 40,
+    "stats": {
+      "best_model": {
+        "games": 41,
+        "model": "openrouter/moonshotai/kimi-k2.5",
+        "rating": 1747.7524224928404,
+        "win_rate": 0.6
+      },
+      "baseline_win_rate": 0.5
+    },
+    "rankings": {
+      "openai/gpt-5.4": {
+        "mu": 1546.4810141079781,
+        "phi": 66.76427005306819,
+        "type": "glicko2",
+        "games": 44,
+        "model": "openai/gpt-5.4",
+        "sigma": 0.059986284051817836,
+        "rating": 1546.4810141079781
+      },
+      "gemini/gemini-2.5-pro": {
+        "mu": 1646.1196533868251,
+        "phi": 66.57392351263054,
+        "type": "glicko2",
+        "games": 48,
+        "model": "gemini/gemini-2.5-pro",
+        "sigma": 0.059968326277442745,
+        "rating": 1646.1196533868251
+      },
+      "openrouter/z-ai/glm-5": {
+        "mu": 1454.691807338367,
+        "phi": 67.19304155316625,
+        "type": "glicko2",
+        "games": 47,
+        "model": "openrouter/z-ai/glm-5",
+        "sigma": 0.06000688915938505,
+        "rating": 1454.691807338367
+      },
+      "openrouter/x-ai/grok-4": {
+        "mu": 1430.1575159394029,
+        "phi": 65.99314225581594,
+        "type": "glicko2",
+        "games": 46,
+        "model": "openrouter/x-ai/grok-4",
+        "sigma": 0.05998263315875999,
+        "rating": 1430.1575159394029
+      },
+      "openrouter/minimax/minimax-m2.5": {
+        "mu": 1089.2658483027112,
+        "phi": 85.4613881044334,
+        "type": "glicko2",
+        "games": 34,
+        "model": "openrouter/minimax/minimax-m2.5",
+        "sigma": 0.059973710558831696,
+        "rating": 1089.2658483027112
+      },
+      "openrouter/moonshotai/kimi-k2.5": {
+        "mu": 1747.7524224928404,
+        "phi": 70.09345368961391,
+        "type": "glicko2",
+        "games": 41,
+        "model": "openrouter/moonshotai/kimi-k2.5",
+        "sigma": 0.05997788729911625,
+        "rating": 1747.7524224928404
+      },
+      "openrouter/qwen/qwen3-235b-a22b-2507": {
+        "mu": 1429.7856477191249,
+        "phi": 67.3567397829441,
+        "type": "glicko2",
+        "games": 47,
+        "model": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "sigma": 0.059993224816580724,
+        "rating": 1429.7856477191249
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "mu": 1625.4146577527574,
+        "phi": 67.57010904398165,
+        "type": "glicko2",
+        "games": 44,
+        "model": "openrouter/anthropic/claude-sonnet-4.6",
+        "sigma": 0.06001561883352091,
+        "rating": 1625.4146577527574
+      },
+      "openrouter/bytedance-seed/seed-2.0-mini": {
+        "mu": 1464.3051077562734,
+        "phi": 66.57691539439999,
+        "type": "glicko2",
+        "games": 43,
+        "model": "openrouter/bytedance-seed/seed-2.0-mini",
+        "sigma": 0.05995957239168503,
+        "rating": 1464.3051077562734
+      }
+    },
+    "created_at": "2026-03-11T14:54:21.074188"
+  },
+  "baselineModel": "openai/gpt-5.4",
+  "matcheCount": 192,
+  "coverage": {
+    "completedMatches": 190,
+    "skippedMatches": 2,
+    "totalMatches": 192,
+    "sessionCoverage": 98.95833333333334,
+    "failureBreakdown": {
+      "unsupportedInput": 0,
+      "contextOverflow": 0,
+      "otherError": 2
+    }
+  },
+  "modelCoverage": {
+    "openai/gpt-5.4": {
+      "totalTrials": 19,
+      "completedTrials": 19,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "gemini/gemini-2.5-pro": {
+      "totalTrials": 20,
+      "completedTrials": 20,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/anthropic/claude-sonnet-4.6": {
+      "totalTrials": 17,
+      "completedTrials": 17,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/x-ai/grok-4": {
+      "totalTrials": 19,
+      "completedTrials": 19,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/z-ai/glm-5": {
+      "totalTrials": 17,
+      "completedTrials": 16,
+      "skippedTrials": 1,
+      "modelCoverage": 94.11764705882352,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 1
+      }
+    },
+    "openrouter/moonshotai/kimi-k2.5": {
+      "totalTrials": 19,
+      "completedTrials": 19,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/minimax/minimax-m2.5": {
+      "totalTrials": 18,
+      "completedTrials": 18,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/qwen/qwen3-235b-a22b-2507": {
+      "totalTrials": 18,
+      "completedTrials": 18,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    },
+    "openrouter/bytedance-seed/seed-2.0-mini": {
+      "totalTrials": 18,
+      "completedTrials": 18,
+      "skippedTrials": 0,
+      "modelCoverage": 100,
+      "failureBreakdown": {
+        "unsupportedInput": 0,
+        "contextOverflow": 0,
+        "otherError": 0
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
+import { DemoDisabled } from "@/components/demo-disabled";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -58,15 +59,17 @@ export function DeleteDatasetButton({
       {error && <div className="text-sm text-destructive">{error}</div>}
 
       <AlertDialog>
-        <AlertDialogTrigger asChild>
-          <Button
-            variant="outline"
-            className="border-destructive text-destructive hover:bg-destructive/5 hover:text-destructive "
-            disabled={isPending}
-          >
-            {isPending ? "Deleting..." : "Delete"}
-          </Button>
-        </AlertDialogTrigger>
+        <DemoDisabled>
+          <AlertDialogTrigger asChild>
+            <Button
+              variant="outline"
+              className="border-destructive text-destructive hover:bg-destructive/5 hover:text-destructive"
+              disabled={isPending}
+            >
+              {isPending ? "Deleting..." : "Delete"}
+            </Button>
+          </AlertDialogTrigger>
+        </DemoDisabled>
 
         <AlertDialogContent>
           <AlertDialogHeader>

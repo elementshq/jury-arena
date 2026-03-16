@@ -1,0 +1,64 @@
+{
+  "id": "6153ad89-3db9-449f-a028-a94ba4c7ee4e",
+  "matchIndex": 38,
+  "sampleId": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+  "createdAt": "2026-03-11T06:26:50.414Z",
+  "match": {
+    "winner": "openrouter/moonshotai/kimi-k2.5",
+    "model_a": "openrouter/z-ai/glm-5",
+    "model_b": "openrouter/moonshotai/kimi-k2.5",
+    "match_id": "match_00038",
+    "sample_id": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+    "created_at": "2026-03-11T15:26:50.234361",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Mostly accurate and clear for comparing stable circular orbits: lower orbital speed corresponds to larger orbital radius and longer period. It explains the physics well with the force balance and Kepler’s law. However, it first gives an unconditional answer that can be misleading because an actual decrease in a satellite’s speed via a retrograde burn initially sends it into a lower elliptical orbit. It adds this nuance later, but the framing is less precise.\",\n  \"B\": \"More accurate and better scoped. It explicitly distinguishes between two interpretations of the question: comparing stable circular orbits versus an instantaneous deceleration maneuver. It correctly explains that for stable circular orbits, lower speed means larger radius and longer period, while an actual slowdown from a given orbit leads to a lower elliptical orbit with a shorter period. Clear, complete, and well organized.\",\n  \"reason\": \"Answer B is better because it handles the ambiguity in the prompt more carefully and gives the physically correct interpretation in both common scenarios. Answer A is good, but its initial direct claim is oversimplified before the later clarification.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly explains the physics for comparing two stable orbits, concluding that a lower velocity corresponds to a larger radius and period. It very helpfully includes a note at the end to clarify the common confusion with orbital maneuvers, where slowing down causes a satellite to enter a lower, faster orbit.\",\n  \"B\": \"Answer B is excellent. It immediately addresses the core ambiguity of the question by structuring its entire response around two distinct cases: comparing stable orbits versus performing an orbital maneuver. It correctly explains the physics for both scenarios, includes an energy perspective, and provides a clear summary. The structure is exceptionally clear and educational.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are highly accurate and correctly identify the crucial ambiguity in the question. However, Answer B is slightly better because it frames its entire response around this ambiguity from the very beginning, making it clearer and more direct for the user. Answer A presents the same information but tucks the clarification about orbital maneuvers into a note at the end, which is slightly less effective. Answer B's structure is superior for teaching the concept.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, well-structured, and clearly explains the physics using gravitational/centripetal force equations and Kepler's Third Law. It correctly concludes that decreased velocity corresponds to larger radius and longer period for stable orbits. It also includes a helpful note on orbital maneuvers, though this note contains a slight conceptual confusion—it states that a retrograde burn causes the satellite to 'drop to a lower altitude' when in fact the burn point becomes the apogee of an elliptical orbit (the satellite initially descends toward perigee). The main answer is solid and clearly presented.\",\"B\":\"Answer B is also accurate and well-structured. It correctly addresses both the stable orbit comparison (Case 1) and the instantaneous deceleration scenario (Case 2). The Case 2 explanation is physically correct—a retrograde burn causes the current position to become the apogee of an elliptical orbit, leading to a smaller semi-major axis and shorter period. This is more accurate than Answer A's note on maneuvers. The energy perspective added in Case 1 provides additional depth. The response is comprehensive and clear.\",\"winner\":\"B\",\"reason\":\"Both answers are accurate for the main question. However, Answer B is superior because: (1) its treatment of the orbital maneuver case is physically correct (the burn point becomes the apogee), whereas Answer A's note on maneuvers contains a conceptual error (stating the satellite 'drops to a lower altitude' immediately after a retrograde burn, rather than entering an elliptical orbit with the current position as apogee); (2) Answer B adds an energy perspective that deepens understanding; (3) Answer B's organization into two clearly labeled cases is cleaner and more pedagogically useful.\"}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "If the velocity of a satellite orbiting Earth decreases, what happens to its orbital radius and orbital period? Explain your reasoning using principles of physics."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Based on the principles of orbital mechanics, if the orbital velocity of a satellite decreases (and the orbit remains stable), its **orbital radius increases** and its **orbital period increases**.\n\nHere is the step-by-step reasoning using principles of physics:\n\n### 1. Relationship Between Velocity and Radius\nTo maintain a stable circular orbit, the gravitational force acting on the satellite must provide the necessary centripetal force.\n\n*   **Newton's Law of Universal Gravitation:**\n    $$F_g = \\frac{GMm}{r^2}$$\n    (Where $G$ is the gravitational constant, $M$ is Earth's mass, $m$ is the satellite's mass, and $r$ is the orbital radius).\n\n*   **Centripetal Force:**\n    $$F_c = \\frac{mv^2}{r}$$\n    (Where $v$ is the orbital velocity).\n\nSetting these two forces equal ($F_g = F_c$):\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r}$$\n\nWe can cancel the mass of the satellite ($m$) and one $r$ term to solve for velocity:\n$$v = \\sqrt{\\frac{GM}{r}}$$\n\n**Reasoning:**\nThis equation shows an **inverse relationship** between velocity ($v$) and the square root of the radius ($\\sqrt{r}$).\n*   As $r$ gets larger, $v$ gets smaller.\n*   As $r$ gets smaller, $v$ gets larger.\n\nTherefore, if the velocity **decreases**, the radius must **increase**. The satellite moves to a higher orbit further away from Earth.\n\n### 2. Relationship Between Radius and Period (Kepler’s Third Law)\nThe orbital period ($T$) is the time it takes to complete one orbit ($T = \\frac{\\text{distance}}{\\text{speed}} = \\frac{2\\pi r}{v}$).\n\nBy substituting the velocity equation from above ($v = \\sqrt{\\frac{GM}{r}}$), we derive the relationship for the period:\n$$T = \\frac{2\\pi r}{\\sqrt{\\frac{GM}{r}}}$$\n$$T = 2\\pi \\sqrt{\\frac{r^3}{GM}}$$\n\n**Reasoning:**\nThis equation (Kepler's Third Law) shows that the period is proportional to the power of $3/2$ of the radius ($T \\propto r^{3/2}$).\n*   If the radius ($r$) increases, the period ($T$) must increase.\n\nIntuitively, this makes sense because:\n1.  The satellite has a larger circumference to travel around ($2\\pi r$ increases).\n2.  It is traveling at a slower speed ($v$ decreases).\nBoth factors contribute to a longer orbital period.\n\n### Summary\nIf a satellite's orbital velocity decreases:\n1.  **Orbital Radius:** **Increases** (it moves to a higher altitude).\n2.  **Orbital Period:** **Increases** (it takes longer to complete an orbit).\n\n***\n\n### Important Note on Orbital Maneuvers\nA common source of confusion in orbital mechanics is the difference between the *instantaneous* change and the *stable orbit* result.\n\nIf a satellite is in a stable orbit and fires thrusters to **decrease** its velocity (retrograde burn), it will initially lose kinetic energy. This energy loss causes the satellite to drop to a lower altitude. However, as it falls, gravitational potential energy converts into kinetic energy, causing the satellite to speed up.\n\nConsequently, a satellite in a lower orbit actually moves **faster** than one in a higher orbit. To transition from a high, slow orbit to a low, fast orbit, you must slow down. Conversely, to move from a low, fast orbit to a high, slow orbit, you must speed up (prograde burn).\n\nSince the prompt asks what happens if the velocity is lower (comparing two stable states), the satellite must be in the higher, slower orbit.",
+    "params": {},
+    "tokens": {
+      "input": 34,
+      "output": 7845
+    },
+    "cost_usd": 0.01806798,
+    "latency_ms": 104534.42096710205
+  },
+  "trialB": {
+    "output": " If the velocity of a satellite decreases, the outcome depends on whether you are **comparing two different stable circular orbits** or describing an **instantaneous orbital maneuver** (such as firing thrusters). Here is the physics for both scenarios:\n\n---\n\n### Case 1: Comparing Two Stable Circular Orbits\nIf you compare two different satellites in stable circular orbits around Earth, the one with the **lower orbital velocity** will have the **larger orbital radius** and the **longer orbital period**.\n\n**Reasoning:**\nFor a circular orbit, the gravitational force provides the centripetal force:\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r}$$\n\nSolving for velocity:\n$$v = \\sqrt{\\frac{GM}{r}}$$\n\nThis shows that orbital velocity is inversely proportional to the square root of the radius ($v \\propto 1/\\sqrt{r}$). Therefore:\n*   **As $v$ decreases, $r$ increases** (the satellite moves to a higher orbit).\n\nFor the orbital period, using Kepler's Third Law:\n$$T = \\frac{2\\pi r}{v} = 2\\pi\\sqrt{\\frac{r^3}{GM}}$$\n\nSince $T \\propto r^{3/2}$, a larger radius results in a longer period. Thus:\n*   **As $r$ increases, $T$ increases**.\n\n**Energy Perspective:**\nA satellite in a higher orbit has greater total orbital energy ($E = -\\frac{GMm}{2r}$), even though it moves slower. Its kinetic energy ($K = \\frac{GMm}{2r}$) is lower, but its potential energy increases by twice that amount, resulting in a less negative (higher) total energy.\n\n---\n\n### Case 2: Instantaneous Deceleration (Orbital Transfer)\nIf a satellite already in a circular orbit **instantaneously decreases its velocity** (e.g., via a retrograde burn), the opposite happens in the short term:\n\n*   **Orbital Radius:** The satellite no longer has sufficient speed to maintain its current altitude against gravity. It will fall into an **elliptical orbit** where the current position becomes the **apogee** (farthest point from Earth). The radius will temporarily decrease as the satellite descends to a new, lower **perigee**.\n*   **Orbital Period:** The new elliptical orbit has a smaller **semi-major axis** ($a$) than the original circular radius. By Kepler's Third Law ($T^2 \\propto a^3$), the satellite's orbital period will actually **decrease**, even though it is now moving slower on average.\n\nIf the satellite subsequently circularizes its orbit at the new, lower altitude, it will end up in a stable orbit where it moves **faster** than it did originally ($v = \\sqrt{GM/r_{new}}$ where $r_{new} < r_{original}$).\n\n---\n\n### Summary\n*   **For different stable orbits:** Decreasing velocity $\\rightarrow$ **Larger radius**, **Longer period** (higher, slower orbits).\n*   **For a burn/manuever:** Decreasing velocity $\\rightarrow$ Satellite drops to a **lower orbit** with a **shorter period** (though it will speed up again as it falls).\n\nMost introductory physics questions refer to **Case 1**, illustrating the inverse relationship between orbital altitude and speed.",
+    "params": {},
+    "tokens": {
+      "input": 37,
+      "output": 3950
+    },
+    "cost_usd": 0.00870665,
+    "latency_ms": 148439.7521018982
+  }
+}

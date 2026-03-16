@@ -1,0 +1,64 @@
+{
+  "id": "dd223379-0264-40fe-9ad0-f854f0b4c389",
+  "matchIndex": 36,
+  "sampleId": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+  "createdAt": "2026-03-11T06:26:49.886Z",
+  "match": {
+    "winner": "openrouter/x-ai/grok-4",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "openrouter/x-ai/grok-4",
+    "match_id": "match_00036",
+    "sample_id": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+    "created_at": "2026-03-11T15:26:49.702510",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Clear and well-structured, but fundamentally inaccurate for the physical situation described. It incorrectly concludes that decreasing a satellite's velocity leads to a larger orbital radius and longer period, which only applies when comparing different circular orbits, not when a satellite in a given orbit is slowed. It also contains a contradictory explanation saying the satellite would 'fall inward initially' yet 'settle into a new, larger stable orbit.'\",\n  \"B\": \"Accurate, complete, and well explained. It correctly states that if a satellite in orbit loses speed, it drops into an elliptical orbit with a smaller semi-major axis, so the effective orbital radius decreases and the orbital period decreases. It uses the relevant physics appropriately and includes helpful caveats about circular versus elliptical motion.\",\n  \"reason\": \"Answer B is better because it correctly applies orbital mechanics to the scenario of a satellite whose velocity is decreased from an existing orbit. Answer A misapplies the circular-orbit speed-radius relation and reaches the wrong conclusion.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This answer is incorrect. It correctly states the formula for velocity in a stable circular orbit but misapplies it to a dynamic situation. It wrongly concludes that decreasing velocity leads to a larger orbital radius and a longer period, which is the opposite of what actually happens.\",\n  \"B\": \"This answer is accurate and provides a thorough, step-by-step explanation. It correctly identifies that a decrease in velocity will cause the satellite to fall into a smaller elliptical orbit, resulting in a decrease in both the average orbital radius (semi-major axis) and the orbital period. The reasoning is well-supported by principles of forces, energy conservation, and Kepler's laws.\",\n  \"winner\": \"B\",\n  \"reason\": \"Answer B is physically correct and provides a detailed, accurate explanation of the orbital mechanics involved. Answer A makes a fundamental error in its conclusion, confusing the properties of different stable orbits with the dynamic result of changing velocity within a single orbit.\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is concise, well-structured, and uses correct physics. However, it contains a significant conceptual error: it states that when velocity decreases, the orbital radius *increases*. This is incorrect for a simple velocity decrease from a circular orbit. When a satellite's velocity decreases, it falls into a lower orbit (smaller semi-major axis), not a higher one. The response confuses the equilibrium relationship (slower stable orbits are at larger radii) with what happens dynamically when you reduce velocity from a given orbit.\",\"B\":\"Answer B is thorough, accurate, and physically correct. It properly explains that when velocity decreases, the satellite enters an elliptical orbit with the current position becoming the apogee, the semi-major axis decreases, and the period decreases. It correctly uses energy conservation and Kepler's third law. The physical reasoning is sound and the explanation of the transition to an elliptical orbit is well-handled. It is somewhat verbose but the detail is generally useful.\",\"winner\":\"B\",\"reason\":\"Answer B is physically correct while Answer A contains a fundamental error, claiming the orbital radius increases when velocity decreases. In reality, reducing a satellite's velocity causes it to drop into a lower orbit with a smaller semi-major axis and shorter period. Answer B correctly identifies this behavior using energy conservation and Kepler's third law.\"}",
+        "winner": "openrouter/x-ai/grok-4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "If the velocity of a satellite orbiting Earth decreases, what happens to its orbital radius and orbital period? Explain your reasoning using principles of physics."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "# Satellite Orbital Mechanics: Effect of Velocity Decrease\n\n## The Core Relationships\n\nFor a circular orbit, gravitational force provides centripetal force:\n\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r}$$\n\nSolving for orbital velocity:\n\n$$\\boxed{v = \\sqrt{\\frac{GM}{r}}}$$\n\nThis reveals a **critical inverse relationship**: as r increases, v *decreases*.\n\n---\n\n## What Happens When Velocity Decreases?\n\n### Orbital Radius → **Increases**\n\nFrom the equation above:\n\n$$v \\propto \\frac{1}{\\sqrt{r}} \\implies r \\propto \\frac{1}{v^2}$$\n\nIf v decreases, r must **increase** to maintain a stable orbit. This seems counterintuitive but is correct — slower satellites orbit *farther out*.\n\n**Physical reasoning:** When a satellite loses speed, it cannot maintain its current orbit (it would fall inward initially), but settles into a new, larger stable orbit with lower energy paradoxically demanding lower speed.\n\n### Orbital Period → **Increases**\n\nFrom Kepler's Third Law:\n\n$$T = \\frac{2\\pi r}{v} = 2\\pi\\sqrt{\\frac{r^3}{GM}}$$\n\n$$T \\propto r^{3/2} \\propto \\frac{1}{v^3}$$\n\nIf v decreases, T **increases** — the satellite takes longer to complete each orbit.\n\n---\n\n## Energy Perspective (Deeper Insight)\n\nTotal orbital energy:\n\n$$E = -\\frac{GMm}{2r}$$\n\n| Quantity | Direction of Change |\n|----------|-------------------|\n| Orbital radius r | ↑ Increases |\n| Orbital period T | ↑ Increases |\n| Orbital speed v | ↓ Decreases |\n| Total energy E | ↑ Increases (less negative) |\n\n**The paradox:** To move to a *higher* orbit (more energy), you must *add* energy via a prograde burn, which *temporarily* increases speed — yet the final orbital speed is lower. This is the essence of the **Hohmann transfer** concept.\n\n---\n\n## Summary\n\n> A satellite with decreased velocity occupies a **larger orbital radius** and has a **longer orbital period** — governed by the fundamental inverse relationship between orbital speed and orbital altitude.",
+    "params": {},
+    "tokens": {
+      "input": 38,
+      "output": 562
+    },
+    "cost_usd": 0.008544,
+    "latency_ms": 11845.722913742065
+  },
+  "trialB": {
+    "output": "### Analysis of a Satellite's Orbit When Velocity Decreases\n\nTo address this question, I'll explain the effects on the orbital radius and orbital period step by step, using fundamental principles of physics, including Newton's law of universal gravitation, centripetal force requirements for orbital motion, conservation of energy, and Kepler's third law. I'll assume the satellite is initially in a stable circular orbit around Earth, and its tangential velocity is suddenly decreased (e.g., due to a brief thruster firing or atmospheric drag). Note that orbits are generally elliptical, but circular orbits are a special case for simplicity.\n\n#### 1. **Initial Equilibrium in a Circular Orbit**\n   - For a satellite in a circular orbit at radius \\( r \\) (measured from Earth's center), the gravitational force provides the centripetal force needed to keep it moving in a circle.\n   - Gravitational force: \\( F_g = \\frac{G M m}{r^2} \\), where \\( G \\) is the gravitational constant, \\( M \\) is Earth's mass, and \\( m \\) is the satellite's mass.\n   - Centripetal force required: \\( F_c = \\frac{m v^2}{r} \\), where \\( v \\) is the orbital velocity.\n   - At equilibrium: \\( \\frac{G M m}{r^2} = \\frac{m v^2}{r} \\), which simplifies to \\( v = \\sqrt{\\frac{G M}{r}} \\).\n   - This shows that for a given \\( r \\), there's a specific \\( v \\) required for a circular orbit. Higher orbits (larger \\( r \\)) have lower required velocities.\n\n#### 2. **What Happens When Velocity Decreases?**\n   - If the velocity decreases to some \\( v' < v \\), the centripetal force required (\\( \\frac{m v'^2}{r} \\)) becomes smaller than the gravitational force (\\( \\frac{G M m}{r^2} \\)).\n   - This imbalance means gravity \"wins\"—there's a net inward force toward Earth. As a result, the satellite begins to accelerate radially inward, causing its distance from Earth to decrease.\n   - The orbit transitions from circular to elliptical (per Kepler's first law, orbits are ellipses with Earth at one focus). The point where the velocity decreased becomes the **apogee** (farthest point) of the new elliptical orbit, and the satellite will now dip to a closer **perigee** (nearest point).\n   - In other words, the orbital radius is no longer constant—it varies between a smaller perigee radius and the original apogee radius. Overall, the satellite spends time at smaller average distances from Earth compared to the original orbit.\n\n#### 3. **Effect on Orbital Radius**\n   - The orbital radius **decreases**.\n   - **Reasoning using energy conservation**: Orbital motion conserves mechanical energy (kinetic + potential). The total specific energy \\( E \\) (per unit mass) for a circular orbit is \\( E = -\\frac{G M}{2 r} \\) (negative, indicating a bound orbit).\n     - Decreasing \\( v \\) reduces the kinetic energy (\\( \\frac{v^2}{2} \\)), making \\( E \\) more negative (lower total energy).\n     - Energy relates to the semi-major axis \\( a \\) of the orbit by \\( E = -\\frac{G M}{2 a} \\). A more negative \\( E \\) means a smaller \\( a \\).\n     - For the new elliptical orbit, \\( a = \\frac{r_p + r_a}{2} \\), where \\( r_p \\) (perigee) < original \\( r \\) and \\( r_a \\) (apogee) ≈ original \\( r \\). Thus, \\( a < \\) original \\( r \\), confirming the orbit is \"smaller\" overall.\n   - Intuitively, slowing down is like \"falling\" toward Earth, similar to how an object dropped from rest falls straight down (extreme case where \\( v = 0 \\)). The satellite doesn't maintain or increase its radius; it moves inward.\n\n#### 4. **Effect on Orbital Period**\n   - The orbital period **decreases**.\n   - **Reasoning using Kepler's third law**: The period \\( T \\) for any closed orbit (circular or elliptical) is given by \\( T = 2\\pi \\sqrt{\\frac{a^3}{G M}} \\), where \\( a \\) is the semi-major axis.\n     - Since decreasing velocity leads to a smaller \\( a \\) (as explained above), \\( T \\) must decrease.\n   - For example:\n     - Low Earth orbits (small \\( r \\approx 6,700 \\) km) have short periods (~90 minutes).\n     - Higher orbits like geostationary ( \\( r \\approx 42,000 \\) km) have longer periods (24 hours).\n     - Moving to a smaller effective orbit shortens the time for one full revolution.\n   - If the velocity decrease is gradual (e.g., due to atmospheric drag), the satellite spirals inward continuously, with both radius and period decreasing over time until it potentially re-enters the atmosphere.\n\n#### 5. **Important Notes and Caveats**\n   - This assumes no further velocity changes or external forces (like additional thruster burns). In practice, to circularize the new orbit at a lower radius, another adjustment would be needed.\n   - If the velocity decrease is very small, the changes are minor, but the direction is the same: inward motion, smaller \\( a \\), shorter \\( T \\).\n   - The opposite occurs if velocity increases: the orbit expands to a larger \\( a \\), increasing both radius and period (e.g., used in orbital maneuvers to reach higher altitudes).\n   - These principles are derived from Newtonian gravity and apply to satellites far from atmospheric effects. In dense atmosphere, drag would exacerbate the inward spiral.\n\nIf you have specific values (e.g., initial radius or velocity change) or want calculations for a numerical example, let me know!",
+    "params": {},
+    "tokens": {
+      "input": 712,
+      "output": 4598
+    },
+    "cost_usd": 0.071106,
+    "latency_ms": 85429.01396751404
+  }
+}

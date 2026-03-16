@@ -8,13 +8,19 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-JuryArena-orange)](https://elementshq.github.io/jury-arena/)
 
-[Documentation](https://elementshq.github.io/jury-arena/) · [Quick Start](#quick-start) · [Data Format](#data-format)
+[Documentation](https://elementshq.github.io/jury-arena/) · [Quick Start](#quick-start) · [Data Format](#data-format) · [Live Demo](https://elementshq.github.io/jury-arena/demo)
 
 </div>
 
 JuryArena is an open-source evaluation tool for comparing multiple LLMs in an arena format using your **actual production prompts**.
 
 You can relatively compare model response quality in a way close to real-world tasks, without defining ground truth or scoring rubrics in advance.
+
+## Live Demo
+
+Explore the UI and example results:
+
+[Live Demo](https://elementshq.github.io/jury-arena/demo)
 
 ## Features
 

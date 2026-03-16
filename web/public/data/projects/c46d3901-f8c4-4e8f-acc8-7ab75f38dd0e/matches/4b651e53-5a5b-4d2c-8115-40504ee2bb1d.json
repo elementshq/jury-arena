@@ -1,0 +1,3652 @@
+{
+  "matches": [
+    {
+      "id": "1e7e5938-e833-4609-9c00-86aed3401bb9",
+      "matchIndex": 199,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:54:21.255Z",
+      "match": {
+        "match_id": "match_00199",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:54:21.070540"
+      }
+    },
+    {
+      "id": "f89b16d7-736b-4351-9e30-73b1b8d19f4c",
+      "matchIndex": 198,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:54:19.788Z",
+      "match": {
+        "match_id": "match_00198",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:54:19.592795"
+      }
+    },
+    {
+      "id": "e5c8c082-55e6-4629-94ae-59d7db0365d0",
+      "matchIndex": 197,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:54:18.845Z",
+      "match": {
+        "match_id": "match_00197",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:54:18.666878"
+      }
+    },
+    {
+      "id": "e6d105ff-1a3c-43d9-be4a-209bc343df5f",
+      "matchIndex": 196,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:54:15.706Z",
+      "match": {
+        "match_id": "match_00196",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:54:15.522255"
+      }
+    },
+    {
+      "id": "0d5b6539-ab94-406c-be0e-b8d97f4f9b34",
+      "matchIndex": 195,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:54:05.936Z",
+      "match": {
+        "match_id": "match_00195",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:54:05.883942"
+      }
+    },
+    {
+      "id": "dfc626f9-565c-43c1-b445-61ef06d785d9",
+      "matchIndex": 194,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:53:53.567Z",
+      "match": {
+        "match_id": "match_00194",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openai/gpt-5.4",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:53.379471"
+      }
+    },
+    {
+      "id": "65553324-69cb-4887-ae30-c3effee837ab",
+      "matchIndex": 193,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:53:49.374Z",
+      "match": {
+        "match_id": "match_00193",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:49.179123"
+      }
+    },
+    {
+      "id": "63e83938-e736-4a06-a4bc-9e6fe7a7adb8",
+      "matchIndex": 192,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:53:48.126Z",
+      "match": {
+        "match_id": "match_00192",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:47.947467"
+      }
+    },
+    {
+      "id": "1283930b-5e9a-41cf-a26a-528d57466c29",
+      "matchIndex": 191,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:53:46.592Z",
+      "match": {
+        "match_id": "match_00191",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:46.410950"
+      }
+    },
+    {
+      "id": "b66af436-632a-423b-a913-2c047da0998c",
+      "matchIndex": 190,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:53:42.282Z",
+      "match": {
+        "match_id": "match_00190",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:42.104014"
+      }
+    },
+    {
+      "id": "16e1bd20-7c68-41f4-b771-a79a815e5765",
+      "matchIndex": 189,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:53:01.460Z",
+      "match": {
+        "match_id": "match_00189",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:53:01.257699"
+      }
+    },
+    {
+      "id": "b5adb9f5-00c6-496b-804c-8b6c6bd3fe98",
+      "matchIndex": 188,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:52:59.919Z",
+      "match": {
+        "match_id": "match_00188",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:59.720427"
+      }
+    },
+    {
+      "id": "de0fb211-25d1-4c54-a828-cdb807ae707a",
+      "matchIndex": 187,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:52:54.672Z",
+      "match": {
+        "match_id": "match_00187",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:54.493385"
+      }
+    },
+    {
+      "id": "235ae6bb-a02b-48f7-bc3a-a96a62a55d27",
+      "matchIndex": 186,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:52:54.174Z",
+      "match": {
+        "match_id": "match_00186",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:53.982640"
+      }
+    },
+    {
+      "id": "0f3ee292-877c-4c62-9b85-3b57eb04ba67",
+      "matchIndex": 185,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:52:53.249Z",
+      "match": {
+        "match_id": "match_00185",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:53.061146"
+      }
+    },
+    {
+      "id": "6d9085e8-54c7-437b-874a-9a8324a8b86d",
+      "matchIndex": 184,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:52:36.052Z",
+      "match": {
+        "match_id": "match_00184",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:35.860727"
+      }
+    },
+    {
+      "id": "68e7301b-f676-46d8-ab28-a86b707b746a",
+      "matchIndex": 183,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:52:34.704Z",
+      "match": {
+        "match_id": "match_00183",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:34.526803"
+      }
+    },
+    {
+      "id": "0af16ba5-9813-4835-b90a-f040b873ef63",
+      "matchIndex": 182,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:52:33.576Z",
+      "match": {
+        "match_id": "match_00182",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:33.398895"
+      }
+    },
+    {
+      "id": "ab8badbc-9919-41ec-ace9-1f39cf5ec49e",
+      "matchIndex": 181,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:52:30.287Z",
+      "match": {
+        "match_id": "match_00181",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:30.111185"
+      }
+    },
+    {
+      "id": "31de0dd5-608c-426f-b97d-57b49dccc8bb",
+      "matchIndex": 180,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:52:28.999Z",
+      "match": {
+        "match_id": "match_00180",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:28.818322"
+      }
+    },
+    {
+      "id": "5ce16ed7-d0d7-4865-b5c5-4a8bdc34cf04",
+      "matchIndex": 179,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:52:19.553Z",
+      "match": {
+        "match_id": "match_00179",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:19.369483"
+      }
+    },
+    {
+      "id": "4bb007eb-4863-45c0-b3dc-5e5f285e9d84",
+      "matchIndex": 178,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:52:18.114Z",
+      "match": {
+        "match_id": "match_00178",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:17.934821"
+      }
+    },
+    {
+      "id": "d974ca43-3b24-467a-9ed5-c9f87ef70f2d",
+      "matchIndex": 177,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:52:15.355Z",
+      "match": {
+        "match_id": "match_00177",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:15.171375"
+      }
+    },
+    {
+      "id": "734522a4-91e7-40bc-8840-745451fd8f2c",
+      "matchIndex": 176,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:52:11.778Z",
+      "match": {
+        "match_id": "match_00176",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:11.599779"
+      }
+    },
+    {
+      "id": "9dcf24fc-efa7-474a-8a5c-076eea6c99c0",
+      "matchIndex": 175,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:52:10.546Z",
+      "match": {
+        "match_id": "match_00175",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:10.362195"
+      }
+    },
+    {
+      "id": "8b8830c6-44bd-4e50-aece-c8063d76c6ea",
+      "matchIndex": 174,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:52:01.127Z",
+      "match": {
+        "match_id": "match_00174",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:52:00.937927"
+      }
+    },
+    {
+      "id": "24657902-37ef-4cab-b38c-d6a8cddf561d",
+      "matchIndex": 173,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:51:58.872Z",
+      "match": {
+        "match_id": "match_00173",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:58.686717"
+      }
+    },
+    {
+      "id": "c93a0c77-06e8-4941-b2b2-9972094b526c",
+      "matchIndex": 172,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:51:56.917Z",
+      "match": {
+        "match_id": "match_00172",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:56.740735"
+      }
+    },
+    {
+      "id": "387dd7d3-e3d3-4cb1-a46c-f5fc787743d2",
+      "matchIndex": 171,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:51:52.803Z",
+      "match": {
+        "match_id": "match_00171",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:52.612002"
+      }
+    },
+    {
+      "id": "9157f5d0-ef17-4063-894e-0815dd68cb85",
+      "matchIndex": 170,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:51:52.503Z",
+      "match": {
+        "match_id": "match_00170",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:52.311448"
+      }
+    },
+    {
+      "id": "9dcbd3c8-f690-4f13-85ce-139095f5bdf4",
+      "matchIndex": 169,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:51:42.885Z",
+      "match": {
+        "match_id": "match_00169",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:42.710857"
+      }
+    },
+    {
+      "id": "5196d4b7-5269-4d7c-8735-bab683030f7b",
+      "matchIndex": 168,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:51:40.523Z",
+      "match": {
+        "match_id": "match_00168",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:40.331046"
+      }
+    },
+    {
+      "id": "04b9de59-957f-4054-8e76-0da8ee83e4e4",
+      "matchIndex": 167,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:51:40.234Z",
+      "match": {
+        "match_id": "match_00167",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:40.048907"
+      }
+    },
+    {
+      "id": "fea9e50c-6c60-4dc1-99e8-7869b2a52277",
+      "matchIndex": 166,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:51:34.713Z",
+      "match": {
+        "match_id": "match_00166",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:34.522883"
+      }
+    },
+    {
+      "id": "8c4ce99b-c887-445a-b611-a82ac4267a4a",
+      "matchIndex": 165,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:51:34.422Z",
+      "match": {
+        "match_id": "match_00165",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:51:34.216532"
+      }
+    },
+    {
+      "id": "3d30688a-3d34-483b-bcca-8dc681b55d16",
+      "matchIndex": 164,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:50:12.840Z",
+      "match": {
+        "match_id": "match_00164",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:50:12.660093"
+      }
+    },
+    {
+      "id": "5128888f-da20-4859-8145-eaaa1e4e3ded",
+      "matchIndex": 163,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:50:12.666Z",
+      "match": {
+        "match_id": "match_00163",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:50:12.488077"
+      }
+    },
+    {
+      "id": "91e32a70-35b1-410e-8dd1-5a85766f135f",
+      "matchIndex": 162,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T05:50:06.836Z",
+      "match": {
+        "match_id": "match_00162",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:50:06.657736"
+      }
+    },
+    {
+      "id": "6d0a5491-d662-4205-83fc-229f02f05eed",
+      "matchIndex": 161,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:50:05.626Z",
+      "match": {
+        "match_id": "match_00161",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:50:05.432246"
+      }
+    },
+    {
+      "id": "0e7e0bc5-b1d6-46d3-a927-92132e861b4c",
+      "matchIndex": 160,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:50:04.377Z",
+      "match": {
+        "match_id": "match_00160",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:50:04.179316"
+      }
+    },
+    {
+      "id": "a0ccbee4-f78b-43f4-b61a-f18ce4e1dcb3",
+      "matchIndex": 159,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T05:49:13.703Z",
+      "match": {
+        "match_id": "match_00159",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:49:13.519165"
+      }
+    },
+    {
+      "id": "36f068fe-5364-437e-909f-0012f93d2991",
+      "matchIndex": 158,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:49:13.601Z",
+      "match": {
+        "match_id": "match_00158",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:49:13.412939"
+      }
+    },
+    {
+      "id": "d3501c66-a6b9-4110-bb7c-bc41e46cd742",
+      "matchIndex": 157,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:49:13.074Z",
+      "match": {
+        "match_id": "match_00157",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:49:12.896782"
+      }
+    },
+    {
+      "id": "0e420e15-2abd-40df-b0da-adef5a824ba4",
+      "matchIndex": 156,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:49:12.349Z",
+      "match": {
+        "match_id": "match_00156",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:49:12.159355"
+      }
+    },
+    {
+      "id": "4346cd25-bb04-4333-8407-9e6e5a9c81cb",
+      "matchIndex": 155,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:49:12.191Z",
+      "match": {
+        "match_id": "match_00155",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:49:11.979263"
+      }
+    },
+    {
+      "id": "a55ce4da-d9cd-4103-a049-68edd38f143f",
+      "matchIndex": 154,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:47:44.932Z",
+      "match": {
+        "match_id": "match_00154",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:47:44.734366"
+      }
+    },
+    {
+      "id": "eb126f0f-d045-426e-a7eb-e529d5ab4411",
+      "matchIndex": 153,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T05:47:41.444Z",
+      "match": {
+        "match_id": "match_00153",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:47:41.269822"
+      }
+    },
+    {
+      "id": "cc837a72-f3c3-483f-ad4c-d2bc9adf27bb",
+      "matchIndex": 152,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:47:40.719Z",
+      "match": {
+        "match_id": "match_00152",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:47:40.527429"
+      }
+    },
+    {
+      "id": "5bd401fd-9a41-4b1e-af6c-97184e71e13c",
+      "matchIndex": 151,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T05:47:38.354Z",
+      "match": {
+        "match_id": "match_00151",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openai/gpt-5.4",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:47:38.175626"
+      }
+    },
+    {
+      "id": "f846688f-7dbc-4a64-8a86-36e38161e2eb",
+      "matchIndex": 150,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:47:37.092Z",
+      "match": {
+        "match_id": "match_00150",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:47:36.894210"
+      }
+    },
+    {
+      "id": "643d4b7e-b24d-471a-b9eb-9593ab291e1b",
+      "matchIndex": 149,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:45:21.049Z",
+      "match": {
+        "match_id": "match_00149",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:45:20.856988"
+      }
+    },
+    {
+      "id": "5aa919ca-1a13-4aa2-af47-1fcb4ec3b7b8",
+      "matchIndex": 148,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:45:17.431Z",
+      "match": {
+        "match_id": "match_00148",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:45:17.251824"
+      }
+    },
+    {
+      "id": "c6beed20-d378-4d45-b626-2882ed8098ca",
+      "matchIndex": 146,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:45:14.196Z",
+      "match": {
+        "match_id": "match_00146",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:45:14.004117"
+      }
+    },
+    {
+      "id": "eeafe9f8-8c2f-4289-b24a-47d3f84942c4",
+      "matchIndex": 145,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:45:11.144Z",
+      "match": {
+        "match_id": "match_00145",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:45:10.953902"
+      }
+    },
+    {
+      "id": "6c61d985-ff09-4c8f-9f2a-5f4fe53931d4",
+      "matchIndex": 144,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:44:25.646Z",
+      "match": {
+        "match_id": "match_00144",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:25.455192"
+      }
+    },
+    {
+      "id": "353d874a-50cd-4add-a464-c18a2280e09c",
+      "matchIndex": 143,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:44:21.657Z",
+      "match": {
+        "match_id": "match_00143",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:21.465148"
+      }
+    },
+    {
+      "id": "e42eedb3-dd9e-4e03-b0e3-6516f32adb9d",
+      "matchIndex": 142,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:44:20.428Z",
+      "match": {
+        "match_id": "match_00142",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:20.236678"
+      }
+    },
+    {
+      "id": "4555c70b-09d0-4c03-a813-84ccd5b10f49",
+      "matchIndex": 141,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T05:44:19.451Z",
+      "match": {
+        "match_id": "match_00141",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:19.277798"
+      }
+    },
+    {
+      "id": "58cf2801-961b-4fdf-97bf-ef5f095bafa0",
+      "matchIndex": 140,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:44:19.401Z",
+      "match": {
+        "match_id": "match_00140",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:19.208732"
+      }
+    },
+    {
+      "id": "e4ab9b7d-2023-4f90-988c-2b4abc813609",
+      "matchIndex": 139,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:44:07.196Z",
+      "match": {
+        "match_id": "match_00139",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:07.023989"
+      }
+    },
+    {
+      "id": "d5844880-ace5-4925-8d70-1b1536c31d71",
+      "matchIndex": 138,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:44:04.865Z",
+      "match": {
+        "match_id": "match_00138",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:44:04.674757"
+      }
+    },
+    {
+      "id": "b37d93c8-3083-4461-a8e4-350ba3ab669c",
+      "matchIndex": 137,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:43:58.975Z",
+      "match": {
+        "match_id": "match_00137",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:58.800087"
+      }
+    },
+    {
+      "id": "4316960b-7347-44aa-bdb6-105671fa43f4",
+      "matchIndex": 136,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:43:58.800Z",
+      "match": {
+        "match_id": "match_00136",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:58.619445"
+      }
+    },
+    {
+      "id": "cbe008b7-b746-468e-b9de-c0fc58c239bb",
+      "matchIndex": 135,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:43:55.924Z",
+      "match": {
+        "match_id": "match_00135",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:55.733780"
+      }
+    },
+    {
+      "id": "f40955cc-54ef-4f82-bc2a-e896120f2825",
+      "matchIndex": 134,
+      "sampleId": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+      "createdAt": "2026-03-11T05:43:15.591Z",
+      "match": {
+        "match_id": "match_00134",
+        "sample_id": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:15.398284"
+      }
+    },
+    {
+      "id": "2bec095c-4064-41fc-99d4-e9e80c92d23c",
+      "matchIndex": 133,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:43:15.047Z",
+      "match": {
+        "match_id": "match_00133",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:14.869450"
+      }
+    },
+    {
+      "id": "102dc62d-a4b7-451a-ada7-b03720364fbc",
+      "matchIndex": 132,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:43:11.614Z",
+      "match": {
+        "match_id": "match_00132",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:11.425801"
+      }
+    },
+    {
+      "id": "db5ba6ec-195d-4034-be88-a53ec9140b97",
+      "matchIndex": 130,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:43:08.949Z",
+      "match": {
+        "match_id": "match_00130",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:43:08.762693"
+      }
+    },
+    {
+      "id": "e965abfd-5837-4550-83c0-8b8c33d9d1b5",
+      "matchIndex": 129,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:39:01.245Z",
+      "match": {
+        "match_id": "match_00129",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:39:01.054692"
+      }
+    },
+    {
+      "id": "647599f2-8512-4bad-b568-c31dfec104e3",
+      "matchIndex": 128,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:39:00.535Z",
+      "match": {
+        "match_id": "match_00128",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:39:00.337336"
+      }
+    },
+    {
+      "id": "58029452-0140-427f-8c38-7801269fac61",
+      "matchIndex": 127,
+      "sampleId": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+      "createdAt": "2026-03-11T05:38:59.394Z",
+      "match": {
+        "match_id": "match_00127",
+        "sample_id": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:38:59.211150"
+      }
+    },
+    {
+      "id": "33b85f0c-f6da-4740-a9b3-03180d7bc9f4",
+      "matchIndex": 126,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:38:58.460Z",
+      "match": {
+        "match_id": "match_00126",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:38:58.284473"
+      }
+    },
+    {
+      "id": "c15145b1-9a2a-4a49-95d9-4e75f7cb6395",
+      "matchIndex": 125,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:38:57.142Z",
+      "match": {
+        "match_id": "match_00125",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:38:56.953239"
+      }
+    },
+    {
+      "id": "cbb42e21-b45f-44bb-a46a-a883741de47c",
+      "matchIndex": 124,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:37:36.357Z",
+      "match": {
+        "match_id": "match_00124",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:37:36.160133"
+      }
+    },
+    {
+      "id": "23b40238-fe86-4f5e-918c-b22c291c4ee5",
+      "matchIndex": 123,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:37:32.655Z",
+      "match": {
+        "match_id": "match_00123",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:37:32.474451"
+      }
+    },
+    {
+      "id": "f13dc10f-2aba-49b2-84ee-e3b07636f475",
+      "matchIndex": 120,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:37:31.304Z",
+      "match": {
+        "match_id": "match_00120",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:37:31.073046"
+      }
+    },
+    {
+      "id": "be92f836-f37a-49f0-8910-14b87f345815",
+      "matchIndex": 119,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T05:35:39.007Z",
+      "match": {
+        "match_id": "match_00119",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:35:38.812925"
+      }
+    },
+    {
+      "id": "992b7e4d-d431-4c39-a1ed-b6e3d9d5ce03",
+      "matchIndex": 118,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:35:31.220Z",
+      "match": {
+        "match_id": "match_00118",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:35:31.027912"
+      }
+    },
+    {
+      "id": "4e83758e-3b30-4226-93fa-9ffeee4cf863",
+      "matchIndex": 117,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:35:30.893Z",
+      "match": {
+        "match_id": "match_00117",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:35:30.715410"
+      }
+    },
+    {
+      "id": "9b37df81-5c0f-48ee-aea6-6fd5976ce0f9",
+      "matchIndex": 116,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:35:28.451Z",
+      "match": {
+        "match_id": "match_00116",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:35:28.261387"
+      }
+    },
+    {
+      "id": "63369312-48b1-4583-a35e-4aee588796ab",
+      "matchIndex": 115,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:35:28.062Z",
+      "match": {
+        "match_id": "match_00115",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:35:27.854253"
+      }
+    },
+    {
+      "id": "3f356801-56d7-474c-b340-41b6f4c3bde8",
+      "matchIndex": 114,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:34:40.158Z",
+      "match": {
+        "match_id": "match_00114",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:34:39.974923"
+      }
+    },
+    {
+      "id": "71bdba7c-ac07-40ad-a328-1f809a66d318",
+      "matchIndex": 113,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:34:37.240Z",
+      "match": {
+        "match_id": "match_00113",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:34:37.062189"
+      }
+    },
+    {
+      "id": "e65c37b2-b2ec-415c-be6b-f79b86839dca",
+      "matchIndex": 112,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:34:36.535Z",
+      "match": {
+        "match_id": "match_00112",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:34:36.348189"
+      }
+    },
+    {
+      "id": "44123ed1-b49c-4e73-a208-b11da06c197c",
+      "matchIndex": 111,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:34:35.905Z",
+      "match": {
+        "match_id": "match_00111",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:34:35.727955"
+      }
+    },
+    {
+      "id": "be43cc93-b1bf-4f0e-aad2-9817a87a5a0c",
+      "matchIndex": 110,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:34:33.587Z",
+      "match": {
+        "match_id": "match_00110",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:34:33.376996"
+      }
+    },
+    {
+      "id": "a9b3712d-981c-4739-a477-fca6a292c6c4",
+      "matchIndex": 109,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:33:51.509Z",
+      "match": {
+        "match_id": "match_00109",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:33:51.319313"
+      }
+    },
+    {
+      "id": "91523861-698e-45e4-bc75-6d67e5900e9f",
+      "matchIndex": 108,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:33:51.360Z",
+      "match": {
+        "match_id": "match_00108",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:33:51.184094"
+      }
+    },
+    {
+      "id": "76f8b983-5b8f-492a-938c-7a6855b6560a",
+      "matchIndex": 107,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:33:50.240Z",
+      "match": {
+        "match_id": "match_00107",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:33:50.058641"
+      }
+    },
+    {
+      "id": "71428f5c-c888-49b0-bad8-761b8727ce6c",
+      "matchIndex": 106,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:33:48.596Z",
+      "match": {
+        "match_id": "match_00106",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:33:48.418632"
+      }
+    },
+    {
+      "id": "69b92622-eb1a-41fb-bea0-3fc16cf1796c",
+      "matchIndex": 105,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:33:46.462Z",
+      "match": {
+        "match_id": "match_00105",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/minimax/minimax-m2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:33:46.271446"
+      }
+    },
+    {
+      "id": "340ad792-0b18-42fa-b01b-3cadfd5a0287",
+      "matchIndex": 104,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:30:35.081Z",
+      "match": {
+        "match_id": "match_00104",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:30:34.885506"
+      }
+    },
+    {
+      "id": "3a394092-4de9-41f3-a62c-fd086fd6c5da",
+      "matchIndex": 103,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:30:32.296Z",
+      "match": {
+        "match_id": "match_00103",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:30:32.115991"
+      }
+    },
+    {
+      "id": "7f534192-0207-42c7-a1b3-89dd7928cf87",
+      "matchIndex": 102,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:30:31.320Z",
+      "match": {
+        "match_id": "match_00102",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:30:31.144532"
+      }
+    },
+    {
+      "id": "28d4e1cc-c3da-4fbe-96e8-539db30561df",
+      "matchIndex": 101,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:30:31.232Z",
+      "match": {
+        "match_id": "match_00101",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:30:31.055544"
+      }
+    },
+    {
+      "id": "e7e8c2ef-c32d-4685-a809-dd9cd8ece8cb",
+      "matchIndex": 100,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:30:30.480Z",
+      "match": {
+        "match_id": "match_00100",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:30:30.288904"
+      }
+    },
+    {
+      "id": "9147c605-455b-4558-8db4-fdb5fbc1053f",
+      "matchIndex": 99,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:29:01.993Z",
+      "match": {
+        "match_id": "match_00099",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:29:01.800349"
+      }
+    },
+    {
+      "id": "72bbcddd-5e3f-4876-9c98-08682dcb23e8",
+      "matchIndex": 98,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:28:59.411Z",
+      "match": {
+        "match_id": "match_00098",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:59.237418"
+      }
+    },
+    {
+      "id": "79471561-b83e-4505-9b44-e8cc776addf1",
+      "matchIndex": 97,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T05:28:59.027Z",
+      "match": {
+        "match_id": "match_00097",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:58.827334"
+      }
+    },
+    {
+      "id": "1873eca4-f60d-4bb7-9d78-4ea4383b8cdc",
+      "matchIndex": 95,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:28:43.092Z",
+      "match": {
+        "match_id": "match_00095",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:43.079729"
+      }
+    },
+    {
+      "id": "ec7f6846-4ee4-4e81-8a7f-cc92e438ecfd",
+      "matchIndex": 94,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:28:26.253Z",
+      "match": {
+        "match_id": "match_00094",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:26.059568"
+      }
+    },
+    {
+      "id": "7a253c3c-f21b-4078-be11-6b40fcbdb847",
+      "matchIndex": 93,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:28:25.926Z",
+      "match": {
+        "match_id": "match_00093",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:25.751747"
+      }
+    },
+    {
+      "id": "92d140e3-7a52-498d-a4eb-8adedf1936a6",
+      "matchIndex": 91,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:28:25.629Z",
+      "match": {
+        "match_id": "match_00091",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:25.450050"
+      }
+    },
+    {
+      "id": "799bb3b2-3adc-452d-8aac-f89a8bf71d37",
+      "matchIndex": 90,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:28:21.956Z",
+      "match": {
+        "match_id": "match_00090",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:28:21.761353"
+      }
+    },
+    {
+      "id": "6da596e6-616f-40ba-939e-b15703f5a8da",
+      "matchIndex": 89,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:25:22.013Z",
+      "match": {
+        "match_id": "match_00089",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:25:21.832515"
+      }
+    },
+    {
+      "id": "9a7d38a3-7419-4fe2-bbc6-3f40ba2b8f05",
+      "matchIndex": 88,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:25:16.679Z",
+      "match": {
+        "match_id": "match_00088",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:25:16.503117"
+      }
+    },
+    {
+      "id": "2c4e6862-7396-4649-a6e3-745462efd4a7",
+      "matchIndex": 87,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:25:15.407Z",
+      "match": {
+        "match_id": "match_00087",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:25:15.229570"
+      }
+    },
+    {
+      "id": "0bd1e259-6d8b-415d-90da-b3a5d78be443",
+      "matchIndex": 86,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:25:15.355Z",
+      "match": {
+        "match_id": "match_00086",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:25:15.174296"
+      }
+    },
+    {
+      "id": "66cc31f8-d43e-4171-b226-873eaa2d3073",
+      "matchIndex": 85,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:25:14.155Z",
+      "match": {
+        "match_id": "match_00085",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:25:13.968284"
+      }
+    },
+    {
+      "id": "ae5d4c69-83b9-4b88-bee6-4baa3739ec0d",
+      "matchIndex": 83,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:24:50.373Z",
+      "match": {
+        "match_id": "match_00083",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:24:50.188922"
+      }
+    },
+    {
+      "id": "cec59533-9872-410c-9239-370082a652bf",
+      "matchIndex": 82,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:24:46.064Z",
+      "match": {
+        "match_id": "match_00082",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:24:45.886317"
+      }
+    },
+    {
+      "id": "741dd12a-0db7-450d-8373-ce13605b6d34",
+      "matchIndex": 81,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:24:45.358Z",
+      "match": {
+        "match_id": "match_00081",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:24:45.173534"
+      }
+    },
+    {
+      "id": "ea8cdca8-2270-4dae-9ac0-200a8d4e755f",
+      "matchIndex": 80,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:24:43.544Z",
+      "match": {
+        "match_id": "match_00080",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:24:43.338718"
+      }
+    },
+    {
+      "id": "27c9d68a-ccea-454e-8f02-06f063821db6",
+      "matchIndex": 79,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:23:51.912Z",
+      "match": {
+        "match_id": "match_00079",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:23:51.719049"
+      }
+    },
+    {
+      "id": "0ace1380-5341-43b1-9942-6d95f01a5a67",
+      "matchIndex": 78,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:23:51.795Z",
+      "match": {
+        "match_id": "match_00078",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:23:51.614140"
+      }
+    },
+    {
+      "id": "5f4c61c5-31ba-4cc3-a759-e59b7f34cf61",
+      "matchIndex": 77,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:23:49.634Z",
+      "match": {
+        "match_id": "match_00077",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:23:49.462277"
+      }
+    },
+    {
+      "id": "a49f891a-d31d-409b-81a1-93cf8707242b",
+      "matchIndex": 76,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:23:46.063Z",
+      "match": {
+        "match_id": "match_00076",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:23:45.882899"
+      }
+    },
+    {
+      "id": "0c99b7ba-9aca-40ba-bd10-bebaf73cf864",
+      "matchIndex": 75,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:23:45.422Z",
+      "match": {
+        "match_id": "match_00075",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:23:45.221768"
+      }
+    },
+    {
+      "id": "ffe6bb61-c64d-4c02-bfc4-61b4fd44c984",
+      "matchIndex": 74,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:22:24.144Z",
+      "match": {
+        "match_id": "match_00074",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:22:23.958478"
+      }
+    },
+    {
+      "id": "38f45cf6-8b91-4036-a31b-c53397489f95",
+      "matchIndex": 73,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:22:22.817Z",
+      "match": {
+        "match_id": "match_00073",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:22:22.630201"
+      }
+    },
+    {
+      "id": "30a3caf2-8bc2-4e15-b7a4-0ac8dc93f04f",
+      "matchIndex": 72,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:22:19.012Z",
+      "match": {
+        "match_id": "match_00072",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:22:18.836319"
+      }
+    },
+    {
+      "id": "04fbfe36-5eaf-439c-8bfc-61a21e4ecaa3",
+      "matchIndex": 71,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:22:18.618Z",
+      "match": {
+        "match_id": "match_00071",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:22:18.432734"
+      }
+    },
+    {
+      "id": "afbdb2ef-84a2-49b8-9327-714a2df354b7",
+      "matchIndex": 70,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:22:17.285Z",
+      "match": {
+        "match_id": "match_00070",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:22:17.100563"
+      }
+    },
+    {
+      "id": "1ac892fc-0002-4070-88d9-ef39b672271b",
+      "matchIndex": 69,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T05:21:28.616Z",
+      "match": {
+        "match_id": "match_00069",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:21:28.436734"
+      }
+    },
+    {
+      "id": "12185910-80aa-47a3-a224-bb86fbf1f8d9",
+      "matchIndex": 68,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T05:21:28.538Z",
+      "match": {
+        "match_id": "match_00068",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:21:28.356571"
+      }
+    },
+    {
+      "id": "1789e499-f400-42d7-8026-069d754e36f3",
+      "matchIndex": 67,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:21:25.973Z",
+      "match": {
+        "match_id": "match_00067",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:21:25.795210"
+      }
+    },
+    {
+      "id": "4aff6941-0dba-4a2b-9646-6fdca3f59960",
+      "matchIndex": 66,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:21:21.851Z",
+      "match": {
+        "match_id": "match_00066",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:21:21.668674"
+      }
+    },
+    {
+      "id": "46c1f669-73dc-4ae7-846b-f637fca48dc0",
+      "matchIndex": 65,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:21:21.801Z",
+      "match": {
+        "match_id": "match_00065",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:21:21.599858"
+      }
+    },
+    {
+      "id": "c323eba6-1bfa-4365-b1a2-6074515264f6",
+      "matchIndex": 64,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:19:54.661Z",
+      "match": {
+        "match_id": "match_00064",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:19:54.471834"
+      }
+    },
+    {
+      "id": "284417cb-adab-46b8-a279-c786d4f7568e",
+      "matchIndex": 63,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T05:19:54.609Z",
+      "match": {
+        "match_id": "match_00063",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:19:54.442225"
+      }
+    },
+    {
+      "id": "ce18dd21-89d1-4fca-b6c9-13d932fbaf0a",
+      "matchIndex": 62,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:19:53.208Z",
+      "match": {
+        "match_id": "match_00062",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:19:53.022951"
+      }
+    },
+    {
+      "id": "64025000-d4cc-4f66-9c34-a7d87b3d3e53",
+      "matchIndex": 61,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:19:48.597Z",
+      "match": {
+        "match_id": "match_00061",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:19:48.414772"
+      }
+    },
+    {
+      "id": "6757c773-ceb9-48f0-922a-750f8fc37361",
+      "matchIndex": 60,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T05:19:47.686Z",
+      "match": {
+        "match_id": "match_00060",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:19:47.492304"
+      }
+    },
+    {
+      "id": "7c0b46f6-4b66-4d9b-a188-3a2fac67dfa1",
+      "matchIndex": 59,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:11:58.772Z",
+      "match": {
+        "match_id": "match_00059",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:11:58.594521"
+      }
+    },
+    {
+      "id": "e07309ba-3c22-4d61-a4f9-2ddd508ec926",
+      "matchIndex": 58,
+      "sampleId": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+      "createdAt": "2026-03-11T05:11:58.056Z",
+      "match": {
+        "match_id": "match_00058",
+        "sample_id": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openai/gpt-5.4",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:11:57.880516"
+      }
+    },
+    {
+      "id": "0aaa34b5-4675-40d9-b53f-1530e54621fc",
+      "matchIndex": 57,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:11:51.910Z",
+      "match": {
+        "match_id": "match_00057",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:11:51.734906"
+      }
+    },
+    {
+      "id": "81b4436d-b610-471e-b927-628cdb52abb9",
+      "matchIndex": 56,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:11:51.394Z",
+      "match": {
+        "match_id": "match_00056",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:11:51.222086"
+      }
+    },
+    {
+      "id": "5b579be9-9bb2-43ae-899d-b4a6da1392c3",
+      "matchIndex": 55,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:11:51.034Z",
+      "match": {
+        "match_id": "match_00055",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openai/gpt-5.4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:11:50.813170"
+      }
+    },
+    {
+      "id": "ca1799b3-f62d-4bf9-b354-28c335d532da",
+      "matchIndex": 54,
+      "sampleId": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+      "createdAt": "2026-03-11T05:10:53.448Z",
+      "match": {
+        "match_id": "match_00054",
+        "sample_id": "13e200eb-ccbe-40fa-ba1a-7e15837aebe3",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:10:53.262437"
+      }
+    },
+    {
+      "id": "041200d1-600d-4c96-9a24-50470c5b2ab8",
+      "matchIndex": 53,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T05:10:51.029Z",
+      "match": {
+        "match_id": "match_00053",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:10:50.841630"
+      }
+    },
+    {
+      "id": "4b4f26f9-97fa-4afd-9ee9-7ad0316e30f5",
+      "matchIndex": 52,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:10:50.466Z",
+      "match": {
+        "match_id": "match_00052",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:10:50.293612"
+      }
+    },
+    {
+      "id": "4a1bf8bd-d73f-4f5d-9f7f-b84fc74d4aa1",
+      "matchIndex": 51,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:10:50.120Z",
+      "match": {
+        "match_id": "match_00051",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:10:49.939856"
+      }
+    },
+    {
+      "id": "ec5afd68-0865-4433-ae67-ff41a4997c4e",
+      "matchIndex": 50,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T05:10:49.779Z",
+      "match": {
+        "match_id": "match_00050",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:10:49.579046"
+      }
+    },
+    {
+      "id": "9954619e-9268-47d8-ad8c-1b8e825bc94d",
+      "matchIndex": 49,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:07:01.494Z",
+      "match": {
+        "match_id": "match_00049",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:07:01.323056"
+      }
+    },
+    {
+      "id": "378a126b-821c-48ff-921c-de83222ab246",
+      "matchIndex": 48,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:06:59.468Z",
+      "match": {
+        "match_id": "match_00048",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:06:59.287455"
+      }
+    },
+    {
+      "id": "a3a84334-aa34-4903-b328-b27d12c4b316",
+      "matchIndex": 47,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:06:57.924Z",
+      "match": {
+        "match_id": "match_00047",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:06:57.744164"
+      }
+    },
+    {
+      "id": "0968903e-4554-442d-b775-3aa8d39babe6",
+      "matchIndex": 46,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:06:57.097Z",
+      "match": {
+        "match_id": "match_00046",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:06:56.922609"
+      }
+    },
+    {
+      "id": "39954210-38d0-4765-850f-4cbe68a5e82e",
+      "matchIndex": 45,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:06:56.204Z",
+      "match": {
+        "match_id": "match_00045",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:06:56.003580"
+      }
+    },
+    {
+      "id": "4db4da10-f014-4f01-89ac-ded0f0415d44",
+      "matchIndex": 44,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:05:41.236Z",
+      "match": {
+        "match_id": "match_00044",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:05:41.046336"
+      }
+    },
+    {
+      "id": "05b5bfa1-4406-4fd5-b0fe-081625748314",
+      "matchIndex": 43,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:05:37.174Z",
+      "match": {
+        "match_id": "match_00043",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:05:36.998126"
+      }
+    },
+    {
+      "id": "54879515-f4d8-43d0-9076-87bf8c5c0ae4",
+      "matchIndex": 42,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:05:35.894Z",
+      "match": {
+        "match_id": "match_00042",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:05:35.718324"
+      }
+    },
+    {
+      "id": "13aa3a93-c6a0-412f-a8bb-b19f71fcbcf5",
+      "matchIndex": 41,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T05:05:35.080Z",
+      "match": {
+        "match_id": "match_00041",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:05:34.903133"
+      }
+    },
+    {
+      "id": "396763c4-0e9c-4afd-b456-7faab7206638",
+      "matchIndex": 40,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:05:33.563Z",
+      "match": {
+        "match_id": "match_00040",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:05:33.363480"
+      }
+    },
+    {
+      "id": "f50af2e2-844c-4704-9830-21471e6534cc",
+      "matchIndex": 39,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T05:04:17.578Z",
+      "match": {
+        "match_id": "match_00039",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:04:17.385350"
+      }
+    },
+    {
+      "id": "7f083660-4827-4521-8cb0-c51e6f19e0b6",
+      "matchIndex": 38,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T05:04:13.313Z",
+      "match": {
+        "match_id": "match_00038",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:04:13.137124"
+      }
+    },
+    {
+      "id": "e4d087fe-60fe-4d46-bd7d-8277f834d51d",
+      "matchIndex": 37,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:04:13.030Z",
+      "match": {
+        "match_id": "match_00037",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:04:12.849030"
+      }
+    },
+    {
+      "id": "87b41aac-e161-474f-99c7-3bb5743d542a",
+      "matchIndex": 36,
+      "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+      "createdAt": "2026-03-11T05:04:11.002Z",
+      "match": {
+        "match_id": "match_00036",
+        "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:04:10.827744"
+      }
+    },
+    {
+      "id": "bfd6beaa-ffd6-4831-bd63-51b27c1ec089",
+      "matchIndex": 35,
+      "sampleId": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+      "createdAt": "2026-03-11T05:04:10.695Z",
+      "match": {
+        "match_id": "match_00035",
+        "sample_id": "f8dde0d6-86d6-40a4-bcbc-2147ddbbeeae",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:04:10.522161"
+      }
+    },
+    {
+      "id": "76c1c160-a002-425b-ace1-08ca9c32c30c",
+      "matchIndex": 34,
+      "sampleId": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+      "createdAt": "2026-03-11T05:02:14.968Z",
+      "match": {
+        "match_id": "match_00034",
+        "sample_id": "e07b7e4d-1555-4aa2-a550-315e0190404a",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:02:14.780784"
+      }
+    },
+    {
+      "id": "d09e9018-e5b3-421f-b7cb-6844053cc534",
+      "matchIndex": 33,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T05:02:13.522Z",
+      "match": {
+        "match_id": "match_00033",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:02:13.346856"
+      }
+    },
+    {
+      "id": "b0ad71e7-1611-446e-b4b2-7ab2ecf87e43",
+      "matchIndex": 32,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:02:12.096Z",
+      "match": {
+        "match_id": "match_00032",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:02:11.915656"
+      }
+    },
+    {
+      "id": "0022f1aa-de4c-4399-b945-817ed257e100",
+      "matchIndex": 31,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:02:08.655Z",
+      "match": {
+        "match_id": "match_00031",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:02:08.480774"
+      }
+    },
+    {
+      "id": "adf52ce2-282f-4982-bdb4-c0bcdcdd3ec9",
+      "matchIndex": 30,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T05:02:08.458Z",
+      "match": {
+        "match_id": "match_00030",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:02:08.286936"
+      }
+    },
+    {
+      "id": "05d34acd-f1d9-49c3-9d38-40a4703032f7",
+      "matchIndex": 29,
+      "sampleId": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+      "createdAt": "2026-03-11T05:00:54.176Z",
+      "match": {
+        "match_id": "match_00029",
+        "sample_id": "3c7a0e21-92e3-4422-921c-1fb3fcfeb9b9",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:00:53.985865"
+      }
+    },
+    {
+      "id": "2f2f2c25-6062-4887-b835-576ac85ccef4",
+      "matchIndex": 28,
+      "sampleId": "00e542d6-13fa-4648-be86-b6b070b38436",
+      "createdAt": "2026-03-11T05:00:53.351Z",
+      "match": {
+        "match_id": "match_00028",
+        "sample_id": "00e542d6-13fa-4648-be86-b6b070b38436",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:00:53.169704"
+      }
+    },
+    {
+      "id": "7b900492-0d3b-4588-a81c-c88b0f0e7ca0",
+      "matchIndex": 27,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T05:00:51.511Z",
+      "match": {
+        "match_id": "match_00027",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:00:51.328221"
+      }
+    },
+    {
+      "id": "68ebf4e5-23ca-4de0-9f4f-ea059b93eb28",
+      "matchIndex": 26,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T05:00:50.434Z",
+      "match": {
+        "match_id": "match_00026",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:00:50.250099"
+      }
+    },
+    {
+      "id": "d4926f7d-aade-4cf6-abcc-c0ef165b906d",
+      "matchIndex": 25,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T05:00:46.360Z",
+      "match": {
+        "match_id": "match_00025",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/z-ai/glm-5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T14:00:46.178250"
+      }
+    },
+    {
+      "id": "11b17e5a-0af0-487c-a3f1-4be1861d1e88",
+      "matchIndex": 24,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T04:56:08.461Z",
+      "match": {
+        "match_id": "match_00024",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:56:08.288889"
+      }
+    },
+    {
+      "id": "57803ec5-a328-48dd-886e-1dd3eb96151b",
+      "matchIndex": 23,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T04:56:06.322Z",
+      "match": {
+        "match_id": "match_00023",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:56:06.142943"
+      }
+    },
+    {
+      "id": "d22ce3e1-1742-4f6a-87fc-0f0fe10cd883",
+      "matchIndex": 22,
+      "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+      "createdAt": "2026-03-11T04:56:05.495Z",
+      "match": {
+        "match_id": "match_00022",
+        "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:56:05.320968"
+      }
+    },
+    {
+      "id": "38dea017-8b98-4ef5-9531-057e32db5447",
+      "matchIndex": 21,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T04:56:02.314Z",
+      "match": {
+        "match_id": "match_00021",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:56:02.144848"
+      }
+    },
+    {
+      "id": "c985a224-711f-4bc8-8a24-bc836153db21",
+      "matchIndex": 20,
+      "sampleId": "ac7ca62c-3f8d-4089-828a-02911240a389",
+      "createdAt": "2026-03-11T04:56:02.019Z",
+      "match": {
+        "match_id": "match_00020",
+        "sample_id": "ac7ca62c-3f8d-4089-828a-02911240a389",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:56:01.842336"
+      }
+    },
+    {
+      "id": "60376b6b-b027-448e-b5b3-e4f330743bb4",
+      "matchIndex": 19,
+      "sampleId": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+      "createdAt": "2026-03-11T04:53:50.755Z",
+      "match": {
+        "match_id": "match_00019",
+        "sample_id": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:53:50.567373"
+      }
+    },
+    {
+      "id": "2c2d3303-a4cd-412e-84cf-d890d0098861",
+      "matchIndex": 18,
+      "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+      "createdAt": "2026-03-11T04:53:48.483Z",
+      "match": {
+        "match_id": "match_00018",
+        "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+        "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:53:48.309225"
+      }
+    },
+    {
+      "id": "24ed2147-88e1-4c1a-8b37-ef1fd7f937ff",
+      "matchIndex": 17,
+      "sampleId": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+      "createdAt": "2026-03-11T04:53:46.136Z",
+      "match": {
+        "match_id": "match_00017",
+        "sample_id": "33350843-2ce2-44a2-aa81-dd5f59e064c3",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:53:45.956582"
+      }
+    },
+    {
+      "id": "117af4eb-d704-4de9-8a05-e195c769bab0",
+      "matchIndex": 16,
+      "sampleId": "81de6202-4b09-405c-aaae-a97444888041",
+      "createdAt": "2026-03-11T04:53:45.001Z",
+      "match": {
+        "match_id": "match_00016",
+        "sample_id": "81de6202-4b09-405c-aaae-a97444888041",
+        "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:53:44.827686"
+      }
+    },
+    {
+      "id": "30e0c6dd-bf8e-428f-b3e9-9330f7e35fee",
+      "matchIndex": 15,
+      "sampleId": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+      "createdAt": "2026-03-11T04:53:44.513Z",
+      "match": {
+        "match_id": "match_00015",
+        "sample_id": "1dd90020-ab5d-4c7c-9128-4330a7c7e27c",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:53:44.319266"
+      }
+    },
+    {
+      "id": "873f03fa-0f0a-4d7d-b610-e632a0bd5179",
+      "matchIndex": 14,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T04:52:31.687Z",
+      "match": {
+        "match_id": "match_00014",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/z-ai/glm-5",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:52:31.508673"
+      }
+    },
+    {
+      "id": "e1349702-316c-4898-a757-23b6ff607d46",
+      "matchIndex": 13,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T04:52:29.555Z",
+      "match": {
+        "match_id": "match_00013",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:52:29.341864"
+      }
+    },
+    {
+      "id": "daa4eebc-7591-4a37-87fb-72cfc8f07f06",
+      "matchIndex": 12,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T04:52:29.502Z",
+      "match": {
+        "match_id": "match_00012",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:52:29.326480"
+      }
+    },
+    {
+      "id": "2c1361b2-64a6-47da-81cc-46836d7664b3",
+      "matchIndex": 11,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T04:52:26.994Z",
+      "match": {
+        "match_id": "match_00011",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "gemini/gemini-2.5-pro",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:52:26.827648"
+      }
+    },
+    {
+      "id": "70b06d8e-0880-43af-a9ee-3925c49d3850",
+      "matchIndex": 10,
+      "sampleId": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+      "createdAt": "2026-03-11T04:52:23.081Z",
+      "match": {
+        "match_id": "match_00010",
+        "sample_id": "4f11fc1b-f5fe-416c-b3bc-158809bdd1c5",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "tie",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:52:22.909659"
+      }
+    },
+    {
+      "id": "049c3cc5-6ee5-444b-b10f-698059285e2a",
+      "matchIndex": 9,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T04:49:03.920Z",
+      "match": {
+        "match_id": "match_00009",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openrouter/moonshotai/kimi-k2.5",
+        "model_b": "openrouter/x-ai/grok-4",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:49:03.740051"
+      }
+    },
+    {
+      "id": "6296859b-7c41-4a2f-865f-e1b614c9a63e",
+      "matchIndex": 7,
+      "sampleId": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+      "createdAt": "2026-03-11T04:49:02.076Z",
+      "match": {
+        "match_id": "match_00007",
+        "sample_id": "75c87308-1e26-4d96-bc3f-be338da6e5fe",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openrouter/minimax/minimax-m2.5",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:49:01.903955"
+      }
+    },
+    {
+      "id": "6f846672-86e5-4e79-960c-414da557e4ed",
+      "matchIndex": 6,
+      "sampleId": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+      "createdAt": "2026-03-11T04:49:01.651Z",
+      "match": {
+        "match_id": "match_00006",
+        "sample_id": "01a9034e-918d-4b45-bd25-6de32f240ab0",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "gemini/gemini-2.5-pro",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:49:01.477884"
+      }
+    },
+    {
+      "id": "9caccb6c-582f-4275-82b7-5257968c230e",
+      "matchIndex": 5,
+      "sampleId": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+      "createdAt": "2026-03-11T04:48:57.285Z",
+      "match": {
+        "match_id": "match_00005",
+        "sample_id": "797c4328-a4d0-4328-b797-c908dd1fd72c",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:48:57.088482"
+      }
+    },
+    {
+      "id": "a242ff16-acaa-4a03-b4ec-767db8e7c545",
+      "matchIndex": 4,
+      "sampleId": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+      "createdAt": "2026-03-11T04:47:02.008Z",
+      "match": {
+        "match_id": "match_00004",
+        "sample_id": "f5ee3ce7-1d71-4d95-a51c-b816f57c5ee9",
+        "model_a": "openai/gpt-5.4",
+        "model_b": "gemini/gemini-2.5-pro",
+        "winner": "openai/gpt-5.4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:47:01.989125"
+      }
+    },
+    {
+      "id": "9c9b8b45-3884-4b61-b6b3-1b46c6ef2275",
+      "matchIndex": 3,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T04:47:01.856Z",
+      "match": {
+        "match_id": "match_00003",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+        "model_b": "openai/gpt-5.4",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:47:01.681856"
+      }
+    },
+    {
+      "id": "63a6da16-437d-466c-bf53-9761de24d52c",
+      "matchIndex": 2,
+      "sampleId": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+      "createdAt": "2026-03-11T04:47:01.240Z",
+      "match": {
+        "match_id": "match_00002",
+        "sample_id": "2016d710-7c93-46f8-85b4-935fe9fe7ebb",
+        "model_a": "openrouter/z-ai/glm-5",
+        "model_b": "openrouter/moonshotai/kimi-k2.5",
+        "winner": "openrouter/moonshotai/kimi-k2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:47:01.063505"
+      }
+    },
+    {
+      "id": "4b1cb39f-6249-4731-9dc8-3d7e140ec8a2",
+      "matchIndex": 1,
+      "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+      "createdAt": "2026-03-11T04:46:59.435Z",
+      "match": {
+        "match_id": "match_00001",
+        "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+        "model_a": "openrouter/minimax/minimax-m2.5",
+        "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+        "winner": "openrouter/minimax/minimax-m2.5",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:46:59.222759"
+      }
+    },
+    {
+      "id": "64f13a7f-385e-48af-b4a4-ffb5a5ab8e1c",
+      "matchIndex": 0,
+      "sampleId": "ba705a22-8f73-44e2-9072-11a54ff17306",
+      "createdAt": "2026-03-11T04:46:58.803Z",
+      "match": {
+        "match_id": "match_00000",
+        "sample_id": "ba705a22-8f73-44e2-9072-11a54ff17306",
+        "model_a": "openrouter/x-ai/grok-4",
+        "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+        "winner": "openrouter/x-ai/grok-4",
+        "judge_models": [
+          "openai/gpt-5.4",
+          "gemini/gemini-2.5-pro",
+          "openrouter/anthropic/claude-sonnet-4.6"
+        ],
+        "created_at": "2026-03-11T13:46:58.623085"
+      }
+    }
+  ]
+}

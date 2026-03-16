@@ -1,0 +1,64 @@
+{
+  "id": "06d90558-a81f-4d66-bab7-64feb52d723f",
+  "matchIndex": 106,
+  "sampleId": "32714de1-bbad-43f8-8dfb-916e5e5db550",
+  "createdAt": "2026-03-11T06:48:05.865Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00106",
+    "sample_id": "32714de1-bbad-43f8-8dfb-916e5e5db550",
+    "created_at": "2026-03-11T15:48:05.684583",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and fully follows the prompt. It provides a simple HTML page with a button that displays one of four jokes at random, and the code is clear, complete, and easy to use. It is also concise with little unnecessary extra content.\",\n  \"B\": \"Accurate and complete, with a polished design and random selection from four jokes. However, it adds extra functionality beyond the prompt, such as a separate punchline reveal button, detailed feature explanations, and more complexity than necessary for a simple website.\",\n  \"reason\": \"Both answers work, but Answer A is better because it matches the request more directly: a simple HTML website where clicking one button shows one of four jokes at random. Answer B is also good, but it is less concise and introduces extra features not asked for.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a simple, self-contained HTML file that perfectly fulfills the user's request. It has a single button that, when clicked, displays one of four random jokes. The code is clean, concise, and easy to understand.\",\n  \"B\": \"Answer B provides a more complex solution with a two-step joke reveal (setup then punchline) requiring two separate buttons. While visually appealing, this adds unrequested complexity and deviates from the simple instruction of displaying a joke upon a single button click. It also includes extraneous descriptive text.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is better because it directly and concisely fulfills the user's prompt without adding unrequested features or complexity. Answer B's two-button system for revealing the joke does not align with the simple 'click a button to display a joke' instruction.\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions precisely, and is clean and concise. It displays a random joke from four options when a button is clicked. The code is simple, well-styled with a light theme, and easy to understand. It directly addresses the prompt without unnecessary complexity.\",\"B\":\"Answer B is also accurate and functional, but adds extra features beyond what was requested: a two-step reveal with a separate 'Reveal Punchline' button, a dark theme, emojis, and additional UI elements. While visually impressive, it introduces complexity not asked for and deviates slightly from the simple 'click a button, see a joke' requirement.\",\"winner\":\"A\",\"reason\":\"Answer A more precisely follows the instructions: a simple website where clicking one button displays a random joke. Answer B, while well-crafted, adds unrequested complexity (two-step punchline reveal, extra button, dark theme). For a prompt asking for simplicity and a single button interaction, Answer A is the better fit.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Create a simple website using HTML. When the user clicks a button, one of four jokes should be displayed at random."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>Random Joke Generator</title>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      background: #f4f4f9;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      height: 100vh;\n      margin: 0;\n    }\n\n    .container {\n      background: white;\n      padding: 30px;\n      border-radius: 12px;\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n      text-align: center;\n      max-width: 500px;\n    }\n\n    h1 {\n      margin-bottom: 20px;\n    }\n\n    button {\n      background: #007bff;\n      color: white;\n      border: none;\n      padding: 12px 20px;\n      font-size: 16px;\n      border-radius: 8px;\n      cursor: pointer;\n    }\n\n    button:hover {\n      background: #0056b3;\n    }\n\n    #joke {\n      margin-top: 20px;\n      font-size: 18px;\n      color: #333;\n      min-height: 60px;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h1>Random Joke Generator</h1>\n    <button onclick=\"showJoke()\">Tell Me a Joke</button>\n    <p id=\"joke\">Click the button to see a joke!</p>\n  </div>\n\n  <script>\n    const jokes = [\n      \"Why don’t skeletons fight each other? They don’t have the guts.\",\n      \"What do you call fake spaghetti? An impasta.\",\n      \"Why did the math book look sad? Because it had too many problems.\",\n      \"What do you call cheese that isn't yours? Nacho cheese.\"\n    ];\n\n    function showJoke() {\n      const randomIndex = Math.floor(Math.random() * jokes.length);\n      document.getElementById(\"joke\").textContent = jokes[randomIndex];\n    }\n  </script>\n</body>\n</html>\n```\n\nSave this as `index.html` and open it in a browser.",
+    "params": {},
+    "tokens": {
+      "input": 30,
+      "output": 511
+    },
+    "cost_usd": 0.00774,
+    "latency_ms": 8148.040294647217
+  },
+  "trialB": {
+    "output": "Here's a simple joke website with HTML, CSS, and JavaScript:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Random Joke Generator</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background-color: #1a1a2e;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            min-height: 100vh;\n            color: #fff;\n        }\n\n        .container {\n            background-color: #16213e;\n            border-radius: 16px;\n            padding: 40px;\n            max-width: 600px;\n            width: 90%;\n            text-align: center;\n            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);\n        }\n\n        h1 {\n            font-size: 2rem;\n            margin-bottom: 10px;\n            color: #e94560;\n        }\n\n        .subtitle {\n            color: #a8a8b3;\n            margin-bottom: 30px;\n            font-size: 0.95rem;\n        }\n\n        .joke-box {\n            background-color: #0f3460;\n            border-radius: 12px;\n            padding: 30px;\n            min-height: 120px;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            margin-bottom: 30px;\n            border-left: 4px solid #e94560;\n        }\n\n        .joke-setup {\n            font-size: 1.1rem;\n            font-weight: 600;\n            margin-bottom: 12px;\n            color: #eaeaea;\n        }\n\n        .joke-punchline {\n            font-size: 1rem;\n            color: #f5a623;\n            font-style: italic;\n            display: none;\n        }\n\n        .placeholder {\n            color: #a8a8b3;\n            font-size: 1rem;\n        }\n\n        .btn {\n            background-color: #e94560;\n            color: #fff;\n            border: none;\n            padding: 14px 32px;\n            font-size: 1rem;\n            font-weight: 600;\n            border-radius: 50px;\n            cursor: pointer;\n            transition: background-color 0.3s ease, transform 0.1s ease;\n            margin: 8px;\n        }\n\n        .btn:hover {\n            background-color: #c73652;\n        }\n\n        .btn:active {\n            transform: scale(0.97);\n        }\n\n        .btn-secondary {\n            background-color: transparent;\n            border: 2px solid #e94560;\n            color: #e94560;\n        }\n\n        .btn-secondary:hover {\n            background-color: #e94560;\n            color: #fff;\n        }\n\n        .emoji {\n            font-size: 2.5rem;\n            margin-bottom: 16px;\n        }\n    </style>\n</head>\n<body>\n\n    <div class=\"container\">\n        <div class=\"emoji\">😄</div>\n        <h1>Joke Generator</h1>\n        <p class=\"subtitle\">Click the button to hear a joke!</p>\n\n        <div class=\"joke-box\" id=\"jokeBox\">\n            <p class=\"placeholder\" id=\"placeholder\">Your joke will appear here...</p>\n            <p class=\"joke-setup\" id=\"jokeSetup\"></p>\n            <p class=\"joke-punchline\" id=\"jokePunchline\"></p>\n        </div>\n\n        <button class=\"btn\" onclick=\"getJoke()\">Tell Me a Joke! 🎲</button>\n        <button class=\"btn btn-secondary\" onclick=\"showPunchline()\">Reveal Punchline 👀</button>\n    </div>\n\n    <script>\n        const jokes = [\n            {\n                setup: \"Why don't scientists trust atoms?\",\n                punchline: \"Because they make up everything! 😄\"\n            },\n            {\n                setup: \"Why did the scarecrow win an award?\",\n                punchline: \"Because he was outstanding in his field! 🌾\"\n            },\n            {\n                setup: \"Why don't eggs tell jokes?\",\n                punchline: \"Because they'd crack each other up! 🥚\"\n            },\n            {\n                setup: \"What do you call a fake noodle?\",\n                punchline: \"An impasta! 🍝\"\n            }\n        ];\n\n        let punchlineVisible = false;\n\n        function getJoke() {\n            const randomIndex = Math.floor(Math.random() * jokes.length);\n            const joke = jokes[randomIndex];\n\n            document.getElementById('placeholder').style.display = 'none';\n            document.getElementById('jokeSetup').textContent = joke.setup;\n            document.getElementById('jokePunchline').textContent = joke.punchline;\n            document.getElementById('jokePunchline').style.display = 'none';\n\n            punchlineVisible = false;\n        }\n\n        function showPunchline() {\n            const punchline = document.getElementById('jokePunchline');\n            const setup = document.getElementById('jokeSetup').textContent;\n\n            if (!setup) {\n                alert(\"Get a joke first!\");\n                return;\n            }\n\n            if (!punchlineVisible) {\n                punchline.style.display = 'block';\n                punchlineVisible = true;\n            }\n        }\n    </script>\n\n</body>\n</html>\n```\n\n## Features\n\n- 🎲 **Random joke selection** from a set of four jokes\n- 👀 **Two-step reveal** — the setup shows first, then you click to reveal the punchline\n- 🎨 **Styled UI** with a dark theme, smooth hover effects, and clear typography\n- 📱 **Responsive design** that works on mobile and desktop\n\n## How It Works\n\n1. Click **\"Tell Me a Joke!\"** to display a random joke setup\n2. Click **\"Reveal Punchline\"** to see the punchline\n3. Click **\"Tell Me a Joke!\"** again to get a new joke\n\nYou can easily add more jokes by adding objects to the `jokes` array in the `<script>` section, following the `{ setup, punchline }` format.",
+    "params": {},
+    "tokens": {
+      "input": 31,
+      "output": 1680
+    },
+    "cost_usd": 0.025293,
+    "latency_ms": 19863.75665664673
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "a8af07a3-2b60-4c9f-954c-d6ec434cbc8f",
+  "matchIndex": 86,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T06:43:15.760Z",
+  "match": {
+    "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_b": "openrouter/moonshotai/kimi-k2.5",
+    "match_id": "match_00086",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T15:43:15.576021",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and clear. It correctly identifies the White House as being in Washington, D.C. It follows the instruction well and is easy to understand. However, it adds a bit of extra explanation and emoji that are not necessary.\",\n  \"B\": \"Accurate and generally clear. It correctly gives the location as Washington, D.C., and provides additional interpretation of the riddle. However, the extra speculation about the Green Room and Red Room is unnecessary and less concise.\",\n  \"reason\": \"Both answers are correct, but Answer A is slightly better because it is simpler, clearer, and avoids the more speculative explanation found in Answer B.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly identifies the answer to the riddle and provides a simple, clear explanation of why it's a trick question.\",\n  \"B\": \"Answer B also correctly answers the riddle but provides a more insightful and detailed explanation. It not only explains the trick but also connects the other houses mentioned (red house, greenhouse) to specific rooms in the White House, adding a clever layer to the analysis.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are correct, but Answer B is better because its explanation is more comprehensive and demonstrates a deeper understanding of the wordplay in the riddle. The connection made to the Red Room and Green Room is a valuable insight that Answer A misses.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly identifies the White House as being in Washington, D.C. and notes it's a riddle/trick question. It's concise, clear, and accurate without over-explaining.\",\"B\":\"Answer B also correctly identifies Washington, D.C. but adds unnecessary and inaccurate speculation about the Green Room and Red Room, which are not relevant to the riddle and adds confusion rather than clarity.\",\"winner\":\"A\",\"reason\":\"Answer A is more concise and accurate. It correctly identifies the answer and explains the trick nature of the riddle without adding irrelevant or potentially misleading information about White House rooms. Answer B's extra speculation about the Green Room and Red Room is unnecessary and detracts from the response quality.\"}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "The white house is in **Washington, D.C.** — it's the **White House**, the residence and office of the President of the United States.\n\nThis riddle plays on your expectations — it describes colorful houses to distract you, but the \"White House\" is a well-known landmark, not just a white-colored house in the scene. 🏛️🇺🇸",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 77
+    },
+    "cost_usd": 0.000010682,
+    "latency_ms": 2957.0891857147217
+  },
+  "trialB": {
+    "output": " The White House is located in **Washington, D.C.**, United States.\n\nWhile the riddle sets up a spatial puzzle with colors (suggesting the White House might be \"behind you\" or that you are standing inside it), the use of the word **\"located\"** asks for the geographical location of the famous building.\n\n*(The mention of a \"greenhouse\" is likely a playful pun on the White House's **Green Room**, and the \"red house\" may refer to the **Red Room**, but the riddle is ultimately a trick question designed to make you overthink the directions rather than stating the simple answer.)*",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 2930
+    },
+    "cost_usd": 0.006464900000000001,
+    "latency_ms": 180112.25819587708
+  }
+}

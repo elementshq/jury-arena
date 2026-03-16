@@ -3,11 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
+import { generateEvaluationParams } from "@/lib/static-params";
 import { getBenchmarkDetail } from "@/lib/usecase/benchmarks/get-benchmark-detail";
 import { getDataset } from "@/lib/usecase/evaluations/get-dataset";
 import { getProject } from "@/lib/usecase/projects/get-project";
 import MatchResultSection from "./_components.tsx/match-result-section";
 import OverviewSection from "./_components.tsx/overview-section";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateEvaluationParams : undefined;
 
 function buildEvaluationsHref(params: {
   projectId: string;

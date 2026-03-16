@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:demo": "MODE=demo next dev",
     "build": "next build",
+    "build:demo": "MODE=demo next build",
+    "build:demo:export": "MODE=demo DEMO_EXPORT=1 node scripts/prepare-demo-build.mjs && MODE=demo DEMO_EXPORT=1 next build",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",

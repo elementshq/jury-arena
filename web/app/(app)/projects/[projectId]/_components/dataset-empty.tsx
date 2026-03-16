@@ -1,4 +1,5 @@
 import { Cloud, Sparkles, Upload } from "lucide-react";
+import { DemoDisabled } from "@/components/demo-disabled";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -21,19 +22,23 @@ export function DatasetEmpty({ onUpload }: DatasetEmptyProps) {
         </p>
 
         <div className="flex gap-3">
-          <Button onClick={onUpload} size="lg" className="w-[200px]">
-            <Upload className="mr-2 h-4 w-4" />
-            Upload
-          </Button>
-          <Button
-            onClick={onUpload}
-            variant="outline"
-            size="lg"
-            className="w-[200px]"
-          >
-            <Sparkles className="mr-2 h-4 w-4" />
-            Use template
-          </Button>
+          <DemoDisabled>
+            <Button onClick={onUpload} size="lg" className="w-[200px]">
+              <Upload className="mr-2 h-4 w-4" />
+              Upload
+            </Button>
+          </DemoDisabled>
+          <DemoDisabled>
+            <Button
+              onClick={onUpload}
+              variant="outline"
+              size="lg"
+              className="w-[200px]"
+            >
+              <Sparkles className="mr-2 h-4 w-4" />
+              Use template
+            </Button>
+          </DemoDisabled>
         </div>
       </div>
     </Card>

@@ -16,7 +16,7 @@ function MatchResultSection({
       <div className="h-4" />
 
       <SectionLink
-        href={`/projects/${projectId}/matches?benchmarkId=${encodeURIComponent(evaluationId)}`}
+        href={`/projects/${projectId}/matches/${evaluationId}`}
         label="View Match Results"
       />
     </div>

@@ -1,0 +1,64 @@
+{
+  "id": "07ebe891-bd52-48e6-9790-2d66e64c0417",
+  "matchIndex": 18,
+  "sampleId": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+  "createdAt": "2026-03-11T06:07:40.282Z",
+  "match": {
+    "winner": "gemini/gemini-2.5-pro",
+    "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00018",
+    "sample_id": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+    "created_at": "2026-03-11T15:07:40.105552",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It clearly states that you are now in second place and the person passed is now in third place. The explanation is easy to understand, though slightly more verbose than necessary.\",\n  \"B\": \"Accurate and complete. It directly answers both parts of the question clearly and concisely, with no unnecessary detail.\",\n  \"reason\": \"Both answers are correct and follow the instruction, but Answer B is slightly better because it is clearer and more concise while still fully addressing the prompt.\",\n  \"winner\": \"B\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct, well-structured, and provides a clear explanation for its reasoning. The use of bullet points and an additional note enhances clarity and helps the user understand the logic behind this classic riddle.\",\n  \"B\": \"Answer B is also correct and concise. It correctly identifies the question as a riddle and provides the right answers, but it lacks the explanatory detail of Answer A.\",\n  \"winner\": \"A\",\n  \"reason\": \"Both responses are correct. However, Answer A is superior because it not only provides the correct answer but also explains the reasoning behind it, which is particularly helpful for a riddle. The formatting makes it very easy to read and understand.\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Accurate, complete, clear, and well-formatted with a helpful note explaining the reasoning. Slightly more verbose but the extra detail adds value.\",\"B\":\"Accurate, complete, clear, and concise. Correctly frames it as a riddle and answers both parts of the question directly.\",\"winner\":\"tie\",\"reason\":\"Both answers are equally accurate and answer all parts of the question. Answer A provides a bit more explanation which could be helpful, while Answer B is more concise. Neither has a clear advantage over the other in terms of quality.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Imagine you are running a race with others. If you just passed the person in second place, what position are you now in? What position is the person you passed now in?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "If you just passed the person who was in **second place**, then:\n\n- **You are now in second place.**  \n  (Because you overtook the person who was ahead of you in that position.)\n\n- **The person you passed is now in third place.**  \n  (Since you moved ahead of them, they drop one position.)\n\n💡 Note: You did *not* pass the person in first place, so you didn't take the lead — you're now the new second-place runner.",
+    "params": {},
+    "tokens": {
+      "input": 44,
+      "output": 104
+    },
+    "cost_usd": 0.000013524000000000001,
+    "latency_ms": 2972.860813140869
+  },
+  "trialB": {
+    "output": "This is a classic riddle!\n\nIf you just passed the person in second place, you are now in **second place**.\n\nThe person you passed is now in **third place**.",
+    "params": {},
+    "tokens": {
+      "input": 37,
+      "output": 852
+    },
+    "cost_usd": 0.008566250000000001,
+    "latency_ms": 8429.656982421875
+  }
+}

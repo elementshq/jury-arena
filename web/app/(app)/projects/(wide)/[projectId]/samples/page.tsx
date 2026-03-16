@@ -3,11 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
+import { generateProjectParams } from "@/lib/static-params";
 import { getDataset } from "@/lib/usecase/evaluations/get-dataset";
 import { getProject } from "@/lib/usecase/projects/get-project";
 import { getProjectDatasets } from "@/lib/usecase/projects/get-project-datasets";
 import { getProjectSamples } from "@/lib/usecase/projects/get-project-samples";
 import { SamplesSplitView } from "./_components/sample-split-view";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateProjectParams : undefined;
 
 export default async function Page(props: {
   params: Promise<{ projectId: string }>;

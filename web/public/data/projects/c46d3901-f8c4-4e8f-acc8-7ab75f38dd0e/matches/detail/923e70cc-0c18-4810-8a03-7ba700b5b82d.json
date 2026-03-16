@@ -1,0 +1,64 @@
+{
+  "id": "923e70cc-0c18-4810-8a03-7ba700b5b82d",
+  "matchIndex": 10,
+  "sampleId": "cbb72379-f819-431b-83d9-65757d27211d",
+  "createdAt": "2026-03-11T06:06:24.981Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "match_id": "match_00010",
+    "sample_id": "cbb72379-f819-431b-83d9-65757d27211d",
+    "created_at": "2026-03-11T15:06:24.754935",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Mostly accurate and well-formatted. It includes all requested fields and follows the required output style. However, for 'Night on the Galactic Railroad,' it lists both Giovanni and Campanella as protagonist, whereas the prompt asks for a single protagonist field and the story only revolves around the two boys rather than clearly identifying both as the protagonist.\",\n  \"B\": \"Accurate, complete, and properly formatted. It follows the instruction exactly with one line per book and provides a single protagonist for each entry. It is clear and concise.\",\n  \"reason\": \"Both answers are clear and concise, but Answer B is better because it more precisely follows the singular 'protagonist' requirement for 'Night on the Galactic Railroad.' Answer A is slightly less accurate/instruction-following by listing two names in that field.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct and complete. It accurately extracts all the requested information from the text, including listing both protagonists for 'Night on the Galactic Railroad' as the source text indicates the story revolves around both of them.\",\n  \"B\": \"Answer B is mostly correct but incomplete. For 'Night on the Galactic Railroad,' it only lists Giovanni as the protagonist, while the text mentions the story revolves around two boys, Giovanni and Campanella.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is superior because it is more complete and accurate. By including both protagonists for the second book, it more faithfully represents the information provided in the source text.\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly identifies both Giovanni and Campanella as protagonists of 'Night on the Galactic Railroad,' accurately reflecting the source text which states 'The story revolves around two boys, Giovanni and Campanella.' All other fields are correct and the format matches the required output.\",\"B\":\"Answer B only lists Giovanni as the protagonist of 'Night on the Galactic Railroad,' omitting Campanella. While the text does mention two boys, Answer B fails to include both protagonists, making it incomplete compared to the source material.\",\"winner\":\"A\",\"reason\":\"Answer A is more accurate and complete because it includes both protagonists (Giovanni and Campanella) for 'Night on the Galactic Railroad,' as explicitly stated in the source text. Answer B omits Campanella, making it less accurate and complete.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni and Campanella, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 219,
+      "output": 67
+    },
+    "cost_usd": 0.0015525,
+    "latency_ms": 2244.1751956939697
+  },
+  "trialB": {
+    "output": "Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 229,
+      "output": 68
+    },
+    "cost_usd": 0.000023058999999999997,
+    "latency_ms": 2064.546823501587
+  }
+}

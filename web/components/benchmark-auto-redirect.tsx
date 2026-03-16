@@ -50,6 +50,9 @@ export function BenchmarkAutoRedirect() {
   useEffect(() => {
     if (!running) return;
 
+    // Demo mock benchmarks are handled by DemoBenchmarkRunModal — skip auto-redirect.
+    if (running.benchmarkId.startsWith("demo-mock-")) return;
+
     if (pushedRef.current === running.benchmarkId) return;
 
     let cancelled = false;

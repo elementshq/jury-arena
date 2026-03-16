@@ -1,0 +1,64 @@
+{
+  "id": "22f53617-f9b3-4b6b-bce2-b41fcbe62320",
+  "matchIndex": 110,
+  "sampleId": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+  "createdAt": "2026-03-11T06:53:08.366Z",
+  "match": {
+    "winner": "openrouter/minimax/minimax-m2.5",
+    "model_a": "openrouter/moonshotai/kimi-k2.5",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00110",
+    "sample_id": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+    "created_at": "2026-03-11T15:53:08.185114",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, complete, and follows the instruction to list one topic per line. However, it includes a leading space before the first item, which is a minor formatting issue.\",\n  \"B\": \"Accurate, complete, clear, and fully follows the instruction to list one topic per line with clean formatting and no extra content.\",\n  \"reason\": \"Both answers are correct and complete, but B is slightly better because it has cleaner formatting and more strictly follows the prompt.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly identifies the category for each of the four questions provided. It follows all instructions, listing only the category for each question on a new line without any additional text.\",\n  \"B\": \"Answer B correctly identifies the category for each of the four questions provided. It follows all instructions, listing only the category for each question on a new line without any additional text.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are identical and perfectly correct. They both accurately categorize the questions and follow the negative constraint of not including any extra words.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, complete, and correct in its categorizations. However, it includes a leading space before 'Literature' which is a minor formatting issue.\",\"B\":\"Answer B is accurate, complete, correct, and perfectly formatted with no extra spaces or characters.\",\"winner\":\"B\",\"reason\":\"Both answers are correct in their categorizations and follow instructions. However, Answer B has cleaner formatting without the unnecessary leading space before 'Literature' that appears in Answer A.\"}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "The following categories are available: Literature, History, Science, Art. Analyze the questions below and assign each to one of these categories. Do not include any extra words in your response. Strictly list one topic per line.\n1. Discuss the major themes and techniques found in Yukio Mishima's \"The Temple of the Golden Pavilion.\" How do they reflect the social conditions of 20th-century Japan?\n2. Analyze the geopolitical strategies and domestic policies adopted by various daimyo during the Sengoku period. How did these actions shape the postwar international order?\n3. Draw the Lewis structure of water and explain its polarity. How does this influence its unique properties such as high boiling point and ability to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices seen in Torii Kiyonaga’s ukiyo-e works. How do these paintings reflect the cultural and philosophical environment of the Edo period?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": " Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 216,
+      "output": 458
+    },
+    "cost_usd": 0.0011048000000000002,
+    "latency_ms": 5783.482789993286
+  },
+  "trialB": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 223,
+      "output": 597
+    },
+    "cost_usd": 0.00062736,
+    "latency_ms": 109128.75890731812
+  }
+}

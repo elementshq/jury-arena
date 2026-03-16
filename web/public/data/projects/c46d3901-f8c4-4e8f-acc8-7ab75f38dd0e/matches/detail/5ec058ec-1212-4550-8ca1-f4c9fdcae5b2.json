@@ -1,0 +1,64 @@
+{
+  "id": "5ec058ec-1212-4550-8ca1-f4c9fdcae5b2",
+  "matchIndex": 133,
+  "sampleId": "32714de1-bbad-43f8-8dfb-916e5e5db550",
+  "createdAt": "2026-03-11T06:57:00.202Z",
+  "match": {
+    "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openrouter/x-ai/grok-4",
+    "match_id": "match_00133",
+    "sample_id": "32714de1-bbad-43f8-8dfb-916e5e5db550",
+    "created_at": "2026-03-11T15:57:00.028027",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Answer A is accurate and fully satisfies the prompt. It provides a complete HTML file with embedded CSS and JavaScript, correctly displays one of four jokes at random on button click, and is clear and easy to use. It is slightly more detailed than necessary, but still well-structured and polished.\",\n  \"B\": \"Answer B is also accurate and follows the prompt well. It includes a complete HTML file with simple styling and JavaScript that randomly displays one of four jokes when the button is clicked. It is clear, straightforward, and a bit more concise than A.\",\n  \"reason\": \"Both answers are correct, complete, and easy to understand. However, Answer A is slightly better because it is more polished, uses cleaner event handling, and provides a more refined user experience while still fully meeting the request.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a complete and functional HTML file. The code is well-structured, using modern JavaScript practices (`addEventListener`) and includes polished, responsive CSS for a better visual presentation. The explanation is clear and detailed.\",\n  \"B\": \"Answer B also provides a complete and functional HTML file. The code works correctly but uses an slightly older JavaScript practice (`onclick` attribute in HTML). The CSS is very basic, resulting in a less visually appealing page. The explanation is clear and accurate.\",\n  \"winner\": \"A\",\n  \"reason\": \"Both answers provide a correct and functional solution. However, Answer A is superior due to its use of more modern coding practices (separating the HTML structure from the JavaScript event handling) and its significantly better, more polished CSS styling, which results in a higher-quality end product.\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A provides a complete, working HTML file with four jokes, clean modern styling including hover/active effects, and clear explanations. The code is well-commented and functional.\",\"B\":\"Answer B provides a complete, working HTML file with four jokes, simple clean styling, and clear explanations. The code is functional and straightforward.\",\"winner\":\"tie\",\"reason\":\"Both answers are accurate, follow instructions, and include all required elements (HTML button, 4 jokes, random selection via JavaScript). Both explain how the code works and are easy to understand. Answer A has slightly more polished styling (transitions, shadow, flexbox centering) while Answer B uses a slightly simpler inline onclick approach. Neither has a clear advantage in meeting the core requirements of the prompt.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Create a simple website using HTML. When the user clicks a button, one of four jokes should be displayed at random."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here's a complete, simple and responsive random joke generator website:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Random Joke Generator</title>\n    <style>\n        /* Basic page styling for clean, modern look */\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n        }\n\n        body {\n            min-height: 100vh;\n            background-color: #f0f8ff;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            padding: 20px;\n        }\n\n        .joke-card {\n            background: white;\n            padding: 3rem 2rem;\n            border-radius: 12px;\n            box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n            max-width: 600px;\n            width: 100%;\n            text-align: center;\n        }\n\n        h1 {\n            color: #2c3e50;\n            margin-bottom: 2rem;\n            font-size: 2rem;\n        }\n\n        #jokeDisplay {\n            font-size: 1.3rem;\n            color: #34495e;\n            line-height: 1.6;\n            margin-bottom: 2.5rem;\n            min-height: 60px; /* Prevents layout shift when jokes load */\n        }\n\n        #jokeBtn {\n            background-color: #2ecc71;\n            color: white;\n            border: none;\n            padding: 1rem 2rem;\n            font-size: 1.1rem;\n            border-radius: 8px;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n        }\n\n        #jokeBtn:hover {\n            background-color: #27ae60;\n        }\n\n        #jokeBtn:active {\n            transform: scale(0.98);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"joke-card\">\n        <h1>Random Joke Generator</h1>\n        <!-- Area where jokes will be displayed -->\n        <p id=\"jokeDisplay\">Click the button below to hear a random joke!</p>\n        <button id=\"jokeBtn\">Tell Me a Joke!</button>\n    </div>\n\n    <script>\n        // Our list of 4 jokes\n        const jokeLibrary = [\n            \"Why don't scientists trust atoms? Because they make up everything!\",\n            \"What do you call a fake noodle? An impasta!\",\n            \"Why did the coffee file a police report? It got mugged!\",\n            \"How does a penguin build its house? Igloos it together!\"\n        ];\n\n        // Function to pick a random joke from the library\n        function getRandomJoke() {\n            // Generate a random index between 0 and 3 (since we have 4 jokes)\n            const randomIndex = Math.floor(Math.random() * jokeLibrary.length);\n            return jokeLibrary[randomIndex];\n        }\n\n        // Add click event listener to the button\n        document.getElementById('jokeBtn').addEventListener('click', () => {\n            // Update the display area with the new random joke\n            document.getElementById('jokeDisplay').textContent = getRandomJoke();\n        });\n    </script>\n</body>\n</html>\n```\n\n### How this works:\n1.  **HTML Structure**:\n    - A clean card container to hold the joke generator content\n    - A heading, a text area to display jokes, and a clickable button\n2.  **Styling**:\n    - Responsive layout that centers content perfectly on all screen sizes\n    - Soft shadows and rounded corners for a modern, polished look\n    - Hover/click effects on the button for better user experience\n3.  **JavaScript Logic**:\n    - An array holding 4 silly, light-hearted jokes\n    - A function that picks a random joke using `Math.random()` to generate a random index for the joke array\n    - An event listener that triggers the random joke function every time the button is clicked, updating the displayed joke instantly\n\nYou can save this code as an `.html` file and open it in any web browser to use the joke generator!",
+    "params": {},
+    "tokens": {
+      "input": 72,
+      "output": 3032
+    },
+    "cost_usd": 0.00122,
+    "latency_ms": 82438.77482414246
+  },
+  "trialB": {
+    "output": "Below is a simple, self-contained HTML file that creates a basic website. When you open it in a web browser and click the button, it will randomly display one of four jokes in a designated area on the page. I've used plain HTML, CSS (for minimal styling), and JavaScript (to handle the randomness and button click).\n\nYou can copy-paste this code into a file named `index.html` and open it in any web browser to test it.\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Random Joke Generator</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            text-align: center;\n            margin: 50px;\n            background-color: #f0f0f0;\n        }\n        #joke {\n            margin-top: 20px;\n            font-size: 18px;\n            color: #333;\n            border: 1px solid #ccc;\n            padding: 15px;\n            border-radius: 5px;\n            max-width: 600px;\n            margin: 20px auto;\n        }\n        button {\n            padding: 10px 20px;\n            font-size: 16px;\n            cursor: pointer;\n            background-color: #007bff;\n            color: white;\n            border: none;\n            border-radius: 5px;\n        }\n        button:hover {\n            background-color: #0056b3;\n        }\n    </style>\n</head>\n<body>\n    <h1>Random Joke Generator</h1>\n    <p>Click the button to get a random joke!</p>\n    <button onclick=\"tellJoke()\">Tell Me a Joke</button>\n    <div id=\"joke\">Your joke will appear here...</div>\n\n    <script>\n        // Array of four jokes\n        const jokes = [\n            \"Why don't scientists trust atoms? Because they make up everything!\",\n            \"Why did the scarecrow win an award? Because he was outstanding in his field!\",\n            \"What do you call fake spaghetti? An impasta!\",\n            \"Why couldn't the bicycle stand up by itself? It was two-tired!\"\n        ];\n\n        function tellJoke() {\n            // Pick a random index from 0 to 3\n            const randomIndex = Math.floor(Math.random() * jokes.length);\n            // Display the random joke\n            document.getElementById('joke').innerText = jokes[randomIndex];\n        }\n    </script>\n</body>\n</html>\n```\n\n### How It Works:\n- **HTML Structure**: There's a heading, a paragraph, a button, and a `<div>` element to display the joke.\n- **CSS Styling**: Basic styles to make it look clean and centered.\n- **JavaScript Logic**:\n  - An array holds four simple jokes.\n  - When the button is clicked, it generates a random number between 0 and 3 (inclusive) using `Math.random()` and `Math.floor()`.\n  - It then updates the text in the `<div id=\"joke\">` with the selected joke.\n\nThis is a complete, standalone page—no external libraries or servers needed. If you want to add more jokes, modify the styling, or expand it (e.g., with images), let me know!",
+    "params": {},
+    "tokens": {
+      "input": 708,
+      "output": 866
+    },
+    "cost_usd": 0.015114,
+    "latency_ms": 20432.649850845337
+  }
+}

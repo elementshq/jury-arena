@@ -1,0 +1,64 @@
+{
+  "id": "7e6f81ed-ed1a-4e7f-b73e-20a8441b01d8",
+  "matchIndex": 190,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T07:14:27.361Z",
+  "match": {
+    "winner": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00190",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T16:14:27.181019",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and clear. It correctly identifies Washington, D.C. and briefly explains the trick nature of the question. However, it is slightly less concise due to the extra explanation and emoji.\",\n  \"B\": \"Accurate, follows the prompt, and is very concise. It gives the correct answer clearly without unnecessary content.\",\n  \"reason\": \"Both answers are correct, but Answer B is better because it is fully accurate, directly answers the question, and is more concise while still remaining clear.\",\n  \"winner\": \"B\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response correctly answers the riddle and provides a helpful explanation of why it's a trick question. The added context enhances the user's understanding.\",\n  \"B\": \"This response provides the correct answer but is overly brief. It lacks any explanation or context, which is less helpful for a riddle.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is superior because it not only gives the correct answer but also explains the logic behind the riddle. This explanatory context is crucial for trick questions and provides a more complete and satisfying response for the user.\"\n}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, provides the correct answer (Washington D.C.), explains why it's a trick question, and adds helpful context about the misdirection. It's clear and well-structured, though slightly verbose with the emoji.\",\"B\":\"Answer B is accurate and perfectly concise, giving the correct answer in just four words. It's clear and direct but provides no explanation.\",\"winner\":\"A\",\"reason\":\"While both answers are correct, Answer A is superior because it explains the reasoning behind the trick question, helping the user understand why the answer is Washington D.C. rather than some directional answer. This educational component adds value without being excessive. Answer B, while concise, gives no context or explanation for why the answer is Washington D.C., leaving users who didn't understand the trick question still confused.\"}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "This is a classic lateral thinking / trick question.\n\nThe answer is **Washington, D.C.** (or simply: **in Washington**).\n\nThe question describes you looking around in various directions, but the \"White House\" isn't part of the scene being described — it's a well-known landmark located in Washington, D.C. The description is just a setup to make you think spatially, when the answer has nothing to do with your orientation. 🏛️",
+    "params": {},
+    "tokens": {
+      "input": 41,
+      "output": 104
+    },
+    "cost_usd": 0.001683,
+    "latency_ms": 4081.4969539642334
+  },
+  "trialB": {
+    "output": "In Washington, D.C.",
+    "params": {},
+    "tokens": {
+      "input": 35,
+      "output": 437
+    },
+    "cost_usd": 0.00441375,
+    "latency_ms": 4707.273006439209
+  }
+}

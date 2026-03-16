@@ -136,17 +136,19 @@ export function DatasetNameEditable({
             {value}
           </span>
 
-          {/* 編集は鉛筆ボタンのみ */}
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            onClick={openEdit}
-            className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-            aria-label="Rename dataset"
-          >
-            <Pencil className="h-4 w-4" />
-          </Button>
+          {/* 編集は鉛筆ボタンのみ（デモモードでは非表示） */}
+          {process.env.NEXT_PUBLIC_DEMO !== "1" && (
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={openEdit}
+              className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Rename dataset"
+            >
+              <Pencil className="h-4 w-4" />
+            </Button>
+          )}
 
           {isPending ? (
             <span className="ml-1 text-sm opacity-60">saving...</span>

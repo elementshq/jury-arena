@@ -1,0 +1,64 @@
+{
+  "id": "abeff40d-f584-4900-b4b2-b7b104962aea",
+  "matchIndex": 82,
+  "sampleId": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+  "createdAt": "2026-03-11T06:42:13.908Z",
+  "match": {
+    "winner": "openrouter/moonshotai/kimi-k2.5",
+    "model_a": "openrouter/minimax/minimax-m2.5",
+    "model_b": "openrouter/moonshotai/kimi-k2.5",
+    "match_id": "match_00082",
+    "sample_id": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+    "created_at": "2026-03-11T15:42:13.721961",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and fully follows the prompt. It provides a correct recursive C++ program, includes proper input validation for both invalid and negative input, and explains the recursion clearly. It is complete and easy to understand, though slightly more detailed than necessary.\",\n  \"B\": \"Accurate and follows the prompt with a correct recursive C++ program. It is clear and complete, and includes useful notes about performance and overflow. However, it does not validate non-integer input and adds extra memoization content that goes beyond the request, making it a bit less concise.\",\n  \"reason\": \"Both answers are correct and clear, but Answer A is slightly better because it stays more focused on the requested recursive solution while still providing helpful explanation and stronger input validation. Answer B is also good, but the extra optimization section is unnecessary for the prompt and slightly reduces conciseness.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Provides a correct and well-commented C++ program with a clear explanation. It includes a good note about the inefficiency of the naive recursive approach and handles input validation robustly by checking for non-numeric input.\",\n  \"B\": \"Provides a correct C++ program with more comprehensive explanations. It includes detailed notes on time complexity, memoization (with a code example), potential for overflow, and stack depth issues. It also adds a helpful in-program warning for large inputs.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are excellent and provide correct code. However, Answer B is slightly better because its explanations are more comprehensive, covering important related topics like memoization, overflow, and stack depth, which provides greater educational value. The in-program warning for slow execution is also a thoughtful addition.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A provides a correct recursive Fibonacci implementation with clear explanation, input validation, and a note about exponential time complexity. Uses long long for the return type. Well-structured and easy to understand.\",\"B\":\"Answer B provides a correct recursive Fibonacci implementation with input validation, a warning for large n values, and uses unsigned long long. Additionally includes a memoization variant and notes about overflow and stack depth, making it more informative and practical.\",\"winner\":\"B\",\"reason\":\"Both answers are correct and follow the prompt, but Answer B is more complete and informative. It includes a practical warning for large n values, provides a memoization optimization with code, discusses overflow behavior with specific limits (n=93 for unsigned long long), and mentions stack overflow risks. These additions make Answer B more educational and useful without being excessive.\"}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a C++ program that uses recursion to compute the nth Fibonacci number."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here’s a small, self‑contained C++ program that asks the user for an integer **n** and prints the *n*‑th Fibonacci number using a simple recursive function.\n\n```cpp\n// fibonacci_recursive.cpp\n// Computes the n‑th Fibonacci number using plain recursion.\n// Compile with: g++ -std=c++17 -O2 fibonacci_recursive.cpp -o fibonacci\n\n#include <iostream>\n\n// Recursive function that returns the n‑th Fibonacci number.\n// Base cases: F(0) = 0, F(1) = 1.\n// For n > 1: F(n) = F(n‑1) + F(n‑2)\nlong long fib(long long n) {\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    std::cout << \"Enter the index n (0‑based) for the Fibonacci sequence: \";\n    long long n;\n    if (!(std::cin >> n)) {\n        std::cerr << \"Invalid input. Please enter a non‑negative integer.\\n\";\n        return 1;\n    }\n\n    if (n < 0) {\n        std::cerr << \"Please enter a non‑negative integer.\\n\";\n        return 1;\n    }\n\n    long long result = fib(n);\n    std::cout << \"F(\" << n << \") = \" << result << '\\n';\n    return 0;\n}\n```\n\n### How it works\n1. **`fib`**  \n   * If `n` is 0 → returns 0.  \n   * If `n` is 1 → returns 1.  \n   * Otherwise it calls itself (`fib(n‑1) + fib(n‑2)`) to compute the two previous numbers and adds them together.\n\n2. **`main`**  \n   * Reads an integer `n` from the user.  \n   * Calls `fib(n)` and prints the result.\n\n> **Note:** The naive recursive implementation runs in exponential time *O(2ⁿ)* and is suitable only for very small `n` (e.g., n ≤ 40). For larger values, you would normally use an iterative approach or memoization to avoid recomputing the same sub‑problems. But for the purpose of demonstrating recursion, this program fulfills the request.",
+    "params": {},
+    "tokens": {
+      "input": 53,
+      "output": 734
+    },
+    "cost_usd": 0.0007116099999999999,
+    "latency_ms": 16419.787883758545
+  },
+  "trialB": {
+    "output": " Here is a complete C++ program that uses recursion to calculate the nth Fibonacci number:\n\n```cpp\n#include <iostream>\n\n// Recursive function to compute nth Fibonacci number\n// Uses 0-indexing: F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2, etc.\nunsigned long long fibonacci(int n) {\n    // Base cases\n    if (n <= 1) {\n        return n;\n    }\n    \n    // Recursive case: F(n) = F(n-1) + F(n-2)\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n    \n    std::cout << \"Enter a non-negative integer n: \";\n    std::cin >> n;\n    \n    // Input validation\n    if (n < 0) {\n        std::cout << \"Error: n must be non-negative.\" << std::endl;\n        return 1;\n    }\n    \n    // Warning for large values (recursive solution is slow)\n    if (n > 45) {\n        std::cout << \"Warning: This may take a while for large n...\" << std::endl;\n    }\n    \n    unsigned long long result = fibonacci(n);\n    \n    std::cout << \"F(\" << n << \") = \" << result << std::endl;\n    \n    return 0;\n}\n```\n\n### Important Notes:\n\n1. **Time Complexity**: This naive recursive approach has **O(2ⁿ)** time complexity because it recalculates the same Fibonacci numbers many times. It becomes very slow for `n > 40`.\n\n2. **Optimization (Memoization)**: For practical use, add memoization to achieve O(n) time complexity:\n\n```cpp\n#include <vector>\n\nunsigned long long fibonacciMemo(int n, std::vector<unsigned long long>& memo) {\n    if (n <= 1) return n;\n    if (memo[n] != 0) return memo[n];\n    \n    memo[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);\n    return memo[n];\n}\n\n// Call with: std::vector<unsigned long long> memo(n + 1, 0); \n//            fibonacciMemo(n, memo);\n```\n\n3. **Overflow**: `unsigned long long` overflows at n=93. For larger values, use a big integer library or arbitrary precision arithmetic.\n\n4. **Stack Depth**: The recursion depth is O(n), so extremely large values (n > 10000) may cause a stack overflow.",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 1671
+    },
+    "cost_usd": 0.0036951,
+    "latency_ms": 23154.208183288574
+  }
+}

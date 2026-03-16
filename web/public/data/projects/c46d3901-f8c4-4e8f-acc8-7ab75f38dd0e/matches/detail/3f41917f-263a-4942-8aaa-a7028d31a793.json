@@ -1,0 +1,64 @@
+{
+  "id": "3f41917f-263a-4942-8aaa-a7028d31a793",
+  "matchIndex": 79,
+  "sampleId": "8a231164-d826-4f73-8f87-05709b1188ff",
+  "createdAt": "2026-03-11T06:40:47.164Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openai/gpt-5.4",
+    "match_id": "match_00079",
+    "sample_id": "8a231164-d826-4f73-8f87-05709b1188ff",
+    "created_at": "2026-03-11T15:40:46.993495",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete, with a working solution that reads text files in a directory and returns the top five words. It is clear and well-structured, but somewhat over-engineered for the prompt and includes extra features like stopword removal and extensive explanation that were not requested.\",\n  \"B\": \"Accurate, clear, and directly aligned with the prompt. It provides a simple working program that reads all .txt files in a directory and returns the top five most frequent words. It is more concise than A, though slightly less robust in error handling and file-processing details.\",\n  \"reason\": \"Both answers are correct and follow the instruction, but Answer B is better because it satisfies the prompt more directly and concisely without unnecessary extras. Answer A is robust and detailed, but it adds optional behavior and substantial explanation beyond what was asked.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"A comprehensive and robust solution. The code is well-structured, includes extensive error handling, command-line arguments, and valuable features like stopword removal. The explanation is detailed, covering features, usage, and customization.\",\n  \"B\": \"A concise and functional solution that directly answers the prompt. It uses modern libraries like pathlib. However, it lacks robust error handling, is less flexible (e.g., hardcoded to top 5), and provides minimal explanation.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is significantly better due to its robustness, completeness, and superior code quality. It provides a production-ready script with thoughtful features like extensive error handling and stopword removal, along with clear instructions on how to use and customize it. Answer B is functional but very basic in comparison.\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, feature-rich, and well-documented. It handles edge cases like permission errors, missing directories, and optional stop word removal. It uses command-line arguments and has clean output formatting. However, it is quite verbose and includes many optional features (stop words, emoji, type hints) that weren't requested, making it less concise.\",\"B\":\"Answer B is accurate, clean, and directly addresses the prompt. It reads all .txt files in a directory, counts word frequencies, and returns the top 5 most common words. It's concise, easy to understand, and uses modern Python (pathlib). It lacks some robustness features but covers everything the prompt asked for.\",\"winner\":\"B\",\"reason\":\"While Answer A is more feature-complete, the prompt asked for a simple program to read text files and return the top five most frequent words. Answer B fulfills this requirement cleanly and concisely without unnecessary complexity. The extra features in Answer A (stop words, emoji icons, type hints, extensive error handling) were not requested and reduce conciseness without adding value to the core task. Answer B scores better on clarity and conciseness while still being accurate and complete for the given prompt.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Develop a Python program that reads all text files in a directory and returns the top five most frequently occurring words."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here's a complete, robust Python program that meets your requirements, using only Python's standard library:\n\n---\n\n### Full Code\n```python\nimport os\nimport re\nimport sys\nfrom collections import Counter\nfrom typing import List, Tuple\n\n\ndef get_top_words(\n    directory: str = \".\",\n    num_top: int = 5,\n    remove_stopwords: bool = False\n) -> List[Tuple[str, int]]:\n    \"\"\"\n    Analyze all text files in a target directory and return the top N most frequent words.\n\n    Args:\n        directory: Path to the directory containing text files (defaults to current working directory)\n        num_top: Number of top frequent words to return (defaults to 5)\n        remove_stopwords: If True, exclude common English stop words (e.g. \"the\", \"and\")\n\n    Returns:\n        List of tuples in the format (word, count) sorted by frequency (descending)\n    \"\"\"\n    word_counts = Counter()\n\n    # Validate target directory exists\n    try:\n        all_files = os.listdir(directory)\n    except FileNotFoundError:\n        print(f\"❌ Error: Target directory '{directory}' does not exist!\")\n        return []\n    except PermissionError:\n        print(f\"❌ Error: Permission denied when accessing '{directory}'!\")\n        return []\n\n    # Filter for only text files (case-insensitive: works with .txt and .TXT)\n    txt_files = [\n        file for file in all_files\n        if os.path.isfile(os.path.join(directory, file)) and file.lower().endswith(\".txt\")\n    ]\n\n    if not txt_files:\n        print(\"ℹ️ No text files found in the specified directory.\")\n        return []\n\n    # Predefine common English stop words if needed\n    stop_words = set()\n    if remove_stopwords:\n        stop_words = {\n            \"a\", \"an\", \"the\", \"and\", \"or\", \"but\", \"is\", \"in\", \"on\", \"at\", \"to\", \"of\",\n            \"for\", \"with\", \"by\", \"as\", \"so\", \"this\", \"that\", \"these\", \"those\", \"i\", \"you\",\n            \"he\", \"she\", \"it\", \"we\", \"they\", \"me\", \"him\", \"her\", \"us\", \"them\", \"my\", \"your\",\n            \"his\", \"her\", \"its\", \"our\", \"their\"\n        }\n\n    # Process each text file\n    for filename in txt_files:\n        file_path = os.path.join(directory, filename)\n        try:\n            with open(file_path, \"r\", encoding=\"utf-8\", errors=\"replace\") as f:\n                raw_text = f.read()\n\n                # Extract and clean words:\n                # 1. Match all sequences of lowercase letters and apostrophes\n                # 2. Strip leading/trailing apostrophes to handle contractions/possessives\n                # 3. Filter out any non-alphabetic cleaned strings\n                raw_words = re.findall(r\"[a-z']+\", raw_text.lower())\n                cleaned_words = []\n                for word in raw_words:\n                    stripped = word.strip(\"'\")\n                    if stripped.isalpha():\n                        cleaned_words.append(stripped)\n\n                # Remove stop words if enabled\n                if remove_stopwords:\n                    cleaned_words = [word for word in cleaned_words if word not in stop_words]\n\n                # Update total word count\n                word_counts.update(cleaned_words)\n\n        except PermissionError:\n            print(f\"⚠️ Warning: Could not read '{filename}' — permission denied\")\n        except Exception as e:\n            print(f\"⚠️ Warning: Failed to process '{filename}': {str(e)}\")\n\n    # Return top N most frequent words\n    return word_counts.most_common(num_top)\n\n\nif __name__ == \"__main__\":\n    # Use command line argument as target directory, or current working directory\n    target_dir = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()\n\n    # Generate and print results\n    top_words = get_top_words(target_dir, num_top=5, remove_stopwords=True)\n\n    print(f\"\\n📊 Top 5 most frequent words in '{target_dir}':\")\n    print(\"-\" * 50)\n    if top_words:\n        for rank, (word, count) in enumerate(top_words, start=1):\n            print(f\"{rank}. {word}: {count} occurrence{'s' if count !=1 else ''}\")\n    else:\n        print(\"No valid word counts found across text files.\")\n    print(\"-\" * 50 + \"\\n\")\n```\n\n---\n\n### Key Features\n1.  **No external dependencies**: Uses only Python's built-in libraries\n2.  **Robust error handling**: Catches missing directories, permission errors, and failed file reads\n3.  **Smart text cleaning**:\n    - Converts all words to lowercase to avoid case sensitivity (`Hello` and `hello` count as the same word)\n    - Handles contractions and possessives (e.g. `Don't` → `dont`, `John's` → `johns`)\n    - Removes punctuation and special characters\n4.  **Optional stop word removal**: Filters out common filler words by default (you can toggle this off)\n5.  **Case-insensitive text file detection**: Works with both `.txt` and `.TXT` files\n6.  **Clean, readable output**: Formats results nicely with singular/plural grammar for counts\n\n---\n\n### How to Use\n1.  Save the code as `top_word_counter.py`\n2.  Run the script in your terminal:\n    - To scan the **current working directory**:\n      ```bash\n      python top_word_counter.py\n      ```\n    - To scan a specific directory:\n      ```bash\n      python top_word_counter.py /path/to/your/text/files\n      ```\n\n---\n\n### Customization Options\n1.  **Change the number of top words**: Modify the `num_top` parameter in the `get_top_words` call\n2.  **Keep stop words**: Set `remove_stopwords=False` in the function call to include common words like `the` and `and`\n3.  **Include numbers/symbols**: Update the regex pattern `r\"[a-z']+\"` to include additional characters like `\\d` for numbers\n4.  **Recursive directory scan**: Add `os.walk()` to search subdirectories recursively\n5.  **Add custom stop words**: Expand the `stop_words` set to match your needs",
+    "params": {},
+    "tokens": {
+      "input": 70,
+      "output": 5299
+    },
+    "cost_usd": 0.0021265999999999998,
+    "latency_ms": 155123.54111671448
+  },
+  "trialB": {
+    "output": "```python\nfrom pathlib import Path\nfrom collections import Counter\nimport re\n\ndef top_five_words(directory):\n    word_counts = Counter()\n    word_pattern = re.compile(r\"\\b\\w+\\b\")\n\n    for file_path in Path(directory).glob(\"*.txt\"):\n        try:\n            text = file_path.read_text(encoding=\"utf-8\")\n            words = word_pattern.findall(text.lower())\n            word_counts.update(words)\n        except Exception as e:\n            print(f\"Could not read {file_path}: {e}\")\n\n    return word_counts.most_common(5)\n\n\nif __name__ == \"__main__\":\n    directory = input(\"Enter directory path: \").strip()\n    top_words = top_five_words(directory)\n\n    print(\"Top 5 most frequent words:\")\n    for word, count in top_words:\n        print(f\"{word}: {count}\")\n```\n\nWhat it does:\n- Reads all `.txt` files in the given directory\n- Extracts words case-insensitively\n- Counts word frequency across all files\n- Returns the top 5 most common words\n\nExample output:\n```python\nTop 5 most frequent words:\nthe: 42\nand: 35\npython: 20\nis: 18\ncode: 15\n```",
+    "params": {},
+    "tokens": {
+      "input": 28,
+      "output": 265
+    },
+    "cost_usd": 0.004045,
+    "latency_ms": 4290.833950042725
+  }
+}

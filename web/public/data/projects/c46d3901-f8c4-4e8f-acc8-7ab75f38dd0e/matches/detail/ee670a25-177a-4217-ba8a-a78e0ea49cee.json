@@ -1,0 +1,64 @@
+{
+  "id": "ee670a25-177a-4217-ba8a-a78e0ea49cee",
+  "matchIndex": 20,
+  "sampleId": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+  "createdAt": "2026-03-11T06:09:24.008Z",
+  "match": {
+    "winner": "openrouter/minimax/minimax-m2.5",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00020",
+    "sample_id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+    "created_at": "2026-03-11T15:09:23.836432",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It clearly calculates half of 800,000 yen as 400,000 yen and sums to 1,200,000 yen. It follows the instruction well and is concise, though slightly plain in presentation.\",\n  \"B\": \"Accurate and complete. It clearly states the first-year and second-year amounts and gives the correct total of 1,200,000 yen. It follows the instruction well, is easy to read, and is slightly clearer in formatting than Answer A.\",\n  \"reason\": \"Both answers are correct, complete, and concise. However, Answer B is marginally better because its formatting makes the breakdown easier to read while still staying concise.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct and provides a clear, step-by-step breakdown of the calculation. The layout is simple and easy to understand.\",\n  \"B\": \"Answer B is also correct and presents the information clearly. It uses formatting like bullet points, bolding, and the yen currency symbol (¥), which enhances readability and makes the final answer stand out.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are correct and clearly explain the steps. However, Answer B is slightly better due to its superior formatting. The use of bullet points, bolding, and the currency symbol makes the response more professional and easier to read quickly.\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Accurate, clear, and concise. Uses plain text formatting with straightforward step-by-step breakdown. Correct answer of 1,200,000 yen.\",\"B\":\"Accurate, clear, and well-formatted using markdown with bold text and bullet points. Correct answer of ¥1,200,000. Slightly more visually organized.\",\"winner\":\"tie\",\"reason\":\"Both answers are equally accurate, complete, and clear. They follow the same logical steps and arrive at the correct answer of 1,200,000 yen. The only difference is formatting style (plain text vs. markdown), which does not meaningfully differentiate the quality of the responses.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "First year: 800,000 yen\n\nSecond year: half of 800,000 yen = 400,000 yen\n\nTotal over two years:\n800,000 + 400,000 = 1,200,000 yen\n\nAnswer: 1,200,000 yen",
+    "params": {},
+    "tokens": {
+      "input": 51,
+      "output": 61
+    },
+    "cost_usd": 0.0010425,
+    "latency_ms": 1565.9799575805664
+  },
+  "trialB": {
+    "output": "The startup invested  \n\n- **First year:** ¥800,000  \n- **Second year:** half of ¥800,000 = ¥400,000  \n\n**Total over the two years:** ¥800,000 + ¥400,000 = **¥1,200,000**.",
+    "params": {},
+    "tokens": {
+      "input": 83,
+      "output": 210
+    },
+    "cost_usd": 0.00022191,
+    "latency_ms": 6667.357921600342
+  }
+}

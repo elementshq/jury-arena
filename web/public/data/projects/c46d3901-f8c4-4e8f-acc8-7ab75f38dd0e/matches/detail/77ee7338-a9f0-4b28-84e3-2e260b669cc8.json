@@ -1,0 +1,64 @@
+{
+  "id": "77ee7338-a9f0-4b28-84e3-2e260b669cc8",
+  "matchIndex": 17,
+  "sampleId": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+  "createdAt": "2026-03-11T06:07:38.965Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/z-ai/glm-5",
+    "match_id": "match_00017",
+    "sample_id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+    "created_at": "2026-03-11T15:07:38.797183",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, clear, and concise. It correctly calculates half of 800,000 yen as 400,000 yen and gives the correct total of 1,200,000 yen. It follows the prompt well and includes all necessary information.\",\n  \"B\": \"Accurate, clear, and complete. It correctly shows the first-year amount, second-year half amount, and total of 1,200,000 yen. However, it is slightly more verbose than necessary.\",\n  \"reason\": \"Both answers are correct and easy to understand, but Answer A is slightly better because it is more concise while still fully meeting the prompt requirements.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct and provides a clear, step-by-step calculation. It is concise and directly answers the user's question.\",\n  \"B\": \"Answer B is also correct and breaks down the calculation into a numbered list. It includes a concluding sentence that restates the final answer in bold, which enhances readability.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are accurate and clear. However, Answer B is slightly better due to its superior formatting. The use of a numbered list and a bolded final summary sentence makes the response more structured and easier to read.\"\n}",
+        "winner": "openrouter/z-ai/glm-5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, clear, and concise. It correctly calculates the second year investment and the total. It presents the information in a straightforward manner without unnecessary content.\",\"B\":\"Answer B is also accurate and clear. It uses formatting (bold, numbered list) to present the same correct information. It is slightly more verbose but remains well-organized and easy to follow.\",\"winner\":\"tie\",\"reason\":\"Both answers are equally accurate, complete, and clear. Answer A is slightly more concise while Answer B uses formatting for structure. Neither has a meaningful advantage over the other in terms of the evaluation criteria.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "First year: 800,000 yen\n\nSecond year: half of 800,000 yen = 400,000 yen\n\nTotal over two years:\n800,000 + 400,000 = 1,200,000 yen\n\nAnswer: 1,200,000 yen",
+    "params": {},
+    "tokens": {
+      "input": 51,
+      "output": 61
+    },
+    "cost_usd": 0.0010425,
+    "latency_ms": 1565.9799575805664
+  },
+  "trialB": {
+    "output": "Here is the calculation to find the total amount invested:\n\n1.  **First year investment:** 800,000 yen\n2.  **Second year investment:** 400,000 yen (Half of 800,000)\n3.  **Total investment:** 800,000 + 400,000 = 1,200,000 yen\n\nThe total amount invested in software development over the two years was **1,200,000 yen**.",
+    "params": {},
+    "tokens": {
+      "input": 50,
+      "output": 590
+    },
+    "cost_usd": 0.001393,
+    "latency_ms": 16287.20498085022
+  }
+}

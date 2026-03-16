@@ -1,0 +1,64 @@
+{
+  "id": "4496dbf1-a375-4a0c-9835-4526f825bbf7",
+  "matchIndex": 117,
+  "sampleId": "cbb72379-f819-431b-83d9-65757d27211d",
+  "createdAt": "2026-03-11T06:54:42.890Z",
+  "match": {
+    "winner": "openrouter/minimax/minimax-m2.5",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00117",
+    "sample_id": "cbb72379-f819-431b-83d9-65757d27211d",
+    "created_at": "2026-03-11T15:54:42.711897",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, complete, and follows the requested format. It includes all four fields for each of the three books and is clear, though it adds an unnecessary introductory line.\",\n  \"B\": \"Accurate, complete, and follows the requested format exactly. It includes all required information with one book per line and no unnecessary extra text.\",\n  \"reason\": \"Both answers are correct and complete, but Answer B is slightly better because it adheres more strictly to the requested output format without adding extra commentary.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response correctly extracts all the requested information and formats it as instructed. However, it includes an unnecessary introductory sentence.\",\n  \"B\": \"This response correctly extracts all the requested information and formats it exactly as instructed, providing only the required data.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers provide the correct information in the correct format. Answer B is slightly better because it is more concise and omits the conversational preamble, adhering more strictly to the data extraction task.\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete, clear, and concise. It includes a brief introductory line but the data itself is correctly formatted.\",\"B\":\"Answer B is accurate, follows instructions, complete, clear, and concise. It presents the data in the requested format without any extra introductory text, though it has trailing spaces after each line.\",\"winner\":\"tie\",\"reason\":\"Both answers provide identical information in the correct format with the same level of accuracy and completeness. The minor differences (Answer A has an intro line, Answer B has trailing spaces) are negligible and neither meaningfully impacts quality.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here are the extracted details:\n\nIshigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 238,
+      "output": 78
+    },
+    "cost_usd": 0.001884,
+    "latency_ms": 2624.924898147583
+  },
+  "trialB": {
+    "output": "Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005  \nGiovanni, Night on the Galactic Railroad, Kenji Miyazawa, 1927  \nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 249,
+      "output": 1228
+    },
+    "cost_usd": 0.00123383,
+    "latency_ms": 8174.349784851074
+  }
+}

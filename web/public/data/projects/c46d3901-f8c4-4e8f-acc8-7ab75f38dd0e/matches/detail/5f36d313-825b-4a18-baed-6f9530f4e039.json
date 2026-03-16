@@ -1,0 +1,64 @@
+{
+  "id": "5f36d313-825b-4a18-baed-6f9530f4e039",
+  "matchIndex": 195,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T07:14:42.882Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/moonshotai/kimi-k2.5",
+    "match_id": "match_00195",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T16:14:42.684144",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Correct and very concise. It directly answers the riddle with the expected location, though it provides no extra context.\",\n  \"B\": \"Correct and clear, and it gives helpful context. However, it is less concise and includes speculative explanation that is unnecessary for the prompt.\",\n  \"reason\": \"Both answers are accurate and easy to understand, but Answer A is better because it gives the correct response directly and concisely without adding unnecessary commentary.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This is a correct and concise answer to the riddle.\",\n  \"B\": \"This response is also correct but goes further by explaining the nature of the riddle. It correctly identifies it as a trick question and explains the wordplay involved, which adds helpful context.\",\n  \"winner\": \"B\",\n  \"reason\": \"Answer B is superior because it not only provides the correct answer but also explains the mechanics of the riddle. This is a more helpful and complete response for a user asking about a puzzle or riddle.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, concise, and directly answers the question. It correctly identifies Washington, D.C. as the location of the White House without unnecessary elaboration.\",\"B\":\"Answer B is also accurate and provides the correct location, but includes unnecessary and somewhat incorrect analysis of the riddle. The explanation about Green Room and Red Room is speculative and not relevant to the actual answer.\",\"winner\":\"A\",\"reason\":\"Answer A is more concise and direct, providing the correct answer without unnecessary or potentially misleading analysis. Answer B, while correct in its core answer, adds superfluous content that could confuse the reader with incorrect interpretations of the riddle.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "In Washington, D.C.",
+    "params": {},
+    "tokens": {
+      "input": 40,
+      "output": 10
+    },
+    "cost_usd": 0.00025,
+    "latency_ms": 1065.711259841919
+  },
+  "trialB": {
+    "output": " The White House is located in **Washington, D.C.**, United States.\n\nWhile the riddle sets up a spatial puzzle with colors (suggesting the White House might be \"behind you\" or that you are standing inside it), the use of the word **\"located\"** asks for the geographical location of the famous building.\n\n*(The mention of a \"greenhouse\" is likely a playful pun on the White House's **Green Room**, and the \"red house\" may refer to the **Red Room**, but the riddle is ultimately a trick question designed to make you overthink the directions rather than stating the simple answer.)*",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 2930
+    },
+    "cost_usd": 0.006464900000000001,
+    "latency_ms": 180112.25819587708
+  }
+}

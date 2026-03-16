@@ -1,0 +1,64 @@
+{
+  "id": "68f44352-710b-4d3a-bb15-df2bff6c60bd",
+  "matchIndex": 125,
+  "sampleId": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+  "createdAt": "2026-03-11T06:56:22.054Z",
+  "match": {
+    "winner": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "openai/gpt-5.4",
+    "match_id": "match_00125",
+    "sample_id": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+    "created_at": "2026-03-11T15:56:21.875841",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It clearly states that you are now in second place and the person passed is now in third place. It is easy to understand, but slightly less concise because it adds extra explanation.\",\n  \"B\": \"Accurate, complete, clear, and very concise. It directly answers both parts of the question without unnecessary extra content.\",\n  \"reason\": \"Both answers are correct and follow the instructions, but Answer B is better because it is more concise while still fully answering the question clearly.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly answers both parts of the riddle. It also provides a helpful explanation of why the answer is what it is, acknowledging the 'trick' nature of the question.\",\n  \"B\": \"Answer B provides the correct answers to both questions in a very direct and concise manner.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is better because it provides valuable context and explanation for the riddle. By explaining the logic, it offers a more complete and helpful response than the purely factual answer provided by B.\"\n}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete (addresses both positions), clear, and adds helpful explanation about why people get tricked. Slightly less concise due to the explanation, but the explanation adds value.\",\"B\":\"Answer B is accurate, follows instructions, complete (addresses both positions), clear, and concise. Directly answers both parts of the question without unnecessary content.\",\"winner\":\"A\",\"reason\":\"Both answers are correct and complete, but Answer A provides additional educational value by explaining why this is a trick question and why 'first place' would be the wrong answer. This makes it more helpful to the user even if slightly less concise. The explanation clarifies the reasoning, which enhances understanding.\"}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Imagine you are running a race with others. If you just passed the person in second place, what position are you now in? What position is the person you passed now in?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "This is a classic trick question.\n\nIf you passed the person in **second place**, you are now in **second place**.\n\nThe person you passed drops to **third place**.\n\nMany people instinctively say \"first place,\" but you can only take the position of the person you passed. To be in first place, you would need to pass the person *in* first place.",
+    "params": {},
+    "tokens": {
+      "input": 44,
+      "output": 84
+    },
+    "cost_usd": 0.001392,
+    "latency_ms": 3063.019037246704
+  },
+  "trialB": {
+    "output": "You are now in **second place**.\n\nThe person you passed is now in **third place**.",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 25
+    },
+    "cost_usd": 0.00048,
+    "latency_ms": 1234.400987625122
+  }
+}

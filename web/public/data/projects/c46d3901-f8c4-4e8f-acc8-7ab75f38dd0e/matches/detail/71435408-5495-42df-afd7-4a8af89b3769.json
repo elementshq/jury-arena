@@ -1,0 +1,64 @@
+{
+  "id": "71435408-5495-42df-afd7-4a8af89b3769",
+  "matchIndex": 109,
+  "sampleId": "f3be9472-a0b1-4b26-ba10-82c6a0bad132",
+  "createdAt": "2026-03-11T06:48:08.896Z",
+  "match": {
+    "winner": "openrouter/minimax/minimax-m2.5",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00109",
+    "sample_id": "f3be9472-a0b1-4b26-ba10-82c6a0bad132",
+    "created_at": "2026-03-11T15:48:08.721638",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, clear, and well-structured. It correctly defines superposition, gives a standard qubit example, and explains the relation to entanglement with an appropriate Bell-state example. It also usefully notes that not every superposition is entangled and provides a non-entangled counterexample. Slightly simplified wording like 'mixture' could be more precise, but overall it directly answers the question concisely and effectively.\",\n  \"B\": \"Accurate and very complete, with strong mathematical explanations and a good discussion of how entanglement is a special kind of superposition in multipartite systems. It is clear and technically solid, and adds useful points such as non-factorizability and no-signalling. However, it is somewhat longer than necessary for the user’s question, and includes extra material beyond the core prompt.\",\n  \"reason\": \"Both answers are correct and clear, but Answer A gives a more focused and concise response while still covering the essential relationship between superposition and entanglement. Answer B is also strong and slightly more detailed, but it is less concise and includes some unnecessary elaboration for this prompt.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"A very good response. It is accurate, concise, and well-structured. It provides clear definitions and uses mathematical examples effectively. Its key strength is the inclusion of a specific example of a two-particle superposition state that is not entangled, which perfectly illustrates the distinction between the concepts.\",\n  \"B\": \"An excellent and comprehensive response. It provides accurate, detailed definitions with helpful analogies (Schrödinger's cat) and mathematical formalism. It not only explains the relationship between superposition and entanglement but also adds valuable context, such as the non-signaling theorem and the role of entanglement as a resource in quantum technologies. The structure is exceptionally clear and logical.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are excellent and accurate. However, Answer B is slightly better because it is more comprehensive. It provides more context around the concepts (e.g., the no-signaling theorem, entanglement as a resource for technology) which gives the reader a fuller understanding of why these ideas are important. Its structured, point-by-point breakdown of the relationship between the two concepts is also extremely clear and easy to follow.\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, well-structured, and concise. It clearly explains superposition with a mathematical example, then connects it to entanglement with a concrete example (Bell state). It correctly distinguishes that entanglement is a special type of superposition and provides a clear counter-example showing superposition without entanglement. The summary at the end is helpful. However, it is somewhat brief and lacks depth on certain aspects like measurement collapse and practical applications.\",\"B\":\"Answer B is comprehensive, accurate, and well-organized. It provides a thorough explanation of superposition with mathematical notation, includes the Schrödinger's cat analogy for accessibility, and covers entanglement in greater depth including key features like non-local correlations, no-signalling theorem, and practical applications. The relationship between the two concepts is explained across four distinct points, covering creation of entanglement and measurement collapse. The summary at the end is clear and precise.\",\"winner\":\"B\",\"reason\":\"Answer B is superior due to its greater depth and completeness. It covers all aspects of the question more thoroughly - including how entanglement is created, the no-signalling theorem, practical applications of entanglement, and a richer explanation of the measurement/collapse process. It maintains accuracy throughout while being more educational and comprehensive without being unnecessarily verbose. The structure is clear and the explanations are accessible to a wider audience thanks to the inclusion of the Schrödinger's cat analogy.\"}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "In quantum physics, what is a superposition state? How is it related to the phenomenon of quantum entanglement?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "A **superposition state** is a quantum state where a system exists in a combination of multiple possible states at once, until it is measured.\n\nFor example, a qubit can be in state:\n\n\\[\n|\\psi\\rangle = \\alpha |0\\rangle + \\beta |1\\rangle\n\\]\n\nThis means it is in a mixture of both \\(|0\\rangle\\) and \\(|1\\rangle\\) simultaneously, with coefficients \\(\\alpha\\) and \\(\\beta\\) determining the probabilities of each outcome when measured.\n\n## Relation to entanglement\n\n**Quantum entanglement** occurs when two or more quantum systems share a joint state such that the state of each system cannot be described independently of the others.\n\nAn example is:\n\n\\[\n|\\Phi^+\\rangle = \\frac{1}{\\sqrt{2}} (|00\\rangle + |11\\rangle)\n\\]\n\nThis is a **superposition** of two two-particle states: both particles being 0, and both being 1.\n\n### Key connection\n- **Superposition** is a general feature of a quantum system: one system can be in a combination of states.\n- **Entanglement** is a special kind of superposition involving multiple systems, where the combined state cannot be factored into separate states for each subsystem.\n\nSo:\n- Every entangled state is built from superposition.\n- But not every superposition is entangled.\n\n### Example of superposition without entanglement\n\\[\n\\left(\\frac{|0\\rangle + |1\\rangle}{\\sqrt{2}}\\right)\\otimes |0\\rangle\n\\]\n\nThis is a two-particle state, but it is not entangled, because it can be written as a product of individual states.\n\n### In short\n- **Superposition**: “a system is in multiple possible states at once.”\n- **Entanglement**: “multiple systems are in a shared superposition that links their measurement outcomes.”\n\nIf you want, I can also explain this with a simple coin analogy or a more mathematical explanation.",
+    "params": {},
+    "tokens": {
+      "input": 30,
+      "output": 431
+    },
+    "cost_usd": 0.006540000000000001,
+    "latency_ms": 10413.08879852295
+  },
+  "trialB": {
+    "output": "**Superposition – what it is**\n\nIn quantum mechanics a *superposition* is a way of saying that a system can be in a combination of two (or more) distinct states at the same time.  The mathematical description is a **linear combination** of the system’s basis (or “pointer”) states:\n\n\\[\n|\\psi\\rangle = c_1 |a\\rangle + c_2 |b\\rangle + \\dots\n\\]\n\nThe numbers \\(c_i\\) (complex amplitudes) satisfy \\(\\sum_i |c_i|^2 = 1\\).  When a measurement is performed the system “collapses” to one of the basis states, and the probability of ending up in \\(|a\\rangle\\) is \\(|c_1|^2\\), in \\(|b\\rangle\\) it is \\(|c_2|^2\\), and so on.\n\n*Examples*  \n\n* **Single qubit**: \\(|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle\\).  It is neither definitely “0” nor definitely “1” until a measurement tells us which.  \n* **Schrödinger’s cat**: the famous thought‑experiment imagines a cat that is simultaneously alive and dead until we open the box and observe it.  “Alive” and “dead” are the two basis states of the macroscopic system.\n\nThe key point is that **the superposition exists before measurement**; the wave‑function interference between the components is what leads to many quantum phenomena (e.g. diffraction, quantum algorithms).\n\n---\n\n**Entanglement – what it is**\n\nEntanglement is a special kind of superposition that involves *two or more separate systems* (often called “parts” or “subsystems”).  If the total state of the composite system cannot be written as a product of the individual states, the parts are entangled:\n\n\\[\n|\\Psi\\rangle \\neq |\\phi_A\\rangle \\otimes |\\phi_B\\rangle .\n\\]\n\nInstead, the state is a superposition of *product* states.  The most famous example is one of the Bell states:\n\n\\[\n|\\Phi^+\\rangle = \\frac{1}{\\sqrt2}\\bigl(|00\\rangle + |11\\rangle\\bigr).\n\\]\n\nIf you measure qubit A in the computational basis (\\(|0\\rangle,|1\\rangle\\)) you obtain outcome “0” with probability ½ and the whole state collapses to \\(|00\\rangle\\); outcome “1” leads to \\(|11\\rangle\\).  In either case the *other* qubit is instantly known to be in the same state, even if it is spatially separated.\n\nKey features of entanglement  \n\n* **Non‑local correlations:** The measurement result on one particle is correlated with the result on another, no matter the distance between them.  \n* **No signalling:** Although the outcomes are correlated, you cannot use entanglement to send information faster than light (the no‑signalling theorem).  \n* **Resource for quantum technologies:** Entanglement is the essential ingredient for quantum teleportation, dense coding, quantum key distribution, and many quantum‑computing algorithms.\n\n---\n\n**How superposition and entanglement are related**\n\n1. **Entangled states *are* superpositions** – they are superpositions of *product* states.  The Bell state above is a superposition of \\(|00\\rangle\\) and \\(|11\\rangle\\).  So entanglement can be viewed as a *type* of superposition that involves more than one particle.\n\n2. **Superposition is more general** – a single particle (or a single qubit) can be in a superposition without being entangled with anything else.  Conversely, every entangled state necessarily involves superposition (you need at least two terms in the global wavefunction).\n\n3. **Measurement and collapse** – when you measure one part of an entangled pair, the *global* superposition collapses, and the remaining part is left in a well‑defined state.  This is exactly the same “collapse” rule that applies to any superposition, but the consequence is a correlation between the two distant systems.\n\n4. **Creation of entanglement** – you often create entanglement by letting two particles interact while they are each in superpositions of their own states.  The interaction entangles the degrees of freedom, turning what were independent superpositions into a joint superposition that cannot be factored.\n\nIn short:\n\n* **Superposition** = “a quantum system can be in a mixture of basis states.”\n* **Entanglement** = “a *composite* system is in a superposition of *product* states that cannot be separated into individual states.”\n\nEntanglement is thus a *special case* of superposition for multi‑part systems, and the mathematics of both is built on the same linear‑algebraic framework (Hilbert spaces, amplitudes, interference).  The presence of entanglement is what lets quantum mechanics display non‑classical correlations that are impossible in any classical (i.e., non‑superposition) theory.",
+    "params": {},
+    "tokens": {
+      "input": 59,
+      "output": 1542
+    },
+    "cost_usd": 0.0014808299999999998,
+    "latency_ms": 13674.379825592041
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "57a29be3-0499-4c83-94e7-1899e8ecee38",
+  "matchIndex": 191,
+  "sampleId": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+  "createdAt": "2026-03-11T07:14:30.331Z",
+  "match": {
+    "winner": "gemini/gemini-2.5-pro",
+    "model_a": "openrouter/minimax/minimax-m2.5",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00191",
+    "sample_id": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+    "created_at": "2026-03-11T16:14:30.150780",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Correct and fully follows the prompt by providing a recursive C++ Fibonacci program. It is clear, complete, and includes useful input validation and a brief efficiency note. It stays focused and reasonably concise.\",\n  \"B\": \"Also correct and follows the prompt, with a recursive C++ Fibonacci program and clear explanation. However, it is much longer than necessary for the request, and includes extra material such as a full trace and iterative alternative, which reduces conciseness.\",\n  \"reason\": \"Both answers are accurate, clear, and complete. Answer A is better because it directly satisfies the request with less unnecessary detail while still giving helpful explanation and validation. Answer B is informative but overly verbose for the prompt.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a correct and concise C++ program. It includes good input validation, compilation instructions, and a clear, brief explanation of the code. It also correctly notes the inefficiency of the naive recursive approach.\",\n  \"B\": \"Answer B provides a correct C++ program with a much more comprehensive and educational explanation. It details the Fibonacci sequence, explains the concepts of base cases and recursive steps, provides a manual trace of an example call, includes a visual call tree, and compares the recursive method to a more efficient iterative one. The code is well-commented using a standard format.\",\n  \"winner\": \"B\",\n  \"reason\": \"While both answers provide a correct program, Answer B is superior because its explanation is far more thorough and pedagogical. The inclusion of a trace, a call tree diagram, and a comparison with an iterative solution makes it significantly more helpful for a user trying to understand the concept of recursion and its practical limitations.\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows the prompt, and provides a clean recursive implementation with input validation. It includes a clear explanation of how recursion works and an important note about efficiency. It is concise and well-organized.\",\"B\":\"Answer B is also accurate and follows the prompt. It provides the same recursive implementation but with significantly more detail: a step-by-step trace of the recursion, a visual call tree, compilation instructions, and an iterative comparison. It is thorough but somewhat verbose.\",\"winner\":\"B\",\"reason\":\"Both answers are correct and follow the prompt instructions. Answer B is more comprehensive, providing a detailed trace of the recursion, a visual call tree diagram, compilation/run instructions, and an iterative alternative for comparison. While Answer A is more concise, Answer B's additional explanations (especially the call tree trace) make it more educational and useful for someone learning recursion, without sacrificing accuracy or clarity.\"}",
+        "winner": "gemini/gemini-2.5-pro"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a C++ program that uses recursion to compute the nth Fibonacci number."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here’s a small, self‑contained C++ program that asks the user for an integer **n** and prints the *n*‑th Fibonacci number using a simple recursive function.\n\n```cpp\n// fibonacci_recursive.cpp\n// Computes the n‑th Fibonacci number using plain recursion.\n// Compile with: g++ -std=c++17 -O2 fibonacci_recursive.cpp -o fibonacci\n\n#include <iostream>\n\n// Recursive function that returns the n‑th Fibonacci number.\n// Base cases: F(0) = 0, F(1) = 1.\n// For n > 1: F(n) = F(n‑1) + F(n‑2)\nlong long fib(long long n) {\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    std::cout << \"Enter the index n (0‑based) for the Fibonacci sequence: \";\n    long long n;\n    if (!(std::cin >> n)) {\n        std::cerr << \"Invalid input. Please enter a non‑negative integer.\\n\";\n        return 1;\n    }\n\n    if (n < 0) {\n        std::cerr << \"Please enter a non‑negative integer.\\n\";\n        return 1;\n    }\n\n    long long result = fib(n);\n    std::cout << \"F(\" << n << \") = \" << result << '\\n';\n    return 0;\n}\n```\n\n### How it works\n1. **`fib`**  \n   * If `n` is 0 → returns 0.  \n   * If `n` is 1 → returns 1.  \n   * Otherwise it calls itself (`fib(n‑1) + fib(n‑2)`) to compute the two previous numbers and adds them together.\n\n2. **`main`**  \n   * Reads an integer `n` from the user.  \n   * Calls `fib(n)` and prints the result.\n\n> **Note:** The naive recursive implementation runs in exponential time *O(2ⁿ)* and is suitable only for very small `n` (e.g., n ≤ 40). For larger values, you would normally use an iterative approach or memoization to avoid recomputing the same sub‑problems. But for the purpose of demonstrating recursion, this program fulfills the request.",
+    "params": {},
+    "tokens": {
+      "input": 53,
+      "output": 734
+    },
+    "cost_usd": 0.0007116099999999999,
+    "latency_ms": 16419.787883758545
+  },
+  "trialB": {
+    "output": "Of course! Here is a C++ program that uses recursion to compute the nth Fibonacci number, along with a detailed explanation of how it works.\n\n### The C++ Code\n\n```cpp\n#include <iostream>\n\n// Function prototype (declaration)\nlong long fibonacci(int n);\n\nint main() {\n    int n;\n\n    std::cout << \"Enter a non-negative integer: \";\n    std::cin >> n;\n\n    // Input validation\n    if (n < 0) {\n        std::cout << \"Invalid input. Please enter a non-negative number.\" << std::endl;\n        return 1; // Indicate an error\n    }\n\n    // Call the recursive function and display the result\n    // We use long long to prevent overflow for larger Fibonacci numbers\n    long long result = fibonacci(n);\n    \n    std::cout << \"The \" << n << \"th Fibonacci number is: \" << result << std::endl;\n\n    return 0; // Indicate successful execution\n}\n\n/**\n * @brief Computes the nth Fibonacci number using recursion.\n * \n * @param n The index in the Fibonacci sequence (n >= 0).\n * @return The nth Fibonacci number as a long long.\n */\nlong long fibonacci(int n) {\n    // Base Case 1: The 0th Fibonacci number is 0.\n    if (n == 0) {\n        return 0;\n    }\n    \n    // Base Case 2: The 1st Fibonacci number is 1.\n    if (n == 1) {\n        return 1;\n    }\n\n    // Recursive Step: F(n) = F(n-1) + F(n-2)\n    // The function calls itself with smaller inputs until it reaches a base case.\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n```\n\n### How to Compile and Run\n\n1.  Save the code in a file named `fibonacci.cpp`.\n2.  Open a terminal or command prompt.\n3.  Compile the code using a C++ compiler (like g++):\n    ```sh\n    g++ fibonacci.cpp -o fibonacci\n    ```\n4.  Run the executable:\n    ```sh\n    ./fibonacci\n    ```\n\n**Example Execution:**\n```\nEnter a non-negative integer: 10\nThe 10th Fibonacci number is: 55\n```\n\n### Explanation\n\n#### The Fibonacci Sequence\nThe Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. It starts with 0 and 1.\n*   F(0) = 0\n*   F(1) = 1\n*   F(n) = F(n-1) + F(n-2) for n > 1\n\nSequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...\n\n#### The Recursive `fibonacci` Function\n\nA recursive function is a function that calls itself. To prevent it from calling itself infinitely, it must have two key components:\n\n1.  **Base Case(s):** These are the conditions under which the function stops calling itself and returns a value directly. Without a base case, you would get an infinite loop (and eventually a \"stack overflow\" error).\n    *   In our code, the base cases are `if (n == 0)` and `if (n == 1)`. These correspond directly to the definition of the Fibonacci sequence, F(0) = 0 and F(1) = 1.\n\n2.  **Recursive Step:** This is where the function calls itself, but with a modified argument that moves it closer to a base case.\n    *   Our recursive step is `return fibonacci(n - 1) + fibonacci(n - 2);`. This line perfectly models the mathematical definition F(n) = F(n-1) + F(n-2).\n\n#### How It Works: A Trace for `fibonacci(4)`\n\nLet's see what happens when the program computes `fibonacci(4)`:\n\n1.  `fibonacci(4)` is called. Since `n` is not 0 or 1, it calls `fibonacci(3) + fibonacci(2)`.\n2.  `fibonacci(3)` is called. It calls `fibonacci(2) + fibonacci(1)`.\n3.  `fibonacci(2)` (from step 2) is called. It calls `fibonacci(1) + fibonacci(0)`.\n    *   `fibonacci(1)` hits a base case and returns `1`.\n    *   `fibonacci(0)` hits a base case and returns `0`.\n    *   The result for `fibonacci(2)` is `1 + 0 = 1`.\n4.  `fibonacci(1)` (from step 2) hits a base case and returns `1`.\n5.  The result for `fibonacci(3)` is the sum of its two calls: `1` (from step 3) + `1` (from step 4) = `2`.\n6.  Now, we go back to the original call in step 1. We have the result for `fibonacci(3)`, which is `2`. Now we need to compute `fibonacci(2)`.\n7.  `fibonacci(2)` (from step 1) is called. It calls `fibonacci(1) + fibonacci(0)`.\n    *   `fibonacci(1)` returns `1`.\n    *   `fibonacci(0)` returns `0`.\n    *   The result for this `fibonacci(2)` call is `1 + 0 = 1`.\n8.  Finally, the result for the original `fibonacci(4)` call is the sum of its two calls: `2` (from step 5) + `1` (from step 7) = `3`.\n\nHere is a visual representation of the call tree:\n\n```\n              fib(4)\n             /      \\\n        fib(3)   +   fib(2)\n       /      \\     /      \\\n   fib(2) + fib(1) fib(1) + fib(0)\n  /      \\\nfib(1) + fib(0)\n```\n\n### A Critical Note on Efficiency\n\nThis recursive solution is a beautiful and direct translation of the mathematical formula. However, it is **extremely inefficient**.\n\nAs you can see in the trace above, `fibonacci(2)` was calculated twice, `fibonacci(1)` three times, and `fibonacci(0)` twice. This problem of re-calculating the same values gets exponentially worse as `n` increases. The time complexity is roughly **O(2^n)**, which makes it impractical for even moderately large numbers (e.g., `n > 40`).\n\nFor practical use, an **iterative (loop-based) solution** is far superior as it has a time complexity of **O(n)**.\n\nHere is what the much more efficient iterative version would look like for comparison:\n\n```cpp\nlong long fibonacci_iterative(int n) {\n    if (n <= 1) {\n        return n;\n    }\n    long long a = 0;\n    long long b = 1;\n    long long c;\n    for (int i = 2; i <= n; ++i) {\n        c = a + b;\n        a = b;\n        b = c;\n    }\n    return b;\n}\n```",
+    "params": {},
+    "tokens": {
+      "input": 16,
+      "output": 3345
+    },
+    "cost_usd": 0.03347,
+    "latency_ms": 26743.21985244751
+  }
+}

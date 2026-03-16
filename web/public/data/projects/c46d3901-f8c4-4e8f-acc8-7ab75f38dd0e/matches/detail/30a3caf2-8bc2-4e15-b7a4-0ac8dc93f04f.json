@@ -1,0 +1,64 @@
+{
+  "id": "30a3caf2-8bc2-4e15-b7a4-0ac8dc93f04f",
+  "matchIndex": 72,
+  "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+  "createdAt": "2026-03-11T05:22:19.012Z",
+  "match": {
+    "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00072",
+    "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+    "created_at": "2026-03-11T14:22:18.836319",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で、4つのジョークをランダム表示する要件を満たしたシンプルなHTMLを提示している。説明も十分で明快。ややジョーク内容の自然さに違和感はあるが、コード品質は高い。\",\n  \"B\": \"正確で、HTML/CSS/JavaScriptを一体化した完成コードを提示しており要件を満たしている。説明は非常に丁寧でわかりやすいが、やや冗長。\",\n  \"reason\": \"両者とも正確性・追従性・完全性は高く、要求通りのウェブサイトを実装している。比較すると、AはaddEventListenerを使っていて実装がやや整っており、全体として簡潔で無駄が少ない。一方Bは丁寧だが、解説が長く簡潔性でやや劣るため、総合的にAが優れる。\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"ユーザーの要求に沿った、シンプルでモダンなJavaScriptの記述法を用いたHTMLファイルを生成しています。見た目も整っており、使い方の説明も簡潔で分かりやすいです。\",\n  \"B\": \"ユーザーの要求を満たすHTMLファイルを生成しています。さらに、コード内に丁寧なコメントが付与されており、HTML、CSS、JavaScriptの各役割についても解説があるため、初心者にとって非常に親切で理解しやすい内容になっています。\",\n  \"winner\": \"B\",\n  \"reason\": \"両方の回答とも、要求された機能を完全に満たす高品質なコードを生成しています。しかし、回答Bはコードの仕組みや各言語の役割について詳細な解説を加えており、ユーザーの理解を深めるという点でより付加価値が高いため、Bを勝者とします。\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"正確で機能的なコードを提供。4つのジョークを含み、シンプルなデザイン。使い方の説明も簡潔。addEventListener方式を使用しており若干モダン。\",\"B\":\"正確で機能的なコードを提供。4つのジョークを含み、シンプルなデザイン。詳細な解説付きで初心者に親切。ただし説明が過剰に長く、コードの解説セクションは要求外。\",\"winner\":\"tie\",\"reason\":\"両回答とも要件（HTML・4つのジョーク・ランダム表示・ボタン）を満たしており、デザインも同等。回答Aはより簡潔で無駄がなく、回答Bはより詳しい説明で初心者に親切だが冗長。どちらも正確性・追従性・完全性・明確性を満たしており、優劣をつけがたい。\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "HTMLでシンプルなウェブサイトを作成してください。ユーザーがボタンをクリックすると、4つのジョークからランダムに一つが表示されるようにしてください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "以下に、リクエストに合わせたランダムジョークジェネレーターのHTMLコードを作成しました。ボタンをクリックすると4つのジョークからランダムに1つが表示され、スタイリングで見た目もシンプルで使いやすくなっています。\n\n```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ランダムジョークジェネレーター</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            min-height: 100vh;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            font-family: 'Meiryo', Arial, sans-serif;\n            background-color: #f0f8ff;\n            padding: 1rem;\n        }\n\n        .container {\n            background-color: white;\n            padding: 2.5rem;\n            border-radius: 12px;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            width: 100%;\n            text-align: center;\n        }\n\n        h1 {\n            color: #1f2937;\n            margin-bottom: 2rem;\n            font-size: 1.8rem;\n        }\n\n        #joke-text {\n            font-size: 1.3rem;\n            line-height: 1.6;\n            color: #374151;\n            min-height: 100px;\n            margin-bottom: 2rem;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        #joke-btn {\n            padding: 1rem 2.5rem;\n            font-size: 1.1rem;\n            border: none;\n            border-radius: 8px;\n            background-color: #2563eb;\n            color: white;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n        }\n\n        #joke-btn:hover {\n            background-color: #1d4ed8;\n        }\n\n        #joke-btn:active {\n            transform: scale(0.98);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>ランダムジョークジェネレーター</h1>\n        <p id=\"joke-text\">下のボタンを押してランダムなジョークを楽しもう！</p>\n        <button id=\"joke-btn\">ジョークを表示</button>\n    </div>\n\n    <script>\n        // 4つのジョークを配列に格納\n        const jokes = [\n            \"なんで誕生日ケーキがいつも緊張してるの？ チョコレートがあるから！\",\n            \"先生が『何もない所から何を作れるか？』と聞いたら、僕は『ご飯を作ったよ！』と答えたんだ。\",\n            \"パンダがレストランに行って食事をしてから、銃を持って出ていった。なぜ？ 辞書で『パンダ』を引くと『竹を食べて、すぐに去る』って書いてあるからだよ！\",\n            \"電気屋さんが転職したらどうなる？ 電気がなくなっちゃうよ！\"\n        ];\n\n        const jokeTextElement = document.getElementById('joke-text');\n        const jokeButtonElement = document.getElementById('joke-btn');\n\n        // ランダムなジョークを表示する関数\n        function showRandomJoke() {\n            const randomIndex = Math.floor(Math.random() * jokes.length);\n            jokeTextElement.textContent = jokes[randomIndex];\n        }\n\n        // ボタンがクリックされたらジョークを表示\n        jokeButtonElement.addEventListener('click', showRandomJoke);\n    </script>\n</body>\n</html>\n```\n\n### 使い方\n1.  上記のコードを`joke-generator.html`などの名前で保存します\n2.  ブラウザでファイルを開くと利用できます\n3.  「ジョークを表示」ボタンを押すたびに、ランダムなジョークが表示されます",
+    "params": {},
+    "tokens": {
+      "input": 126,
+      "output": 4335
+    },
+    "cost_usd": 0.0017465999999999998,
+    "latency_ms": 102191.33281707764
+  },
+  "trialB": {
+    "output": "はい、承知いたしました。\nHTML、CSS、JavaScriptを一つのファイルにまとめた、シンプルなランダムジョークサイトを作成します。\n\n以下のコードをコピーして、メモ帳などのテキストエディタに貼り付け、`joke.html` という名前で保存してください。その後、保存したファイルをウェブブラウザで開くと動作します。\n\n### 完成コード\n\n```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ランダムジョークジェネレーター</title>\n    <style>\n        /* ここからCSS（デザイン） */\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            height: 100vh;\n            margin: 0;\n            background-color: #f0f8ff; /* 明るい青系の背景色 */\n            text-align: center;\n        }\n\n        .container {\n            background-color: white;\n            padding: 40px;\n            border-radius: 12px;\n            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n        }\n\n        h1 {\n            color: #333;\n            margin-bottom: 20px;\n        }\n\n        #jokeDisplay {\n            margin-top: 20px;\n            margin-bottom: 30px;\n            font-size: 1.2em;\n            color: #555;\n            min-height: 60px; /* ジョークが表示されていなくても高さを確保 */\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        button {\n            padding: 12px 25px;\n            font-size: 1em;\n            font-weight: bold;\n            color: white;\n            background-color: #007bff; /* 青色のボタン */\n            border: none;\n            border-radius: 8px;\n            cursor: pointer;\n            transition: background-color 0.3s, transform 0.1s;\n        }\n\n        button:hover {\n            background-color: #0056b3; /* ホバー時にもう少し濃い青に */\n        }\n        \n        button:active {\n            transform: scale(0.98); /* クリック時に少し縮むエフェクト */\n        }\n        /* ここまでCSS */\n    </style>\n</head>\n<body>\n\n    <div class=\"container\">\n        <h1>ランダムジョークジェネレーター</h1>\n        <p id=\"jokeDisplay\">下のボタンをクリックしてね！</p>\n        <button onclick=\"generateJoke()\">新しいジョークを教えて！</button>\n    </div>\n\n    <script>\n        // ここからJavaScript（動き）\n\n        // 4つのジョークを配列（リスト）として用意します\n        const jokes = [\n            \"なぜ幽霊は嘘が下手なの？ すぐに透けて見えるからさ！\",\n            \"パンはパンでも食べられないパンはなーんだ？ フライパン！\",\n            \"コンピューターが一番好きなスナックは何？ マイクロチップス！\",\n            \"海賊が一番好きなアルファベットは何だと思う？ 「C」（海）さ！\"\n        ];\n\n        // 「generateJoke」という名前の関数（一連の処理のまとまり）を定義します\n        function generateJoke() {\n            // 1. 0から3までのランダムな数字を生成します\n            const randomIndex = Math.floor(Math.random() * jokes.length);\n\n            // 2. ランダムな数字を使って、配列からジョークを1つ選びます\n            const randomJoke = jokes[randomIndex];\n\n            // 3. HTMLのpタグ（id=\"jokeDisplay\"）を見つけて、その中身を新しいジョークで書き換えます\n            document.getElementById('jokeDisplay').textContent = randomJoke;\n        }\n\n        // ここまでJavaScript\n    </script>\n\n</body>\n</html>\n```\n\n### 使い方\n\n1.  上記のコード全体をコピーします。\n2.  パソコンのテキストエディタ（Windowsの「メモ帳」やMacの「テキストエディット」など）を開き、コードを貼り付けます。\n3.  ファイルを保存します。その際、ファイル名を `joke.html` のように、末尾を `.html` にしてください。\n4.  保存したファイルをダブルクリックすると、お使いのウェブブラウザ（Chrome, Safari, Edgeなど）で開かれます。\n5.  表示された「新しいジョークを教えて！」ボタンをクリックすると、ジョークがランダムに切り替わります。\n\n### コードの簡単な解説\n\n*   **HTML** (`<head>`と`<body>`の部分)\n    *   ウェブページの骨組みを作ります。\n    *   `<h1>`は見出し、`<p id=\"jokeDisplay\">`はジョークが表示される段落、`<button onclick=\"generateJoke()\">`がクリックできるボタンです。\n    *   `onclick=\"generateJoke()\"`という部分で、「このボタンがクリックされたら `generateJoke` というJavaScriptの処理を実行してね」と命令しています。\n\n*   **CSS** (`<style>`タグの中)\n    *   ウェブページの見た目を整えます。\n    *   背景色、文字の大きさ、ボタンの色や形、中央揃えなどを指定しています。\n\n*   **JavaScript** (`<script>`タグの中)\n    *   ウェブページに動きをつけます。\n    *   `jokes`という配列に4つのジョークを保存しています。\n    *   `generateJoke`という関数（処理）が、ボタンがクリックされるたびに呼び出されます。この関数は、`jokes`配列の中からランダムに1つを選び出し、HTMLの`<p id=\"jokeDisplay\">`の部分に表示する役割を担っています。",
+    "params": {},
+    "tokens": {
+      "input": 29,
+      "output": 3492
+    },
+    "cost_usd": 0.03495625000000001,
+    "latency_ms": 26668.890953063965
+  }
+}

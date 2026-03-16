@@ -1,12 +1,16 @@
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
+import { generateDatasetParams } from "@/lib/static-params";
 import { getDatasetDetail } from "@/lib/usecase/datasets/get-dataset-detail";
 import { getProject } from "@/lib/usecase/projects/get-project";
 import { DatasetHeader } from "./_components/dataset-header";
 import { DeleteDatasetSection } from "./_components/delete-dataset-section";
 import { RecentEvaluationsSection } from "./_components/recent-evaluations-section";
 import { SamplesSection } from "./_components/samples-section";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateDatasetParams : undefined;
 
 export default async function Page(props: {
   params: Promise<{ projectId: string; datasetId: string }>;

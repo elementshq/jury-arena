@@ -1,0 +1,64 @@
+{
+  "id": "0e193879-2ca9-4ed9-b756-023daf99a5e6",
+  "matchIndex": 51,
+  "sampleId": "18812654-f35a-4181-88cf-44afaed16820",
+  "createdAt": "2026-03-11T06:34:36.228Z",
+  "match": {
+    "winner": "openrouter/x-ai/grok-4",
+    "model_a": "openrouter/x-ai/grok-4",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00051",
+    "sample_id": "18812654-f35a-4181-88cf-44afaed16820",
+    "created_at": "2026-03-11T15:34:36.056069",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It follows the instruction to return a JSON array of integers, is clear, and is maximally concise.\",\n  \"B\": \"Accurate and complete. It is clear and formatted as JSON, but it includes unnecessary Markdown code fences rather than returning just the JSON array.\",\n  \"reason\": \"Both answers give the correct ratings [5, 1, 3]. However, Answer A better follows the instruction to return the answer as a JSON array of integers without extra formatting.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response provides a correct and valid JSON array. It is concise and directly answers the user's request without any extraneous formatting.\",\n  \"B\": \"This response also provides a correct and valid JSON array. However, it is wrapped in a markdown code block and includes unnecessary whitespace, making it less direct than Answer A.\",\n  \"winner\": \"A\",\n  \"reason\": \"Both answers are correct and follow the instructions. Answer A is slightly better because it is more concise and avoids the unnecessary markdown code block formatting present in Answer B.\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A provides the correct ratings [5,1,3] as a clean JSON array of integers without any extra formatting. It follows the instruction to return a JSON array of integers and is concise and clear.\",\"B\":\"Answer B also provides the correct ratings [5,1,3] but wraps them in markdown code block formatting with triple backticks, which adds unnecessary content and doesn't match the clean JSON array format requested.\",\"winner\":\"A\",\"reason\":\"Both answers provide the same correct ratings, but Answer A better follows the instruction by returning a clean JSON array without markdown code block formatting. Answer B adds unnecessary backtick markdown formatting that was not requested and could be considered non-compliant with the instruction to return the answer 'as a JSON array of integers' in plain format.\"}",
+        "winner": "openrouter/x-ai/grok-4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Rate the following movie reviews on a scale from 1 to 5, where 1 is very negative, 3 is neutral, and 5 is very positive:\n1. This movie, released on November 18, 2019, was outstanding. The cinematography, acting, and plot were all top-notch.\n2. I have never been so disappointed by a film. The story was predictable and the characters were one-dimensional. In my opinion, this is one of the worst movies released in 2022.\n3. The movie was okay. There were parts I enjoyed, but also parts that felt lacking. It seems like a fairly average film released in February 2018.\nReturn your answer as a JSON array of integers."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "[5,1,3]",
+    "params": {},
+    "tokens": {
+      "input": 833,
+      "output": 288
+    },
+    "cost_usd": 0.006819,
+    "latency_ms": 5421.976089477539
+  },
+  "trialB": {
+    "output": "```json\n[\n  5,\n  1,\n  3\n]\n```",
+    "params": {},
+    "tokens": {
+      "input": 162,
+      "output": 747
+    },
+    "cost_usd": 0.007672500000000001,
+    "latency_ms": 6427.645206451416
+  }
+}

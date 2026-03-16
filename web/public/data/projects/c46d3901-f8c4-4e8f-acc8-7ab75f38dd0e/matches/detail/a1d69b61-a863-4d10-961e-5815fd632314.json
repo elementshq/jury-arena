@@ -1,0 +1,64 @@
+{
+  "id": "a1d69b61-a863-4d10-961e-5815fd632314",
+  "matchIndex": 85,
+  "sampleId": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+  "createdAt": "2026-03-11T06:43:15.183Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00085",
+    "sample_id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+    "created_at": "2026-03-11T15:43:15.008414",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and clear. It correctly calculates half of 800,000 yen as 400,000 yen and the total as 1,200,000 yen. It is complete and easy to follow, though slightly more verbose than necessary with the step-by-step phrasing.\",\n  \"B\": \"Accurate, clear, and complete. It correctly shows the first-year amount, the second-year half amount, and the final total of 1,200,000 yen. It follows the prompt well and is slightly more concise than Answer A.\",\n  \"reason\": \"Both answers are correct, complete, and easy to understand. However, Answer B is marginally better because it is more concise while still presenting all necessary calculations clearly.\",\n  \"winner\": \"B\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is accurate and provides a clear, step-by-step calculation. It also helpfully includes the total in a more colloquial format (1.2 million yen).\",\n  \"B\": \"Answer B is also accurate and presents the information clearly using bullet points. It correctly calculates the total investment.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are correct, clear, and concise. They use slightly different formatting (numbered list vs. bullet points) but are equally effective in communicating the solution. Neither has a distinct advantage over the other.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete, clear, and uses a numbered step-by-step format with LaTeX math notation. Slightly more verbose due to the formatting style.\",\"B\":\"Answer B is accurate, follows instructions, complete, clear, and uses a concise bullet-point format. Clean and easy to read without unnecessary content.\",\"winner\":\"tie\",\"reason\":\"Both answers are equally accurate, complete, and clear. They reach the same correct answer of 1,200,000 yen through the same logical steps. The only difference is formatting style (numbered steps with LaTeX vs. bullet points), which is a matter of preference rather than quality.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Let's solve this step-by-step:\n1.  First year investment: 800,000 yen\n2.  Second year investment is half the first year amount: $800,000 \\div 2 = 400,000$ yen\n3.  Total two-year investment: $800,000 + 400,000 = 1,200,000$ yen\n\nThe total amount invested over two years is **1,200,000 yen (1.2 million yen)**.",
+    "params": {},
+    "tokens": {
+      "input": 97,
+      "output": 334
+    },
+    "cost_usd": 0.0001433,
+    "latency_ms": 8937.419891357422
+  },
+  "trialB": {
+    "output": "Here's the breakdown:\n\n*   **Year 1 investment:** 800,000 yen\n*   **Year 2 investment:** Half of 800,000 yen = 400,000 yen\n\n**Total investment:** 800,000 yen + 400,000 yen = **1,200,000 yen**\n\nThe total amount invested over the two years was **1,200,000 yen**.",
+    "params": {},
+    "tokens": {
+      "input": 50,
+      "output": 680
+    },
+    "cost_usd": 0.0068625000000000005,
+    "latency_ms": 6676.769018173218
+  }
+}

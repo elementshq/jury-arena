@@ -1,0 +1,64 @@
+{
+  "id": "3d3ad6ef-82c8-4446-ba70-d41496ca39f4",
+  "matchIndex": 97,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T06:46:12.189Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+    "match_id": "match_00097",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T15:46:12.008229",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and concise. It correctly identifies the White House as being in Washington, D.C., directly answering the riddle without unnecessary detail.\",\n  \"B\": \"Accurate and clear, but somewhat verbose. It correctly explains the reasoning and gives a more specific location, though it includes more detail than needed for the original question.\",\n  \"reason\": \"Both answers are correct, but Answer A is better because it is more concise while still fully answering the question. Answer B adds extra explanation that is not necessary.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response is correct and concise, directly answering the trick question.\",\n  \"B\": \"This response is also correct but provides a step-by-step explanation of why the answer is not found in the described scene, clarifying the nature of the riddle. It offers a more complete and helpful answer.\",\n  \"winner\": \"B\",\n  \"reason\": \"While both answers are correct, B is superior because it explains the logic behind the riddle. This is more helpful for a user who might not have understood the trick, making it a more comprehensive and user-friendly response.\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is correct and concise, directly answering the riddle. The White House is in Washington, D.C. It gets straight to the point without unnecessary elaboration.\",\"B\":\"Answer B is also correct and provides the full address, but it over-explains the reasoning. While the step-by-step approach adds clarity, it's somewhat verbose for a simple riddle answer. However, it does correctly identify the answer.\",\"winner\":\"A\",\"reason\":\"Both answers are correct, but Answer A is more concise and appropriate for a riddle response. The riddle is a classic lateral thinking puzzle where the answer is simply 'Washington, D.C.' Answer A delivers this cleanly without unnecessary padding, making it the better response for this type of question.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "In Washington, D.C.",
+    "params": {},
+    "tokens": {
+      "input": 40,
+      "output": 10
+    },
+    "cost_usd": 0.00025,
+    "latency_ms": 1065.711259841919
+  },
+  "trialB": {
+    "output": "Let's work through this step by step:\n\nThe scene describes three nearby buildings: a red house on your left, a greenhouse on your right, and a pink place directly in front of you. None of these match the capitalized *White House*, which refers to the iconic official residence of the U.S. President.\n\nThe most widely recognized White House is located at **1600 Pennsylvania Avenue Northwest, Washington, D.C., United States**.",
+    "params": {},
+    "tokens": {
+      "input": 82,
+      "output": 1908
+    },
+    "cost_usd": 0.0007714000000000001,
+    "latency_ms": 50468.923807144165
+  }
+}

@@ -29,10 +29,21 @@ export async function loadModels(): Promise<ModelsYaml> {
     text = await fs.readFile(filePath, "utf8");
   } catch (err: any) {
     if (err?.code === "ENOENT") {
-      // models.yaml 未作成 → 空定義として扱う
-      return { model_list: [] };
+      if (process.env.MODE === "demo") {
+        // デモモード: models.yaml 未作成 → example にフォールバック
+        const examplePath = path.join(process.cwd(), "config", "models.example.yaml");
+        try {
+          text = await fs.readFile(examplePath, "utf8");
+        } catch {
+          return { model_list: [] };
+        }
+      } else {
+        // 通常モード: models.yaml 未作成 → 空定義として扱う
+        return { model_list: [] };
+      }
+    } else {
+      throw err;
     }
-    throw err;
   }
 
   const data = yaml.load(text);
