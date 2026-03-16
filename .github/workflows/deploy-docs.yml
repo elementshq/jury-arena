@@ -58,6 +58,8 @@ jobs:
       - name: Build demo (static export)
         working-directory: web
         run: pnpm run build:demo:export
+        env:
+          NEXT_PUBLIC_GA_ID: G-JFGLREW28D
 
       # --- Merge into single artifact ---
       - name: Merge docs + demo
