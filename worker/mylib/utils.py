@@ -170,19 +170,41 @@ def extract_usage_from_response(resp: Any) -> Dict[str, int]:
 
 
 # 最新のモデルごとの料金テーブル（USD per 1M tokens）
+# litellm未対応モデルのフォールバック用。料金参照: https://openrouter.ai/models
 MODEL_PRICING = {
     # OpenRouter models
     # openrouterは、litellmの呼び出しではopenrouter/モデル名で呼び出すが、responseのmodel名はベンダー/モデル名のみ
-    "google/gemini-2.5-flash-lite-preview-09-2025": {
-        "input": 0.10,
-        "output": 0.40,
-    },
-    "google/gemini-2.5-flash-preview-09-2025": {
-        "input": 0.30,
-        "output": 2.50,
-    },
-    "x-ai/grok-4-fast": {"input": 0.20, "output": 0.50},
+    "anthropic/claude-opus-4.5": {"input": 5.00, "output": 25.00},
+    "anthropic/claude-sonnet-4.5": {"input": 3.00, "output": 15.00},
+    "anthropic/claude-sonnet-4.6": {"input": 3.00, "output": 15.00},
+    "bytedance-seed/seed-2.0-mini": {"input": 0.10, "output": 0.40},
+    "deepseek/deepseek-v3.2": {"input": 0.25, "output": 0.40},
+    "google/gemini-2.5-flash-lite-preview-09-2025": {"input": 0.10, "output": 0.40},
+    "google/gemini-2.5-flash-preview-09-2025": {"input": 0.30, "output": 2.50},
+    "google/gemini-3-flash-preview": {"input": 0.50, "output": 3.00},
+    "google/gemini-3-pro-preview": {"input": 2.00, "output": 12.00},
+    "google/gemma-3-27b-it": {"input": 0.03, "output": 0.11},
+    "meta-llama/llama-3.1-8b-instruct": {"input": 0.02, "output": 0.05},
+    "meta-llama/llama-3.3-70b-instruct": {"input": 0.10, "output": 0.32},
     "meta-llama/llama-4-maverick": {"input": 0.15, "output": 0.60},
+    "meta-llama/llama-4-scout": {"input": 0.08, "output": 0.30},
+    "minimax/minimax-m2.5": {"input": 0.27, "output": 0.95},
+    "mistralai/mistral-large-2512": {"input": 0.50, "output": 1.50},
+    "mistralai/mistral-small-24b-instruct-2501": {"input": 0.05, "output": 0.08},
+    "moonshotai/kimi-k2.5": {"input": 0.45, "output": 2.20},
+    "openai/gpt-5": {"input": 1.25, "output": 10.00},
+    "openai/gpt-5-mini": {"input": 0.25, "output": 2.00},
+    "openai/gpt-5-nano": {"input": 0.05, "output": 0.40},
+    "openai/gpt-5.1": {"input": 1.25, "output": 10.00},
+    "openai/gpt-5.2": {"input": 1.75, "output": 14.00},
+    "openai/gpt-5.2-pro": {"input": 21.00, "output": 168.00},
+    "openai/gpt-5.4": {"input": 2.50, "output": 15.00},
+    "openai/gpt-oss-120b": {"input": 0.18, "output": 0.80},
+    "qwen/qwen3-235b-a22b-2507": {"input": 0.071, "output": 0.10},
+    "x-ai/grok-4": {"input": 3.00, "output": 15.00},
+    "x-ai/grok-4-fast": {"input": 0.20, "output": 0.50},
+    "xiaomi/mimo-v2-flash": {"input": 0.09, "output": 0.29},
+    "z-ai/glm-5": {"input": 0.72, "output": 2.30},
 }
 
 
