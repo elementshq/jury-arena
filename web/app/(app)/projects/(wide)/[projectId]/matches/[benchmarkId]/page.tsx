@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
+import { generateMatchParams } from "@/lib/static-params";
 import { getBenchmarkDetail } from "@/lib/usecase/benchmarks/get-benchmark-detail";
 import { getMatches } from "@/lib/usecase/matches/get-matches";
 import { getProject } from "@/lib/usecase/projects/get-project";
-import { MatchesSplitView } from "./_components/matches-split-view";
+import { MatchesSplitView } from "../_components/matches-split-view";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateMatchParams : undefined;
 
 function parseNum(v: string | undefined, fallback: number) {
   if (!v) return fallback;
@@ -13,19 +17,15 @@ function parseNum(v: string | undefined, fallback: number) {
 }
 
 export default async function Page(props: {
-  params: Promise<{ projectId: string }>;
+  params: Promise<{ projectId: string; benchmarkId: string }>;
   searchParams: Promise<{
-    benchmarkId?: string;
     limit?: string;
     offset?: string;
     q?: string;
   }>;
 }) {
-  const { projectId } = await props.params;
+  const { projectId, benchmarkId } = await props.params;
   const sp = await props.searchParams;
-
-  const benchmarkId = sp.benchmarkId;
-  if (!benchmarkId) notFound();
 
   const limit = parseNum(sp.limit, 200);
   const offset = parseNum(sp.offset, 0);
@@ -55,9 +55,7 @@ export default async function Page(props: {
     {
       id: `matches`,
       label: "Matches",
-      href: `/projects/${projectId}/matches?benchmarkId=${encodeURIComponent(
-        benchmarkId,
-      )}`,
+      href: `/projects/${projectId}/matches/${benchmarkId}`,
       isCurrent: true,
     },
   ];
@@ -68,6 +66,7 @@ export default async function Page(props: {
   return (
     <div className="flex-1 min-h-0 flex overflow-hidden">
       <MatchesSplitView
+        projectId={projectId}
         sampleListHref={sampleListHref}
         matches={result.matches.map((m: any) => ({
           id: m.id,
@@ -83,7 +82,6 @@ export default async function Page(props: {
           targetModel: m.match.model_a,
           opponentModel: m.match.model_b,
 
-          // ✅ 巨大オブジェクトを保持せず、matchIdだけ
           matchId: m.id,
         }))}
       >

@@ -1,0 +1,64 @@
+{
+  "id": "a6e374a8-c750-45b1-aa5d-d125d7d702f5",
+  "matchIndex": 197,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T07:14:47.656Z",
+  "match": {
+    "winner": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_a": "openrouter/minimax/minimax-m2.5",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00197",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T16:14:47.460281",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Incorrect. It invents a spatial-pattern solution ('behind you') that is not the standard answer to the riddle. It is clear, but unnecessarily long and includes extra speculation.\",\n  \"B\": \"Correct. It gives the standard riddle answer: the White House is in Washington, D.C. It is clear, follows the instruction, and is reasonably concise.\",\n  \"reason\": \"Answer B is more accurate and better aligned with the intended trick-question meaning. Answer A is well written but based on a false premise, so it is worse overall.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a creative and logical solution based on the pattern presented in the riddle (matching the missing color to the missing direction). However, it misses the most common and intended answer to this classic riddle.\",\n  \"B\": \"Answer B correctly identifies the prompt as a classic lateral thinking riddle. It provides the most widely accepted answer, 'Washington, D.C.', and accurately explains that the descriptive part of the prompt is a misdirection.\",\n  \"winner\": \"B\",\n  \"reason\": \"Answer B is the winner because it provides the correct and most common answer to this well-known riddle. It correctly identifies the nature of the puzzle as a trick question, while Answer A provides a plausible but less common interpretation.\"\n}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly identifies that the white house is behind you, using logical reasoning about directions (left, right, front covered, so behind is the answer). It also briefly mentions the Washington D.C. White House as a secondary note. Clear and well-explained.\",\"B\":\"Answer B gives the Washington D.C. answer as the primary response, which misses the intended riddle answer. The riddle is a spatial puzzle where 'behind you' is the correct answer, not a trick about the famous White House.\",\"winner\":\"A\",\"reason\":\"Answer A correctly solves the riddle by reasoning that left, right, and front are accounted for, so the white house must be behind you. Answer B incorrectly identifies Washington D.C. as the answer, missing the point of the spatial riddle entirely.\"}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "The white house is the one you **don’t see** – it’s behind you.  \n\nYou’re being told:\n\n- **Left → red house**  \n- **Right → green house (the “greenhouse”)**  \n- **Front → pink place**  \n\nThose three directions (left, right, front) already cover the three colors red, green, and pink. The only color missing from the set (red – green – pink – white) is **white**, and the only direction not listed is the one **behind you**. So the white house would be situated directly behind you.  \n\n(If you’re thinking of the famous building, the **White House** that houses the U.S. President is at 1600 Pennsylvania Avenue NW in Washington, D.C., but that’s not the answer the riddle is looking for.)",
+    "params": {},
+    "tokens": {
+      "input": 72,
+      "output": 1430
+    },
+    "cost_usd": 0.00137794,
+    "latency_ms": 19124.435901641846
+  },
+  "trialB": {
+    "output": "This is a classic lateral thinking / trick question.\n\nThe answer is **Washington, D.C.** (or simply: **in Washington**).\n\nThe question describes you looking around in various directions, but the \"White House\" isn't part of the scene being described — it's a well-known landmark located in Washington, D.C. The description is just a setup to make you think spatially, when the answer has nothing to do with your orientation. 🏛️",
+    "params": {},
+    "tokens": {
+      "input": 41,
+      "output": 104
+    },
+    "cost_usd": 0.001683,
+    "latency_ms": 4081.4969539642334
+  }
+}

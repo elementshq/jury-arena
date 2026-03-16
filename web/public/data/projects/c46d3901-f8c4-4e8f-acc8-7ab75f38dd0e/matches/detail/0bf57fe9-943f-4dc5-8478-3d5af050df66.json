@@ -1,0 +1,64 @@
+{
+  "id": "0bf57fe9-943f-4dc5-8478-3d5af050df66",
+  "matchIndex": 168,
+  "sampleId": "8a231164-d826-4f73-8f87-05709b1188ff",
+  "createdAt": "2026-03-11T07:12:03.801Z",
+  "match": {
+    "winner": "openrouter/z-ai/glm-5",
+    "model_a": "openrouter/x-ai/grok-4",
+    "model_b": "openrouter/z-ai/glm-5",
+    "match_id": "match_00168",
+    "sample_id": "8a231164-d826-4f73-8f87-05709b1188ff",
+    "created_at": "2026-03-11T16:12:03.614736",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It provides a working Python program that reads all .txt files in a directory, counts words case-insensitively, and returns the top five most frequent words. The code is clear, includes basic error handling, and directly satisfies the prompt. Slightly verbose, but still well structured.\",\n  \"B\": \"Also accurate and mostly complete. It provides a working program with helpful interactivity and explanation. However, it mixes returning results with printing status/errors, and in some cases returns None instead of a result, which is a bit less aligned with the prompt to return the top five most frequent words. It is clear but a little more verbose and slightly less focused.\",\n  \"reason\": \"Both answers are good, but Answer A is more directly aligned with the prompt: it cleanly defines a function that returns the top five most frequent words from text files in a directory. Answer B is also correct, but its interactive input and print-heavy behavior make it slightly less concise and slightly less precise in meeting the requested behavior.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a very clear, correct, and well-structured Python program. It uses standard libraries effectively, includes robust error handling by raising a ValueError, and provides a thorough explanation of its assumptions and logic.\",\n  \"B\": \"Answer B also provides a correct and well-explained program using the same efficient libraries. It enhances user experience with an interactive prompt for the directory path, more descriptive print statements, and a nicely formatted output. The function is also slightly more flexible.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are excellent and provide correct, well-explained code. However, Answer B is slightly better because it delivers a more polished, user-friendly program. The inclusion of an interactive prompt, better output formatting, and a more flexible function signature make it a more complete solution for an end-user.\"\n}",
+        "winner": "openrouter/z-ai/glm-5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, and includes a complete working program with error handling. It uses regex to extract words, Counter for frequency counting, and returns top 5 words. The explanation is clear and the code is well-commented. It uses a hardcoded directory path with a comment to change it.\",\"B\":\"Answer B is also accurate and follows instructions. It includes the same core functionality but adds interactive user input for the directory path, ranked output with occurrence counts, and slightly better formatted output. The explanation is equally clear and includes example output showing what the program produces.\",\"winner\":\"B\",\"reason\":\"Both answers are technically correct and follow the instructions well. Answer B edges out Answer A with several small improvements: it accepts user input for the directory path (more user-friendly), displays results with ranking numbers and 'occurrences' label for clarity, includes a progress message when scanning, provides example output showing what the program looks like when run, and has a slightly more polished presentation overall. These additions make it more complete and practical without being unnecessarily verbose.\"}",
+        "winner": "openrouter/z-ai/glm-5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Develop a Python program that reads all text files in a directory and returns the top five most frequently occurring words."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Below is a complete Python program that accomplishes the task. It reads all text files (with a `.txt` extension) in a specified directory, counts the frequency of words across all files (case-insensitively, ignoring common punctuation), and returns the top five most frequently occurring words. I've used standard libraries only (no external dependencies like NLTK).\n\nThe program assumes:\n- Words are separated by whitespace.\n- Punctuation attached to words (e.g., \"hello!\") is stripped.\n- The count is case-insensitive (e.g., \"Hello\" and \"hello\" are considered the same).\n- If there are fewer than 5 unique words, it returns all of them.\n- Ties in frequency are broken arbitrarily (by sorting order).\n\n### Python Program: `word_frequency.py`\n\n```python\nimport os\nimport re\nfrom collections import Counter\n\ndef get_top_five_words(directory_path):\n    \"\"\"\n    Reads all .txt files in the given directory, counts word frequencies,\n    and returns the top 5 most frequent words.\n    \n    :param directory_path: Path to the directory containing text files.\n    :return: List of tuples (word, frequency) for the top 5 words.\n    \"\"\"\n    word_counter = Counter()\n    \n    # Check if the directory exists\n    if not os.path.isdir(directory_path):\n        raise ValueError(f\"Directory '{directory_path}' does not exist.\")\n    \n    # Iterate over all files in the directory\n    for filename in os.listdir(directory_path):\n        if filename.endswith('.txt'):\n            file_path = os.path.join(directory_path, filename)\n            try:\n                with open(file_path, 'r', encoding='utf-8') as file:\n                    text = file.read()\n                    # Clean and split into words: lowercase, remove punctuation\n                    words = re.findall(r'\\b\\w+\\b', text.lower())\n                    word_counter.update(words)\n            except Exception as e:\n                print(f\"Error reading file {filename}: {e}\")\n    \n    # Get the top 5 most common words\n    top_five = word_counter.most_common(5)\n    \n    return top_five\n\n# Example usage\nif __name__ == \"__main__\":\n    # Replace with your directory path\n    directory = '.'  # Current directory for testing\n    top_words = get_top_five_words(directory)\n    \n    if top_words:\n        print(\"Top 5 most frequent words:\")\n        for word, freq in top_words:\n            print(f\"{word}: {freq}\")\n    else:\n        print(\"No words found in text files.\")\n```\n\n### How It Works\n1. **Directory Traversal**: Uses `os.listdir` to find all files ending in `.txt`.\n2. **Text Processing**: Reads each file, converts to lowercase, and uses a regex (`re.findall(r'\\b\\w+\\b')`) to extract words (alphanumeric sequences bounded by word boundaries, effectively stripping punctuation like periods, commas, etc.).\n3. **Counting**: Uses `collections.Counter` to tally word frequencies.\n4. **Top 5 Extraction**: Calls `most_common(5)` to get the top 5 words sorted by frequency (descending).\n5. **Error Handling**: Basic checks for directory existence and file reading errors.\n\n### Testing and Usage\n- Save the code to a file (e.g., `word_frequency.py`).\n- Replace the `directory` variable in the example usage with your actual directory path (e.g., `/path/to/your/folder`).\n- Run the script: `python word_frequency.py`.\n- For example, if your directory has text files with content like \"hello world hello\", it might output something like `hello: 2` and `world: 1`.\n\nIf you encounter issues (e.g., Unicode errors in files), you can adjust the encoding in `open()`. Let me know if you need modifications, such as handling different file extensions or more advanced text cleaning!",
+    "params": {},
+    "tokens": {
+      "input": 706,
+      "output": 1073
+    },
+    "cost_usd": 0.018213,
+    "latency_ms": 25355.11612892151
+  },
+  "trialB": {
+    "output": "Here is a Python program that accomplishes this. It uses the `os` module to navigate the file system, `re` (regular expressions) to handle punctuation and word extraction, and `collections.Counter` to efficiently count the words.\n\n### The Python Code\n\nYou can save this code in a file named `word_counter.py`.\n\n```python\nimport os\nimport re\nfrom collections import Counter\n\ndef get_top_words_from_directory(directory_path, num_top_words=5):\n    \"\"\"\n    Reads all .txt files in the given directory and returns the top\n    most frequently occurring words.\n    \"\"\"\n    total_word_counts = Counter()\n    files_processed = 0\n\n    # Check if directory exists\n    if not os.path.isdir(directory_path):\n        print(f\"Error: Directory '{directory_path}' does not exist.\")\n        return\n\n    print(f\"Scanning directory: {directory_path}...\")\n\n    # Iterate over all files in the directory\n    for filename in os.listdir(directory_path):\n        # Process only text files\n        if filename.endswith(\".txt\"):\n            file_path = os.path.join(directory_path, filename)\n            \n            try:\n                # Open and read the file\n                with open(file_path, 'r', encoding='utf-8') as file:\n                    content = file.read()\n                    \n                    # Use Regex to find words. \n                    # r'\\w+' matches any word character (alphanumeric + underscore)\n                    # We convert to lowercase to ensure 'The' and 'the' are counted together\n                    words = re.findall(r'\\b\\w+\\b', content.lower())\n                    \n                    # Update the counter\n                    total_word_counts.update(words)\n                    files_processed += 1\n                    \n            except Exception as e:\n                print(f\"Error reading file {filename}: {e}\")\n\n    if files_processed == 0:\n        print(\"No .txt files found in the directory.\")\n        return\n\n    # Return the most common words\n    return total_word_counts.most_common(num_top_words)\n\nif __name__ == \"__main__\":\n    # You can change this path to your specific folder path\n    # '.' represents the current directory\n    target_directory = input(\"Enter the directory path (or press Enter for current directory): \").strip()\n    \n    if not target_directory:\n        target_directory = \".\"\n\n    top_words = get_top_words_from_directory(target_directory)\n\n    if top_words:\n        print(f\"\\nTop {len(top_words)} most frequent words:\")\n        print(\"-\" * 30)\n        for rank, (word, count) in enumerate(top_words, 1):\n            print(f\"{rank}. {word}: {count} occurrences\")\n```\n\n### How It Works\n\n1.  **`os.listdir(directory_path)`**: This function retrieves a list of all files and folders in the specified directory. We filter this list to keep only files ending with `.txt`.\n2.  **`re.findall(r'\\b\\w+\\b', ...)`**: This is a Regular Expression.\n    *   `\\w+`: Matches one or more \"word characters\" (letters, numbers, and underscores).\n    *   `\\b`: Represents a boundary. This ensures we don't match parts of words. It effectively strips out punctuation like commas, periods, and exclamation marks automatically.\n    *   `.lower()`: Converts all text to lowercase so that \"Apple\" and \"apple\" are counted as the same word.\n3.  **`collections.Counter`**: This is a specialized dictionary designed for counting hashable objects. The `update(words)` method adds the list of words to the count, and `most_common(5)` retrieves the top 5 items efficiently.\n\n### How to Run It\n\n1.  Create a folder (e.g., named `text_files`).\n2.  Place a few `.txt` files inside that folder with some text content.\n3.  Run the script: `python word_counter.py`.\n4.  When prompted, enter the path to your folder (e.g., `text_files`).\n\n**Example Output:**\n\n```text\nEnter the directory path (or press Enter for current directory): text_files\nScanning directory: text_files...\n\nTop 5 most frequent words:\n------------------------------\n1. the: 124 occurrences\n2. and: 98 occurrences\n3. to: 76 occurrences\n4. python: 54 occurrences\n5. code: 45 occurrences\n```",
+    "params": {},
+    "tokens": {
+      "input": 27,
+      "output": 1890
+    },
+    "cost_usd": 0.004366439999999999,
+    "latency_ms": 19631.77490234375
+  }
+}

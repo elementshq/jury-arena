@@ -1,0 +1,64 @@
+{
+  "id": "7a253c3c-f21b-4078-be11-6b40fcbdb847",
+  "matchIndex": 93,
+  "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+  "createdAt": "2026-03-11T05:28:25.926Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openai/gpt-5.4",
+    "match_id": "match_00093",
+    "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+    "created_at": "2026-03-11T14:28:25.751747",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で実用的。ディレクトリ内の.txtファイルを集計し上位5単語を返す要件を満たしており、エラー処理や大小文字・句読点対応もある。説明も明確。ただし再帰探索がデフォルトで無効で、要件の『全てのテキストファイル』に対してやや解釈が限定的。\",\n  \"B\": \"正確で要件適合性が高い。再帰的に全テキストファイルを探索し、単語抽出と上位5件集計を簡潔に実装している。説明も十分明確で、全体として無駄が少ない。一方でUTF-8固定で文字コード耐性はAより弱い。\",\n  \"reason\": \"両者とも基本要件は満たしていますが、Bは『ディレクトリ内の全てのテキストファイル』を再帰的に処理しており、実装も簡潔で追従性が高いです。Aは機能追加が多く堅牢ですが、再帰探索がデフォルトで無効な点で要件への直接性がやや劣ります。\",\n  \"winner\": \"B\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"機能分割が明確で、コマンドライン引数の扱いや再帰探索のオプション化など柔軟性が高い。エンコーディングエラーへのフォールバックもあり、堅牢で完成度の高いプログラムとなっている。\",\n  \"B\": \"正規表現による単語抽出は簡潔だが、アポストロフィを含む単語を分割してしまうなど、意図しない挙動の可能性がある。機能の柔軟性やエラーハンドリングの点でAに劣る。\",\n  \"winner\": \"A\",\n  \"reason\": \"回答Aは、柔軟性（デフォルトディレクトリ、再帰オプション）、堅牢性（エンコーディングのフォールバック）、単語処理の妥当性の面で優れている。また、説明も非常に丁寧でユーザーフレンドリーであるため、総合的に高品質な回答と判断した。\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"詳細な説明、エラーハンドリング、再帰オプション、エンコーディングフォールバックなど機能が豊富。コードは正確で完全。ただやや冗長な面もある。\",\"B\":\"シンプルで簡潔なコード。正規表現による単語抽出は句読点処理において回答Aより優れている。ディレクトリ検証も含む。ただし機能は最小限。\",\"winner\":\"B\",\"reason\":\"回答Bは正規表現 `\\\\b\\\\w+\\\\b` を使って単語を抽出しており、句読点の処理がより確実で正確。コードがシンプルで読みやすく、ディレクトリの検証も行っている。回答Aは機能が豊富だが、空白分割＋句読点トリムのアプローチは正規表現より精度が低く、コード量も多く冗長。基本的なタスクに対しては回答Bのシンプルさと正確さが優れている。\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "ディレクトリ内の全てのテキストファイルを読み込み、出現回数が最も多い上位5単語を返すPythonプログラムを開発してください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "# 出現回数上位5単語を取得するPythonプログラム\nこのプログラムは以下の仕様に対応しています：\n- 指定したディレクトリ内の全ての`.txt`ファイルを読み込み、単語の出現回数を集計\n- 大文字小文字の区別をなくし、単語の前後に付いた句読点を自動的に除去\n- 出現回数が多い上位5単語を返却\n- 読み込みに失敗したファイルがある場合は警告を表示してスキップ\n- コマンドライン引数で処理対象ディレクトリを指定可能（省略時はカレントディレクトリ）\n\n---\n\n## プログラムコード\n```python\nimport os\nimport collections\nimport string\nimport sys\n\ndef clean_word(token: str) -> str:\n    \"\"\"トークンの前後から句読点を除去し、小文字に変換して返します\"\"\"\n    return token.strip(string.punctuation).lower()\n\ndef process_text_file(file_path: str) -> list[str]:\n    \"\"\"個別のテキストファイルを読み込み、クリーニングされた単語のリストを返します\"\"\"\n    try:\n        # UTF-8でファイルを読み込みを試行\n        with open(file_path, 'r', encoding='utf-8') as f:\n            text = f.read()\n    except UnicodeDecodeError:\n        # UTF-8で失敗した場合Latin-1で再試行（多国語対応のため）\n        print(f\"警告: {file_path} をUTF-8で読み込めませんでした。Latin-1で試行します。\")\n        try:\n            with open(file_path, 'r', encoding='latin-1') as f:\n                text = f.read()\n        except Exception as e:\n            print(f\"エラー: {file_path} の読み込みに失敗しました - {e}\")\n            return []\n    except Exception as e:\n        print(f\"エラー: {file_path} の読み込みに失敗しました - {e}\")\n        return []\n\n    # 空白で分割してトークンに分解\n    tokens = text.split()\n    # 各トークンをクリーニング\n    cleaned_tokens = [clean_word(token) for token in tokens]\n    # 空文字列になったトークンを除外（例：\"!!!\"を処理した場合）\n    cleaned_tokens = [token for token in cleaned_tokens if token]\n    return cleaned_tokens\n\ndef get_top_frequent_words(directory: str = '.', top_n: int = 5, recursive: bool = False) -> list[tuple[str, int]]:\n    \"\"\"\n    ディレクトリ内のテキストファイルから出現回数が多い上位N単語を取得します\n\n    Args:\n        directory: 処理対象のディレクトリパス（省略時はカレントディレクトリ）\n        top_n: 取得する上位単語の数（省略時は5）\n        recursive: サブディレクトリ内のファイルも対象にするか（省略時はFalse）\n\n    Returns:\n        (単語, 出現回数)のタプルを、出現回数の降順にソートしたリスト\n    \"\"\"\n    total_word_counts = collections.Counter()\n\n    # ディレクトリを走査するためのジェネレータを準備\n    if recursive:\n        dir_walker = os.walk(directory)\n    else:\n        dir_walker = [(directory, [], os.listdir(directory))]\n\n    for root, _, files in dir_walker:\n        for file_name in files:\n            # テキストファイル(.txt, .TXT)のみ対象にする\n            if file_name.lower().endswith('.txt'):\n                full_file_path = os.path.join(root, file_name)\n                file_words = process_text_file(full_file_path)\n                total_word_counts.update(file_words)\n\n    # 上位N単語を取得\n    return total_word_counts.most_common(top_n)\n\nif __name__ == \"__main__\":\n    # コマンドライン引数から処理対象ディレクトリを取得（省略時カレントディレクトリ）\n    target_directory = sys.argv[1] if len(sys.argv) > 1 else '.'\n\n    top_words = get_top_frequent_words(target_directory, top_n=5, recursive=False)\n\n    print(f\"=== {os.path.abspath(target_directory)} 内のテキストファイルの上位5単語 ===\")\n    for rank, (word, count) in enumerate(top_words, 1):\n        print(f\"{rank}. {word}: {count}回\")\n\n    # 5未満の単語しか見つからなかった場合の通知\n    if len(top_words) < 5:\n        print(f\"※ 全テキストファイルから {len(top_words)} 種類の単語しか検出されませんでした\")\n```\n\n---\n\n## 使い方\n1. **カレントディレクトリで実行する場合**\n   ```bash\n   python word_counter.py\n   ```\n\n2. **特定のディレクトリを指定して実行する場合**\n   ```bash\n   python word_counter.py /path/to/your/target/directory\n   ```\n\n3. **サブディレクトリ内のファイルも対象にする場合**\n   コード内の`recursive=False`を`recursive=True`に変更するか、関数呼び出し時に引数として渡してください。\n   ```python\n   top_words = get_top_frequent_words(target_directory, top_n=5, recursive=True)\n   ```\n\n---\n\n## 注意点\n- 単語の定義：空白で分割されたトークンを単位とし、前後の句読点を除去した上で小文字化されるため、`\"Hello,\"`と`\"hello\"`は同じ単語としてカウントされます。\n- エンコーディング：UTF-8に対応し、失敗した場合はLatin-1で再試行しますが、必要に応じてエンコーディングを増やすことが可能です。\n- 空ファイルや読み込み不可なファイルは自動的にスキップされ、警告が表示されます。",
+    "params": {},
+    "tokens": {
+      "input": 111,
+      "output": 6371
+    },
+    "cost_usd": 0.0025595,
+    "latency_ms": 168244.00687217712
+  },
+  "trialB": {
+    "output": "以下は、**指定ディレクトリ内のすべてのテキストファイルを読み込み、出現回数が多い上位5単語を表示する Python プログラム**です。\n\n## プログラム\n\n```python\nimport os\nimport re\nimport sys\nfrom collections import Counter\n\n\ndef get_text_files(directory):\n    text_files = []\n    for root, _, files in os.walk(directory):\n        for file in files:\n            if file.endswith(\".txt\"):\n                text_files.append(os.path.join(root, file))\n    return text_files\n\n\ndef extract_words_from_file(file_path):\n    try:\n        with open(file_path, \"r\", encoding=\"utf-8\") as f:\n            text = f.read().lower()\n            words = re.findall(r'\\b\\w+\\b', text)\n            return words\n    except Exception as e:\n        print(f\"ファイル読み込みエラー: {file_path} ({e})\")\n        return []\n\n\ndef count_top_words(directory, top_n=5):\n    counter = Counter()\n    text_files = get_text_files(directory)\n\n    for file_path in text_files:\n        words = extract_words_from_file(file_path)\n        counter.update(words)\n\n    return counter.most_common(top_n)\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) < 2:\n        print(\"使い方: python script.py <ディレクトリパス>\")\n        sys.exit(1)\n\n    directory = sys.argv[1]\n\n    if not os.path.isdir(directory):\n        print(\"指定されたパスはディレクトリではありません。\")\n        sys.exit(1)\n\n    top_words = count_top_words(directory, top_n=5)\n\n    print(\"出現回数が多い上位5単語:\")\n    for word, count in top_words:\n        print(f\"{word}: {count}\")\n```\n\n---\n\n## 使い方\n\nたとえば `script.py` という名前で保存した場合、以下のように実行します。\n\n```bash\npython script.py /path/to/directory\n```\n\n---\n\n## 補足\n\n- `.txt` ファイルのみを対象にしています。\n- サブディレクトリ内のテキストファイルも再帰的に探索します。\n- 単語は小文字化して集計するため、`Apple` と `apple` は同じ単語として扱われます。\n- `\\b\\w+\\b` で単語を抽出しているため、英数字やアンダースコアを単語として扱います。\n\n必要であれば次のような改良版も作れます。\n- **日本語対応（形態素解析）**\n- **ストップワード除去**\n- **句読点や数字を除外**\n- **CSV出力**",
+    "params": {},
+    "tokens": {
+      "input": 50,
+      "output": 599
+    },
+    "cost_usd": 0.00911,
+    "latency_ms": 8257.535934448242
+  }
+}

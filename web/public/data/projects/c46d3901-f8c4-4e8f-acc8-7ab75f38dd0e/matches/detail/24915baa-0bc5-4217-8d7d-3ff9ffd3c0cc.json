@@ -1,0 +1,64 @@
+{
+  "id": "24915baa-0bc5-4217-8d7d-3ff9ffd3c0cc",
+  "matchIndex": 30,
+  "sampleId": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+  "createdAt": "2026-03-11T06:12:42.669Z",
+  "match": {
+    "winner": "gemini/gemini-2.5-pro",
+    "model_a": "gemini/gemini-2.5-pro",
+    "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "match_id": "match_00030",
+    "sample_id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+    "created_at": "2026-03-11T15:12:42.481835",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, clearly explains the calculation, fully answers the question, and is concise and easy to understand.\",\n  \"B\": \"Accurate, complete, and very clear, but slightly more formatted and a bit less concise than necessary for this simple question.\",\n  \"reason\": \"Both answers are correct and follow the instructions well, but Answer A is slightly better because it is just as clear and complete while being more concise.\",\n  \"winner\": \"A\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct and clearly breaks down the calculation into simple steps using bullet points. The formatting is clean and easy to follow.\",\n  \"B\": \"Answer B is also correct and provides a clear, step-by-step breakdown of the calculation. It uses more elaborate formatting with block quotes and mathematical notation.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are accurate, complete, and clearly explain how they arrived at the correct total. They present the same information effectively, differing only in their formatting style. Neither style is objectively better than the other.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete, clear, and concise. It uses simple bullet points and bold text to present the calculation cleanly.\",\"B\":\"Answer B is also accurate, follows instructions, complete, and clear. It uses LaTeX-style math formatting and additional markdown elements like blockquotes and a checkmark emoji, which adds some unnecessary visual complexity.\",\"winner\":\"A\",\"reason\":\"Both answers are correct and complete, but Answer A is more concise and cleaner in its presentation. Answer B's use of blockquotes, LaTeX formatting, and extra markdown elements adds unnecessary complexity without improving clarity or accuracy.\"}",
+        "winner": "gemini/gemini-2.5-pro"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here's the breakdown:\n\n*   **Year 1 investment:** 800,000 yen\n*   **Year 2 investment:** Half of 800,000 yen = 400,000 yen\n\n**Total investment:** 800,000 yen + 400,000 yen = **1,200,000 yen**\n\nThe total amount invested over the two years was **1,200,000 yen**.",
+    "params": {},
+    "tokens": {
+      "input": 50,
+      "output": 680
+    },
+    "cost_usd": 0.0068625000000000005,
+    "latency_ms": 6676.769018173218
+  },
+  "trialB": {
+    "output": "In the **first year**, the startup invested:\n\n> **800,000 yen**\n\nIn the **second year**, it invested **half** of that amount:\n\n> $ \\frac{1}{2} \\times 800,000 = 400,000 $ yen\n\nNow, the **total amount invested** over the two years is:\n\n> $ 800,000 + 400,000 = 1,200,000 $ yen\n\n### ✅ Final Answer:\n> **1,200,000 yen**",
+    "params": {},
+    "tokens": {
+      "input": 57,
+      "output": 134
+    },
+    "cost_usd": 0.000017447,
+    "latency_ms": 3503.6611557006836
+  }
+}

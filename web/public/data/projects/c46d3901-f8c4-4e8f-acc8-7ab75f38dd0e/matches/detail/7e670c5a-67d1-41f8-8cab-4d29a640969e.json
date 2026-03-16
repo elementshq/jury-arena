@@ -1,0 +1,64 @@
+{
+  "id": "7e670c5a-67d1-41f8-8cab-4d29a640969e",
+  "matchIndex": 170,
+  "sampleId": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+  "createdAt": "2026-03-11T07:12:13.433Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00170",
+    "sample_id": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+    "created_at": "2026-03-11T16:12:13.243089",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Correctly assigns all four questions to the appropriate categories. It follows the instruction to list one topic per line, includes all items, is clear, and contains no extra content.\",\n  \"B\": \"Correctly assigns all four questions to the appropriate categories. It follows the instruction to list one topic per line, includes all items, is clear, and contains no extra content.\",\n  \"reason\": \"Both answers are identical and fully satisfy the prompt in accuracy, instruction-following, completeness, clarity, and conciseness.\",\n  \"winner\": \"tie\"\n}",
+        "winner": "tie"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly categorizes all four questions. It perfectly follows the instructions to list only one topic per line without any extra words.\",\n  \"B\": \"Answer B is identical to Answer A. It also correctly categorizes all four questions and adheres to all formatting instructions provided in the prompt.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are identical and perfectly fulfill the user's request. They are both accurate and follow the formatting instructions precisely.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly categorizes all four questions as Literature, History, Science, and Art respectively. It follows the instructions by listing one topic per line without extra words, is complete, clear, and concise.\",\"B\":\"Answer B correctly categorizes all four questions as Literature, History, Science, and Art respectively. It follows the instructions by listing one topic per line without extra words, is complete, clear, and concise.\",\"winner\":\"tie\",\"reason\":\"Both answers are identical in content, format, accuracy, and adherence to instructions. There is no meaningful difference between the two responses.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "The following categories are available: Literature, History, Science, Art. Analyze the questions below and assign each to one of these categories. Do not include any extra words in your response. Strictly list one topic per line.\n1. Discuss the major themes and techniques found in Yukio Mishima's \"The Temple of the Golden Pavilion.\" How do they reflect the social conditions of 20th-century Japan?\n2. Analyze the geopolitical strategies and domestic policies adopted by various daimyo during the Sengoku period. How did these actions shape the postwar international order?\n3. Draw the Lewis structure of water and explain its polarity. How does this influence its unique properties such as high boiling point and ability to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices seen in Torii Kiyonaga’s ukiyo-e works. How do these paintings reflect the cultural and philosophical environment of the Edo period?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 191,
+      "output": 12
+    },
+    "cost_usd": 0.0006575000000000001,
+    "latency_ms": 1151.505947113037
+  },
+  "trialB": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 218,
+      "output": 10
+    },
+    "cost_usd": 0.000804,
+    "latency_ms": 2272.136926651001
+  }
+}

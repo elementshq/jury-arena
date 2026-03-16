@@ -7,8 +7,11 @@ import {
   getActive,
   setActive,
 } from "@/lib/active-benchmark";
+import { DemoBenchmarkRunModal } from "./demo-benchmark-run-modal";
 import { BenchmarkRunModal } from "./benchmark-run-modal";
 import { RunningBenchmarkBanner } from "./running-benchmark-banner";
+
+import { isDemo } from "@/lib/is-demo";
 
 export function BenchmarkProgressGlobalBar() {
   const [open, setOpen] = useState(false);
@@ -54,12 +57,16 @@ export function BenchmarkProgressGlobalBar() {
       <RunningBenchmarkBanner onViewProgress={onViewProgress} />
 
       {activeId && (
-        <BenchmarkRunModal
-          open={open}
-          onOpenChange={onOpenChange}
-          benchmarkId={activeId}
-          onTerminal={() => {}}
-        />
+        isDemo ? (
+          <DemoBenchmarkRunModal open={open} onOpenChange={onOpenChange} />
+        ) : (
+          <BenchmarkRunModal
+            open={open}
+            onOpenChange={onOpenChange}
+            benchmarkId={activeId}
+            onTerminal={() => {}}
+          />
+        )
       )}
     </>
   );

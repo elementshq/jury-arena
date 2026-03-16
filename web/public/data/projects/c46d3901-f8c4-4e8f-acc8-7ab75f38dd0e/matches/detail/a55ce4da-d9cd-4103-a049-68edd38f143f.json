@@ -1,0 +1,64 @@
+{
+  "id": "a55ce4da-d9cd-4103-a049-68edd38f143f",
+  "matchIndex": 154,
+  "sampleId": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+  "createdAt": "2026-03-11T05:47:44.932Z",
+  "match": {
+    "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_a": "openrouter/z-ai/glm-5",
+    "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+    "match_id": "match_00154",
+    "sample_id": "18c1178f-b43c-4bba-9989-7f3ef5f791bf",
+    "created_at": "2026-03-11T14:47:44.734366",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で基本要件を満たす。標準ライブラリのみで実装され、上位5単語を返す処理も明確。ただし対象が非再帰の .txt のみに限定され、日本語の単語分割には不向きで、実行用ディレクトリを自動作成する挙動はやや余計。\",\n  \"B\": \"正確性・実用性が高く、コマンドライン引数対応、大小文字吸収、句読点除去、拡張子の大文字対応、読み込み失敗時のスキップなど配慮がある。要件に対して十分で、使い方も明快。ただし型注釈の list[str] は古いPythonでは非互換で、Latin-1再試行はやや過剰。\",\n  \"reason\": \"両者とも要件は満たしていますが、Bの方が入力ディレクトリ指定、例外処理、句読点除去、.TXT対応など実用面でより完成度が高く、明確性も高いです。Aはシンプルで良い一方、固定ディレクトリ前提で柔軟性がやや低く、不要なディレクトリ作成処理もあります。\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"プロンプトの要求を満たす、シンプルで分かりやすいPythonプログラムを提供しています。標準ライブラリのみを使用し、基本的なエラー処理も実装されています。\",\n  \"B\": \"プロンプトの要求に加え、コマンドライン引数でのディレクトリ指定、サブディレクトリの再帰的探索、堅牢なエンコーディング処理など、より実用的で高機能なプログラムを提供しています。コードが適切にモジュール化されており、可読性・拡張性にも優れています。\",\n  \"winner\": \"B\",\n  \"reason\": \"回答Bは、回答Aの基本的な要件をすべて満たした上で、単語の処理方法、エラーハンドリングの堅牢性、コマンドライン引数対応などの実用的な機能面で明確に優れています。また、コードが関数ごとに整理されており、ソフトウェアとしてより洗練されているため、Bを優れた回答と判断しました。\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"標準ライブラリのみを使用し、正確で読みやすいコードを提供。エラー処理、日本語対応の注意点、ストップワードの言及など実用的な解説が充実している。ただし、コマンドライン引数対応がなく、エンコーディングフォールバックもない。\",\"B\":\"UTF-8失敗時のLatin-1フォールバック、コマンドライン引数対応、再帰的ディレクトリ走査オプション、型ヒント付き関数など、より実用的で拡張性の高い実装。エラー処理も丁寧で、5件未満の場合の通知も含む。\",\"winner\":\"B\",\"reason\":\"回答Bはコマンドライン引数対応、エンコーディングフォールバック、再帰的ディレクトリ走査、型ヒントなど実用的な機能が多く盛り込まれており、コードの品質と拡張性が高い。回答Aも十分な品質だが、回答Bの方が実際の使用シナリオに対してより堅牢な実装となっている。\"}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "ディレクトリ内の全てのテキストファイルを読み込み、出現回数が最も多い上位5単語を返すPythonプログラムを開発してください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "ディレクトリ内のテキストファイルを読み込み、出現頻度の高い単語上位5つを表示するPythonプログラムを作成しました。\n\nこのプログラムは標準ライブラリ（`os`, `re`, `collections`）のみを使用するため、追加のインストールは不要です。\n\n### Pythonプログラム\n\n```python\nimport os\nimport re\nfrom collections import Counter\n\ndef get_top_5_words(directory_path):\n    \"\"\"\n    指定されたディレクトリ内の全ての.txtファイルを読み込み、\n    出現回数が多い上位5つの単語を返す関数。\n    \"\"\"\n    total_word_counts = Counter()\n\n    # ディレクトリ内のファイルを走査\n    try:\n        files = os.listdir(directory_path)\n    except FileNotFoundError:\n        print(f\"エラー: ディレクトリ '{directory_path}' が見つかりません。\")\n        return []\n\n    for filename in files:\n        # テキストファイル(.txt)のみを対象にする\n        if filename.endswith(\".txt\"):\n            file_path = os.path.join(directory_path, filename)\n            \n            try:\n                # ファイルを読み込み（UTF-8エンコーディング想定）\n                with open(file_path, 'r', encoding='utf-8') as f:\n                    content = f.read()\n                    \n                    # 小文字に変換\n                    content = content.lower()\n                    \n                    # 正規表現を使って単語を抽出（アルファベットと数字の連続）\n                    # \\w は [a-zA-Z0-9_] に相当します\n                    words = re.findall(r'\\w+', content)\n                    \n                    # カウンターに追加\n                    total_word_counts.update(words)\n                    \n            except Exception as e:\n                print(f\"ファイル '{filename}' の読み込み中にエラーが発生しました: {e}\")\n\n    # 上位5件を取得\n    return total_word_counts.most_common(5)\n\nif __name__ == \"__main__\":\n    # 解析対象のディレクトリパスを指定\n    # 実行する環境に合わせてパスを変更してください\n    target_directory = \"./sample_texts\" \n    \n    # ディレクトリが存在しない場合は作成（テスト用）\n    if not os.path.exists(target_directory):\n        os.makedirs(target_directory)\n        print(f\"情報: ディレクトリ '{target_directory}' を作成しました。\")\n        print(\"テキストファイルを配置してから再度実行してください。\")\n    else:\n        top_words = get_top_5_words(target_directory)\n        \n        print(\"\\n--- 出現頻度トップ5 ---\")\n        if top_words:\n            for word, count in top_words:\n                print(f\"{word}: {count}回\")\n        else:\n            print(\"テキストファイルが見つからないか、単語が含まれていません。\")\n```\n\n### プログラムの解説\n\n1.  **ファイルの探索 (`os.listdir`)**:\n    指定されたディレクトリ内のファイル一覧を取得し、`.txt` で終わるファイルのみを処理対象とします。\n2.  **テキストの読み込みと前処理**:\n    *   ファイルを開く際は `utf-8` エンコーディングを指定しています（日本語環境や一般的なテキストファイル向け）。\n    *   `content.lower()` で大文字・小文字の違いを吸収し、\"The\" と \"the\" を同じ単語としてカウントできるようにします。\n3.  **単語の抽出 (`re.findall`)**:\n    正規表現 `\\w+` を使用して、記号や空白を除外し、単語（アルファベット、数字、アンダースコアの連続）のみをリストとして抽出します。\n4.  **集計 (`collections.Counter`)**:\n    `Counter` オブジェクトを使うことで、手動で辞書を作成してカウントする手間を省き、`most_common(5)` メソッドで簡単に上位5件を取得できます。\n\n### 実行方法\n\n1.  上記のコードを `word_count.py` などの名前で保存します。\n2.  同じ階層に `sample_texts` というフォルダを作成し、その中に解析したいテキストファイル（`.txt`）を入れます。（コード内で自動作成もします）\n3.  ターミナルで `python word_count.py` を実行します。\n\n### 注意点\n\n*   **日本語テキストの場合**: 上記のコードは英語のような「スペース区切り」のテキストを想定しています。日本語テキスト（スペースで区切られていない）を正確に単語分割するには、MeCabやJanomeなどの形態素解析ツールが必要です。\n*   **ストップワード**: \"the\", \"a\", \"is\" などの一般的な単語（ストップワード）もカウントされます。これらを除外したい場合は、別途ストップワードリストを用意してフィルタリング処理を追加する必要があります。",
+    "params": {},
+    "tokens": {
+      "input": 46,
+      "output": 2946
+    },
+    "cost_usd": 0.0068089199999999996,
+    "latency_ms": 63737.09797859192
+  },
+  "trialB": {
+    "output": "# 出現回数上位5単語を取得するPythonプログラム\nこのプログラムは以下の仕様に対応しています：\n- 指定したディレクトリ内の全ての`.txt`ファイルを読み込み、単語の出現回数を集計\n- 大文字小文字の区別をなくし、単語の前後に付いた句読点を自動的に除去\n- 出現回数が多い上位5単語を返却\n- 読み込みに失敗したファイルがある場合は警告を表示してスキップ\n- コマンドライン引数で処理対象ディレクトリを指定可能（省略時はカレントディレクトリ）\n\n---\n\n## プログラムコード\n```python\nimport os\nimport collections\nimport string\nimport sys\n\ndef clean_word(token: str) -> str:\n    \"\"\"トークンの前後から句読点を除去し、小文字に変換して返します\"\"\"\n    return token.strip(string.punctuation).lower()\n\ndef process_text_file(file_path: str) -> list[str]:\n    \"\"\"個別のテキストファイルを読み込み、クリーニングされた単語のリストを返します\"\"\"\n    try:\n        # UTF-8でファイルを読み込みを試行\n        with open(file_path, 'r', encoding='utf-8') as f:\n            text = f.read()\n    except UnicodeDecodeError:\n        # UTF-8で失敗した場合Latin-1で再試行（多国語対応のため）\n        print(f\"警告: {file_path} をUTF-8で読み込めませんでした。Latin-1で試行します。\")\n        try:\n            with open(file_path, 'r', encoding='latin-1') as f:\n                text = f.read()\n        except Exception as e:\n            print(f\"エラー: {file_path} の読み込みに失敗しました - {e}\")\n            return []\n    except Exception as e:\n        print(f\"エラー: {file_path} の読み込みに失敗しました - {e}\")\n        return []\n\n    # 空白で分割してトークンに分解\n    tokens = text.split()\n    # 各トークンをクリーニング\n    cleaned_tokens = [clean_word(token) for token in tokens]\n    # 空文字列になったトークンを除外（例：\"!!!\"を処理した場合）\n    cleaned_tokens = [token for token in cleaned_tokens if token]\n    return cleaned_tokens\n\ndef get_top_frequent_words(directory: str = '.', top_n: int = 5, recursive: bool = False) -> list[tuple[str, int]]:\n    \"\"\"\n    ディレクトリ内のテキストファイルから出現回数が多い上位N単語を取得します\n\n    Args:\n        directory: 処理対象のディレクトリパス（省略時はカレントディレクトリ）\n        top_n: 取得する上位単語の数（省略時は5）\n        recursive: サブディレクトリ内のファイルも対象にするか（省略時はFalse）\n\n    Returns:\n        (単語, 出現回数)のタプルを、出現回数の降順にソートしたリスト\n    \"\"\"\n    total_word_counts = collections.Counter()\n\n    # ディレクトリを走査するためのジェネレータを準備\n    if recursive:\n        dir_walker = os.walk(directory)\n    else:\n        dir_walker = [(directory, [], os.listdir(directory))]\n\n    for root, _, files in dir_walker:\n        for file_name in files:\n            # テキストファイル(.txt, .TXT)のみ対象にする\n            if file_name.lower().endswith('.txt'):\n                full_file_path = os.path.join(root, file_name)\n                file_words = process_text_file(full_file_path)\n                total_word_counts.update(file_words)\n\n    # 上位N単語を取得\n    return total_word_counts.most_common(top_n)\n\nif __name__ == \"__main__\":\n    # コマンドライン引数から処理対象ディレクトリを取得（省略時カレントディレクトリ）\n    target_directory = sys.argv[1] if len(sys.argv) > 1 else '.'\n\n    top_words = get_top_frequent_words(target_directory, top_n=5, recursive=False)\n\n    print(f\"=== {os.path.abspath(target_directory)} 内のテキストファイルの上位5単語 ===\")\n    for rank, (word, count) in enumerate(top_words, 1):\n        print(f\"{rank}. {word}: {count}回\")\n\n    # 5未満の単語しか見つからなかった場合の通知\n    if len(top_words) < 5:\n        print(f\"※ 全テキストファイルから {len(top_words)} 種類の単語しか検出されませんでした\")\n```\n\n---\n\n## 使い方\n1. **カレントディレクトリで実行する場合**\n   ```bash\n   python word_counter.py\n   ```\n\n2. **特定のディレクトリを指定して実行する場合**\n   ```bash\n   python word_counter.py /path/to/your/target/directory\n   ```\n\n3. **サブディレクトリ内のファイルも対象にする場合**\n   コード内の`recursive=False`を`recursive=True`に変更するか、関数呼び出し時に引数として渡してください。\n   ```python\n   top_words = get_top_frequent_words(target_directory, top_n=5, recursive=True)\n   ```\n\n---\n\n## 注意点\n- 単語の定義：空白で分割されたトークンを単位とし、前後の句読点を除去した上で小文字化されるため、`\"Hello,\"`と`\"hello\"`は同じ単語としてカウントされます。\n- エンコーディング：UTF-8に対応し、失敗した場合はLatin-1で再試行しますが、必要に応じてエンコーディングを増やすことが可能です。\n- 空ファイルや読み込み不可なファイルは自動的にスキップされ、警告が表示されます。",
+    "params": {},
+    "tokens": {
+      "input": 111,
+      "output": 6371
+    },
+    "cost_usd": 0.0025595,
+    "latency_ms": 168244.00687217712
+  }
+}

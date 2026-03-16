@@ -1,0 +1,305 @@
+{
+  "samples": [
+    {
+      "id": "f3be9472-a0b1-4b26-ba10-82c6a0bad132",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "In quantum physics, what is a superposition state? How is it related to the phenomenon of quantum entanglement?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "ddb6dfd0-e8b6-4350-b17e-b84bc0a7e59d",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "What is the area of a triangle with vertices at (0, 0), (-1, 1), and (3, 3)?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "cbb72379-f819-431b-83d9-65757d27211d",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "c98d63fe-cf2a-4f01-8ca0-b92137b903d7",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "In a survey conducted at a local high school, students’ preferences for new uniform colors were measured: 58% preferred blue, 45% preferred green, and 22% liked both colors. If a student is selected at random, what is the probability that the student likes neither blue nor green?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Write a C++ program that uses recursion to compute the nth Fibonacci number."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "c44a8462-5fee-4575-b85f-f2074a8c5bd0",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "How do different stages of life influence the way we understand time and death? Provide examples in your explanation."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Imagine you are running a race with others. If you just passed the person in second place, what position are you now in? What position is the person you passed now in?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "The following categories are available: Literature, History, Science, Art. Analyze the questions below and assign each to one of these categories. Do not include any extra words in your response. Strictly list one topic per line.\n1. Discuss the major themes and techniques found in Yukio Mishima's \"The Temple of the Golden Pavilion.\" How do they reflect the social conditions of 20th-century Japan?\n2. Analyze the geopolitical strategies and domestic policies adopted by various daimyo during the Sengoku period. How did these actions shape the postwar international order?\n3. Draw the Lewis structure of water and explain its polarity. How does this influence its unique properties such as high boiling point and ability to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices seen in Torii Kiyonaga’s ukiyo-e works. How do these paintings reflect the cultural and philosophical environment of the Edo period?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "98cc4d8f-6719-464f-921c-e509458c42fd",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Let’s start a conversation with you role-playing as Nobita from Doraemon. Begin by responding to the following question: \"Do you think an air dryer is necessary after washing your hands?\""
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "8a231164-d826-4f73-8f87-05709b1188ff",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Develop a Python program that reads all text files in a directory and returns the top five most frequently occurring words."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "7d7eb54f-f26e-430a-830b-c772ef8cb37a",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Pretend you are Hayao Miyazaki and speak as much like him as possible. Why do you think we need animation?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "4938075c-27fd-4809-88f7-22fc31e3d0f5",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Create a guide on business email etiquette for new employees. Include proper use of honorific language and important considerations in Japanese business culture."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "42e89246-cfd7-46ec-9365-624dfb28eaa1",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Explain the relationship between economic indicators such as GDP growth rate, Consumer Price Index (CPI), and unemployment rate, and the monetary policy of the Bank of Japan. Identify the main policy tools that influence these indicators and discuss their effects."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "32714de1-bbad-43f8-8dfb-916e5e5db550",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Create a simple website using HTML. When the user clicks a button, one of four jokes should be displayed at random."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "2167a132-e3a6-401a-b35c-3f5cca870cc6",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Write a poem about the four seasons in Kyoto. Express the beauty of each season and the fleeting nature of time."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "18812654-f35a-4181-88cf-44afaed16820",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Rate the following movie reviews on a scale from 1 to 5, where 1 is very negative, 3 is neutral, and 5 is very positive:\n1. This movie, released on November 18, 2019, was outstanding. The cinematography, acting, and plot were all top-notch.\n2. I have never been so disappointed by a film. The story was predictable and the characters were one-dimensional. In my opinion, this is one of the worst movies released in 2022.\n3. The movie was okay. There were parts I enjoyed, but also parts that felt lacking. It seems like a fairly average film released in February 2018.\nReturn your answer as a JSON array of integers."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "If the velocity of a satellite orbiting Earth decreases, what happens to its orbital radius and orbital period? Explain your reasoning using principles of physics."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "0dec64e6-8ea4-4410-9787-607ae46be701",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Explain Japan’s Antimonopoly Act and its impact on market competition. Provide specific examples and compare their implications."
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    },
+    {
+      "id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+      "info": {
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+            }
+          ]
+        },
+        "usage_output": null
+      },
+      "createdAt": "2026-03-11T04:43:08.395Z"
+    }
+  ],
+  "total": 20
+}

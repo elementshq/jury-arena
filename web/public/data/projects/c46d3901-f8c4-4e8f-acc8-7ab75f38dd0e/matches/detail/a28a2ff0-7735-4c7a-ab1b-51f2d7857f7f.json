@@ -1,0 +1,64 @@
+{
+  "id": "a28a2ff0-7735-4c7a-ab1b-51f2d7857f7f",
+  "matchIndex": 76,
+  "sampleId": "ddb6dfd0-e8b6-4350-b17e-b84bc0a7e59d",
+  "createdAt": "2026-03-11T06:40:41.012Z",
+  "match": {
+    "winner": "openrouter/moonshotai/kimi-k2.5",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "openrouter/moonshotai/kimi-k2.5",
+    "match_id": "match_00076",
+    "sample_id": "ddb6dfd0-e8b6-4350-b17e-b84bc0a7e59d",
+    "created_at": "2026-03-11T15:40:40.839326",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Correct and clear. It uses an appropriate formula, substitutes the points correctly, and gets the right area of 3. It follows the prompt well and is reasonably concise.\",\n  \"B\": \"Correct and clear. It also uses the correct formula and gets the right area of 3. However, the extra determinant method is unnecessary for this simple question, making it slightly less concise.\",\n  \"reason\": \"Both answers are accurate, complete, and easy to understand. Answer A is slightly better because it is more concise while still fully solving the problem.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"A correct and clearly explained solution using the coordinate formula. The steps are well-laid out with clear headings, making it easy to follow.\",\n  \"B\": \"A correct solution that uses the same primary method as A but also provides a valid alternative method using determinants. This makes the response more comprehensive.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are accurate and clear. Answer B is slightly better because it includes an alternative method for solving the problem, providing more information and value to the user.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, well-structured, and clear. It correctly applies the coordinate formula and arrives at the correct answer of 3 square units. The solution is concise and easy to follow.\",\"B\":\"Answer B is also accurate and clear. It uses the same shoelace formula correctly and arrives at the correct answer of 3 square units. Additionally, it provides an alternative determinant method, offering more depth and verification of the answer.\",\"winner\":\"B\",\"reason\":\"Both answers are accurate and clear, but Answer B provides additional value by including an alternative method (determinant approach) to verify the result, making it more comprehensive without being unnecessarily verbose.\"}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is the area of a triangle with vertices at (0, 0), (-1, 1), and (3, 3)?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "## Finding the Area of a Triangle\n\nI'll use the coordinate formula for the area of a triangle with vertices (x₁, y₁), (x₂, y₂), and (x₃, y₃):\n\n$$A = \\frac{1}{2} |x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$$\n\n## Substituting the Vertices\n\n- (x₁, y₁) = (0, 0)\n- (x₂, y₂) = (-1, 1)\n- (x₃, y₃) = (3, 3)\n\n$$A = \\frac{1}{2} |0(1 - 3) + (-1)(3 - 0) + 3(0 - 1)|$$\n\n$$A = \\frac{1}{2} |0 + (-3) + (-3)|$$\n\n$$A = \\frac{1}{2} |-6|$$\n\n$$\\boxed{A = 3}$$\n\nThe area of the triangle is **3 square units**.",
+    "params": {},
+    "tokens": {
+      "input": 36,
+      "output": 278
+    },
+    "cost_usd": 0.004278,
+    "latency_ms": 4239.957094192505
+  },
+  "trialB": {
+    "output": "To find the area of a triangle with vertices at $(0, 0)$, $(-1, 1)$, and $(3, 3)$, you can use the **shoelace formula**:\n\n$$\\text{Area} = \\frac{1}{2}|x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$$\n\nSubstituting the coordinates $(x_1, y_1) = (0, 0)$, $(x_2, y_2) = (-1, 1)$, and $(x_3, y_3) = (3, 3)$:\n\n$$\\text{Area} = \\frac{1}{2}|0(1 - 3) + (-1)(3 - 0) + 3(0 - 1)|$$\n\n$$\\text{Area} = \\frac{1}{2}|0 + (-3) + (-3)|$$\n\n$$\\text{Area} = \\frac{1}{2}|-6|$$\n\n$$\\text{Area} = \\frac{1}{2} \\cdot 6 = \\boxed{3}$$\n\nAlternatively, using the determinant method:\n$$\\text{Area} = \\frac{1}{2}\\left|\\det\\begin{pmatrix} 0 & 0 & 1 \\\\ -1 & 1 & 1 \\\\ 3 & 3 & 1 \\end{pmatrix}\\right| = \\frac{1}{2}|(-1)(3) - (1)(3)| = \\frac{1}{2}|-6| = 3$$\n\nThe area of the triangle is **3 square units**.",
+    "params": {},
+    "tokens": {
+      "input": 37,
+      "output": 1739
+    },
+    "cost_usd": 0.0038424500000000003,
+    "latency_ms": 107404.88028526306
+  }
+}

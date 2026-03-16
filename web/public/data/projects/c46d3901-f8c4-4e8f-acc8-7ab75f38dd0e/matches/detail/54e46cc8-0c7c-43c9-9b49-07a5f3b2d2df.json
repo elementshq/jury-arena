@@ -1,0 +1,64 @@
+{
+  "id": "54e46cc8-0c7c-43c9-9b49-07a5f3b2d2df",
+  "matchIndex": 12,
+  "sampleId": "cbb72379-f819-431b-83d9-65757d27211d",
+  "createdAt": "2026-03-11T06:06:26.131Z",
+  "match": {
+    "winner": "openrouter/moonshotai/kimi-k2.5",
+    "model_a": "openrouter/moonshotai/kimi-k2.5",
+    "model_b": "openrouter/bytedance-seed/seed-2.0-mini",
+    "match_id": "match_00012",
+    "sample_id": "cbb72379-f819-431b-83d9-65757d27211d",
+    "created_at": "2026-03-11T15:06:25.961377",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Answer A is accurate, follows the required output format, includes all requested fields, and is clear and concise. It correctly identifies Ishigami, Giovanni and Campanella, and Shimamura as the protagonists based on the passage.\",\n  \"B\": \"Answer B includes all books and authors, but it is less accurate and less concise because it lists extra characters instead of the protagonist field as requested. For two entries, it expands the protagonist into multiple characters, which weakens instruction-following and clarity.\",\n  \"reason\": \"Answer A better matches the prompt by extracting a single protagonist entry as presented for each work and formatting each line exactly as requested. Answer B adds unnecessary characters and is therefore less precise and less compliant with the instruction.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly extracts all the requested information and presents it in the specified format. It accurately identifies the protagonist for each book based on the provided text.\",\n  \"B\": \"Answer B follows the format but is less accurate. For the third book, 'Snow Country,' it incorrectly includes 'the young woman' as a protagonist, whereas the text explicitly states, 'The protagonist, Shimamura...'.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is the winner because it is more accurate. It correctly identifies the protagonist for all three books as described in the source text. Answer B makes an error on the third book by adding a character who was not explicitly named as a protagonist.\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly identifies the main protagonist (Ishigami) for book a), and lists Giovanni and Campanella for b), and Shimamura for c). It follows the format, is concise, and accurate. For a), Ishigami is arguably the central character (the 'suspect X'), making this a reasonable choice. For c), Shimamura is the clear protagonist.\",\"B\":\"Answer B includes more characters than necessary for a) and c). For a), listing 'mathematician Ishigami and the female shop owner and her daughter' is overly verbose and mixes protagonist with other key characters. For c), adding 'and the young woman' is unnecessary as Shimamura is the protagonist. This makes the response less concise and slightly less accurate in identifying the protagonist specifically.\",\"winner\":\"A\",\"reason\":\"Answer A is more concise and accurately identifies the protagonists without including unnecessary secondary characters. Answer B over-includes characters, making the protagonist field verbose and imprecise. The format requested 'protagonist' (singular concept), and Answer A handles this better by selecting the primary character rather than listing multiple characters.\"}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": " Ishigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni and Campanella, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 242,
+      "output": 1075
+    },
+    "cost_usd": 0.0024739000000000002,
+    "latency_ms": 41764.97983932495
+  },
+  "trialB": {
+    "output": "mathematician Ishigami and the female shop owner and her daughter, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni and Campanella, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura and the young woman, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 269,
+      "output": 8470
+    },
+    "cost_usd": 0.0034149000000000002,
+    "latency_ms": 264798.02203178406
+  }
+}

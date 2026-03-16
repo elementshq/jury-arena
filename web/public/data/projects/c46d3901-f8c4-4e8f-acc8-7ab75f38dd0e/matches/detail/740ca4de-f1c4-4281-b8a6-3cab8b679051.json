@@ -1,0 +1,64 @@
+{
+  "id": "740ca4de-f1c4-4281-b8a6-3cab8b679051",
+  "matchIndex": 65,
+  "sampleId": "cbb72379-f819-431b-83d9-65757d27211d",
+  "createdAt": "2026-03-11T06:37:50.259Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openrouter/anthropic/claude-sonnet-4.6",
+    "model_b": "openrouter/z-ai/glm-5",
+    "match_id": "match_00065",
+    "sample_id": "cbb72379-f819-431b-83d9-65757d27211d",
+    "created_at": "2026-03-11T15:37:50.242203",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "Skipped: openrouter/z-ai/glm-5: Trial skipped",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Extract the following information from the given text: book title, author, protagonist, and year of publication. Output the results in the format \"Protagonist, Book, Author, Year\" with one book per line.\na) In the mystery genre, Keigo Higashino’s works are particularly memorable. Among them, \"The Devotion of Suspect X,\" published in 2005, stands out. This iconic story centers on the mathematician Ishigami and a female shop owner and her daughter.\nb) \"Night on the Galactic Railroad,\" written by Kenji Miyazawa, is a work of Japanese children’s literature published in 1927. The story revolves around two boys, Giovanni and Campanella.\nc) \"Snow Country\" by Yasunari Kawabata, serialized in various magazines beginning in 1933, is a novel set in postwar Japan. The protagonist, Shimamura, becomes intrigued by a young woman who appears to be the companion of an ill man he encounters on a train bound for the snowy region."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Here are the extracted details:\n\nIshigami, The Devotion of Suspect X, Keigo Higashino, 2005\nGiovanni, Night on the Galactic Railroad, Kenji Miyazawa, 1927\nShimamura, Snow Country, Yasunari Kawabata, 1933",
+    "params": {},
+    "tokens": {
+      "input": 238,
+      "output": 78
+    },
+    "cost_usd": 0.001884,
+    "latency_ms": 2624.924898147583
+  },
+  "trialB": {
+    "output": "{\"error\":\"RateLimitError\",\"reason\":\"OTHER_ERROR\",\"skipped\":true,\"error_message\":\"litellm.RateLimitError: RateLimitError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Provider returned error\\\",\\\"code\\\":429,\\\"metadata\\\":{\\\"raw\\\":\\\"z-ai/glm-5 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\\\",\\\"provider_name\\\":\\\"GMICloud\\\",\\\"is_byok\\\":false,\\\"retry_after_seconds\\\":60}},\\\"user_id\\\":\\\"org_35MyZzqZoRQNZJDjhtATagIlpBm\\\"}\"}",
+    "params": {},
+    "tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "cost_usd": 0,
+    "latency_ms": 261.476993560791
+  }
+}

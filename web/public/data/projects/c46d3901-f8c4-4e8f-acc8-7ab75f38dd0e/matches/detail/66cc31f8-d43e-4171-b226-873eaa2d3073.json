@@ -1,0 +1,64 @@
+{
+  "id": "66cc31f8-d43e-4171-b226-873eaa2d3073",
+  "matchIndex": 85,
+  "sampleId": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+  "createdAt": "2026-03-11T05:25:14.155Z",
+  "match": {
+    "winner": "openrouter/z-ai/glm-5",
+    "model_a": "openrouter/z-ai/glm-5",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00085",
+    "sample_id": "4e966809-e8b8-4ab1-89e0-6664cc9b78f1",
+    "created_at": "2026-03-11T14:25:13.968284",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で、現在の位置が2番目・追い越した人が3番目と明確に述べている。説明も簡潔でわかりやすく、必要十分。\",\n  \"B\": \"結論自体は正しいが、英語や崩れた文、不要な混在表現が多く、明確性と簡潔性に欠ける。読みやすさも低い。\",\n  \"reason\": \"両者とも結論は正しいが、Aは日本語で一貫しており、質問の2点に明確に答えていて、説明も簡潔で自然。Bは内容は合っているものの、ノイズの多い表現や言語混在があり、追従性・明確性・簡潔性で劣るため。\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/z-ai/glm-5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"質問に対して、論理的で分かりやすい説明と共に正しい回答をしています。\",\n  \"B\": \"回答の結論は正しいですが、説明部分に無関係な言語や意味不明な単語が混在しており、非常に分かりにくいです。\",\n  \"winner\": \"A\",\n  \"reason\": \"回答Aは明確かつ簡潔に正しい答えを提示しています。一方、回答Bは結論こそ正しいものの、説明が冗長で意味の通らない部分が多く、品質が著しく低いです。したがって、明確さの点でAが明らかに優れています。\"\n}",
+        "winner": "openrouter/z-ai/glm-5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"正確で明確な回答。2番目を追い越した後の自分の位置（2位）と追い越した人の位置（3位）を簡潔に説明している。理由も論理的でわかりやすい。\",\"B\":\"答え自体は正しい（2位・3位）が、英語・日本語が混在し、誤字や不自然な表現が多く、非常に読みにくい。冗長で整理されていない。\",\"winner\":\"A\",\"reason\":\"回答AとBはどちらも正しい答え（自分が2位、追い越した人が3位）を提示しているが、回答Aは日本語で統一されており、論理的かつ簡潔に説明されている。回答Bは日英混在で誤字・乱雑な構成が目立ち、明確性・簡潔性の面で大きく劣る。\"}",
+        "winner": "openrouter/z-ai/glm-5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "あなたが人々と一緒にレースをしていると想像してみてください。あなたがちょうど2番目の人を追い越したとしたら、あなたの現在の位置は何番目でしょうか？ あなたが追い越した人の位置はどこでしょうか？"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "もし2番目の人を追い越した場合、あなたの現在の位置は**2番目**です。\n\n理由は以下の通りです。\n\n1.  **あなたの位置:** あなたが2番目の人を追い越すと、その人のポジションを引き継ぐことになるため、あなたが新しい「2番目」になります。（1番目の人はそのまま1番目です）。\n2.  **追い越した人の位置:** 元々2番目だった人は、あなたが前に出たことで順位を下げるため、**3番目**になります。",
+    "params": {},
+    "tokens": {
+      "input": 63,
+      "output": 658
+    },
+    "cost_usd": 0.0015587599999999997,
+    "latency_ms": 16377.485036849976
+  },
+  "trialB": {
+    "output": "あなたが今いるのは「2位」です。  \n\njustify: 抜くためには相手の後ろにいないといけないので、あれryptedでは③番手にいて、2位の人を抜きませんでした Actually you are currently 3rd place, behind the second place runner. So you were in third place when you overtook second place. After passing them you become second place, and the person you overtook becomes third.\n\nSo new position: 2位  \n抜いた人: 3位（あなたの後ろ）  \n\nThat's the answer. I think it's clear. \n\nBut let me rephrase: your current position is second place. The person you overtook is now third place. (Because you were third originally.) \n\nThus answer: 2位, 3位.\n2位で、抜いた人は3位です。  \n詳しく説明すると、抜くためには相手の後ろにいないといけないので、抜く前は3位 bluetoothしたがって、2位の人を抜き、你が2位になり lait、抜かれた人は3位に落ちます。 So answer: \"Your current position is 2nd, and the person you overtook is now 3rd.\"",
+    "params": {},
+    "tokens": {
+      "input": 75,
+      "output": 1000
+    },
+    "cost_usd": 0.00097025,
+    "latency_ms": 16224.547147750854
+  }
+}

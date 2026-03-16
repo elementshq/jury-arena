@@ -1,0 +1,64 @@
+{
+  "id": "dce8eca9-55f7-4e56-99cd-f7f7000841a6",
+  "matchIndex": 72,
+  "sampleId": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+  "createdAt": "2026-03-11T06:40:00.590Z",
+  "match": {
+    "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openrouter/x-ai/grok-4",
+    "match_id": "match_00072",
+    "sample_id": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+    "created_at": "2026-03-11T15:40:00.397765",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and fully follows the prompt. It provides a correct recursive C++ Fibonacci program, includes negative-input handling, clear comments, and a helpful explanation. It is slightly more verbose than necessary, but still clear and complete.\",\n  \"B\": \"Accurate and follows the prompt well. It gives a correct recursive C++ Fibonacci program with simple input validation and a concise explanation. It is clear and appropriately short, though slightly less robust and detailed than Answer A.\",\n  \"reason\": \"Both answers are correct and satisfy the request, but Answer A is better because it is more complete and robust. It includes stronger input handling, better documentation, and safer use of long long to reduce overflow risk. Answer B is simpler and more concise, but less comprehensive.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A provides a robust C++ program with excellent error handling using exceptions, a thoughtful choice of data type (`long long`) to prevent overflow, and a very detailed explanation of the code, its logic, and its performance limitations.\",\n  \"B\": \"Answer B provides a functional and correct C++ program that meets the basic requirements. The explanation is brief but accurate. The code is simpler but lacks the robustness of Answer A regarding error handling and potential integer overflow.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is superior due to its more robust code and comprehensive explanation. It addresses practical issues like integer overflow by using `long long` and employs better error handling with a try-catch block. The detailed breakdown of the logic and performance makes it a more educational and complete response.\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, well-structured, and includes input validation with exception handling, uses long long for overflow prevention, provides example output, and explains time complexity and limitations. It is thorough and educational but slightly verbose.\",\"B\":\"Answer B is accurate, concise, and follows the prompt well. It includes basic input validation, a clear explanation, and a note about inefficiency. It uses int which may overflow for large n, and validates input after reading (a minor logic issue where fib could be called with negative n if validation were bypassed, though here it's checked before calling). Overall clean and straightforward.\",\"winner\":\"A\",\"reason\":\"Answer A is superior due to better input validation (throws exception before calling the recursive function), use of long long to handle larger values without overflow, example output demonstrating the program's behavior, and more thorough documentation of edge cases and performance characteristics. While Answer B is more concise, Answer A provides a more complete and robust solution.\"}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a C++ program that uses recursion to compute the nth Fibonacci number."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "### Here's a complete C++ program that uses recursion to compute the nth Fibonacci number, with proper input validation and clear documentation:\n\n```cpp\n#include <iostream>\n#include <stdexcept>\n\n// Recursive Fibonacci function using 0-indexed sequence:\n// F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n >= 2\nlong long fibonacci(int n) {\n    // Reject negative input since Fibonacci sequence is defined for non-negative integers\n    if (n < 0) {\n        throw std::invalid_argument(\"n must be a non-negative integer\");\n    }\n\n    // Base cases: terminate recursion here\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n\n    // Recursive case: break problem into smaller subproblems\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n    std::cout << \"Enter a non-negative integer to calculate its Fibonacci number: \";\n    std::cin >> n;\n\n    try {\n        long long result = fibonacci(n);\n        std::cout << \"F(\" << n << \") = \" << result << std::endl;\n    } catch (const std::invalid_argument& error) {\n        std::cerr << \"Error: \" << error.what() << std::endl;\n        return 1;\n    }\n\n    return 0;\n}\n```\n\n---\n\n### Key Details:\n1.  **Recursive Logic**:\n    - The function has two base cases: `F(0) = 0` and `F(1) =1` to stop the recursion\n    - For any `n >=2`, the function breaks the problem into two smaller subproblems: calculating `F(n-1)` and `F(n-2)`, then returns their sum.\n2.  **Input Safety**: We throw and catch an invalid argument exception for negative inputs since the Fibonacci sequence is only defined for non-negative integers here.\n3.  **Data Type**: We use `long long` instead of `int` to avoid integer overflow for larger values of `n` (this can safely compute Fibonacci numbers up to `F(92)` before overflowing 64-bit integer limits).\n4.  **Performance Note**: This naive recursive implementation has **O(2^n) time complexity** because it redundantly recalculates the same Fibonacci values thousands of times for large `n`. For better performance, you could add memoization or use an iterative recursive approach, but this matches the standard textbook recursive Fibonacci solution requested.\n\n---\n### Example Output:\n```\nEnter a non-negative integer to calculate its Fibonacci number: 10\nF(10) = 55\n```\n```\nEnter a non-negative integer to calculate its Fibonacci number: -3\nError: n must be a non-negative integer\n```",
+    "params": {},
+    "tokens": {
+      "input": 65,
+      "output": 2699
+    },
+    "cost_usd": 0.0010861000000000002,
+    "latency_ms": 69686.84601783752
+  },
+  "trialB": {
+    "output": "```cpp\n#include <iostream>\n\nusing namespace std;\n\n// Recursive function to compute the nth Fibonacci number\nint fib(int n) {\n    if (n <= 1) {\n        return n;\n    }\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    int n;\n    cout << \"Enter a non-negative integer n: \";\n    cin >> n;\n    \n    if (n < 0) {\n        cout << \"Error: n must be non-negative.\" << endl;\n        return 1;\n    }\n    \n    cout << \"The \" << n << \"th Fibonacci number is: \" << fib(n) << endl;\n    return 0;\n}\n```\n\n### Explanation:\n- This program uses a recursive function `fib` to calculate the nth Fibonacci number, where F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.\n- It prompts the user for input, computes the result, and prints it.\n- Note: Recursive Fibonacci is inefficient for large n (e.g., n > 40) due to exponential time complexity and potential stack overflow. For larger values, consider an iterative approach or memoization.",
+    "params": {},
+    "tokens": {
+      "input": 699,
+      "output": 631
+    },
+    "cost_usd": 0.011562,
+    "latency_ms": 15856.691122055054
+  }
+}

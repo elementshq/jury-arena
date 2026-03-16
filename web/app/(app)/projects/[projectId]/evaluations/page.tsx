@@ -3,10 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { PageHeader } from "@/components/page-header";
+import { generateProjectParams } from "@/lib/static-params";
 import { getProject } from "@/lib/usecase/projects/get-project";
 import { getProjectDatasets } from "@/lib/usecase/projects/get-project-datasets";
 import { getProjectEvaluations } from "@/lib/usecase/projects/get-project-evaluations";
 import { EvaluationsList } from "./_components/evaluations-list";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateProjectParams : undefined;
 
 function buildEvaluationsBaseHref(params: {
   projectId: string;

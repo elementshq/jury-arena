@@ -1,0 +1,64 @@
+{
+  "id": "378a126b-821c-48ff-921c-de83222ab246",
+  "matchIndex": 48,
+  "sampleId": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+  "createdAt": "2026-03-11T05:06:59.468Z",
+  "match": {
+    "winner": "openrouter/x-ai/grok-4",
+    "model_a": "openrouter/x-ai/grok-4",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00048",
+    "sample_id": "610c40a3-43f3-4afe-88d2-94f7ff62b230",
+    "created_at": "2026-03-11T14:06:59.287455",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"要件を正確に満たしたシンプルで分かりやすい回答。4つのジョークをランダム表示でき、コードもそのまま使いやすい。説明も十分で簡潔。\",\n  \"B\": \"要件を満たしており完成度も高いが、デザインや追加機能が多く、シンプルなウェブサイトという依頼に対してやや過剰。やや冗長。\",\n  \"reason\": \"両方とも正確で実用的だが、ユーザーは『シンプルなウェブサイト』を求めているため、必要十分で簡潔な回答Aのほうが追従性と簡潔性で優れている。回答Bは高機能で見栄えは良いが、要件に対して少し盛り込みすぎている。\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"ユーザーの「シンプルなウェブサイト」という要求に忠実に従い、必要最小限のHTML, CSS, JavaScriptで機能を実現している。コードは簡潔で理解しやすい。\",\n  \"B\": \"要求された機能に加えて、洗練されたデザイン、アニメーション、連続表示防止、カウンターなど多くの追加機能を提供している。非常に高品質だが、「シンプル」という要求からは逸脱している。\",\n  \"winner\": \"A\",\n  \"reason\": \"ユーザーは「シンプルなウェブサイト」を要求した。回答Aはこの要求に忠実であり、簡潔で分かりやすいコードを提供している。一方、回答Bは多機能でデザインも凝っているが、その分コードが複雑になっており、「シンプル」という重要な要件を満たしていない。したがって、ユーザーの指示に最も正確に従った回答Aを優れた回答と判断する。\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"正確・シンプル・わかりやすいコードで要件を満たしている。英語ジョークに日本語訳付きという点はやや冗長だが、説明は明確。\",\"B\":\"要件を十分に満たしつつ、デザイン・アニメーション・連続防止・カウンター機能など付加価値が高い。日本語ジョークも自然で完成度が高い。\",\"winner\":\"B\",\"reason\":\"両回答とも要件（ボタンクリックでランダムに4つのジョークから1つ表示）を満たしているが、回答Bはより洗練されたデザイン、アニメーション、連続防止ロジック、カウンター機能など追加価値が多く、日本語ジョークも自然。ただし要件はシンプルなウェブサイトを求めており、回答Bはやや過剰とも言えるが、完成度・ユーザー体験・コードの品質いずれも回答Bが優れているため、Bを選択する。\"}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "HTMLでシンプルなウェブサイトを作成してください。ユーザーがボタンをクリックすると、4つのジョークからランダムに一つが表示されるようにしてください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "以下は、ユーザーのリクエストに基づいたシンプルなHTMLウェブサイトのコードです。このウェブサイトは、ボタンをクリックすると4つのジョークからランダムに1つを表示します。HTML、CSS（シンプルなスタイリングのため）、JavaScript（ランダム機能のため）を使用しています。\n\nこれを`.html`ファイルとして保存し、ブラウザで開くと動作します。\n\n```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>ランダムジョークジェネレーター</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            text-align: center;\n            margin: 50px;\n            background-color: #f0f0f0;\n        }\n        #jokeDisplay {\n            font-size: 1.2em;\n            margin: 20px;\n            padding: 10px;\n            border: 1px solid #ccc;\n            background-color: white;\n            min-height: 50px;\n        }\n        button {\n            padding: 10px 20px;\n            font-size: 1em;\n            cursor: pointer;\n        }\n    </style>\n</head>\n<body>\n    <h1>ランダムジョークジェネレーター</h1>\n    <p>ボタンをクリックしてジョークを表示！</p>\n    <button onclick=\"showRandomJoke()\">ジョークを表示</button>\n    <div id=\"jokeDisplay\"></div>\n\n    <script>\n        // 4つのジョークの配列\n        const jokes = [\n            \"なぜカカシは賞をもらったの？ 彼は自分の分野で傑出していたから！（Why did the scarecrow win an award? Because he was outstanding in his field!）\",\n            \"偽物のスパゲッティは何と言う？ インパスタ！（What do you call fake spaghetti? An impasta!）\",\n            \"なぜ骸骨同士は喧嘩しないの？ 根性がないから！（Why don't skeletons fight each other? They don't have the guts!）\",\n            \"自分のものじゃないチーズは何と言う？ ナチョチーズ！（What do you call cheese that isn't yours? Nacho cheese!）\"\n        ];\n\n        function showRandomJoke() {\n            // ランダムにジョークを選択\n            const randomIndex = Math.floor(Math.random() * jokes.length);\n            const joke = jokes[randomIndex];\n            // 表示\n            document.getElementById('jokeDisplay').innerText = joke;\n        }\n    </script>\n</body>\n</html>\n```\n\n### 説明:\n- **HTML構造**: ヘッダー、ボタン、ジョークを表示するdiv要素があります。\n- **CSS**: シンプルなスタイリングで中央寄せと背景を追加。\n- **JavaScript**: ジョークの配列を定義し、ボタンクリックでランダムに1つを選択してdivに表示します。ジョークは英語の定番ものを日本語訳付きで入れました（必要に応じて変更可能）。\n- **使い方**: ブラウザでファイルを開き、ボタンをクリックするとジョークが表示されます。複数回クリックするとランダムに変わります。\n\nこれで基本的な要件を満たしています。カスタマイズが必要なら教えてください！",
+    "params": {},
+    "tokens": {
+      "input": 716,
+      "output": 1004
+    },
+    "cost_usd": 0.017208,
+    "latency_ms": 24988.039255142212
+  },
+  "trialB": {
+    "output": "# ランダムジョークウェブサイト\n\n以下のコードをコピーして `.html` ファイルとして保存してください。\n\n```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>ランダムジョーク</title>\n  <style>\n    /* ========== リセット & 基本設定 ========== */\n    *, *::before, *::after {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n    }\n\n    body {\n      min-height: 100vh;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);\n      font-family: \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif;\n      color: #ffffff;\n    }\n\n    /* ========== カード ========== */\n    .card {\n      background: rgba(255, 255, 255, 0.07);\n      backdrop-filter: blur(12px);\n      -webkit-backdrop-filter: blur(12px);\n      border: 1px solid rgba(255, 255, 255, 0.15);\n      border-radius: 24px;\n      padding: 48px 40px;\n      max-width: 520px;\n      width: 90%;\n      text-align: center;\n      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);\n    }\n\n    /* ========== タイトル ========== */\n    .title {\n      font-size: 2rem;\n      font-weight: 700;\n      letter-spacing: 0.04em;\n      margin-bottom: 8px;\n    }\n\n    .title span {\n      display: inline-block;\n      animation: wobble 2s infinite;\n    }\n\n    .subtitle {\n      font-size: 0.9rem;\n      color: rgba(255, 255, 255, 0.55);\n      margin-bottom: 36px;\n    }\n\n    /* ========== ジョーク表示エリア ========== */\n    .joke-box {\n      background: rgba(255, 255, 255, 0.05);\n      border: 1px solid rgba(255, 255, 255, 0.1);\n      border-radius: 16px;\n      padding: 28px 24px;\n      min-height: 120px;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      gap: 12px;\n      margin-bottom: 32px;\n      transition: all 0.3s ease;\n    }\n\n    .joke-emoji {\n      font-size: 2.4rem;\n      line-height: 1;\n      opacity: 0;\n      transform: scale(0.5);\n      transition: opacity 0.4s ease, transform 0.4s ease;\n    }\n\n    .joke-text {\n      font-size: 1.05rem;\n      line-height: 1.7;\n      color: rgba(255, 255, 255, 0.9);\n      opacity: 0;\n      transform: translateY(10px);\n      transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;\n    }\n\n    .joke-placeholder {\n      font-size: 0.95rem;\n      color: rgba(255, 255, 255, 0.35);\n      font-style: italic;\n    }\n\n    /* 表示時のクラス */\n    .joke-box.visible .joke-emoji {\n      opacity: 1;\n      transform: scale(1);\n    }\n\n    .joke-box.visible .joke-text {\n      opacity: 1;\n      transform: translateY(0);\n    }\n\n    /* ========== ボタン ========== */\n    .btn {\n      position: relative;\n      display: inline-block;\n      padding: 14px 36px;\n      font-size: 1rem;\n      font-weight: 600;\n      color: #ffffff;\n      background: linear-gradient(135deg, #e94560 0%, #c2185b 100%);\n      border: none;\n      border-radius: 50px;\n      cursor: pointer;\n      overflow: hidden;\n      transition: transform 0.15s ease, box-shadow 0.15s ease;\n      box-shadow: 0 6px 20px rgba(233, 69, 96, 0.45);\n      letter-spacing: 0.04em;\n    }\n\n    .btn::after {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      background: rgba(255, 255, 255, 0);\n      transition: background 0.2s ease;\n    }\n\n    .btn:hover {\n      transform: translateY(-3px);\n      box-shadow: 0 10px 28px rgba(233, 69, 96, 0.55);\n    }\n\n    .btn:hover::after {\n      background: rgba(255, 255, 255, 0.08);\n    }\n\n    .btn:active {\n      transform: translateY(0px);\n      box-shadow: 0 4px 12px rgba(233, 69, 96, 0.35);\n    }\n\n    /* ========== カウンター ========== */\n    .counter {\n      margin-top: 20px;\n      font-size: 0.8rem;\n      color: rgba(255, 255, 255, 0.35);\n    }\n\n    .counter span {\n      color: rgba(255, 255, 255, 0.65);\n      font-weight: 600;\n    }\n\n    /* ========== アニメーション ========== */\n    @keyframes wobble {\n      0%, 100% { transform: rotate(0deg); }\n      20%       { transform: rotate(-10deg); }\n      40%       { transform: rotate(10deg); }\n      60%       { transform: rotate(-6deg); }\n      80%       { transform: rotate(6deg); }\n    }\n\n    @keyframes pop {\n      0%   { transform: scale(1); }\n      50%  { transform: scale(1.15); }\n      100% { transform: scale(1); }\n    }\n\n    .pop {\n      animation: pop 0.3s ease;\n    }\n  </style>\n</head>\n<body>\n\n  <div class=\"card\">\n    <!-- タイトル -->\n    <h1 class=\"title\"><span>😂</span> ジョークBOT</h1>\n    <p class=\"subtitle\">ボタンを押してランダムなジョークをゲットしよう！</p>\n\n    <!-- ジョーク表示エリア -->\n    <div class=\"joke-box\" id=\"jokeBox\">\n      <p class=\"joke-placeholder\" id=\"placeholder\">← ボタンを押してみよう！</p>\n      <span class=\"joke-emoji\" id=\"jokeEmoji\"></span>\n      <p class=\"joke-text\" id=\"jokeText\"></p>\n    </div>\n\n    <!-- ボタン -->\n    <button class=\"btn\" id=\"jokeBtn\" onclick=\"showJoke()\">\n      🎲 ジョークを見る\n    </button>\n\n    <!-- 表示カウンター -->\n    <p class=\"counter\">これまでに <span id=\"count\">0</span> 回笑いました 🤣</p>\n  </div>\n\n  <script>\n    // ========== ジョークデータ ==========\n    const jokes = [\n      {\n        emoji: \"🐄\",\n        text: \"牛が「モ〜」と鳴きました。\\nなぜなら、牛は「ファ〜」とは言えないからです。\"\n      },\n      {\n        emoji: \"🔦\",\n        text: \"懐中電灯が学校を辞めました。\\n理由は「もう十分、明るい未来が見えてきた」から。\"\n      },\n      {\n        emoji: \"🍣\",\n        text: \"寿司が二つ並んでいました。\\n片方が「最近どう？」と聞くと、\\nもう片方が「まぁ、なんとかネタが尽きてない感じ」と答えました。\"\n      },\n      {\n        emoji: \"🤖\",\n        text: \"プログラマーが妻に言いました。\\n「買い物に行って、牛乳を1本買ってきて。\\n卵があったら6個買ってきて」\\n妻は牛乳を6本買って帰ってきました。\"\n      }\n    ];\n\n    let count = 0;\n    let lastIndex = -1;\n\n    function showJoke() {\n      // 前回と違うジョークを選ぶ\n      let index;\n      do {\n        index = Math.floor(Math.random() * jokes.length);\n      } while (index === lastIndex && jokes.length > 1);\n      lastIndex = index;\n\n      const joke = jokes[index];\n      const box  = document.getElementById(\"jokeBox\");\n      const emoji = document.getElementById(\"jokeEmoji\");\n      const text  = document.getElementById(\"jokeText\");\n      const ph    = document.getElementById(\"placeholder\");\n      const btn   = document.getElementById(\"jokeBtn\");\n\n      // リセットアニメーション\n      box.classList.remove(\"visible\");\n\n      setTimeout(() => {\n        // プレースホルダーを非表示\n        ph.style.display = \"none\";\n\n        // 内容をセット\n        emoji.textContent = joke.emoji;\n        text.textContent  = joke.text;\n\n        // 表示アニメーション\n        box.classList.add(\"visible\");\n      }, 200);\n\n      // ボタンのポップアニメーション\n      btn.classList.remove(\"pop\");\n      void btn.offsetWidth; // reflow\n      btn.classList.add(\"pop\");\n\n      // カウンターを更新\n      count++;\n      document.getElementById(\"count\").textContent = count;\n    }\n  </script>\n\n</body>\n</html>\n```\n\n---\n\n## 機能の説明\n\n| 機能 | 詳細 |\n|---|---|\n| **ランダム表示** | 4つのジョークからランダムに1つを選択 |\n| **連続防止** | 直前と同じジョークは選ばれない |\n| **アニメーション** | ジョークがフェードインしてスムーズに登場 |\n| **カウンター** | 何回ボタンを押したか記録・表示 |\n| **レスポンシブ** | スマホ・PCどちらでも見やすいレイアウト |\n\n## 使い方\n\n1. コードをコピーして `joke.html` という名前で保存\n2. ブラウザで開く\n3. **「🎲 ジョークを見る」** ボタンをクリック！",
+    "params": {},
+    "tokens": {
+      "input": 66,
+      "output": 2917
+    },
+    "cost_usd": 0.043953,
+    "latency_ms": 32489.706993103027
+  }
+}

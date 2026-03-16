@@ -1,0 +1,64 @@
+{
+  "id": "b7a8d46e-1f7d-458a-a19b-f1e26cf314f2",
+  "matchIndex": 130,
+  "sampleId": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+  "createdAt": "2026-03-11T06:56:56.936Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "gemini/gemini-2.5-pro",
+    "model_b": "openai/gpt-5.4",
+    "match_id": "match_00130",
+    "sample_id": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+    "created_at": "2026-03-11T15:56:56.754084",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, follows the instruction to list one category per line, includes all four items, and is clear and concise.\",\n  \"B\": \"Accurate, follows the instruction to list one category per line, includes all four items, and is clear and concise.\",\n  \"reason\": \"Both answers are identical and fully satisfy the prompt with correct categories and no extra content.\",\n  \"winner\": \"tie\"\n}",
+        "winner": "tie"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly categorizes each of the four questions into the appropriate topics: Literature, History, Science, and Art. It strictly adheres to the user's formatting instructions by listing one topic per line without any extra words.\",\n  \"B\": \"Answer B also correctly identifies the category for each of the four questions. It perfectly follows the prompt's negative constraints, listing only the required topics, one per line.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are identical and flawless. They correctly categorize all four questions and follow the formatting instructions precisely.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A correctly categorizes all four questions as Literature, History, Science, and Art respectively. It follows all instructions, is complete, clear, and concise.\",\"B\":\"Answer B correctly categorizes all four questions as Literature, History, Science, and Art respectively. It follows all instructions, is complete, clear, and concise.\",\"winner\":\"tie\",\"reason\":\"Both answers are identical in content, accuracy, and format. They both correctly assign each question to its appropriate category and follow all the instructions provided.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "The following categories are available: Literature, History, Science, Art. Analyze the questions below and assign each to one of these categories. Do not include any extra words in your response. Strictly list one topic per line.\n1. Discuss the major themes and techniques found in Yukio Mishima's \"The Temple of the Golden Pavilion.\" How do they reflect the social conditions of 20th-century Japan?\n2. Analyze the geopolitical strategies and domestic policies adopted by various daimyo during the Sengoku period. How did these actions shape the postwar international order?\n3. Draw the Lewis structure of water and explain its polarity. How does this influence its unique properties such as high boiling point and ability to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices seen in Torii Kiyonaga’s ukiyo-e works. How do these paintings reflect the cultural and philosophical environment of the Edo period?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 192,
+      "output": 806
+    },
+    "cost_usd": 0.008300000000000002,
+    "latency_ms": 7265.585899353027
+  },
+  "trialB": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 191,
+      "output": 12
+    },
+    "cost_usd": 0.0006575000000000001,
+    "latency_ms": 1151.505947113037
+  }
+}

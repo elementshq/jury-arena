@@ -1,0 +1,64 @@
+{
+  "id": "7f3c3f20-85a6-495a-be90-e6c1ea0701aa",
+  "matchIndex": 50,
+  "sampleId": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+  "createdAt": "2026-03-11T06:34:34.833Z",
+  "match": {
+    "winner": "tie",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00050",
+    "sample_id": "02c386b9-8685-4073-9a4c-fcfae1c51c27",
+    "created_at": "2026-03-11T15:34:34.659184",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and clear. It correctly calculates half of 800,000 yen as 400,000 yen and the total as 1,200,000 yen. It is easy to follow, though slightly more verbose than necessary with the step-by-step framing.\",\n  \"B\": \"Accurate, clear, and complete. It correctly gives the second-year investment as 400,000 yen and the total as 1,200,000 yen. It is slightly more concise than A while still being easy to understand.\",\n  \"reason\": \"Both answers are correct and follow the prompt well, but B is marginally better because it is more concise while remaining equally clear and complete.\",\n  \"winner\": \"B\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct, clear, and breaks down the calculation into simple, numbered steps. It also helpfully provides the answer in a different format (1.2 million yen).\",\n  \"B\": \"Answer B is also correct and clear. It uses bullet points and bolding to structure the information effectively, showing the breakdown of the calculation before stating the final total.\",\n  \"winner\": \"tie\",\n  \"reason\": \"Both answers are excellent. They are both accurate, easy to understand, and arrive at the correct solution through a clear, logical breakdown. The choice between them comes down to a minor preference in formatting.\"\n}",
+        "winner": "tie"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, follows instructions, complete, clear, and uses a numbered step-by-step format with LaTeX math notation. Slightly more verbose due to the step-by-step structure but still concise.\",\"B\":\"Answer B is accurate, follows instructions, complete, clear, and uses a bullet-point format. It is slightly more concise and directly presents the breakdown without extra labeling of steps.\",\"winner\":\"tie\",\"reason\":\"Both answers are equally accurate, complete, clear, and concise. They arrive at the same correct answer of 1,200,000 yen using slightly different but equally effective formatting styles. Neither has a meaningful advantage over the other.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "A tech startup invested 800,000 yen in software development during its first year. In its second year, it invested half that amount in software development. What was the total amount invested in software development over the two years?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Let's solve this step-by-step:\n1.  First year investment: 800,000 yen\n2.  Second year investment is half the first year amount: $800,000 \\div 2 = 400,000$ yen\n3.  Total two-year investment: $800,000 + 400,000 = 1,200,000$ yen\n\nThe total amount invested over two years is **1,200,000 yen (1.2 million yen)**.",
+    "params": {},
+    "tokens": {
+      "input": 97,
+      "output": 334
+    },
+    "cost_usd": 0.0001433,
+    "latency_ms": 8937.419891357422
+  },
+  "trialB": {
+    "output": "Here's the breakdown:\n\n*   **Year 1 investment:** 800,000 yen\n*   **Year 2 investment:** Half of 800,000 yen = 400,000 yen\n\n**Total investment:** 800,000 yen + 400,000 yen = **1,200,000 yen**\n\nThe total amount invested over the two years was **1,200,000 yen**.",
+    "params": {},
+    "tokens": {
+      "input": 50,
+      "output": 680
+    },
+    "cost_usd": 0.0068625000000000005,
+    "latency_ms": 6676.769018173218
+  }
+}

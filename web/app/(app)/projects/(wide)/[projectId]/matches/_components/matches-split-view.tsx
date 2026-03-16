@@ -5,6 +5,7 @@ import {
   type MatchWithInfo,
   useMatchSelection,
 } from "../_hooks/use-match-selection";
+import { isDemo } from "@/lib/is-demo";
 import { MatchDetailEmptyState } from "./match-detail-empty-state";
 import { MatchDetailPane } from "./match-detail-pane";
 import { MatchListPane } from "./match-list-pane";
@@ -56,8 +57,9 @@ export function MatchesSplitView(props: {
   children: React.ReactNode;
   matches: MatchWithInfo[];
   sampleListHref: string;
+  projectId: string;
 }) {
-  const { children, matches, sampleListHref } = props;
+  const { children, matches, sampleListHref, projectId } = props;
 
   const [searchQuery, setSearchQuery] = useState("");
   const [targetModel, setTargetModel] = useState<string | null>(null);
@@ -87,7 +89,10 @@ export function MatchesSplitView(props: {
       // 詳細取得（matchIdがある場合のみ）
       if (m.matchId) {
         try {
-          const response = await fetch(`/api/matches/${m.matchId}`);
+          const url = isDemo
+            ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/projects/${projectId}/matches/detail/${m.matchId}.json`
+            : `/api/matches/${m.matchId}`;
+          const response = await fetch(url);
           if (response.ok) {
             const detail = await response.json();
             setSelectedInfo(detail);
@@ -99,7 +104,7 @@ export function MatchesSplitView(props: {
         }
       }
     },
-    [selectMatch, setSelectedInfo],
+    [selectMatch, setSelectedInfo, projectId],
   );
 
   /**

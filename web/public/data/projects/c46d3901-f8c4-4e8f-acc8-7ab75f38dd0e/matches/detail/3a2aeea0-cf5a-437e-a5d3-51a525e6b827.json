@@ -1,0 +1,64 @@
+{
+  "id": "3a2aeea0-cf5a-437e-a5d3-51a525e6b827",
+  "matchIndex": 55,
+  "sampleId": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+  "createdAt": "2026-03-11T06:35:44.326Z",
+  "match": {
+    "winner": "gemini/gemini-2.5-pro",
+    "model_a": "openrouter/x-ai/grok-4",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00055",
+    "sample_id": "b08176a7-4a68-4ba8-bb37-a2e5a86050fe",
+    "created_at": "2026-03-11T15:35:44.140575",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete. It correctly says you are now in second place and the person passed is now in third. Clear explanation, but slightly verbose for a simple riddle.\",\n  \"B\": \"Accurate, complete, clear, and very concise. It directly answers both parts of the question without unnecessary extra commentary.\",\n  \"reason\": \"Both answers are correct and follow the instructions, but B is better because it is just as complete while being clearer and more concise.\",\n  \"winner\": \"B\"\n}",
+        "winner": "gemini/gemini-2.5-pro"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response correctly answers both parts of the riddle. It provides a clear, logical breakdown and explains the common misconception associated with the question, which adds significant value and makes the answer more comprehensive.\",\n  \"B\": \"This response also correctly answers both parts of the riddle. It is accurate and concise, getting straight to the point without additional explanation.\",\n  \"winner\": \"A\",\n  \"reason\": \"Both answers are correct. However, Answer A is superior because it not only provides the correct answer but also explains the logic behind it and addresses why it's a classic riddle. This extra context is more helpful and informative for the user.\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Accurate, complete, and clear with good explanation of the reasoning. Slightly verbose but the additional explanation adds value by addressing the common misconception.\",\"B\":\"Accurate, concise, and directly answers both questions asked. Follows instructions well without unnecessary elaboration.\",\"winner\":\"tie\",\"reason\":\"Both answers are accurate and correctly identify that passing the person in second place puts you in second place, while the passed person drops to third. Answer A provides more explanation of the reasoning which helps understanding, while Answer B is more concise and directly answers the question. Both have merit and neither is clearly superior.\"}",
+        "winner": "tie"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Imagine you are running a race with others. If you just passed the person in second place, what position are you now in? What position is the person you passed now in?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Based on the classic wording of this riddle, here's the logical breakdown:\n\n- If you just passed the person who was in **second place**, that means *you* were previously in third place (or further back, but the key is you overtook them).\n- After passing them, **you** are now in **second place**.\n- The person you passed is now in **third place**.\n\nThe trick here is that many people instinctively think passing second place puts you in first—but nope, the leader is still ahead! If the riddle had said you passed the person in *first* place, *then* you'd be in first. Fun one, right? 😊",
+    "params": {},
+    "tokens": {
+      "input": 720,
+      "output": 326
+    },
+    "cost_usd": 0.00705,
+    "latency_ms": 8590.982913970947
+  },
+  "trialB": {
+    "output": "This is a classic riddle!\n\nIf you just passed the person in second place, you are now in **second place**.\n\nThe person you passed is now in **third place**.",
+    "params": {},
+    "tokens": {
+      "input": 37,
+      "output": 852
+    },
+    "cost_usd": 0.008566250000000001,
+    "latency_ms": 8429.656982421875
+  }
+}

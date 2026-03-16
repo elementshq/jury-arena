@@ -1,0 +1,64 @@
+{
+  "id": "f30d8ea5-08c6-4a24-8d3d-e40533bd59c2",
+  "matchIndex": 35,
+  "sampleId": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+  "createdAt": "2026-03-11T06:26:45.424Z",
+  "match": {
+    "winner": "openrouter/minimax/minimax-m2.5",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openrouter/minimax/minimax-m2.5",
+    "match_id": "match_00035",
+    "sample_id": "a3522967-a16b-41c3-921b-98aa4a3a83b1",
+    "created_at": "2026-03-11T15:26:45.245918",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and complete, but it does not strictly follow the instruction to list one topic per line without extra words because it includes numbering.\",\n  \"B\": \"Accurate, complete, clear, and fully follows the instruction by listing exactly one topic per line with no extra words.\",\n  \"reason\": \"Both answers assign the correct categories, but Answer B better follows the formatting constraint of the original prompt by omitting numbering and providing only the topic names on separate lines.\",\n  \"winner\": \"B\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly identifies the category for each question but includes list numbering, which violates the instruction to not include any extra words.\",\n  \"B\": \"Answer B correctly identifies the category for each question and perfectly follows all instructions, including the negative constraints to avoid extra words and list one topic per line.\",\n  \"winner\": \"B\",\n  \"reason\": \"Answer B is better because it adheres more strictly to the instructions. The prompt explicitly stated 'Do not include any extra words', and Answer A includes numbering, which is extraneous. Answer B provides only the requested information in the correct format.\"\n}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A includes the numbered list format (1., 2., 3., 4.) along with the category names, which adds minor extra content beyond what was strictly requested.\",\"B\":\"Answer B lists only the category names, one per line, with no extra words or numbering, perfectly matching the instruction 'Do not include any extra words in your response. Strictly list one topic per line.'\",\"winner\":\"B\",\"reason\":\"The prompt explicitly states 'Do not include any extra words' and 'Strictly list one topic per line.' Answer B follows this exactly by listing only the category names without any numbering or additional content. Answer A adds numbered prefixes (1., 2., 3., 4.) which constitute extra words/characters not requested.\"}",
+        "winner": "openrouter/minimax/minimax-m2.5"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "The following categories are available: Literature, History, Science, Art. Analyze the questions below and assign each to one of these categories. Do not include any extra words in your response. Strictly list one topic per line.\n1. Discuss the major themes and techniques found in Yukio Mishima's \"The Temple of the Golden Pavilion.\" How do they reflect the social conditions of 20th-century Japan?\n2. Analyze the geopolitical strategies and domestic policies adopted by various daimyo during the Sengoku period. How did these actions shape the postwar international order?\n3. Draw the Lewis structure of water and explain its polarity. How does this influence its unique properties such as high boiling point and ability to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices seen in Torii Kiyonaga’s ukiyo-e works. How do these paintings reflect the cultural and philosophical environment of the Edo period?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "1. Literature\n2. History\n3. Science\n4. Art",
+    "params": {},
+    "tokens": {
+      "input": 244,
+      "output": 267
+    },
+    "cost_usd": 0.00013120000000000002,
+    "latency_ms": 7279.791831970215
+  },
+  "trialB": {
+    "output": "Literature\nHistory\nScience\nArt",
+    "params": {},
+    "tokens": {
+      "input": 223,
+      "output": 597
+    },
+    "cost_usd": 0.00062736,
+    "latency_ms": 109128.75890731812
+  }
+}

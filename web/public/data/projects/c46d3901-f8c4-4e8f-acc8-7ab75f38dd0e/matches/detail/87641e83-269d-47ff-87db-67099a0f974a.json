@@ -1,0 +1,64 @@
+{
+  "id": "87641e83-269d-47ff-87db-67099a0f974a",
+  "matchIndex": 95,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T06:46:10.685Z",
+  "match": {
+    "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_a": "openrouter/x-ai/grok-4",
+    "model_b": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "match_id": "match_00095",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T15:46:10.504237",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Correct and very concise. It directly answers the riddle with the expected response, 'Washington, D.C.' Clear and fully sufficient.\",\n  \"B\": \"Correct and clear, with a helpful explanation of the riddle. However, it is less concise and includes extra commentary and emojis that were not necessary.\",\n  \"reason\": \"Both answers are accurate and understandable, but Answer A is better because it gives the correct response directly and more concisely, which fits the prompt best.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/x-ai/grok-4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A is correct and very concise, providing only the direct answer to the riddle.\",\n  \"B\": \"Answer B is also correct but provides a complete explanation of the wordplay in the riddle, explaining why the answer is Washington, D.C. and not a location relative to the other houses mentioned.\",\n  \"winner\": \"B\",\n  \"reason\": \"Both answers are correct, but Answer B is superior because it explains the nature of the riddle. For a user who doesn't understand the pun, Answer A would be confusing. Answer B's explanation makes it a much more helpful and complete response.\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate and extremely concise, directly stating Washington D.C. as the location of the White House. It follows the instruction and is clear, but provides no explanation or context.\",\"B\":\"Answer B is accurate and provides additional context explaining why the answer is Washington D.C., noting the riddle's misdirection. It is clear and complete, though slightly more verbose with the emoji and formatting.\",\"winner\":\"B\",\"reason\":\"While both answers are correct, Answer B provides better value by explaining the reasoning behind the answer - noting that it's a riddle playing on expectations and clarifying that the White House is a landmark. This makes it more helpful and complete without being excessively verbose. Answer A, while accurate, is too bare to be truly useful.\"}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "Washington, D.C.",
+    "params": {},
+    "tokens": {
+      "input": 718,
+      "output": 2876
+    },
+    "cost_usd": 0.045294,
+    "latency_ms": 59036.70287132263
+  },
+  "trialB": {
+    "output": "The white house is in **Washington, D.C.** — it's the **White House**, the residence and office of the President of the United States.\n\nThis riddle plays on your expectations — it describes colorful houses to distract you, but the \"White House\" is a well-known landmark, not just a white-colored house in the scene. 🏛️🇺🇸",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 77
+    },
+    "cost_usd": 0.000010682,
+    "latency_ms": 2957.0891857147217
+  }
+}

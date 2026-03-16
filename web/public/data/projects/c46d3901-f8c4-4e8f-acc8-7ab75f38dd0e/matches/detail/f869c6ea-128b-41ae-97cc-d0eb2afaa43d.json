@@ -1,0 +1,64 @@
+{
+  "id": "f869c6ea-128b-41ae-97cc-d0eb2afaa43d",
+  "matchIndex": 81,
+  "sampleId": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+  "createdAt": "2026-03-11T06:42:12.663Z",
+  "match": {
+    "winner": "openai/gpt-5.4",
+    "model_a": "openai/gpt-5.4",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00081",
+    "sample_id": "c67f3a3e-3ed1-4fff-99da-b258995dd156",
+    "created_at": "2026-03-11T15:42:12.488850",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate, directly answers the prompt, and provides a simple recursive C++ Fibonacci program. It is clear, concise, and appropriately scoped for the request. One minor weakness is that it does not handle invalid negative input.\",\n  \"B\": \"Accurate and very comprehensive, but it goes far beyond the prompt by including multiple implementations, benchmarking, sequence printing, large-number examples, and detailed discussion. While clear, it is not concise and is less well-aligned with the simple request for a recursive Fibonacci program.\",\n  \"reason\": \"Answer A is better because it follows the prompt more closely: it gives a straightforward C++ program using recursion to compute the nth Fibonacci number. Answer B is technically strong, but it is overly elaborate and includes a lot of unnecessary material for the user's request.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"A concise and correct program that directly answers the user's request for a recursive Fibonacci function. It is simple, easy to understand, and includes a basic main function to demonstrate its use.\",\n  \"B\": \"An extremely comprehensive response that provides three different recursive implementations (basic, memoized, tail-recursive), along with performance benchmarking, error handling, and detailed explanations. It is more of a tutorial than a direct answer.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is better because it directly and concisely answers the user's prompt. The user asked for *a* program, and A provides the most straightforward and canonical example. Answer B, while very informative, provides far more information and complexity than was requested, which could be overwhelming for a user simply looking for the basic recursive implementation.\"\n}",
+        "winner": "openai/gpt-5.4"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, directly addresses the prompt with a clean recursive Fibonacci implementation, is easy to understand, and includes a brief explanation and example. It is concise and follows the instructions well.\",\"B\":\"Answer B is also accurate and goes well beyond the prompt by providing three implementations (basic, memoized, tail-recursive), benchmarking, error handling, and a detailed comparison table. While thorough and educational, it significantly exceeds what was asked.\",\"winner\":\"A\",\"reason\":\"The prompt asks for a simple recursive Fibonacci program. Answer A directly and cleanly fulfills this requirement with clarity and conciseness. Answer B, while impressive and educational, is over-engineered for the task — it adds memoization, tail recursion, benchmarking, and error handling that were not requested. For a straightforward prompt, Answer A is the more appropriate response.\"}",
+        "winner": "openai/gpt-5.4"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a C++ program that uses recursion to compute the nth Fibonacci number."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "```cpp\n#include <iostream>\nusing namespace std;\n\nint fibonacci(int n) {\n    if (n <= 1)\n        return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n    cout << \"Enter a number: \";\n    cin >> n;\n\n    cout << \"Fibonacci(\" << n << \") = \" << fibonacci(n) << endl;\n    return 0;\n}\n```\n\nThis program:\n- Uses a recursive function `fibonacci(int n)`\n- Returns `n` when `n` is `0` or `1`\n- Otherwise computes `fibonacci(n-1) + fibonacci(n-2)`\n\nExample:\n- Input: `6`\n- Output: `Fibonacci(6) = 8`",
+    "params": {},
+    "tokens": {
+      "input": 21,
+      "output": 168
+    },
+    "cost_usd": 0.0025725,
+    "latency_ms": 2953.5210132598877
+  },
+  "trialB": {
+    "output": "# Fibonacci Number Using Recursion in C++\n\n## Overview\nThis program demonstrates computing the nth Fibonacci number using recursion, with multiple implementations ranging from basic to optimized approaches.\n\n## Implementation\n\n```cpp\n#include <iostream>\n#include <unordered_map>\n#include <stdexcept>\n#include <chrono>\n\n// ============================================================\n// 1. Basic Recursive Implementation\n// ============================================================\nlong long fibBasic(int n) {\n    if (n < 0) {\n        throw std::invalid_argument(\"n must be a non-negative integer\");\n    }\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n\n    return fibBasic(n - 1) + fibBasic(n - 2);\n}\n\n// ============================================================\n// 2. Memoized Recursive Implementation (Top-Down DP)\n// ============================================================\nlong long fibMemo(int n, std::unordered_map<int, long long>& memo) {\n    if (n < 0) {\n        throw std::invalid_argument(\"n must be a non-negative integer\");\n    }\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n\n    // Return cached result if available\n    auto it = memo.find(n);\n    if (it != memo.end()) {\n        return it->second;\n    }\n\n    // Compute and cache the result\n    memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);\n    return memo[n];\n}\n\n// Wrapper function for cleaner interface\nlong long fibMemoized(int n) {\n    std::unordered_map<int, long long> memo;\n    return fibMemo(n, memo);\n}\n\n// ============================================================\n// 3. Tail-Recursive Implementation\n// ============================================================\nlong long fibTailHelper(int n, long long prev, long long curr) {\n    if (n == 0) return prev;\n    if (n == 1) return curr;\n    return fibTailHelper(n - 1, curr, prev + curr);\n}\n\nlong long fibTail(int n) {\n    if (n < 0) {\n        throw std::invalid_argument(\"n must be a non-negative integer\");\n    }\n    return fibTailHelper(n, 0, 1);\n}\n\n// ============================================================\n// Utility: Benchmark a function\n// ============================================================\ntemplate <typename Func>\nvoid benchmark(const std::string& name, Func func, int n) {\n    auto start = std::chrono::high_resolution_clock::now();\n    long long result = func(n);\n    auto end = std::chrono::high_resolution_clock::now();\n\n    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);\n    std::cout << name << \"(fib(\" << n << \") = \" << result\n              << \") took: \" << duration.count() << \" µs\\n\";\n}\n\n// ============================================================\n// Main Program\n// ============================================================\nint main() {\n    // --- Display Fibonacci Sequence ---\n    std::cout << \"========================================\\n\";\n    std::cout << \"       Fibonacci Sequence (0-10)        \\n\";\n    std::cout << \"========================================\\n\";\n\n    std::cout << \"Index: \";\n    for (int i = 0; i <= 10; ++i) std::cout << i << \"\\t\";\n    std::cout << \"\\nValue: \";\n    for (int i = 0; i <= 10; ++i) std::cout << fibTail(i) << \"\\t\";\n    std::cout << \"\\n\\n\";\n\n    // --- Compare All Implementations ---\n    std::cout << \"========================================\\n\";\n    std::cout << \"  Comparing Implementations (n = 10)   \\n\";\n    std::cout << \"========================================\\n\";\n\n    int n = 10;\n    std::cout << \"Basic Recursive   : fib(\" << n << \") = \" << fibBasic(n)     << \"\\n\";\n    std::cout << \"Memoized Recursive: fib(\" << n << \") = \" << fibMemoized(n)  << \"\\n\";\n    std::cout << \"Tail Recursive    : fib(\" << n << \") = \" << fibTail(n)      << \"\\n\\n\";\n\n    // --- Performance Benchmark ---\n    std::cout << \"========================================\\n\";\n    std::cout << \"         Performance Benchmark          \\n\";\n    std::cout << \"========================================\\n\";\n\n    benchmark(\"Basic    \", fibBasic,    35);\n    benchmark(\"Memoized \", fibMemoized, 35);\n    benchmark(\"Tail     \", fibTail,     35);\n    std::cout << \"\\n\";\n\n    // --- Large Numbers with Memoized ---\n    std::cout << \"========================================\\n\";\n    std::cout << \"       Large Fibonacci Numbers          \\n\";\n    std::cout << \"========================================\\n\";\n\n    for (int i : {40, 50, 60, 70, 80, 90}) {\n        std::cout << \"fib(\" << i << \") = \" << fibMemoized(i) << \"\\n\";\n    }\n    std::cout << \"\\n\";\n\n    // --- Error Handling ---\n    std::cout << \"========================================\\n\";\n    std::cout << \"          Error Handling Test           \\n\";\n    std::cout << \"========================================\\n\";\n\n    try {\n        fibBasic(-1);\n    } catch (const std::invalid_argument& e) {\n        std::cout << \"Caught exception: \" << e.what() << \"\\n\";\n    }\n\n    return 0;\n}\n```\n\n## Sample Output\n\n```\n========================================\n       Fibonacci Sequence (0-10)\n========================================\nIndex: 0\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\nValue: 0\t1\t1\t2\t3\t5\t8\t13\t21\t34\t55\n\n========================================\n  Comparing Implementations (n = 10)\n========================================\nBasic Recursive   : fib(10) = 55\nMemoized Recursive: fib(10) = 55\nTail Recursive    : fib(10) = 55\n\n========================================\n         Performance Benchmark\n========================================\nBasic    (fib(35) = 9227465) took: 28743 µs\nMemoized (fib(35) = 9227465) took: 12 µs\nTail     (fib(35) = 9227465) took: 3 µs\n\n========================================\n       Large Fibonacci Numbers\n========================================\nfib(40) = 102334155\nfib(50) = 12586269025\nfib(60) = 1548008755920\nfib(70) = 190392490709135\nfib(80) = 23416728348161920\nfib(90) = 2880067194370816120\n\n========================================\n          Error Handling Test\n========================================\nCaught exception: n must be a non-negative integer\n```\n\n## Comparison of Approaches\n\n| Approach | Time Complexity | Space Complexity | Notes |\n|---|---|---|---|\n| **Basic Recursive** | O(2ⁿ) | O(n) call stack | Simple but slow |\n| **Memoized Recursive** | O(n) | O(n) memo + stack | Fast, caches results |\n| **Tail Recursive** | O(n) | O(n) call stack* | Clean, no redundancy |\n\n> *Tail recursion **can** be O(1) space if the compiler applies **Tail Call Optimization (TCO)**, which GCC/Clang do with `-O2`.\n\n## Key Concepts\n\n- **Base Cases** → `fib(0) = 0`, `fib(1) = 1` stop the recursion\n- **Memoization** → Stores previously computed results to avoid redundant calls\n- **Tail Recursion** → Passes accumulated state forward instead of waiting for return values, enabling compiler optimization\n- **Input Validation** → Throws `std::invalid_argument` for negative inputs",
+    "params": {},
+    "tokens": {
+      "input": 24,
+      "output": 2008
+    },
+    "cost_usd": 0.030192,
+    "latency_ms": 23165.151119232178
+  }
+}

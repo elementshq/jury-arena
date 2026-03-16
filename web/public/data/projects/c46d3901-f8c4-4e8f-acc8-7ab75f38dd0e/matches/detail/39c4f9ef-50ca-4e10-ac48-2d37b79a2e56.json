@@ -1,0 +1,64 @@
+{
+  "id": "39c4f9ef-50ca-4e10-ac48-2d37b79a2e56",
+  "matchIndex": 148,
+  "sampleId": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+  "createdAt": "2026-03-11T07:08:48.284Z",
+  "match": {
+    "winner": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_a": "openrouter/bytedance-seed/seed-2.0-mini",
+    "model_b": "openrouter/z-ai/glm-5",
+    "match_id": "match_00148",
+    "sample_id": "141c5c25-04bf-44b2-906f-3946f5199b5e",
+    "created_at": "2026-03-11T16:08:48.093398",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and well-reasoned. It correctly explains that reducing a satellite’s speed from a given orbit lowers its orbital energy, leading to a smaller orbit and a shorter period. It uses the relevant physics appropriately and addresses the common confusion between comparing different circular orbits and changing an existing orbit.\",\n  \"B\": \"Mostly clear and structured, but fundamentally inaccurate for the usual interpretation of the question. It incorrectly concludes that decreasing a satellite’s velocity makes it move to a higher orbit, then adds a note that partly contradicts its main answer. This hurts both accuracy and clarity.\",\n  \"reason\": \"Answer A is better because it is physically correct, directly answers the question, and explains the distinction between instantaneous orbital change and comparison between separate stable circular orbits. Answer B confuses these cases and gives the wrong main conclusion.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"This response is accurate and provides a clear, step-by-step explanation grounded in correct physical principles. It correctly identifies that a decrease in velocity will cause the orbital radius and period to decrease. It also includes an excellent section that clarifies a common misconception about orbital mechanics, which is precisely the mistake made by Answer B.\",\n  \"B\": \"This response is fundamentally incorrect. It misinterprets the relationship between velocity and radius for stable circular orbits, claiming that a decrease in velocity leads to an increase in radius. While the equations it presents are correct, their application to the user's question is flawed. It includes a final note that correctly describes the physics of an orbital maneuver, but this note directly contradicts the main body of the answer, making the entire response confusing and self-contradictory.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is correct, clear, and provides a high-quality explanation of the physics. Answer B is incorrect in its primary conclusion and reasoning, and is internally inconsistent.\"\n}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is physically accurate in its explanation of what happens when a satellite slows down in its current orbit (it falls inward). The math is correct and the 'clarifying the common confusion' section is particularly valuable. However, the prompt asks about a satellite whose velocity 'decreases' in a general sense, which could be interpreted as comparing two stable orbits. Answer A interprets this as an instantaneous velocity reduction, leading to a smaller radius conclusion.\",\"B\":\"Answer B interprets the question as comparing two stable circular orbits (one with lower velocity vs. one with higher velocity), concluding that lower velocity corresponds to a larger radius and longer period. The physics equations are correct for this interpretation. The 'Important Note' section actually acknowledges the confusion and explains the retrograde burn scenario, but then contradicts itself slightly by saying 'to transition from high, slow orbit to low, fast orbit, you must slow down' while also saying the answer is that radius increases when velocity decreases.\",\"winner\":\"A\",\"reason\":\"Answer A is more physically rigorous and accurate. When a satellite's velocity decreases (e.g., via a retrograde burn), it actually moves to a lower orbit with a smaller radius and shorter period - this is the correct physics. Answer B makes a logical error by conflating the equilibrium relationship v=sqrt(GM/r) (comparing different stable orbits) with what happens dynamically when velocity changes. Answer B's 'Important Note' even partially contradicts its own main conclusion. Answer A correctly identifies this common misconception and explains the actual physical outcome, while also properly using the vis-viva equation to support the reasoning.\"}",
+        "winner": "openrouter/bytedance-seed/seed-2.0-mini"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "If the velocity of a satellite orbiting Earth decreases, what happens to its orbital radius and orbital period? Explain your reasoning using principles of physics."
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "### Step 1: Key Orbital Physics Principles\nTo analyze this, we start with two core principles of orbital mechanics:\n1.  **Force Balance for Circular Orbits**: Gravitational force provides the centripetal force required to keep a satellite in a circular orbit. For a satellite of mass $m_s$ orbiting Earth (mass $M_e$):\n    $$\\frac{G M_e m_s}{r^2} = \\frac{m_s v^2}{r}$$\n    Canceling $m_s$ and rearranging gives the critical relation for circular orbital speed:\n    $$v = \\sqrt{\\frac{G M_e}{r}}$$\n    where $r$ is the orbital radius, and $G$ is the gravitational constant. This shows orbital speed is inversely proportional to the square root of the orbital radius for stable circular orbits: smaller orbits have faster speeds, and larger orbits have slower speeds.\n\n2.  **Vis-Viva Equation (General Orbits)**: For any elliptical or circular orbit, the vis-viva equation relates a satellite's speed at any point to its orbital parameters:\n    $$v^2 = G M_e\\left( \\frac{2}{r} - \\frac{1}{a} \\right)$$\n    where $a$ is the semi-major axis (the average orbital radius for elliptical orbits, equal to $r$ for circular orbits).\n\n3.  **Kepler's Third Law**: The square of the orbital period $T$ is proportional to the cube of the semi-major axis:\n    $$T^2 = \\frac{4\\pi^2}{G M_e} a^3 \\implies T \\propto a^{3/2}$$\n\n---\n\n### Step 2: What Happens When Velocity Decreases?\nWhen the satellite's velocity (speed) decreases:\n1.  **Change in Orbital Radius**:\n    For the satellite's current orbital radius $r$, its actual speed $v_{\\text{actual}}$ is now lower than the required circular orbital speed $\\sqrt{\\frac{G M_e}{r}}$. This means Earth's gravitational pull is stronger than the centripetal force needed to maintain the current circular orbit. The satellite will spiral inward toward Earth, reducing its instantaneous orbital radius.\n\n    Using the vis-viva equation: rearranging to solve for the semi-major axis $a$ gives:\n    $$\\frac{1}{a} = \\frac{2}{r} - \\frac{v^2}{G M_e}$$\n    A lower $v$ reduces the term $\\frac{v^2}{G M_e}$, increasing the right-hand side, so $a$ (average orbital radius) decreases. The satellite moves to a lower, tighter orbit.\n\n2.  **Change in Orbital Period**:\n    From Kepler's third law, orbital period scales with $a^{3/2}$. Since the average orbital radius $a$ decreases when velocity drops, the orbital period will also decrease.\n\n---\n\n### Clarifying the Common Confusion\nWhile it is true that larger circular orbits have slower speeds, this describes a comparison between *different stable circular orbits*. A satellite cannot move to a larger orbit by slowing down in its original orbit: slowing down reduces the centripetal force available to maintain its current radius, pulling it inward instead.\n\n---\n\n### Final Answer\nWhen a satellite's orbital velocity decreases:\n1.  **Orbital radius decreases**: The reduced speed means Earth's gravity is stronger than the centripetal force needed to stay in the original orbit, pulling the satellite inward toward Earth.\n2.  **Orbital period decreases**: Per Kepler's third law, orbital period is proportional to the 3/2 power of the average orbital radius, so a smaller radius leads to a shorter orbital period.",
+    "params": {},
+    "tokens": {
+      "input": 77,
+      "output": 8831
+    },
+    "cost_usd": 0.0035401,
+    "latency_ms": 274737.78104782104
+  },
+  "trialB": {
+    "output": "Based on the principles of orbital mechanics, if the orbital velocity of a satellite decreases (and the orbit remains stable), its **orbital radius increases** and its **orbital period increases**.\n\nHere is the step-by-step reasoning using principles of physics:\n\n### 1. Relationship Between Velocity and Radius\nTo maintain a stable circular orbit, the gravitational force acting on the satellite must provide the necessary centripetal force.\n\n*   **Newton's Law of Universal Gravitation:**\n    $$F_g = \\frac{GMm}{r^2}$$\n    (Where $G$ is the gravitational constant, $M$ is Earth's mass, $m$ is the satellite's mass, and $r$ is the orbital radius).\n\n*   **Centripetal Force:**\n    $$F_c = \\frac{mv^2}{r}$$\n    (Where $v$ is the orbital velocity).\n\nSetting these two forces equal ($F_g = F_c$):\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r}$$\n\nWe can cancel the mass of the satellite ($m$) and one $r$ term to solve for velocity:\n$$v = \\sqrt{\\frac{GM}{r}}$$\n\n**Reasoning:**\nThis equation shows an **inverse relationship** between velocity ($v$) and the square root of the radius ($\\sqrt{r}$).\n*   As $r$ gets larger, $v$ gets smaller.\n*   As $r$ gets smaller, $v$ gets larger.\n\nTherefore, if the velocity **decreases**, the radius must **increase**. The satellite moves to a higher orbit further away from Earth.\n\n### 2. Relationship Between Radius and Period (Kepler’s Third Law)\nThe orbital period ($T$) is the time it takes to complete one orbit ($T = \\frac{\\text{distance}}{\\text{speed}} = \\frac{2\\pi r}{v}$).\n\nBy substituting the velocity equation from above ($v = \\sqrt{\\frac{GM}{r}}$), we derive the relationship for the period:\n$$T = \\frac{2\\pi r}{\\sqrt{\\frac{GM}{r}}}$$\n$$T = 2\\pi \\sqrt{\\frac{r^3}{GM}}$$\n\n**Reasoning:**\nThis equation (Kepler's Third Law) shows that the period is proportional to the power of $3/2$ of the radius ($T \\propto r^{3/2}$).\n*   If the radius ($r$) increases, the period ($T$) must increase.\n\nIntuitively, this makes sense because:\n1.  The satellite has a larger circumference to travel around ($2\\pi r$ increases).\n2.  It is traveling at a slower speed ($v$ decreases).\nBoth factors contribute to a longer orbital period.\n\n### Summary\nIf a satellite's orbital velocity decreases:\n1.  **Orbital Radius:** **Increases** (it moves to a higher altitude).\n2.  **Orbital Period:** **Increases** (it takes longer to complete an orbit).\n\n***\n\n### Important Note on Orbital Maneuvers\nA common source of confusion in orbital mechanics is the difference between the *instantaneous* change and the *stable orbit* result.\n\nIf a satellite is in a stable orbit and fires thrusters to **decrease** its velocity (retrograde burn), it will initially lose kinetic energy. This energy loss causes the satellite to drop to a lower altitude. However, as it falls, gravitational potential energy converts into kinetic energy, causing the satellite to speed up.\n\nConsequently, a satellite in a lower orbit actually moves **faster** than one in a higher orbit. To transition from a high, slow orbit to a low, fast orbit, you must slow down. Conversely, to move from a low, fast orbit to a high, slow orbit, you must speed up (prograde burn).\n\nSince the prompt asks what happens if the velocity is lower (comparing two stable states), the satellite must be in the higher, slower orbit.",
+    "params": {},
+    "tokens": {
+      "input": 34,
+      "output": 7845
+    },
+    "cost_usd": 0.01806798,
+    "latency_ms": 104534.42096710205
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "de9b1f7f-fcc1-403b-8838-80170f36e846",
+  "matchIndex": 70,
+  "sampleId": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+  "createdAt": "2026-03-11T06:39:59.709Z",
+  "match": {
+    "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_b": "openrouter/x-ai/grok-4",
+    "match_id": "match_00070",
+    "sample_id": "0fe03ef9-b42d-4da9-bf30-3f85276d5c3e",
+    "created_at": "2026-03-11T15:39:59.517817",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"Accurate and clear. It correctly identifies the White House as being in Washington, D.C. It also provides a brief explanation of the riddle, which improves completeness, but adds some unnecessary detail.\",\n  \"B\": \"Accurate, clear, and very concise. It correctly answers the question with just 'Washington, D.C.' but does not provide any explanation.\",\n  \"reason\": \"Both answers are correct and follow the instruction. Answer A is slightly better because it is still concise while adding helpful context that explains the riddle, making it more complete.\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"Answer A correctly solves the riddle and also provides a helpful explanation of the wordplay involved, which enhances the user's understanding.\",\n  \"B\": \"Answer B provides the correct location but is overly concise. It answers the question without explaining the logic behind the riddle's solution.\",\n  \"winner\": \"A\",\n  \"reason\": \"Answer A is better because it not only gives the correct answer but also explains the pun the riddle is based on. This makes for a more complete and satisfying response to a riddle.\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"Answer A is accurate, provides the correct answer (Washington, D.C.), explains the reasoning behind the riddle, and is clear and easy to understand. It is slightly verbose but the explanation adds value by clarifying why the answer is what it is.\",\"B\":\"Answer B is accurate and concise, providing just the correct answer without any explanation. While brief, it lacks context or explanation of why the White House is in Washington, D.C. rather than in the described scene.\",\"winner\":\"A\",\"reason\":\"Answer A is better because it not only provides the correct answer but also explains the reasoning behind the riddle, helping the reader understand why the White House is in Washington, D.C. rather than being a house in the described scene. The additional context makes it more complete and educational, while still being clear and accurate.\"}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "You see a beautiful red house on your left, a fantastic greenhouse on your right, and an attractive pink place in front of you. Where is the white house located?"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "The white house is in **Washington, D.C.** — it's the **White House**, the residence and office of the President of the United States.\n\nThis riddle plays on your expectations — it describes colorful houses to distract you, but the \"White House\" is a well-known landmark, not just a white-colored house in the scene. 🏛️🇺🇸",
+    "params": {},
+    "tokens": {
+      "input": 42,
+      "output": 77
+    },
+    "cost_usd": 0.000010682,
+    "latency_ms": 2957.0891857147217
+  },
+  "trialB": {
+    "output": "Washington, D.C.",
+    "params": {},
+    "tokens": {
+      "input": 718,
+      "output": 2876
+    },
+    "cost_usd": 0.045294,
+    "latency_ms": 59036.70287132263
+  }
+}

@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
+import { generateProjectParams } from "@/lib/static-params";
 import { getProject } from "@/lib/usecase/projects/get-project";
 import { getProjectDatasets } from "@/lib/usecase/projects/get-project-datasets";
 import { getProjectDatasetsCount } from "@/lib/usecase/projects/get-project-datasets-count";
 import { getRecentEvaluatedDatasets } from "@/lib/usecase/projects/get-recent-evaluated-datasets";
 import { DatasetPageClient } from "./_components/dataset-page-client";
+
+export const generateStaticParams =
+  process.env.MODE === "demo" ? generateProjectParams : undefined;
 
 export default async function Page(props: {
   params: Promise<{ projectId: string }>;

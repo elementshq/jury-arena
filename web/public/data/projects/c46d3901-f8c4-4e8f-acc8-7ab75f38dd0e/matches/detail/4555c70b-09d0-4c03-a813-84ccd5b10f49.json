@@ -1,0 +1,64 @@
+{
+  "id": "4555c70b-09d0-4c03-a813-84ccd5b10f49",
+  "matchIndex": 141,
+  "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+  "createdAt": "2026-03-11T05:44:19.451Z",
+  "match": {
+    "winner": "openrouter/moonshotai/kimi-k2.5",
+    "model_a": "openrouter/moonshotai/kimi-k2.5",
+    "model_b": "gemini/gemini-2.5-pro",
+    "match_id": "match_00141",
+    "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+    "created_at": "2026-03-11T14:44:19.277798",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で、再帰による基本実装に加えてメモ化版も示しており完全性が高い。説明も十分明確だが、求められた範囲を少し超えており簡潔性はやや下がる。\",\n  \"B\": \"正確で、基本的な再帰プログラムを丁寧に説明している。追従性と明確性は高いが、説明が長めで、実装面の補足はAよりやや少ない。\",\n  \"reason\": \"両者とも正しいC++の再帰実装を提示しており高品質。比較すると、Aは基本実装に加えて効率的なメモ化版も提示し、注意点や制約も具体的で、正確性・完全性でわずかに優れる。一方でBはユーザー要求への素直な回答として自然だが、情報量の面でAに一歩及ばない。\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"基本的な再帰実装に加え、実用上の問題点を解決するメモ化を用いた改善版のコードも提示しており、非常に有益。両者の比較表も分かりやすい。\",\n  \"B\": \"基本的な再帰実装のコードと、その仕組みに関する非常に丁寧な解説を提供している。特に再帰の呼び出しツリーの図解は理解を助ける。\",\n  \"winner\": \"A\",\n  \"reason\": \"両者ともユーザーの要求を正確に満たしているが、Aは単純な再帰実装の問題点を指摘するだけでなく、その解決策であるメモ化の具体的なコードまで示している点でより完全性が高い。比較表による性能解説も簡潔で優れている。\"\n}",
+        "winner": "openrouter/moonshotai/kimi-k2.5"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"正確で簡潔。基本的な再帰実装とメモ化の両方を提示し、比較表も含む。説明は適切だが、呼び出しツリーの図示がない分、視覚的理解のサポートは少ない。\",\"B\":\"正確で非常に詳細。基本的な再帰実装に加え、コードの各部分の丁寧な解説、呼び出しツリーの図示、実行の流れの説明、注意点まで網羅されている。ただしメモ化の実装コードは含まれていない（言及のみ）。\",\"winner\":\"B\",\"reason\":\"回答Bはコードの解説が非常に丁寧で、ベースケースや再帰ステップの説明、呼び出しツリーの図示、実行の流れの具体例など、学習者が再帰を理解するための情報が豊富に含まれている。回答Aはメモ化の実装も含む点で実用的だが、説明の深さと教育的価値では回答Bが優れている。プロンプトが「再帰を用いた」プログラムを求めており、回答Bはその要求に対してより丁寧に応えている。\"}",
+        "winner": "gemini/gemini-2.5-pro"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "再帰（recursion）を用いてn番目のフィボナッチ数（Fibonacci number）を求めるC++プログラムを書いてください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": " 再帰を用いたフィボナッチ数の計算プログラムを示します。まず基本的な実装、その後**メモ化**を用いた効率的な実装も紹介します。\n\n## 1. 基本的な再帰実装\n\n```cpp\n#include <iostream>\n\n// n番目のフィボナッチ数を再帰で求める（0, 1, 1, 2, 3, 5, 8...）\nlong long fibonacci(int n) {\n    // ベースケース（再帰の終了条件）\n    if (n <= 1) {\n        return n;\n    }\n    \n    // 再帰的ケース：F(n) = F(n-1) + F(n-2)\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n    std::cout << \"正の整数 n を入力してください: \";\n    std::cin >> n;\n    \n    if (n < 0) {\n        std::cout << \"負の数は対象外です\" << std::endl;\n        return 1;\n    }\n    \n    long long result = fibonacci(n);\n    std::cout << \"F(\" << n << \") = \" << result << std::endl;\n    \n    return 0;\n}\n```\n\n**注意**: この実装は計算量が **O(2ⁿ)** と指数関数的に増大します（例：n=40 で約2.4億回の関数呼び出し）。そのため実用的にはn=40程度が限界です。\n\n## 2. メモ化を用いた効率的な実装\n\n同じ計算を繰り返さないよう、メモ化（Memoization）を使った **O(n)** の実装です：\n\n```cpp\n#include <iostream>\n#include <vector>\n\nlong long fibonacciMemo(int n, std::vector<long long>& memo) {\n    // 既に計算済みの場合はキャッシュから返す\n    if (memo[n] != -1) {\n        return memo[n];\n    }\n    \n    // ベースケース\n    if (n <= 1) {\n        memo[n] = n;\n        return n;\n    }\n    \n    // 計算結果を保存\n    memo[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);\n    return memo[n];\n}\n\nint main() {\n    int n;\n    std::cout << \"正の整数 n を入力してください: \";\n    std::cin >> n;\n    \n    if (n < 0) {\n        std::cout << \"負の数は対象外です\" << std::endl;\n        return 1;\n    }\n    \n    // メモ用の配列を初期化（-1で未計算を表す）\n    std::vector<long long> memo(n + 1, -1);\n    \n    long long result = fibonacciMemo(n, memo);\n    std::cout << \"F(\" << n << \") = \" << result << std::endl;\n    \n    return 0;\n}\n```\n\n## 主なポイント\n\n| 実装 | 計算量 | n=50の実行時間 | メモリ使用量 |\n|------|--------|----------------|--------------|\n| 純粋再帰 | O(2ⁿ) | 非常に遅い（実質不可） | O(n)（スタック） |\n| メモ化再帰 | O(n) | 瞬時 | O(n) |\n\n**推奨**: 学習目的であれば「基本的な実装」で再帰の理解を深め、実用では「メモ化版」を使用してください。`long long` を使うことで n=92 まで正確に計算できます（それ以上はオーバーフローします）。",
+    "params": {},
+    "tokens": {
+      "input": 45,
+      "output": 1442
+    },
+    "cost_usd": 0.00319265,
+    "latency_ms": 89600.95191001892
+  },
+  "trialB": {
+    "output": "はい、承知いたしました。再帰（recursion）を用いてn番目のフィボナッチ数を求めるC++プログラムを作成します。\n\nフィボナッチ数列は、以下のように定義されます。\n*   F(0) = 0\n*   F(1) = 1\n*   F(n) = F(n-1) + F(n-2)  (n > 1の場合)\n\nこの定義をそのままコードに落とし込むと、自然な再帰関数が出来上がります。\n\n### 基本的な再帰プログラム\n\n以下は、再帰の概念を最もシンプルに実装したC++プログラムです。\n\n```cpp\n#include <iostream>\n\n// n番目のフィボナッチ数を再帰的に求める関数\n// F(n) = F(n-1) + F(n-2)\nlong long fibonacci(int n) {\n    // ベースケース (再帰の停止条件)\n    if (n == 0) {\n        return 0;\n    }\n    if (n == 1) {\n        return 1;\n    }\n    // 上記のif文は次のようにまとめることもできます\n    // if (n <= 1) {\n    //     return n;\n    // }\n\n    // 再帰ステップ：自分自身を呼び出す\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n\n    std::cout << \"求めたいフィボナッチ数の項 n を入力してください: \";\n    std::cin >> n;\n\n    if (n < 0) {\n        std::cout << \"0以上の整数を入力してください。\" << std::endl;\n        return 1; // エラー終了\n    }\n\n    std::cout << \"フィボナッチ数列の \" << n << \" 番目の数は \";\n    long long result = fibonacci(n);\n    std::cout << result << \" です。\" << std::endl;\n\n    return 0;\n}\n```\n\n### コードの解説\n\n1.  **`#include <iostream>`**\n    *   コンソールへの入出力（`std::cin`, `std::cout`）を行うために必要なヘッダーファイルをインクルードします。\n\n2.  **`long long fibonacci(int n)` 関数**\n    *   この関数が再帰処理の本体です。\n    *   **戻り値の型**: `long long` を使用しています。フィボナッチ数は急速に大きくなるため、`int`型では`n`が47程度でオーバーフロー（表現できる最大値を超えること）してしまいます。`long long` を使うことで、より大きな数（`n`が92程度まで）を正しく計算できます。\n    *   **ベースケース（Base Case）**:\n        ```cpp\n        if (n <= 1) {\n            return n;\n        }\n        ```\n        これは再帰の停止条件です。もしこの条件がなければ、関数は無限に自分自身を呼び出し続け、スタックオーバーフローというエラーを引き起こします。フィボナッチ数列の定義 `F(0)=0`, `F(1)=1` に基づき、`n`が0または1の場合はその値を直接返します。\n    *   **再帰ステップ（Recursive Step）**:\n        ```cpp\n        return fibonacci(n - 1) + fibonacci(n - 2);\n        ```\n        `n`が2以上の場合、フィボナッチ数の定義 `F(n) = F(n-1) + F(n-2)` に従って、`n-1`番目の数と`n-2`番目の数を求めるために自分自身を呼び出し、その結果の和を返します。\n\n3.  **`int main()` 関数**\n    *   プログラムの実行が開始される場所です。\n    *   ユーザーに項数`n`の入力を促し、`std::cin`で受け取ります。\n    *   `n`が負でないことを確認し、`fibonacci`関数を呼び出して結果を取得します。\n    *   最後に結果を画面に表示します。\n\n### 実行の流れの例 (n=4の場合)\n\n`fibonacci(4)`を呼び出すと、内部では以下のような呼び出しツリーが展開されます。\n\n```\nfibonacci(4)\n├── fibonacci(3)\n│   ├── fibonacci(2)\n│   │   ├── fibonacci(1)  --> 1を返す\n│   │   └── fibonacci(0)  --> 0を返す\n│   └── fibonacci(1)      --> 1を返す\n└── fibonacci(2)\n    ├── fibonacci(1)      --> 1を返す\n    └── fibonacci(0)      --> 0を返す\n```\n\n計算の流れは以下のようになります。\n1.  `fibonacci(4)` は `fibonacci(3)` と `fibonacci(2)` を呼び出す。\n2.  `fibonacci(3)` は `fibonacci(2)` と `fibonacci(1)` を呼び出す。\n3.  `fibonacci(2)` は `fibonacci(1)` と `fibonacci(0)` を呼び出す。\n4.  `fibonacci(1)` と `fibonacci(0)` はベースケースに到達し、それぞれ `1` と `0` を返す。\n5.  これらの戻り値が呼び出し元に次々と返され、最終的に `fibonacci(4)` は `3` という結果を返します。\n\n### 注意点：再帰による実装の非効率性\n\nこのシンプルな再帰による実装は、アルゴリズムの学習には最適ですが、**非常に非効率**であるという大きな欠点があります。\n\n上の呼び出しツリーを見るとわかるように、`fibonacci(2)` が2回、`fibonacci(1)` が3回など、同じ計算が何度も繰り返し行われています。`n`が大きくなるにつれて、この重複計算は爆発的に増加し（計算量が O(2^n) となる）、プログラムの実行が極端に遅くなります。`n`が40程度でも、計算に数秒かかることがあります。\n\n実用的なアプリケーションでは、以下のようなより効率的な方法が使われます。\n*   **メモ化再帰（Memoization）**: 一度計算した結果を配列やマップに保存しておき、再度同じ計算が必要になったら保存した値を返す方法。\n*   **動的計画法（反復処理）**: ループを使って`F(0)`から順番に`F(n)`まで計算していく方法。計算量は O(n) で非常に高速です。\n\n学習目的で再帰の基本を理解するには、上記で提示したプログラムは非常に良い例です。",
+    "params": {},
+    "tokens": {
+      "input": 29,
+      "output": 3474
+    },
+    "cost_usd": 0.03477625,
+    "latency_ms": 28790.762901306152
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "79471561-b83e-4505-9b44-e8cc776addf1",
+  "matchIndex": 97,
+  "sampleId": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+  "createdAt": "2026-03-11T05:28:59.027Z",
+  "match": {
+    "winner": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_a": "openrouter/qwen/qwen3-235b-a22b-2507",
+    "model_b": "openrouter/anthropic/claude-sonnet-4.6",
+    "match_id": "match_00097",
+    "sample_id": "6b641afa-34db-40a1-a7ad-2bbdf2e034ff",
+    "created_at": "2026-03-11T14:28:58.827334",
+    "judge_models": [
+      "openai/gpt-5.4",
+      "gemini/gemini-2.5-pro",
+      "openrouter/anthropic/claude-sonnet-4.6"
+    ],
+    "judge_details": {
+      "openai/gpt-5.4": {
+        "output": "{\n  \"A\": \"正確で、再帰によるn番目のフィボナッチ数を求めるという要求に素直に従っている。入力チェックもあり、説明も十分で簡潔。\",\n  \"B\": \"正確で説明も丁寧だが、n番目を求める要求に対して数列全体の表示まで追加しており、やや冗長。機能追加により簡潔性と追従性で少し劣る。\",\n  \"reason\": \"両者とも正しい再帰実装を提示しており、説明も適切です。ただし回答Aは要求された『n番目のフィボナッチ数を求めるC++プログラム』により直接的に答えていて、不要な追加処理がありません。回答Bは補足説明は充実しているものの、全項表示の追加で無駄が増えており、簡潔性と要求への厳密な追従性でAが優れます。\",\n  \"winner\": \"A\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "gemini/gemini-2.5-pro": {
+        "output": "{\n  \"A\": \"ユーザーの要求に忠実で、シンプルかつ正しいC++コードを提示しています。再帰の問題点や改善案についての説明も的確で分かりやすいです。\",\n  \"B\": \"戻り値の型を大きな数を扱える`long long`にする配慮は見られますが、main関数内で不要なループ処理を追加しており、計算効率を著しく悪化させている点が大きな欠点です。\",\n  \"winner\": \"A\",\n  \"reason\": \"回答Aは、ユーザーの要求に忠実で、シンプルかつ正しいプログラムを提供しています。一方、回答Bは親切心からか要求以上の機能を追加した結果、非常に非効率なコードになってしまっており、プログラムとしての品質で劣るためです。\"\n}",
+        "winner": "openrouter/qwen/qwen3-235b-a22b-2507"
+      },
+      "openrouter/anthropic/claude-sonnet-4.6": {
+        "output": "{\"A\":\"正確なコードと説明を提供。入力バリデーション、実行例、計算量の説明あり。シンプルで読みやすい構成。\",\"B\":\"正確なコードに加え、long long型の使用、数列の全表示機能、再帰ツリーの視覚化、表形式の注意点など情報が豊富。\",\"winner\":\"B\",\"reason\":\"両回答とも正確で要件を満たしているが、回答Bはlong longによる大きな値への対応、再帰の仕組みを視覚的に示すツリー図、表形式の計算量説明、数列の一覧表示など、教育的価値が高い追加情報を含んでいる。回答Aも十分な品質だが、回答Bのほうが明確性・完全性・教育的有用性の面で優れている。\"}",
+        "winner": "openrouter/anthropic/claude-sonnet-4.6"
+      }
+    }
+  },
+  "sampleInfo": {
+    "input": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "再帰（recursion）を用いてn番目のフィボナッチ数（Fibonacci number）を求めるC++プログラムを書いてください。"
+        }
+      ]
+    },
+    "usage_output": null
+  },
+  "trialA": {
+    "output": "以下は、**再帰（recursion）** を使って n 番目のフィボナッチ数を求める C++ プログラムの例です。\n\n```cpp\n#include <iostream>\nusing namespace std;\n\n// 再帰関数：n番目のフィボナッチ数を返す\nint fibonacci(int n) {\n    // ベースケース（再帰の終了条件）\n    if (n <= 0) {\n        return 0;\n    } else if (n == 1) {\n        return 1;\n    }\n    // 再帰呼び出し\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n    cout << \"n番目のフィボナッチ数を求めます。nを入力してください: \";\n    cin >> n;\n\n    if (n < 0) {\n        cout << \"nは非負の整数でなければなりません。\" << endl;\n    } else {\n        int result = fibonacci(n);\n        cout << n << \"番目のフィボナッチ数は \" << result << \" です。\" << endl;\n    }\n\n    return 0;\n}\n```\n\n---\n\n### 📌 説明：\n\n- **フィボナッチ数列**：  \n  `0, 1, 1, 2, 3, 5, 8, 13, ...`  \n  一般に、`F(0) = 0`, `F(1) = 1`, `F(n) = F(n-1) + F(n-2)` です。\n\n- **再帰の特徴**：\n  - 簡単に書けるが、同じ計算を何度も行うため、`n` が大きくなると**非常に遅くなる**（指数時間 `O(2^n)`）。\n  - 例えば、`fibonacci(40)` もそこそこ時間がかかります。\n\n---\n\n### ✅ 改善案（余力があれば）：\n\n計算時間を劇的に減らしたい場合は、**メモ化再帰**や**動的計画法（DP）** を使うのが一般的です。  \nここでは単純な再帰を要請されていたため、上記のコードはその要求に合致します。\n\n---\n\n### 💡 実行例：\n\n```\nn番目のフィボナッチ数を求めます。nを入力してください: 6\n6番目のフィボナッチ数は 8 です。\n```\n\n（`F(0)=0`, `F(1)=1`, `F(2)=1`, `F(3)=2`, `F(4)=3`, `F(5)=5`, `F(6)=8`）",
+    "params": {},
+    "tokens": {
+      "input": 41,
+      "output": 592
+    },
+    "cost_usd": 0.000062111,
+    "latency_ms": 16998.090028762817
+  },
+  "trialB": {
+    "output": "# 再帰を用いたフィボナッチ数のC++プログラム\n\n## コード\n\n```cpp\n#include <iostream>\n\n// 再帰関数：n番目のフィボナッチ数を返す\nlong long fibonacci(int n) {\n    // ベースケース（基底条件）\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n\n    // 再帰ケース\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n;\n\n    std::cout << \"何番目のフィボナッチ数を求めますか？ n = \";\n    std::cin >> n;\n\n    if (n < 0) {\n        std::cout << \"0以上の整数を入力してください。\" << std::endl;\n        return 1;\n    }\n\n    std::cout << \"F(\" << n << \") = \" << fibonacci(n) << std::endl;\n\n    // 最初のn+1項を表示\n    std::cout << \"\\nフィボナッチ数列（F(0) ～ F(\" << n << \")）:\" << std::endl;\n    for (int i = 0; i <= n; i++) {\n        std::cout << \"F(\" << i << \") = \" << fibonacci(i) << std::endl;\n    }\n\n    return 0;\n}\n```\n\n## 実行例\n\n```\n何番目のフィボナッチ数を求めますか？ n = 10\nF(10) = 55\n\nフィボナッチ数列（F(0) ～ F(10)）:\nF(0) = 0\nF(1) = 1\nF(2) = 1\nF(3) = 2\nF(4) = 3\nF(5) = 5\nF(6) = 8\nF(7) = 13\nF(8) = 21\nF(9) = 34\nF(10) = 55\n```\n\n## 再帰の仕組み\n\n```\nfibonacci(5)\n├── fibonacci(4)\n│   ├── fibonacci(3)\n│   │   ├── fibonacci(2) → 1\n│   │   └── fibonacci(1) → 1\n│   └── fibonacci(2) → 1\n└── fibonacci(3)\n    ├── fibonacci(2) → 1\n    └── fibonacci(1) → 1\n```\n\n## 注意点\n\n| 項目 | 内容 |\n|------|------|\n| **時間計算量** | O(2ⁿ)　※同じ計算が重複して非効率 |\n| **空間計算量** | O(n)　※再帰スタックの深さ |\n| **推奨上限** | n ≦ 40 程度（それ以上は処理が遅い） |\n\n> **改善策**: メモ化（memoization）や動的計画法（DP）を使うと O(n) に高速化できます。",
+    "params": {},
+    "tokens": {
+      "input": 52,
+      "output": 791
+    },
+    "cost_usd": 0.012021,
+    "latency_ms": 9989.891767501831
+  }
+}
