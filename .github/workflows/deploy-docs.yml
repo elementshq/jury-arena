@@ -44,6 +44,8 @@ jobs:
       # --- Docs (VitePress) ---
       - name: Build docs
         run: npm run docs:build
+        env:
+          VITEPRESS_GA_ID: ${{ vars.GA_ID }}
 
       # --- Demo (Next.js static export) ---
       - name: Install pnpm
@@ -59,7 +61,7 @@ jobs:
         working-directory: web
         run: pnpm run build:demo:export
         env:
-          NEXT_PUBLIC_GA_ID: G-JFGLREW28D
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_ID }}
 
       # --- Merge into single artifact ---
       - name: Merge docs + demo

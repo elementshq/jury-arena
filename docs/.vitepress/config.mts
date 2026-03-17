@@ -1,11 +1,20 @@
 import { defineConfig } from 'vitepress'
 
+const gaId = process.env.VITEPRESS_GA_ID
+
 export default defineConfig({
   title: 'JuryArena',
   description: 'An open-source arena-based evaluation tool for selecting LLMs using real-world prompts.',
 
   base: '/jury-arena/',
   ignoreDeadLinks: [/^https?:\/\/localhost/],
+
+  head: gaId
+    ? [
+        ['script', { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${gaId}` }],
+        ['script', {}, `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`],
+      ]
+    : [],
 
   locales: {
     root: {
