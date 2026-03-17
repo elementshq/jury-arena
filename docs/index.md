@@ -18,7 +18,7 @@ Arena format is a general evaluation method that pits multiple participants agai
 JuryArena applies this arena format to LLM evaluation, calculating relative quality by directly comparing model outputs.
 
 
-![Arena models](/assets/arena-models.png)
+![Arena models](./assets/arena-models.png)
 
 1. 1-on-1 matches using the same prompt (e.g., LLM A vs LLM B)
 2. Ratings change based on win/loss results
@@ -37,7 +37,7 @@ Datasets are fundamentally structured in the following formats.
 Create a [sample](./concepts/terminology#dataset) from an input prompt.
 For details, see [Data Format](./guides/data-format).
 
-![Single-turn dataset](/assets/dataset-sigle.png)
+![Single-turn dataset](./assets/dataset-sigle.png)
 
 
 ### Multi-turn
@@ -45,7 +45,7 @@ For details, see [Data Format](./guides/data-format).
 A series of conversation history is treated as a single Sample.
 The entire conversation history is provided as context, and the LLM's response quality to the last User Input is evaluated.
 
-![Multi-turn dataset](/assets/dataset-multi-turn.png)
+![Multi-turn dataset](./assets/dataset-multi-turn.png)
 
 Example:
 ```json
