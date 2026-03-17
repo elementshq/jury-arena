@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'JuryArena',
   description: 'An open-source arena-based evaluation tool for selecting LLMs using real-world prompts.',
 
-  base: '/ele-cloud-autobench/',
+  base: '/jury-arena/',
   ignoreDeadLinks: [/^https?:\/\/localhost/],
 
   head: gaId
@@ -45,14 +45,7 @@ export default defineConfig({
               { text: 'Rating System', link: '/concepts/rating-system' },
               { text: 'Terminology', link: '/concepts/terminology' },
             ],
-          },
-          {
-            text: 'Architecture',
-            items: [
-              { text: 'System Architecture', link: '/architecture/system-architecture' },
-              { text: 'Web Implementation', link: '/architecture/web-implementation' },
-            ],
-          },
+          }
         ],
       },
     },
@@ -86,13 +79,6 @@ export default defineConfig({
               { text: '用語集', link: '/ja/concepts/terminology' },
             ],
           },
-          {
-            text: 'アーキテクチャ',
-            items: [
-              { text: '全体設計', link: '/ja/architecture/system-architecture' },
-              { text: 'Web実装方針', link: '/ja/architecture/web-implementation' },
-            ],
-          },
         ],
         outlineTitle: '目次',
         docFooter: {
@@ -105,7 +91,7 @@ export default defineConfig({
 
   themeConfig: {
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Liquid-dev/ele-cloud-autobench' },
+      { icon: 'github', link: 'https://github.com/elementshq/jury-arena' },
     ],
 
     search: {
