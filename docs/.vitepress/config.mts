@@ -1,11 +1,20 @@
 import { defineConfig } from 'vitepress'
 
+const gaId = process.env.VITEPRESS_GA_ID
+
 export default defineConfig({
   title: 'JuryArena',
   description: 'An open-source arena-based evaluation tool for selecting LLMs using real-world prompts.',
 
-  base: '/jury-arena/',
+  base: '/ele-cloud-autobench/',
   ignoreDeadLinks: [/^https?:\/\/localhost/],
+
+  head: gaId
+    ? [
+        ['script', { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${gaId}` }],
+        ['script', {}, `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`],
+      ]
+    : [],
 
   locales: {
     root: {
@@ -36,7 +45,14 @@ export default defineConfig({
               { text: 'Rating System', link: '/concepts/rating-system' },
               { text: 'Terminology', link: '/concepts/terminology' },
             ],
-          }
+          },
+          {
+            text: 'Architecture',
+            items: [
+              { text: 'System Architecture', link: '/architecture/system-architecture' },
+              { text: 'Web Implementation', link: '/architecture/web-implementation' },
+            ],
+          },
         ],
       },
     },
@@ -70,6 +86,13 @@ export default defineConfig({
               { text: '用語集', link: '/ja/concepts/terminology' },
             ],
           },
+          {
+            text: 'アーキテクチャ',
+            items: [
+              { text: '全体設計', link: '/ja/architecture/system-architecture' },
+              { text: 'Web実装方針', link: '/ja/architecture/web-implementation' },
+            ],
+          },
         ],
         outlineTitle: '目次',
         docFooter: {
@@ -82,7 +105,7 @@ export default defineConfig({
 
   themeConfig: {
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/elementshq/jury-arena' },
+      { icon: 'github', link: 'https://github.com/Liquid-dev/ele-cloud-autobench' },
     ],
 
     search: {
