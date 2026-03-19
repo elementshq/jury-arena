@@ -72,12 +72,19 @@ export async function POST(req: Request) {
   const configPath = path.join(configDir, `${safeName(configName)}.yaml`);
   await writeFile(configPath, yamlText, "utf-8");
 
+  const totalSteps = Math.ceil(
+    config.stopping.max_matches / config.execution.match_batch_size,
+  );
+
   initBenchmarkRuntime({
     benchmarkId,
     projectId,
     datasetId,
     datasetName: dataset.name,
     models: config.models?.trials ?? [],
+    totalSteps,
+    matchBatchSize: config.execution.match_batch_size,
+    maxMatches: config.stopping.max_matches,
     tempConfigPath: configPath,
   });
 

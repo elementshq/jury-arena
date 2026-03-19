@@ -208,11 +208,116 @@ MODEL_PRICING = {
 }
 
 
+def fetch_openrouter_pricing(
+    model_ids: List[str], timeout: float = 10.0
+) -> int:
+    """
+    OpenRouter API から最新の料金を取得し、MODEL_PRICING にマージする。
+
+    指定されたモデルのうち OpenRouter 経由のもののみを対象とする。
+    ベンチマーク開始時に1回だけ呼び出すことを想定。
+    失敗しても MODEL_PRICING のハードコード値がフォールバックとして使えるため、
+    例外は出さずに 0 を返す。
+
+    Args:
+        model_ids: ベンチマークで使用するモデル名のリスト
+                   (例: ["openrouter/qwen/qwen3-235b-a22b-2507", "openai/gpt-5"])
+        timeout: HTTPリクエストのタイムアウト秒数
+
+    Returns:
+        マージしたモデル数
+    """
+    import urllib.request
+
+    # openrouter/ プレフィックスのモデルだけ対象にする
+    target_keys = set()
+    for mid in model_ids:
+        if mid.startswith("openrouter/"):
+            target_keys.add(mid.replace("openrouter/", "", 1))
+
+    if not target_keys:
+        logger.info("No OpenRouter models in use — skipping pricing fetch")
+        return 0
+
+    url = "https://openrouter.ai/api/v1/models"
+    try:
+        req = urllib.request.Request(url, headers={"Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        logger.warning(f"Failed to fetch OpenRouter pricing: {e}")
+        return 0
+
+    models = data.get("data", [])
+    merged = 0
+    for m in models:
+        model_id = m.get("id")
+        if model_id not in target_keys:
+            continue
+
+        pricing = m.get("pricing")
+        if not pricing:
+            continue
+
+        prompt_per_token = float(pricing.get("prompt", 0))
+        completion_per_token = float(pricing.get("completion", 0))
+
+        if prompt_per_token == 0 and completion_per_token == 0:
+            continue
+
+        # per token → per 1M tokens (MODEL_PRICING の単位に合わせる)
+        entry = {
+            "input": prompt_per_token * 1_000_000,
+            "output": completion_per_token * 1_000_000,
+        }
+
+        MODEL_PRICING[model_id] = entry
+        merged += 1
+
+    not_found = target_keys - {m.get("id") for m in models}
+    if not_found:
+        logger.warning(f"OpenRouter pricing not found for: {not_found}")
+
+    logger.info(
+        f"OpenRouter pricing: {merged}/{len(target_keys)} models updated"
+    )
+    return merged
+
+
+def _fallback_completion_cost(completion_response: Any, model: str | None) -> float | None:
+    """
+    MODEL_PRICING テーブルを使ってコストを計算する。
+    該当モデルが見つからない場合は None を返す。
+    """
+    if model is None:
+        model = getattr(completion_response, "model", None)
+
+    if model is None:
+        return None
+
+    if model.startswith("openrouter/"):
+        model = model.replace("openrouter/", "", 1)
+
+    if model not in MODEL_PRICING:
+        return None
+
+    pricing = MODEL_PRICING[model]
+    usage = completion_response.usage
+
+    input_tokens = getattr(usage, "prompt_tokens", 0) or 0
+    output_tokens = getattr(usage, "completion_tokens", 0) or 0
+
+    cost = (
+        input_tokens * pricing["input"] + output_tokens * pricing["output"]
+    ) / 1_000_000
+    return cost
+
+
 def safe_completion_cost(completion_response: Any, model: str | None = None) -> float:
     """
     litellm.completion_costのラッパー関数
 
-    最初にlitellmの関数を試し、エラーが出た場合は自前の料金テーブルで計算する
+    最初にlitellmの関数を試し、0 またはエラーの場合は自前の料金テーブルで計算する。
 
     Args:
         completion_response: LiteLLMのレスポンスオブジェクト
@@ -221,30 +326,24 @@ def safe_completion_cost(completion_response: Any, model: str | None = None) -> 
     Returns:
         コスト（USD）
     """
+    # 1) litellm を試行
     try:
-        return litellm.completion_cost(completion_response=completion_response)
+        cost = litellm.completion_cost(completion_response=completion_response)
+        if cost and cost > 0:
+            return cost
     except Exception:
-        # フォールバック: 自前の料金テーブルで計算
-        if model is None:
-            model = getattr(completion_response, "model", None)
+        pass
 
-        if model.startswith("openrouter/"):
-            model = model.replace("openrouter/", "")
+    # 2) 自前テーブルでフォールバック
+    fallback = _fallback_completion_cost(completion_response, model)
+    if fallback is not None:
+        return fallback
 
-        if model not in MODEL_PRICING:
-            logger.warning(f"Model {model} not in pricing table. Returning 0.0")
-            return 0.0
-
-        pricing = MODEL_PRICING[model]
-        usage = completion_response.usage
-
-        input_tokens = getattr(usage, "prompt_tokens", 0)
-        output_tokens = getattr(usage, "completion_tokens", 0)
-
-        cost = (
-            input_tokens * pricing["input"] + output_tokens * pricing["output"]
-        ) / 1_000_000
-        return cost
+    resp_model = getattr(completion_response, "model", "unknown")
+    logger.warning(
+        f"Cost unavailable for model={model} (response.model={resp_model}). Returning 0.0"
+    )
+    return 0.0
 
 
 def load_config(config_path: Path) -> Dict[str, Any]:
