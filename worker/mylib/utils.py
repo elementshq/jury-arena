@@ -326,9 +326,11 @@ def safe_completion_cost(completion_response: Any, model: str | None = None) -> 
     Returns:
         コスト（USD）
     """
-    # 1) litellm を試行
+    # 1) litellm を試行（model 明示で呼ぶ → レスポンスのモデル名が別名でも解決可能）
     try:
-        cost = litellm.completion_cost(completion_response=completion_response)
+        cost = litellm.completion_cost(
+            completion_response=completion_response, model=model
+        )
         if cost and cost > 0:
             return cost
     except Exception:
