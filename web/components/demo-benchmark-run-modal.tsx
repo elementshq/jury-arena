@@ -135,6 +135,9 @@ function buildMockLogs(): string[] {
 
 const MOCK_LOGS = buildMockLogs();
 
+const MOCK_BATCH_SIZE = 5;
+const MOCK_COST_PER_STEP = { trial: 0.0042, judge: 0.0018 };
+
 // How many ms between each animation step
 const STEP_INTERVAL_MS = 600;
 // How many ms between each log line
@@ -235,7 +238,9 @@ export function DemoBenchmarkRunModal({
     return `hsl(${(idx * 360) / MOCK_MODELS.length}, 70%, 50%)`;
   }, []);
 
-  const stepLabel = `${animStep * 5} / ${TOTAL_ANIM_STEPS * 5}`;
+  const mockTrialCost = animStep * MOCK_COST_PER_STEP.trial;
+  const mockJudgeCost = animStep * MOCK_COST_PER_STEP.judge;
+  const mockTotalCost = mockTrialCost + mockJudgeCost;
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -254,25 +259,39 @@ export function DemoBenchmarkRunModal({
         </DialogHeader>
 
         {/* Header info */}
-        <div className="rounded-lg border bg-muted/20 p-4">
+        <div className="rounded-lg border bg-muted/20 p-4 space-y-3">
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
-              <div className="text-muted-foreground">Status</div>
+              <div className="text-muted-foreground">Dataset</div>
+              <div className="font-medium">template samples en</div>
+            </div>
+            <div>
+              <div className="text-muted-foreground">Start Time</div>
               <div className="font-medium">
                 {done ? "Simulation complete" : "Running (demo)"}
               </div>
             </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
               <div className="text-muted-foreground">Step</div>
-              <div className="font-medium">{stepLabel} steps</div>
+              <div className="font-medium">
+                {animStep} / {TOTAL_ANIM_STEPS}
+              </div>
+              <div className="mt-0.5 text-xs text-muted-foreground">
+                {MOCK_BATCH_SIZE} matches per step (max {TOTAL_ANIM_STEPS} steps)
+              </div>
             </div>
             <div>
-              <div className="text-muted-foreground">Models</div>
-              <div className="font-medium">{MOCK_MODELS.length} models</div>
-            </div>
-            <div>
-              <div className="text-muted-foreground">Matches</div>
-              <div className="font-medium">~{animStep * 10}</div>
+              <div className="text-muted-foreground">Cost</div>
+              <div className="font-medium font-mono">
+                {animStep > 0 ? `$${mockTotalCost.toFixed(4)}` : "-"}
+              </div>
+              {animStep > 0 ? (
+                <div className="mt-0.5 text-xs text-muted-foreground">
+                  Trial ${mockTrialCost.toFixed(4)} / Judge ${mockJudgeCost.toFixed(4)}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

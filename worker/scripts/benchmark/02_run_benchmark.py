@@ -39,6 +39,7 @@ from mylib.utils import (
     check_convergence,
     create_rating_system,
     create_selector,
+    fetch_openrouter_pricing,
     load_config,
     load_existing_matches,
     load_latest_rating_step,
@@ -299,6 +300,10 @@ def main() -> int:
             judge_output_language=judge_output_language,
             timeout=judge_timeout,
         )
+
+    # OpenRouter API から使用モデルの最新料金を取得（フォールバック用テーブルを更新）
+    pricing_count = fetch_openrouter_pricing(trial_models + judge_models)
+    print(f"[PRICING] OpenRouter: {pricing_count} models updated", flush=True)
 
     print("\n===== ベンチマーク開始 =====\n", flush=True)
 

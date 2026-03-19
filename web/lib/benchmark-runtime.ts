@@ -37,6 +37,8 @@ export type BenchmarkState = {
 
   step: { current: number; total?: number };
 
+  matches: { batchSize: number; max: number };
+
   models: { count: number; names: string[] };
 
   ratingSeries: Array<{ step: number; [modelName: string]: number }>;
@@ -239,6 +241,9 @@ export function initBenchmarkRuntime(args: {
   datasetId: string;
   datasetName: string;
   models?: string[];
+  totalSteps?: number;
+  matchBatchSize?: number;
+  maxMatches?: number;
   logLimit?: number;
   tempConfigPath?: string;
 }) {
@@ -263,7 +268,8 @@ export function initBenchmarkRuntime(args: {
       status: "queued",
       startedAt: undefined,
       finishedAt: undefined,
-      step: { current: 0 },
+      step: { current: 0, total: args.totalSteps },
+      matches: { batchSize: args.matchBatchSize ?? 0, max: args.maxMatches ?? 0 },
       models: { count: args.models?.length ?? 0, names: args.models ?? [] },
       ratingSeries: [],
       logs: [],

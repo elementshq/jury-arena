@@ -36,6 +36,8 @@ type BenchmarkState = {
 
   step: { current: number; total?: number };
 
+  matches: { batchSize: number; max: number };
+
   models: { count: number; names: string[] };
 
   ratingSeries: Array<{ step: number; [modelName: string]: number }>;
@@ -44,6 +46,25 @@ type BenchmarkState = {
 };
 
 const MAX_LINES = 50;
+
+type CostState = {
+  totalTrialCost: number;
+  totalJudgeCost: number;
+};
+
+function parseCostLine(line: string): Partial<CostState> | null {
+  if (!line.startsWith("[COST]")) return null;
+
+  const trialMatch = line.match(/total_trial_cost=\$([0-9.]+)/);
+  const judgeMatch = line.match(/total_judge_cost=\$([0-9.]+)/);
+
+  if (!trialMatch && !judgeMatch) return null;
+
+  const result: Partial<CostState> = {};
+  if (trialMatch) result.totalTrialCost = Number(trialMatch[1]);
+  if (judgeMatch) result.totalJudgeCost = Number(judgeMatch[1]);
+  return result;
+}
 
 type ParsedSseEvent = { event: string; data: string };
 
@@ -100,7 +121,15 @@ type RatingPayload = {
 type BundlePayload = {
   message?: string;
   rating?: RatingPayload;
-  raw?: unknown;
+  raw?: {
+    type?: string;
+    stepData?: {
+      cost?: {
+        trial_total_usd?: number;
+        judge_total_usd?: number;
+      };
+    };
+  };
 };
 
 function upsertRatingRow(
@@ -136,6 +165,10 @@ export function BenchmarkRunModal(props: {
 
   const [streamLines, setStreamLines] = useState<string[]>([]);
   const [streamConnected, setStreamConnected] = useState(false);
+  const [cost, setCost] = useState<CostState>({
+    totalTrialCost: 0,
+    totalJudgeCost: 0,
+  });
 
   const [stopping, setStopping] = useState(false);
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -197,6 +230,22 @@ export function BenchmarkRunModal(props: {
 
         if (!cancelled) {
           setState(data);
+
+          // Extract cost from existing logs
+          if (data.logs?.length) {
+            let trial = 0;
+            let judge = 0;
+            for (const log of data.logs) {
+              const c = parseCostLine(log.message);
+              if (c) {
+                if (c.totalTrialCost != null) trial = c.totalTrialCost;
+                if (c.totalJudgeCost != null) judge = c.totalJudgeCost;
+              }
+            }
+            if (trial > 0 || judge > 0) {
+              setCost({ totalTrialCost: trial, totalJudgeCost: judge });
+            }
+          }
         }
 
         maybeClearRunningByTransition(data.status);
@@ -227,6 +276,7 @@ export function BenchmarkRunModal(props: {
 
     setStreamLines([]);
     setStreamConnected(false);
+    setCost({ totalTrialCost: 0, totalJudgeCost: 0 });
 
     async function connectLoop() {
       let backoffMs = 500;
@@ -267,6 +317,17 @@ export function BenchmarkRunModal(props: {
             for (const ev of events) {
               if (ev.event === "message") {
                 if (!ev.data) continue;
+
+                const parsed = parseCostLine(ev.data);
+                if (parsed) {
+                  setCost((prev) => ({
+                    totalTrialCost:
+                      parsed.totalTrialCost ?? prev.totalTrialCost,
+                    totalJudgeCost:
+                      parsed.totalJudgeCost ?? prev.totalJudgeCost,
+                  }));
+                }
+
                 setStreamLines((prev) => {
                   const next = [...prev, ev.data];
                   return next.length > MAX_LINES
@@ -348,6 +409,15 @@ export function BenchmarkRunModal(props: {
                       };
                     });
                   }
+
+                  // Extract cost from rating_step data
+                  const stepCost = x.raw?.stepData?.cost;
+                  if (stepCost) {
+                    setCost({
+                      totalTrialCost: stepCost.trial_total_usd ?? 0,
+                      totalJudgeCost: stepCost.judge_total_usd ?? 0,
+                    });
+                  }
                 } catch (e) {
                   setStreamLines((prev) => {
                     const next = [...prev, `[bundle parse error] ${String(e)}`];
@@ -421,10 +491,13 @@ export function BenchmarkRunModal(props: {
     return () => cancelAnimationFrame(id);
   }, [open, streamLines.length]);
 
+  const totalCost = cost.totalTrialCost + cost.totalJudgeCost;
+  const hasCost = totalCost > 0;
+
   const header = useMemo(() => {
     if (!state) return null;
     return (
-      <div className="rounded-lg border bg-muted/20 p-4">
+      <div className="rounded-lg border bg-muted/20 p-4 space-y-3">
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <div className="text-muted-foreground">Dataset</div>
@@ -434,22 +507,35 @@ export function BenchmarkRunModal(props: {
             <div className="text-muted-foreground">Start Time</div>
             <div className="font-medium">{state.startedAt ?? "-"}</div>
           </div>
-
+        </div>
+        <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <div className="text-muted-foreground">Step</div>
             <div className="font-medium">
-              Status: {state.status} ({state.step.current}
-              {state.step.total ? ` / ${state.step.total}` : ""} steps)
+              {state.step.current}
+              {state.step.total ? ` / ${state.step.total}` : ""}
             </div>
+            {state.matches.batchSize > 0 && state.step.total ? (
+              <div className="mt-0.5 text-xs text-muted-foreground">
+                {state.matches.batchSize} matches per step (max {state.step.total} steps)
+              </div>
+            ) : null}
           </div>
           <div>
-            <div className="text-muted-foreground">Number of Models</div>
-            <div className="font-medium">{state.models.count} models</div>
+            <div className="text-muted-foreground">Cost</div>
+            <div className="font-medium font-mono">
+              {hasCost ? `$${totalCost.toFixed(4)}` : "-"}
+            </div>
+            {hasCost ? (
+              <div className="mt-0.5 text-xs text-muted-foreground">
+                Trial ${cost.totalTrialCost.toFixed(4)} / Judge ${cost.totalJudgeCost.toFixed(4)}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
     );
-  }, [state]);
+  }, [state, hasCost, totalCost, cost.totalTrialCost, cost.totalJudgeCost]);
 
   const chartData = useMemo(() => {
     return (state?.ratingSeries ?? []).map((row) => ({ ...row }));
